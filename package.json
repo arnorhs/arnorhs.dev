@@ -1,0 +1,13 @@
+{
+  "name": "arnorhs.dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "arnorhs <arnorhs@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["joshnuss-svelte-copy-pasta"],
+  "scripts": {
+    "build": "yarn workspace joshnuss-svelte-copy-pasta export",
+    "serve": "http-server joshnuss-svelte-copy-pasta/__sapper__/export"
+  }
+}
