@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import all from '../posts/*.md'
+import all from '../../posts/*.md'
 
 export const posts = _.chain(all) // begin a chain
                       .map(transform) // transform the shape of each post

@@ -5,7 +5,9 @@
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["joshnuss-svelte-copy-pasta"],
+  "workspaces": [
+    "joshnuss-svelte-copy-pasta"
+  ],
   "scripts": {
     "build": "yarn workspace joshnuss-svelte-copy-pasta export",
     "serve": "http-server joshnuss-svelte-copy-pasta/__sapper__/export"
