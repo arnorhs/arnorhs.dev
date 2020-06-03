@@ -9,7 +9,7 @@
     "joshnuss-svelte-copy-pasta"
   ],
   "scripts": {
-    "export": "yarn workspace joshnuss-svelte-copy-pasta export",
+    "export": "NODE_ENV=production yarn workspace joshnuss-svelte-copy-pasta export",
     "serve": "http-server joshnuss-svelte-copy-pasta/__sapper__/export",
     "start": "yarn workspace joshnuss-svelte-copy-pasta start"
   }

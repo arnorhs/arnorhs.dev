@@ -19,7 +19,16 @@ const aliases = {
   '@': path.resolve(__dirname, 'src')
 }
 
-const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning)
+const onwarn = (warning, onwarn) =>
+  (warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  onwarn(warning)
+
+const preprocess = autoPreprocess({
+  postcss: {
+    plugins: [require('tailwindcss'), require('autoprefixer')]
+  }
+})
 
 export default {
   client: {
@@ -35,7 +44,7 @@ export default {
       }),
       svelte({
         dev,
-        preprocess: autoPreprocess(),
+        preprocess,
         hydratable: true,
         emitCss: true
       }),
@@ -45,29 +54,37 @@ export default {
       }),
       commonjs(),
 
-      legacy && babel({
-        extensions: ['.js', '.mjs', '.html', '.svelte'],
-        runtimeHelpers: true,
-        exclude: ['node_modules/@babel/**'],
-        presets: [
-          ['@babel/preset-env', {
-            targets: '> 0.25%, not dead'
-          }]
-        ],
-        plugins: [
-          '@babel/plugin-syntax-dynamic-import',
-          ['@babel/plugin-transform-runtime', {
-            useESModules: true
-          }]
-        ]
-      }),
+      legacy &&
+        babel({
+          extensions: ['.js', '.mjs', '.html', '.svelte'],
+          runtimeHelpers: true,
+          exclude: ['node_modules/@babel/**'],
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: '> 0.25%, not dead'
+              }
+            ]
+          ],
+          plugins: [
+            '@babel/plugin-syntax-dynamic-import',
+            [
+              '@babel/plugin-transform-runtime',
+              {
+                useESModules: true
+              }
+            ]
+          ]
+        }),
 
-      !dev && terser({
-        module: true
-      })
+      !dev &&
+        terser({
+          module: true
+        })
     ],
 
-    onwarn,
+    onwarn
   },
 
   server: {
@@ -83,6 +100,7 @@ export default {
       }),
       svelte({
         generate: 'ssr',
+        preprocess,
         dev
       }),
       resolve({
@@ -91,10 +109,11 @@ export default {
       commonjs()
     ],
     external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules || Object.keys(process.binding('natives'))
+      require('module').builtinModules ||
+        Object.keys(process.binding('natives'))
     ),
 
-    onwarn,
+    onwarn
   },
 
   serviceworker: {
@@ -110,6 +129,6 @@ export default {
       !dev && terser()
     ],
 
-    onwarn,
+    onwarn
   }
 }
