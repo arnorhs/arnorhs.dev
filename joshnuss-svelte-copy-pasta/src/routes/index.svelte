@@ -9,7 +9,7 @@
 {#each posts as post}
   <article>
     <!-- link article to /posts/$permalink -->
-    <a href={`/posts/${post.permalink}`}>
+    <a href={post.url}>
       <h2>{post.title}</h2>
       <p>{post.summary}</p>
     </a>

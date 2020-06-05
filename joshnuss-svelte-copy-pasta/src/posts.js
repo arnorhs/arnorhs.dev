@@ -7,9 +7,12 @@ const transform = ({ filename, html, metadata }) => {
 
   // convert date string into a proper `Date`
   const date = new Date(metadata.date)
+  const dateStr = date.toISOString().substring(0, 10)
+
+  const url = `/posts/${dateStr}/${permalink}`
 
   // return the new shape
-  return { ...metadata, filename, html, permalink, date }
+  return { ...metadata, url, filename, html, permalink, date }
 }
 
 const orderBy = (field, direction = 'asc') => {

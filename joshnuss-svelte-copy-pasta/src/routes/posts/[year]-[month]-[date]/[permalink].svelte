@@ -1,16 +1,16 @@
 <script context="module">
   // import the logic for finding a post based on permalink
-  import { findPost } from "../../posts";
+  import { findPost } from "../../../posts"
 
   // sapper calls this to load our data
-  export function preload(page) {
+  export const preload = page => {
     // find the post based on the permalink param
-    const post = findPost(page.params);
+    const { permalink } = page.params
 
-    console.log(page.params);
+    const post = findPost(permalink)
 
     // return a list of props
-    return { post };
+    return { post }
   }
 </script>
 
