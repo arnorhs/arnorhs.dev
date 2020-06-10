@@ -1,11 +1,20 @@
 <script>
+  import Nav from '../components/nav.svelte'
   // export let segment
 </script>
 
 <style global>
   @tailwind base;
 
-  ul {
+  a {
+    @apply text-indigo;
+  }
+
+  a:hover {
+    @apply text-indigo-dark;
+  }
+
+  article ul {
     @apply list-disc;
     @apply list-inside;
   }
@@ -39,5 +48,6 @@
 </style>
 
 <main>
+  <Nav />
   <slot />
 </main>

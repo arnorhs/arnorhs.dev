@@ -100,7 +100,7 @@ export default {
       }),
       svelte({
         generate: 'ssr',
-        preprocess,
+        preprocess: !dev && preprocess,
         dev
       }),
       resolve({
