@@ -1,7 +1,7 @@
 module.exports = {
-  // ...(process.env.NODE_ENV !== 'production'
-  //   ? {}
-  //   : { purge: ['./src/**/*.js', './src/**/*.svelte'] }),
+  ...(process.env.NODE_ENV !== 'production'
+    ? {}
+    : { purge: ['./src/**/*.js', './src/**/*.svelte'] }),
   theme: {
     container: {
       center: true
