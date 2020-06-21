@@ -6,6 +6,10 @@
 <style global>
   @tailwind base;
 
+  html {
+    font-size: 24px;
+  }
+
   a {
     @apply text-indigo;
   }
@@ -20,27 +24,41 @@
   }
 
   h1 {
-    @apply text-3xl;
+    @apply text-5xl;
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
 
   h3 {
-    @apply text-xl;
+    @apply text-2xl;
   }
 
   h4 {
-    @apply text-lg;
+    @apply text-xl;
   }
 
   h5 {
+    @apply text-lg;
+  }
+
+  h6 {
     @apply text-base;
   }
 
-  h1 {
-    @apply text-sm;
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article ul,
+  article ol,
+  article p,
+  article figure,
+  article h6 {
+    @apply mt-2;
+    @apply mb-4;
   }
 
   @tailwind components;

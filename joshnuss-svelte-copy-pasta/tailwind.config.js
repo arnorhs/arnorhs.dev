@@ -3,6 +3,9 @@ module.exports = {
   //   ? {}
   //   : { purge: ['./src/**/*.js', './src/**/*.svelte'] }),
   theme: {
+    container: {
+      center: true
+    },
     extend: {
       colors: {
         indigo: {

@@ -19,7 +19,9 @@
   export let post;
 </script>
 
-<!-- display the post -->
-<h1>{post.title}</h1>
+<article class='container'>
+  <!-- display the post -->
+  <h1>{post.title}</h1>
 
-{@html post.html}
+  {@html post.html}
+</article>

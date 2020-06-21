@@ -11,6 +11,7 @@ import path from 'path'
 import pkg from './package.json'
 import markdown from '@jackfranklin/rollup-plugin-markdown'
 import glob from 'rollup-plugin-glob'
+import json from '@rollup/plugin-json'
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -52,6 +53,7 @@ export default {
         browser: true,
         dedupe: ['svelte']
       }),
+      json(),
       commonjs(),
 
       legacy &&
@@ -106,6 +108,7 @@ export default {
       resolve({
         dedupe: ['svelte']
       }),
+      json(),
       commonjs()
     ],
     external: Object.keys(pkg.dependencies).concat(

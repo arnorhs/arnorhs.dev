@@ -1,4 +1,5 @@
 import all from '../../posts/*.md'
+import legacyPosts from '../../posts/wpposts.json'
 
 // function for reshaping each post
 const transform = ({ filename, html, metadata }) => {
@@ -51,10 +52,44 @@ const orderBy = (field, direction = 'asc') => {
   }
 }
 
+const legacyTransform = o => {
+  const {
+    post_date: publishedDate,
+    post_content: postContent,
+    post_excerpt: summary,
+    post_title: title,
+    post_status: status,
+    post_name: permalink,
+    post_modified: modifiedDate
+  } = o
+
+  // WP's post content comes with newlines for paragraphs
+  const splits = postContent.split(/\n\n|\r\n\r\n/)
+
+  const html = splits.map(s => `<p>${s}</p>`).join('\n')
+
+  const metaData = {
+    modifiedDate,
+    status,
+    summary,
+    title
+  }
+
+  const date = new Date(publishedDate)
+  const dateStr = date.toISOString().substring(0, 10)
+
+  const url = `/posts/${dateStr}/${permalink}`
+
+  return { ...metaData, url, html, permalink, date }
+}
+
+export const posts = [
+  ...all.map(transform),
+  ...legacyPosts.map(legacyTransform).filter(p => p.status === 'publish')
+].sort(orderBy('date', 'desc'))
+
 // provide a way to find a post by permalink
 export const findPost = permalink => {
   // use lodash to find by field name:
   return posts.find(post => post.permalink === permalink)
 }
-
-export const posts = all.map(transform).sort(orderBy('date', 'desc'))
