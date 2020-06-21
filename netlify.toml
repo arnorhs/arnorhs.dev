@@ -1,0 +1,8 @@
+[build]
+  command = "yarn export"
+  publish = "joshnuss-svelte-copy-pasta/__sapper__/export"
+
+[[redirects]]
+  from = "/wp-content/uploads/*"
+  to = "/legacy_images/:splat"
+  status = 200
