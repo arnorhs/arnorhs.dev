@@ -1,15 +1,12 @@
 <script context="module">
-  // import the logic for finding a post based on permalink
-  import { findPost } from "../../../posts"
+  export async function preload (page, session) {
+    const { permalink, year, month, date } = page.params
 
-  // sapper calls this to load our data
-  export const preload = page => {
-    // find the post based on the permalink param
-    const { permalink } = page.params
+    const url = `/posts/${year}-${month}-${date}/${permalink}.json`
 
-    const post = findPost(permalink)
+    const r = await this.fetch(url)
+    const post = await r.json()
 
-    // return a list of props
     return { post }
   }
 </script>

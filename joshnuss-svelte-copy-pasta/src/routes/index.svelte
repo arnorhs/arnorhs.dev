@@ -1,11 +1,17 @@
+<script context="module">
+  export async function preload (page, session) {
+    const r = await this.fetch('/posts.json')
+    const posts = await r.json()
+
+    return { posts }
+  }
+</script>
+
 <script>
-  // import the list of posts
-  import { posts } from "../posts";
+  export let posts
 </script>
 
 <div class='container'>
-  <h1>My blugg</h1>
-
   <!-- iterate through each post -->
   {#each posts as post}
     <article>
