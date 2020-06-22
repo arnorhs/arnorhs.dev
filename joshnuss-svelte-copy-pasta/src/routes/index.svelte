@@ -1,9 +1,11 @@
 <script context="module">
+  import { propMap, toDate } from '../utils'
+
   export async function preload (page, session) {
     const r = await this.fetch('/posts.json')
     const posts = await r.json()
 
-    return { posts }
+    return { posts: posts.map(propMap('date', toDate)) }
   }
 </script>
 

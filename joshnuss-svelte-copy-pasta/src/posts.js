@@ -63,10 +63,7 @@ const legacyTransform = o => {
     post_modified: modifiedDate
   } = o
 
-  // WP's post content comes with newlines for paragraphs
-  const splits = postContent.split(/\n\n|\r\n\r\n/)
-
-  const html = splits.map(s => `<p>${s}</p>`).join('\n')
+  const html = fromWordPressHtml(postContent)
 
   const metaData = {
     modifiedDate,
@@ -81,6 +78,15 @@ const legacyTransform = o => {
   const url = `/posts/${dateStr}/${permalink}`
 
   return { ...metaData, url, html, permalink, date }
+}
+
+const fromWordPressHtml = postContent => {
+  // WP's post content comes with newlines for paragraphs
+  return postContent
+    .split(/\n\n|\r\n\r\n/)
+    .map(s => `<p>${s}</p>`)
+    .join('\n')
+    .replace(/http:\/\//g, 'https://')
 }
 
 export const posts = [

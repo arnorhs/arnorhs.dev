@@ -5,10 +5,7 @@
 
       <ul>
         <li class="inline-block">
-          <a class="inline-block mx-1 py-3 px-4" href="/">Home</a>
-        </li>
-        <li class="inline-block">
-          <a class="inline-block mx-1 py-3 px-4" href="/posts">Posts</a>
+          <a class="inline-block mx-1 py-3 px-4" href="/archive">Post archive</a>
         </li>
         <li class="inline-block">
           <a class="inline-block mx-1 py-3 px-4" href="/about">About</a>
