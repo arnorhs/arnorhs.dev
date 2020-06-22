@@ -26,8 +26,7 @@
 
 <main>
   <article class='container'>
-    <!-- display the post -->
-    <h1>{post.title}</h1>
+    <h1 class='mb-0'>{post.title}</h1>
     <p class='mt-0 text-xs' aria-label='published date'>{dateFormat(post.date)}</p>
 
     {@html post.html}
