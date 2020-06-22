@@ -91,7 +91,9 @@ const fromWordPressHtml = postContent => {
 
 export const posts = [
   ...all.map(transform),
-  ...legacyPosts.map(legacyTransform).filter(p => p.status === 'publish')
+  ...legacyPosts
+    .filter(p => p.post_type === 'post' && p.post_status === 'publish')
+    .map(legacyTransform)
 ].sort(orderBy('date', 'desc'))
 
 // provide a way to find a post by permalink

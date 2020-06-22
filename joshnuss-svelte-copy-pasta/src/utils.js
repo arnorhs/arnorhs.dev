@@ -3,7 +3,7 @@ export const propMap = (key, mapper) => o => ({
   [key]: mapper(o[key])
 })
 
-export const toDate = str => dateFormat(new Date(str))
+export const toDate = str => new Date(str)
 
 export const dateFormat = date => {
   const options = {

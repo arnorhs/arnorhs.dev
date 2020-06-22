@@ -4,10 +4,7 @@ summary: Open for orders
 date: 2020-06-22
 ---
 
-So I decided to re-open my blog. I kind of lost interest in blogging for a while
-and didn't even remember to renew the domain name.
-
-But I did put in the work to import the blog posts from wordpress to here.
+So I decided to re-open my blog. I kind of lost interest in blogging for a while and didn't even remember to renew the domain name. But I did put in the work to import the blog posts from wordpress to here.
 
 So this is my new blog. Maybe I'll post more, maybe I won't.
 

@@ -1,6 +1,5 @@
 <script>
   import Nav from '../components/nav.svelte'
-  // export let segment
 </script>
 
 <style global>
@@ -57,8 +56,8 @@
   article p,
   article figure,
   article h6 {
-    @apply mt-2;
-    @apply mb-4;
+    @apply mt-4;
+    @apply mb-2;
   }
 
   @tailwind components;
@@ -68,4 +67,10 @@
 <main>
   <Nav />
   <slot />
+
+  <footer>
+    <div class="container text-center mt-4 py-4 border-t border-solid border-gray-200">
+      &copy; Copyright 2020 Arnor Heidar Sigurdsson
+    </div>
+  </footer>
 </main>

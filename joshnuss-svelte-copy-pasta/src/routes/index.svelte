@@ -5,29 +5,22 @@
     const r = await this.fetch('/posts.json')
     const posts = await r.json()
 
-    return { posts: posts.map(propMap('date', toDate)) }
+    return { posts: posts.map(propMap('date', toDate)).slice(0, 12) }
   }
 </script>
 
 <script>
+  import PostArticle from '../components/post-entry.svelte'
+
   export let posts
 </script>
 
-<div class='container'>
-  <!-- iterate through each post -->
+<main class='container'>
   {#each posts as post}
-    <article>
-      <!-- link article to /posts/$permalink -->
-      <a href={post.url}>
-        <h2>{post.title}</h2>
-      </a>
-
-      <span aria-label='published date'>{post.date}</span>
-      <p>{post.summary}</p>
-
-      <div>
-        <a href={post.url}>Read on</a>
-      </div>
-    </article>
+    <PostArticle post={post} />
   {/each}
-</div>
+
+  <div class="text-right">
+    <a href='/archive'>More &gt;&gt;</a>
+  </div>
+</main>

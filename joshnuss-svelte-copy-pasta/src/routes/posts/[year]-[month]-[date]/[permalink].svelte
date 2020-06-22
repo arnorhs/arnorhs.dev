@@ -19,14 +19,17 @@
 </script>
 
 <script>
-  // this prop is filled from the result of the `preload()`
+  import { dateFormat } from '../../../utils'
+
   export let post;
 </script>
 
-<article class='container'>
-  <!-- display the post -->
-  <h1>{post.title}</h1>
-  <span aria-label='published date'>{post.date}</span>
+<main>
+  <article class='container'>
+    <!-- display the post -->
+    <h1>{post.title}</h1>
+    <p class='mt-0 text-xs' aria-label='published date'>{dateFormat(post.date)}</p>
 
-  {@html post.html}
-</article>
+    {@html post.html}
+  </article>
+</main>
