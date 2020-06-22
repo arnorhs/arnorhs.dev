@@ -24,6 +24,14 @@
   export let post;
 </script>
 
+<svelte:head>
+  <title>{post.title} - arnorhs.dev</title>
+  <meta
+    name="description"
+    content={post.summary}
+  />
+</svelte:head>
+
 <main>
   <article class='container'>
     <h1 class='mb-0'>{post.title}</h1>

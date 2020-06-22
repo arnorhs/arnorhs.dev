@@ -12,7 +12,7 @@
     </ul>
 
     <p>
-      I've worked extensively in web development, web design, mobile app design,
+      Web development, web design, mobile app design,
       mobile app development in Android and iOS.
     </p>
 

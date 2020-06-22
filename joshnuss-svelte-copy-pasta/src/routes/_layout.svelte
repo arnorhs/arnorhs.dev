@@ -71,6 +71,10 @@
   @tailwind utilities;
 </style>
 
+<svelte:head>
+  <title>arnorhs.dev</title>
+</svelte:head>
+
 <div class='sm:px-2 md:px-0'>
   <Nav />
   <slot />
