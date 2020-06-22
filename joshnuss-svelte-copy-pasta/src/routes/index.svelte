@@ -1,4 +1,5 @@
 <script context="module">
+  import PostArticle from '../components/post-entry.svelte'
   import { propMap, toDate } from '../utils'
 
   export async function preload (page, session) {
@@ -10,8 +11,6 @@
 </script>
 
 <script>
-  import PostArticle from '../components/post-entry.svelte'
-
   export let posts
 </script>
 

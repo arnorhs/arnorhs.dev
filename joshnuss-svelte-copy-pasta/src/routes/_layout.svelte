@@ -6,7 +6,14 @@
   @tailwind base;
 
   html {
-    font-size: 24px;
+    font-size: 16px;
+  }
+
+  /* todo: is there a way to get the svelte breakpoint here */
+  @media screen and (min-width: 640px) {
+    html {
+      font-size: 24px;
+    }
   }
 
   a {
@@ -64,7 +71,7 @@
   @tailwind utilities;
 </style>
 
-<main>
+<div class='sm:px-2 md:px-0'>
   <Nav />
   <slot />
 
@@ -73,4 +80,4 @@
       &copy; Copyright 2020 Arnor Heidar Sigurdsson
     </div>
   </footer>
-</main>
+</div>

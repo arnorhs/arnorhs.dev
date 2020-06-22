@@ -1,14 +1,14 @@
 <div>
   <div class="container">
-    <nav class="flex">
-      <a href='/' class="inline-block mr-5 py-3">arnorhs.dev</a>
+    <nav class="md:flex">
+      <a href='/' class="md:inline-block md:mr-5 py-3" label='home'>arnorhs.dev</a>
 
       <ul>
-        <li class="inline-block">
-          <a class="inline-block mx-1 py-3 px-4" href="/archive">post archive</a>
+        <li class="md:inline-block xs:block">
+          <a class="md:inline-block md:mx-1 py-3 md:px-4" href="/archive">post archive</a>
         </li>
-        <li class="inline-block">
-          <a class="inline-block mx-1 py-3 px-4" href="/about">about</a>
+        <li class="md:inline-block xs:block">
+          <a class="md:inline-block md:mx-1 py-3 md:px-4" href="/about">about</a>
         </li>
       </ul>
     </nav>
