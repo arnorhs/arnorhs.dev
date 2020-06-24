@@ -86,7 +86,7 @@ const fromWordPressHtml = postContent => {
     .split(/\n\n|\r\n\r\n/)
     .map(s => `<p>${s}</p>`)
     .join('\n')
-    .replace(/http:\/\//g, 'https://')
+    .replace(/http:\/\//gi, 'https://')
 }
 
 export const posts = [
