@@ -1,5 +1,9 @@
 <script>
   import Nav from '../components/nav.svelte'
+  import GoogleAnalytics from 'sapper-google-analytics/GoogleAnalytics.svelte'
+  import { stores } from '@sapper/app'
+
+  let analId = "UA-13185991-1"
 </script>
 
 <style global>
@@ -85,3 +89,5 @@
     </div>
   </footer>
 </div>
+
+<GoogleAnalytics {stores} id={analId} />
