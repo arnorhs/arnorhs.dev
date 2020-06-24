@@ -3,7 +3,7 @@
   import GoogleAnalytics from 'sapper-google-analytics/GoogleAnalytics.svelte'
   import { stores } from '@sapper/app'
 
-  let analId = "GTM-MJFKX56"
+  let analId = "UA-13185991-1"
 </script>
 
 <style global>
