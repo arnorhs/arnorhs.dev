@@ -1,0 +1,6 @@
+{
+  "moduleResolution": "node",
+  "paths": {
+    "$lib/*": ".src/lib/*"
+  }
+}

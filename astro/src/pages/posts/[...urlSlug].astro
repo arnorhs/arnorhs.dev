@@ -1,0 +1,24 @@
+---
+import MainLayout from '$layouts/MainLayout.astro'
+import PostFull from '$components/PostFull.astro'
+import { dateFormat, Post, findPost, getAllPosts } from '$lib'
+
+export async function getStaticPaths () {
+  const allPosts = await getAllPosts()
+
+  return allPosts.map((post) => ({
+    params: { urlSlug: post.urlSlug },
+    props: { permalink: post.permalink }
+  }))
+}
+
+const {
+  permalink
+} = Astro.props
+
+const post = await findPost(permalink)
+
+---
+<MainLayout>
+    <PostFull {post} />
+</MainLayout>

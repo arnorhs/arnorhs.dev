@@ -1,0 +1,20 @@
+{
+  "name": "@arnorhs/astro",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.20.12"
+  },
+  "dependencies": {
+    "@arnorhs/posts": "*",
+    "@astrojs/renderer-solid": "^0.1.1",
+    "solid-js": "^1.1.7",
+    "tailwindcss": "^2.2.17"
+  }
+}

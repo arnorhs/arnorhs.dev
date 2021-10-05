@@ -1,0 +1,52 @@
+---
+import { pages } from '$lib/data/pages'
+import Container from '$components/Container.astro'
+import Nav from '$components/nav/Nav.astro'
+import NavItem from '$components/nav/Item.astro'
+import PreloadLinks from '$components/PreloadLinks.astro'
+import { FancyPanel } from '../components/solidjs/FancyPanel.tsx'
+import Fonts from '$components/meta/Fonts.astro'
+import Favicon from '$components/meta/Favicon.astro'
+import '../styles/global.css'
+
+const { title } = Astro.props
+
+const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
+
+---
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{titleTag}</title>
+
+  <Fonts />
+  <Favicon />
+</head>
+
+<body>
+  <FancyPanel client:load />
+
+  <div class="sm:px-2 md:px-0">
+    <header>
+      <Container>
+        <Nav>
+          <NavItem first title="home" href="/">arnorhs</NavItem>
+
+          {pages.map(({ slug, shortTitle, title }) => (
+            <NavItem href={`/${slug}/`} title={title}>{shortTitle}</NavItem>
+          ))}
+        </Nav>
+      </Container>
+    </header>
+
+    <Container>
+      <main>
+        <slot />
+      </main>
+    </Container>
+  </div>
+  <PreloadLinks />
+</body>
+</html>

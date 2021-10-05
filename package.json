@@ -5,12 +5,21 @@
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "joshnuss-svelte-copy-pasta"
-  ],
+  "workspaces": {
+    "packages": [
+      "astro",
+      "posts",
+      "api"
+    ],
+    "nohoist": [
+      "**/solid-start"
+    ]
+  },
   "scripts": {
-    "export": "NODE_ENV=production yarn workspace joshnuss-svelte-copy-pasta export",
-    "serve": "http-server joshnuss-svelte-copy-pasta/__sapper__/export",
-    "start": "yarn workspace joshnuss-svelte-copy-pasta start"
-  }
+    "start-api": "yarn posts build && yarn api start",
+    "api": "yarn workspace @arnorhs/api",
+    "posts": "yarn workspace @arnorhs/posts",
+    "astro": "yarn workspace @arnorhs/astro"
+  },
+  "dependencies": {}
 }

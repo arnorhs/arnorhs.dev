@@ -1,0 +1,18 @@
+---
+import { dateFormat, Post } from '$lib'
+
+const post = Astro.props.post as Post
+---
+<article class="font-serif">
+  <h2 class="mb-0 mt-0 font-nav text-xl">
+    <a href={post.url}>{post.meta.title || 'missing title'}</a>
+  </h2>
+
+  <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
+
+  <p class="text-sm">{post.meta.summary}</p>
+
+  <p>
+    <a href={post.url}>Read on</a>
+  </p>
+</article>
