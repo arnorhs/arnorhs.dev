@@ -18,7 +18,7 @@
     "posts": "yarn workspace @arnorhs/posts",
     "post-exporter": "yarn workspace @arnorhs/post-exporter",
     "astro": "yarn workspace @arnorhs/astro",
-    "build": "yarn posts build && TARGET_DIR=astro/src/gen yarn post-exporter build && yarn astro build"
+    "export": "yarn posts build && TARGET_DIR=astro/src/gen yarn post-exporter build && yarn astro build"
   },
   "dependencies": {}
 }
