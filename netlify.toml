@@ -1,6 +1,6 @@
 [build]
   command = "yarn export"
-  publish = "joshnuss-svelte-copy-pasta/__sapper__/export"
+  publish = "astro/dist/"
 
 [[redirects]]
   from = "/wp-content/uploads/*"
