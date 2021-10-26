@@ -1,7 +1,6 @@
 {
   "name": "arnorhs.dev",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -9,17 +8,17 @@
     "packages": [
       "astro",
       "posts",
-      "api"
-    ],
-    "nohoist": [
-      "**/solid-start"
+      "api",
+      "post-exporter"
     ]
   },
   "scripts": {
     "start-api": "yarn posts build && yarn api start",
     "api": "yarn workspace @arnorhs/api",
     "posts": "yarn workspace @arnorhs/posts",
-    "astro": "yarn workspace @arnorhs/astro"
+    "post-exporter": "yarn workspace @arnorhs/post-exporter",
+    "astro": "yarn workspace @arnorhs/astro",
+    "build": "yarn posts build && TARGET_DIR=astro/src/gen yarn post-exporter build && yarn astro build"
   },
   "dependencies": {}
 }

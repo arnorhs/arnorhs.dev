@@ -1,3 +1,5 @@
+import allPosts from '$/gen/allPosts.json'
+
 export type Meta = Record<string, string>
 
 export interface Post {
@@ -21,13 +23,9 @@ const processPost = (item: Record<string, unknown>): Post => {
 }
 
 export const findPost = async (permalink: string): Promise<Post | null> => {
-  const item = await fetch(`http://localhost:1337/post/${permalink}`).then((res) => res.json())
-
-  return processPost(item)
+  return processPost(allPosts.find((x) => x.permalink === permalink))
 }
 
 export const getAllPosts = async (): Promise<Post[]> => {
-  const posts = await fetch(`http://localhost:1337/posts`).then((res) => res.json())
-
-  return posts.map(processPost)
+  return allPosts.map(processPost)
 }

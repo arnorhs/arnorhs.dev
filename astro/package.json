@@ -9,8 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.20.12",
-    "@arnorhs/posts": "*",
+    "@arnorhs/post-exporter": "*",
     "@astrojs/renderer-solid": "^0.1.1",
     "astro": "^0.20.12",
     "solid-js": "^1.1.7",

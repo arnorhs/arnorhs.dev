@@ -1,4 +1,4 @@
-import { MdFile, Meta, Post } from '../types'
+import { MdFile, Post } from '../types'
 
 // function for reshaping each post
 export const transformMd = ({ filename, html, metadata }: MdFile): Post => {
