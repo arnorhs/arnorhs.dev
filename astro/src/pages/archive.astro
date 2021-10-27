@@ -1,18 +1,24 @@
 ---
 import MainLayout from '$layouts/MainLayout.astro'
 import PostPreview from '$components/PostPreview.astro'
+import Heading from '$components/Heading.astro'
 import Card from '$components/Card.astro'
-import { getAllPosts } from '$lib/'
+import { getAllGroupedPosts, groupBy } from '$lib/'
 
-const posts = await getAllPosts()
+const groupedPosts = await getAllGroupedPosts()
 
 ---
 <MainLayout title='Blog archive'>
-  <div class="md:grid md:grid-cols-2 gap-3">
-    {posts.map((post) => (
-      <Card>
-        <PostPreview {post} />
-      </Card>
-    ))}
-  </div>
+  {groupedPosts.map(({ year, posts }) => (
+    <>
+      <Heading tag='h1'>{year}</Heading>
+      <div class="md:grid md:grid-cols-2 gap-3">
+        {posts.map((post) => (
+          <Card>
+            <PostPreview {post} />
+          </Card>
+        ))}
+      </div>
+    </>
+  ))}
 </MainLayout>

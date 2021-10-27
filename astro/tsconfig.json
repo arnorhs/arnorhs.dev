@@ -1,11 +1,12 @@
 {
   "moduleResolution": "node",
   "compilerOptions": {
-    "resolveJsonModule": true
-  },
-  "paths": {
-    "$lib/*": "./src/lib/*",
-    "$components/*": "./src/components/*",
-    "$layouts/*": "./src/layouts/*"
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "paths": {
+      "$lib/*": ["lib/*"],
+      "$components/*": ["components/*"],
+      "$layouts/*": ["layouts/*"]
+    }
   }
 }
