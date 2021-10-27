@@ -42,10 +42,18 @@ const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
     </header>
 
     <Container>
-      <main>
+      <main class="min-h-screen">
         <slot />
       </main>
     </Container>
+
+    <div>
+      <footer class='mt-8 py-5 bg-myblue text-myblue-lighter'>
+        <Container>
+          &copy; 2008 - Arnór Heiðar Sigurðsson, all rights reserved
+        </Container>
+      </footer>
+    </div>
   </div>
   <PreloadLinks />
 </body>

@@ -6,7 +6,6 @@ import Card from '$components/Card.astro'
 import { getAllGroupedPosts, groupBy } from '$lib/'
 
 const groupedPosts = await getAllGroupedPosts()
-
 ---
 <MainLayout title='Blog archive'>
   {groupedPosts.map(({ year, posts }) => (

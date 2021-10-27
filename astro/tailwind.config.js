@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   mode: 'jit',
   purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
@@ -7,7 +5,8 @@ module.exports = {
 
   theme: {
     fontFamily: {
-      sans: 'helvetica',
+      // there's maybe a way to set the serif to be the default?
+      sans: '"Andada Pro"',
       serif: '"Andada Pro"',
       display: '"Bungee Shade"',
       nav: '"Bungee"',

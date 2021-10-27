@@ -32,32 +32,12 @@ article a:hover {
 }
 
 article ul {
-  @apply list-disc;
   @apply list-inside;
+  @apply list-disc;
 }
 
-h1 {
-  @apply text-4xl;
-}
-
-h2 {
-  @apply text-3xl;
-}
-
-h3 {
-  @apply text-2xl;
-}
-
-h4 {
-  @apply text-xl;
-}
-
-h5 {
-  @apply text-lg;
-}
-
-h6 {
-  @apply text-base;
+article ol li p {
+  @apply mt-0;
 }
 
 article h1,
@@ -72,4 +52,28 @@ article figure,
 article h6 {
   @apply mt-4;
   @apply mb-2;
+}
+
+article h1 {
+  @apply text-4xl;
+}
+
+article h2 {
+  @apply text-3xl;
+}
+
+article h3 {
+  @apply text-2xl;
+}
+
+article h4 {
+  @apply text-xl;
+}
+
+article h5 {
+  @apply text-lg;
+}
+
+article h6 {
+  @apply text-base;
 }
