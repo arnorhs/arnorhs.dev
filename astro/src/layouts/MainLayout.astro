@@ -5,6 +5,8 @@ import Nav from '$components/nav/Nav.astro'
 import NavItem from '$components/nav/Item.astro'
 import PreloadLinks from '$components/PreloadLinks.astro'
 import { FancyPanel } from '../components/solidjs/FancyPanel.tsx'
+import TagManagerHead from '$components/meta/TagManagerHead.astro'
+import TagManagerBody from '$components/meta/TagManagerBody.astro'
 import Fonts from '$components/meta/Fonts.astro'
 import Favicon from '$components/meta/Favicon.astro'
 import '../styles/global.css'
@@ -17,6 +19,8 @@ const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 <html lang="en">
 
 <head>
+  <TagManagerHead />
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>{titleTag}</title>
@@ -26,6 +30,8 @@ const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 </head>
 
 <body>
+  <TagManagerBody />
+
   <FancyPanel client:load />
 
   <div class="sm:px-2 md:px-0">
