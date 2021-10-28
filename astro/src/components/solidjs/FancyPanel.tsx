@@ -1,4 +1,4 @@
-import { ifWindow } from '$lib/index'
+import { ifWindow } from '../../lib'
 import { createSignal, createEffect } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
 
