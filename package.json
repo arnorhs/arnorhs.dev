@@ -8,7 +8,6 @@
     "packages": [
       "astro",
       "posts",
-      "api",
       "post-exporter"
     ]
   },
