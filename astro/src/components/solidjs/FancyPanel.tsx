@@ -1,24 +1,8 @@
-import { onMount, onCleanup, createSignal, createEffect } from 'solid-js'
+import { ifWindow } from '$lib/index'
+import { createSignal, createEffect } from 'solid-js'
+import { bindDocumentEventListener } from './solid-hooks'
 
 const rotationSize = 8192
-
-function debounce<T extends Function>(fn: T, delay: number) {
-  let timer = null
-  return (...args) => {
-    clearTimeout(timer)
-    timer = setTimeout(fn.bind(undefined, args), delay)
-  }
-}
-
-function bindDocumentEventListener(eventName: keyof DocumentEventMap, fn) {
-  onMount(() => {
-    window.document.addEventListener(eventName, fn)
-  })
-
-  onCleanup(() => {
-    window.document.removeEventListener(eventName, fn)
-  })
-}
 
 const makeGradient = (posY: number) => {
   const turn = ((posY % rotationSize) / rotationSize).toFixed(2)
@@ -37,14 +21,6 @@ const makeGradient = (posY: number) => {
 
 const setGradient = (div, gradient) => {
   div.style.background = gradient
-}
-
-const ifWindow = (fn, fb) => {
-  if (typeof window !== 'undefined') {
-    return fn()
-  }
-
-  return fb()
 }
 
 const getWindowHeight = () =>

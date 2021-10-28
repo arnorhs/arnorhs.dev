@@ -37,3 +37,19 @@ export function groupBy<T>(keyFn: (T) => string) {
     return acc
   }
 }
+
+export function debounce<T extends Function>(fn: T, delay: number) {
+  let timer = null
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(fn.bind(undefined, args), delay)
+  }
+}
+
+export const ifWindow = (fn, fb) => {
+  if (typeof window !== 'undefined') {
+    return fn()
+  }
+
+  return fb()
+}

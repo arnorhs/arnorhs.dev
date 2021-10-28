@@ -1,5 +1,5 @@
-import allPosts from '$/gen/allPosts.json'
-import { groupBy } from '../utils'
+import allPosts from '../../gen/allPosts.json'
+import { groupBy } from '../utils/misc'
 
 export type Meta = Record<string, string>
 
@@ -27,17 +27,25 @@ export const findPost = async (permalink: string): Promise<Post | null> => {
   return processPost(allPosts.find((x) => x.permalink === permalink))
 }
 
-export const getAllGroupedPosts = async (): Promise<{ year: string; posts: Post[] }[]> => {
+export interface PostGroup {
+  year: string
+  posts: Post[]
+}
+
+export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
   const groupedPosts = allPosts.map(processPost).reduce(
     groupBy((post) => post.date.getFullYear()),
     {} as Record<string, Post[]>,
-  )
+  ) as Record<string, Post[]>
 
   const posts = Object.entries(groupedPosts)
-    .map(([key, value]) => ({
-      year: key,
-      posts: value,
-    }))
+    .map(
+      ([key, value]) =>
+        ({
+          year: key,
+          posts: value,
+        } as PostGroup),
+    )
     .sort(({ year: a }, { year: b }) => {
       return parseInt(b, 10) - parseInt(a, 10)
     })

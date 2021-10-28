@@ -2,11 +2,13 @@
   "moduleResolution": "node",
   "compilerOptions": {
     "resolveJsonModule": true,
-    "baseUrl": "src",
+    "baseUrl": "./",
+    "esModuleInterop": true,
     "paths": {
-      "$lib/*": ["lib/*"],
-      "$components/*": ["components/*"],
-      "$layouts/*": ["layouts/*"]
+      "$src": ["src/*"],
+      "$lib": ["src/lib/index.ts"],
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"]
     }
   }
 }
