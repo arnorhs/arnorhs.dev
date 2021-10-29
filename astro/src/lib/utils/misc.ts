@@ -46,7 +46,7 @@ export function debounce<T extends Function>(fn: T, delay: number) {
   }
 }
 
-export const ifWindow = (fn, fb) => {
+export function ifWindow<T>(fn: () => T, fb: () => T): T {
   if (typeof window !== 'undefined') {
     return fn()
   }
