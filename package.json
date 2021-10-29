@@ -12,8 +12,6 @@
     ]
   },
   "scripts": {
-    "start-api": "yarn posts build && yarn api start",
-    "api": "yarn workspace @arnorhs/api",
     "posts": "yarn workspace @arnorhs/posts",
     "post-exporter": "yarn workspace @arnorhs/post-exporter",
     "astro": "yarn workspace @arnorhs/astro",

@@ -1,18 +1,7 @@
 import { ifWindow } from '../../lib'
-import { For, createSignal, createEffect } from 'solid-js'
+import { For, createSignal, createEffect, Component, JSX } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
-
-interface BaseTriangle {
-  color: string
-  rotationRatio: number
-}
-
-interface Triangle extends BaseTriangle {
-  ref?: HTMLElement
-  index: number
-  size: number // degrees
-  rotationSize: number
-}
+import { BaseTriangle, Triangle } from './types'
 
 const triangles: BaseTriangle[] = [
   {
@@ -46,7 +35,6 @@ const triangles: BaseTriangle[] = [
 ]
 
 const ROTATION_SIZE = 8192
-// const turn = ((posY % ROTATION_SIZE) / ROTATION_SIZE).toFixed(2)
 
 const makeGradient = (color: string, from: number, to: number) => {
   return `
@@ -59,7 +47,8 @@ const makeGradient = (color: string, from: number, to: number) => {
   `
 }
 
-const makeTransform = (y, { rotationSize, index }: Triangle) => {
+const makeTransform = (y, index, { rotationRatio }: Triangle) => {
+  const rotationSize = ROTATION_SIZE * rotationRatio
   const rotation = (360 * y) / rotationSize + index * rotationSize
   return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
 }
@@ -67,17 +56,13 @@ const makeTransform = (y, { rotationSize, index }: Triangle) => {
 const getViewportAngle = () => {
   const [w, h] = ifWindow(
     () => [window.innerWidth, window.innerHeight],
-    () => [5, 3],
+    () => [6, 3],
   )
-
-  // good old pytho
-  //const c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
 
   // angle of a/b
   const radians = Math.atan(h / w)
   const degrees = (radians * 180) / Math.PI
 
-  console.log(degrees, w, h)
   return degrees
 }
 
@@ -87,25 +72,23 @@ const getScrollTop = () =>
     () => 0,
   )
 
-export const FancyPanel = () => {
+export const FancyPanel: Component = (): JSX.Element => {
   const triangleSize = 360 / triangles.length
   const items: Triangle[] = triangles.map((item, i) => ({
     ...item,
     ref: undefined,
-    index: i,
     size: triangleSize,
-    rotationSize: item.rotationRatio * ROTATION_SIZE,
   }))
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
   createEffect(() => {
-    items.forEach((item, i, arr) => {
+    items.forEach((item, i) => {
       const y = scrollY()
       if (!item.ref) {
         return
       }
 
-      item.ref.style.transform = makeTransform(y, item)
+      item.ref.style.transform = makeTransform(y, i, item)
       item.ref.style.opacity = Math.pow(Math.max(0, (2000 - y) / 2000), 2).toFixed(3)
     })
   })
@@ -115,7 +98,7 @@ export const FancyPanel = () => {
   })
 
   // this angle is the angle of t/l, but the gradient angle's 0 is b/r
-  const angle = getViewportAngle() + 90
+  const viewportAngle = getViewportAngle() + 90
 
   const style = {
     position: 'absolute',
@@ -123,6 +106,7 @@ export const FancyPanel = () => {
     top: '-200px',
     bottom: '-200px',
     right: '-200px',
+    opacity: 0,
     'transform-origin': '0 0',
     'transition-property': 'all',
     'transition-timing-function': 'ease-out',
@@ -148,7 +132,11 @@ export const FancyPanel = () => {
               ref={(el) => (item.ref = el)}
               style={{
                 ...style,
-                background: makeGradient(item.color, angle - item.size / 2, angle + item.size / 2),
+                background: makeGradient(
+                  item.color,
+                  viewportAngle - triangleSize / 2,
+                  viewportAngle + triangleSize / 2,
+                ),
               }}
             ></div>
           )}
