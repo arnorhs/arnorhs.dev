@@ -51,6 +51,7 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
     }
 
     const transform = makeTransform()
+
     items.forEach((item) => {
       const y = scrollY()
       if (!item.ref) {
