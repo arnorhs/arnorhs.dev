@@ -1,5 +1,5 @@
 import { ifWindow } from '../../lib'
-import { For, createSignal, createEffect, Component, JSX } from 'solid-js'
+import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
 import { Triangle, ROTATION_SIZE, triangles } from './constants'
 
@@ -15,23 +15,14 @@ const makeGradient = (color: string, from: number, to: number) => {
   `
 }
 
-const makeTransform = (y, index, { triangleSizeDeg, rotationRatio }: Triangle) => {
-  const rotationSize = ROTATION_SIZE * rotationRatio
-  const rotation = (360 * y) / rotationSize + index * triangleSizeDeg
-  return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
-}
-
-const getViewportAngle = () => {
-  const [w, h] = ifWindow(
-    () => [window.innerWidth, window.innerHeight],
-    () => [6, 3],
-  )
-
-  // angle of a/b
-  const radians = Math.atan(h / w)
-  const degrees = (radians * 180) / Math.PI
-
-  return degrees
+const makeTransform = () => {
+  let last = 0
+  return (y, { triangleSizeDeg, rotationRatio }: Triangle) => {
+    const rotationSize = ROTATION_SIZE * rotationRatio
+    const rotation = (360 * y) / rotationSize + last
+    last += triangleSizeDeg
+    return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
+  }
 }
 
 const getScrollTop = () =>
@@ -40,7 +31,13 @@ const getScrollTop = () =>
     () => 0,
   )
 
-export const FancyPanel: Component = (): JSX.Element => {
+export interface FancyPanelProps {
+  animate?: boolean
+}
+
+export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): JSX.Element => {
+  const animate = !!props.animate
+
   const items: Triangle[] = triangles.map((item) => ({
     ...item,
     triangleSizeDeg: item.angleSize * 360,
@@ -49,13 +46,18 @@ export const FancyPanel: Component = (): JSX.Element => {
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
   createEffect(() => {
-    items.forEach((item, i) => {
+    if (!animate) {
+      return
+    }
+
+    const transform = makeTransform()
+    items.forEach((item) => {
       const y = scrollY()
       if (!item.ref) {
         return
       }
 
-      item.ref.style.transform = makeTransform(y, i, item)
+      item.ref.style.transform = transform(y, item)
       item.ref.style.opacity = Math.pow(Math.max(0, (5000 - y) / 5000), 2).toFixed(3)
     })
   })
@@ -64,8 +66,7 @@ export const FancyPanel: Component = (): JSX.Element => {
     setScrollY(getScrollTop())
   })
 
-  // this angle is the angle of t/l, but the gradient angle's 0 is b/r
-  const viewportAngle = getViewportAngle() + 102
+  const initialAngle = 130
 
   const style = {
     position: 'absolute',
@@ -79,21 +80,23 @@ export const FancyPanel: Component = (): JSX.Element => {
     'transition-duration': '.05s',
   }
 
+  const transform = makeTransform()
+
   return (
     <>
       <Wrapper>
         <For each={items}>
-          {(item: Triangle, i) => (
+          {(item: Triangle) => (
             <div
               ref={(el) => (item.ref = el)}
               style={{
                 ...style,
                 background: makeGradient(
                   item.color,
-                  viewportAngle - item.triangleSizeDeg / 2,
-                  viewportAngle + item.triangleSizeDeg / 2,
+                  initialAngle - item.triangleSizeDeg / 2,
+                  initialAngle + item.triangleSizeDeg / 2,
                 ),
-                transform: makeTransform(0, i(), item),
+                transform: transform(0, item),
               }}
             ></div>
           )}
@@ -108,7 +111,9 @@ const Wrapper: Component = (props) => {
 
   createEffect(() => {
     setTimeout(() => {
-      ref.style.opacity = '1'
+      window.document.body.style.position = 'relative'
+      ref.parentElement.style.height = '100%'
+      // ref.style.opacity = '1'
     }, 0)
   })
 
@@ -116,21 +121,19 @@ const Wrapper: Component = (props) => {
     <div
       ref={ref}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         left: '0px',
         top: '0px',
         width: '100%',
-        height: '100vh',
+        height: '100%',
+        overflow: 'hidden',
         'z-index': '-1',
-        opacity: 0,
+        // opacity: 0,
         background: `
-          linear-gradient(217deg, rgba(240,20,20,.07), rgba(240,20,20,0) 70.71%),
-          linear-gradient(127deg, rgba(20,240,20,.05), rgba(20,240,20,0) 70.71%),
-          linear-gradient(336deg, rgba(20,20,240,.07), rgba(20,20,240,0) 70.71%)
+          linear-gradient(90deg, rgba(240,20,20,.07), rgba(240,20,20,0) 70.71%),
+          linear-gradient(270deg, rgba(20,240,20,.05), rgba(20,240,20,0) 70.71%),
+          linear-gradient(180deg, rgba(20,20,240,.07), rgba(20,20,240,0) 70.71%)
         `,
-        'transition-property': 'all',
-        'transition-timing-function': 'ease-in',
-        'transition-duration': '.2s',
       }}
     >
       {props.children}
