@@ -1,42 +1,10 @@
 import { ifWindow } from '../../lib'
 import { For, createSignal, createEffect, Component, JSX } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
-import { BaseTriangle, Triangle } from './types'
-
-const triangles: BaseTriangle[] = [
-  {
-    rotationRatio: 1.23,
-    color: '#ffaacc',
-  },
-  {
-    rotationRatio: 0.77,
-    color: '#ddffcc',
-  },
-  {
-    rotationRatio: 2.05,
-    color: '#eeee88',
-  },
-  {
-    rotationRatio: 1.41,
-    color: '#448844',
-  },
-  {
-    rotationRatio: 0.911,
-    color: 'blue',
-  },
-  {
-    rotationRatio: 0.719,
-    color: 'rgba(128, 0, 128, 0.25)',
-  },
-  {
-    rotationRatio: 1.7222,
-    color: 'rgba(128, 0, 128, 0.25)',
-  },
-]
-
-const ROTATION_SIZE = 8192
+import { Triangle, ROTATION_SIZE, triangles } from './constants'
 
 const makeGradient = (color: string, from: number, to: number) => {
+  // console.log('making gradient', { from, to })
   return `
     conic-gradient(
       at 0 0,
@@ -47,9 +15,9 @@ const makeGradient = (color: string, from: number, to: number) => {
   `
 }
 
-const makeTransform = (y, index, { rotationRatio }: Triangle) => {
+const makeTransform = (y, index, { triangleSizeDeg, rotationRatio }: Triangle) => {
   const rotationSize = ROTATION_SIZE * rotationRatio
-  const rotation = (360 * y) / rotationSize + index * rotationSize
+  const rotation = (360 * y) / rotationSize + index * triangleSizeDeg
   return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
 }
 
@@ -73,11 +41,10 @@ const getScrollTop = () =>
   )
 
 export const FancyPanel: Component = (): JSX.Element => {
-  const triangleSize = 360 / triangles.length
-  const items: Triangle[] = triangles.map((item, i) => ({
+  const items: Triangle[] = triangles.map((item) => ({
     ...item,
+    triangleSizeDeg: item.angleSize * 360,
     ref: undefined,
-    size: triangleSize,
   }))
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
@@ -89,16 +56,16 @@ export const FancyPanel: Component = (): JSX.Element => {
       }
 
       item.ref.style.transform = makeTransform(y, i, item)
-      item.ref.style.opacity = Math.pow(Math.max(0, (2000 - y) / 2000), 2).toFixed(3)
+      item.ref.style.opacity = Math.pow(Math.max(0, (5000 - y) / 5000), 2).toFixed(3)
     })
   })
 
-  bindDocumentEventListener('scroll', (e) => {
+  bindDocumentEventListener('scroll', () => {
     setScrollY(getScrollTop())
   })
 
   // this angle is the angle of t/l, but the gradient angle's 0 is b/r
-  const viewportAngle = getViewportAngle() + 90
+  const viewportAngle = getViewportAngle() + 102
 
   const style = {
     position: 'absolute',
@@ -106,26 +73,15 @@ export const FancyPanel: Component = (): JSX.Element => {
     top: '-200px',
     bottom: '-200px',
     right: '-200px',
-    opacity: 0,
     'transform-origin': '0 0',
     'transition-property': 'all',
     'transition-timing-function': 'ease-out',
     'transition-duration': '.05s',
   }
 
-  const wrapperStyle = {
-    position: 'fixed',
-    left: '0px',
-    top: '0px',
-    width: '100%',
-    height: '100vh',
-    'z-index': '-1',
-    background: 'rgba(128, 0, 128, 0.03)',
-  }
-
   return (
     <>
-      <div style={wrapperStyle}>
+      <Wrapper>
         <For each={items}>
           {(item: Triangle, i) => (
             <div
@@ -134,14 +90,50 @@ export const FancyPanel: Component = (): JSX.Element => {
                 ...style,
                 background: makeGradient(
                   item.color,
-                  viewportAngle - triangleSize / 2,
-                  viewportAngle + triangleSize / 2,
+                  viewportAngle - item.triangleSizeDeg / 2,
+                  viewportAngle + item.triangleSizeDeg / 2,
                 ),
+                transform: makeTransform(0, i(), item),
               }}
             ></div>
           )}
         </For>
-      </div>
+      </Wrapper>
     </>
+  ) as JSX.Element
+}
+
+const Wrapper: Component = (props) => {
+  let ref: HTMLElement
+
+  createEffect(() => {
+    setTimeout(() => {
+      ref.style.opacity = '1'
+    }, 0)
+  })
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        position: 'fixed',
+        left: '0px',
+        top: '0px',
+        width: '100%',
+        height: '100vh',
+        'z-index': '-1',
+        opacity: 0,
+        background: `
+          linear-gradient(217deg, rgba(240,20,20,.07), rgba(240,20,20,0) 70.71%),
+          linear-gradient(127deg, rgba(20,240,20,.05), rgba(20,240,20,0) 70.71%),
+          linear-gradient(336deg, rgba(20,20,240,.07), rgba(20,20,240,0) 70.71%)
+        `,
+        'transition-property': 'all',
+        'transition-timing-function': 'ease-in',
+        'transition-duration': '.2s',
+      }}
+    >
+      {props.children}
+    </div>
   )
 }

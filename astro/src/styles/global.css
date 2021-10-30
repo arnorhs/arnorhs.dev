@@ -32,8 +32,15 @@ article a:hover {
 }
 
 article ul {
-  @apply list-inside;
+  @apply list-outside;
   @apply list-disc;
+  @apply ml-4;
+}
+
+article ol {
+  @apply list-outside;
+  @apply list-decimal;
+  @apply ml-7;
 }
 
 article ol li p {
