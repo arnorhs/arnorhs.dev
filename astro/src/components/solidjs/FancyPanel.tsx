@@ -78,35 +78,16 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
 }
 
 const Wrapper: Component<{ scrollY: number }> = (props) => {
-  let ref: HTMLElement
-
-  createEffect(() => {
-    setTimeout(() => {
-      window.document.body.style.position = 'relative'
-      ref.parentElement.style.height = '100%'
-      // ref.style.opacity = '1'
-    }, 0)
-  })
-
   return (
     <div
-      ref={ref}
+      class="left-0 top-0 w-100 fixed bottom-0 right-0 overflow-hidden"
       style={{
-        position: 'fixed',
-        left: 0,
-        top: 0,
-        width: '100%',
-        bottom: 0,
-        right: 0,
-        overflow: 'hidden',
         'z-index': '-1',
-        // opacity: 0,
       }}
     >
       <div
+        class="relative w-100"
         style={{
-          position: 'relative',
-          width: '100%',
           height: '100vh',
           perspective: '100px',
           'perspective-origin': `50% 50%`,
