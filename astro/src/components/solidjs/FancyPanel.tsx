@@ -59,7 +59,6 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
                 opacity: 0.08,
                 width: `${box.size}vw`,
                 height: `${box.size}vw`,
-                'border-radius': '50%',
                 'transform-origin': '50% 50%',
                 transform: `
                   translate3d(-50%, -50%, ${box.z}px)
