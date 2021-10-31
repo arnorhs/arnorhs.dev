@@ -26,7 +26,7 @@ const randomBoxes = (seed, length): Box[] => {
     y: randomQuad() * 500 + 50,
     z: random() * -2000,
     rotation: random() * 360,
-    size: random() * 120 + 40,
+    size: random() * 120 + 60,
   }))
 }
 
@@ -55,15 +55,14 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
         <For each={boxes}>
           {(box: Box) => (
             <div
+              class="absolute origin-center"
               style={{
+                opacity: 0.08,
                 background: box.color,
-                position: 'absolute',
                 top: `${box.y}%`,
                 left: `${box.x}%`,
-                opacity: 0.08,
                 width: `${box.size}vh`,
                 height: `${box.size}vh`,
-                'transform-origin': '50% 50%',
                 transform: `
                   translate3d(-50%, -50%, ${box.z}px)
                   translateY(${-scrollY()}px)
@@ -102,11 +101,6 @@ const Wrapper: Component<{ scrollY: number }> = (props) => {
         overflow: 'hidden',
         'z-index': '-1',
         // opacity: 0,
-        background: `
-          linear-gradient(90deg, rgba(240,20,20,.06), rgba(240,20,20,0) 70.71%),
-          linear-gradient(270deg, rgba(20,240,20,.04), rgba(20,240,20,0) 70.71%),
-          linear-gradient(180deg, rgba(20,20,240,.06), rgba(20,20,240,0) 70.71%)
-        `,
       }}
     >
       <div

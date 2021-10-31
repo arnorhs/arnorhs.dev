@@ -29,7 +29,14 @@ const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
   <Favicon />
 </head>
 
-<body>
+<body
+  style="
+    background:
+      linear-gradient(95deg, rgba(240,20,20,.06), rgba(240,20,20,0) 70.71%),
+      linear-gradient(270deg, rgba(20,240,20,.04), rgba(20,240,20,0) 70.71%),
+      linear-gradient(150deg, rgba(20,20,240,.06), rgba(20,20,240,0) 70.71%)
+  "
+>
   <TagManagerBody />
 
   <FancyPanel client:load randomSeed={fancySeed} animate={animate} />
