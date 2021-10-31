@@ -7,7 +7,7 @@ const makeGradient = (color: string, from: number, to: number) => {
   // console.log('making gradient', { from, to })
   return `
     conic-gradient(
-      at 0 0,
+      at 0 50%,
       transparent ${from}deg,
       ${color} ${from}deg ${to}deg,
       transparent ${to}deg
@@ -16,11 +16,16 @@ const makeGradient = (color: string, from: number, to: number) => {
 }
 
 const makeTransform = () => {
-  let last = 0
+  let next = 0
+  let total = 0
   return (y, { triangleSizeDeg, rotationRatio }: Triangle) => {
+    /*
     const rotationSize = ROTATION_SIZE * rotationRatio
-    const rotation = (360 * y) / rotationSize + last
+    const rotation = (360 * y) / (rotationSize/2) + last
     last += triangleSizeDeg
+    */
+    const rotation = next + triangleSizeDeg / 2
+    next += triangleSizeDeg
     return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
   }
 }
@@ -67,7 +72,7 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
     setScrollY(getScrollTop())
   })
 
-  const initialAngle = 130
+  const initialAngle = 90
 
   const style = {
     position: 'absolute',
@@ -123,10 +128,10 @@ const Wrapper: Component = (props) => {
       ref={ref}
       style={{
         position: 'absolute',
-        left: '0px',
-        top: '0px',
-        width: '100%',
-        height: '100%',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0,
         overflow: 'hidden',
         'z-index': '-1',
         // opacity: 0,

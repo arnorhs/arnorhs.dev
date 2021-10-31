@@ -11,32 +11,36 @@ export interface Triangle extends BaseTriangle {
 
 export const triangles: BaseTriangle[] = [
   {
-    rotationRatio: 2.05,
+    rotationRatio: 0.45,
+    // yellowish
     color: 'rgba(240, 240, 128, .12)',
     angleSize: 1 / 7,
   },
   {
     rotationRatio: 1.41,
+    // greenish
     color: 'rgba(64, 128, 64, .06)',
     angleSize: 1 / 7,
   },
   {
-    rotationRatio: 0.911,
+    rotationRatio: 0.061,
+    // blue
     color: 'rgba(20, 20, 255, .09)',
     angleSize: 1 / 7,
   },
   {
-    rotationRatio: 1.7222,
+    rotationRatio: 0.1222,
+    // purple
     color: 'rgba(128, 0, 128, 0.08)',
     angleSize: 2 / 7,
   },
   {
     rotationRatio: 1.23,
-    color: 'rgba(255, 160, 200, .12',
+    color: 'rgba(255, 160, 200, .12)',
     angleSize: 1 / 7,
   },
   {
-    rotationRatio: 0.77,
+    rotationRatio: 0.27,
     color: 'rgba(228, 255, 208, .12)',
     angleSize: 1 / 7,
   },
