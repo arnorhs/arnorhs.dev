@@ -1,16 +1,28 @@
 ---
 import { dateFormat, Post } from '$lib'
+import Heading from './Heading.astro'
 
 const post = Astro.props.post as Post
+const featured = Astro.props.featured ?? false
+const showByline = Astro.props.showByline ?? !featured
+
+export interface Props {
+  post: Post
+  featured?: boolean
+  showByline?: boolean
+}
+
 ---
-<article class="font-serif">
-  <h2 class="mb-0 mt-0 font-nav text-xl">
+<article class={`font-serif ${featured ? 'pt-6' : ''}`}>
+  <Heading tag='h2' variation={featured ? 'big' : 'dense'}>
     <a href={post.url}>{post.meta.title || 'missing title'}</a>
-  </h2>
+  </Heading>
 
-  <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
+  {showByline && (
+    <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
+  )}
 
-  <p class="text-sm">{post.meta.summary}</p>
+  <p class={featured ? 'md:w-2/4 text-lg md:text-base' : 'text-sm'}>{post.meta.summary}</p>
 
   <p>
     <a href={post.url}>Read on</a>

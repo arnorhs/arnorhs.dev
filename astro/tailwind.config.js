@@ -32,7 +32,7 @@ module.exports = {
         DEFAULT: '#5c6ac4',
       },
       myorange: {
-        DEFAULT: 'pink',
+        DEFAULT: 'rgb(255,192,203)',
       },
     },
   },

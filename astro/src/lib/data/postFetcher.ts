@@ -54,3 +54,5 @@ export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
 }
 
 export const getAllPosts = async (): Promise<Post[]> => allPosts.map(processPost)
+
+export const getFeaturedPost = async (): Promise<Post> => processPost(allPosts[0])

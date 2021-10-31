@@ -2,7 +2,7 @@
 // surely there must be a better way
 export interface Props {
   tag: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6'
-  variation: 'normal'|'big'|'semi'
+  variation: 'normal'|'big'|'semi'|'dense'
 }
 
 const { tag = 'h3', variation = 'normal' } = Astro.props as Props
@@ -23,6 +23,11 @@ const variations: Record<Props['variation'],string> = {
     mb-4
     mt-6
     text-3xl
+    font-nav
+  `,
+  'dense': `
+    my-0
+    text-xl
     font-nav
   `
 }

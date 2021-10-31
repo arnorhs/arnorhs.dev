@@ -3,11 +3,17 @@ import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 
 import { bindDocumentEventListener } from './solid-hooks'
 
 const colors = [
+  // yellow
   'rgb(240, 240, 128)',
+  // green
   'rgb(64, 128, 64)',
+  // blue
   'rgba(20, 44, 255, 0.7)',
+  // purple
   'rgb(128, 0, 128)',
-  'rgb(255, 160, 200)',
+  // pink
+  'rgb(255,192,203)',
+  // yellow
   'rgb(228, 255, 208)',
 ]
 
