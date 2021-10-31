@@ -1,14 +1,14 @@
 ---
-title: Astro - static site builder of my dreams
+title: Astro - static site generator made of dreams
 summary: "
-  Recently, a new static site builder arrived on the block called Astro.
-  Lets talk a bit about static site builders. What they're good for, what they're not
+  Recently, a new static site generator (SSG) arrived on the block called Astro.
+  Lets talk a bit about SSGs. What they're good for, what they're not
   and why I think Astro is a bit of a game changer."
 
 date: 2021-10-29
 ---
 
-So for the past few years I've been obsessed with static site builders. [At work](https://juni.is) we've been
+So for the past few years I've been obsessed with static site generators (SSGs). [At work](https://juni.is) we've been
 building a lot of static sites for clients, mostly using [Gatsby.js](https://www.gatsbyjs.com/).
 Static sites are great for a lot of things. There are also, as with all things, some drawbacks.
 
@@ -30,7 +30,7 @@ Static sites are great for a lot of things. There are also, as with all things, 
 ## Astro
 
 Before [Astro](https://astro.build) arrived, I had actually thought a lot about building my
-own static site builder. I wanted one that could just run simple queries
+own static site generator. I wanted one that could just run simple queries
 with very simple setup, use something like a simple file based router, along with just
 javascript to fetch content for each page and render through some html renderer.
 
