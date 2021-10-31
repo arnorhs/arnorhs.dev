@@ -1,108 +1,70 @@
-import { ifWindow } from '../../lib'
+import { getScrollTop, mulberry32 } from '../../lib'
 import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
-import { Triangle, ROTATION_SIZE, triangles } from './constants'
 
-const makeGradient = (color: string, from: number, to: number) => {
-  // console.log('making gradient', { from, to })
-  return `
-    conic-gradient(
-      at 0 50%,
-      transparent ${from}deg,
-      ${color} ${from}deg ${to}deg,
-      transparent ${to}deg
-    )
-  `
-}
+const colors = [
+  'rgb(240, 240, 128)',
+  'rgb(64, 128, 64)',
+  'rgb(20, 20, 255)',
+  'rgb(128, 0, 128)',
+  'rgb(255, 160, 200)',
+  'rgb(228, 255, 208)',
+]
 
-const makeTransform = () => {
-  let next = 0
-  let total = 0
-  return (y, { triangleSizeDeg, rotationRatio }: Triangle) => {
-    /*
-    const rotationSize = ROTATION_SIZE * rotationRatio
-    const rotation = (360 * y) / (rotationSize/2) + last
-    last += triangleSizeDeg
-    */
-    const rotation = next + triangleSizeDeg / 2
-    next += triangleSizeDeg
-    return `translate(39%, ${500 - y * 0.3}px) rotate(${rotation}deg)`
+const randomBoxes = (seed, length): Box[] => {
+  const random = mulberry32(seed)
+
+  const randomQuad = () => {
+    const x = random() * 2 - 1
+    const p = Math.pow(x, 2)
+    return x < 0 ? -p : p
   }
-}
 
-const getScrollTop = () =>
-  ifWindow(
-    () => window.document.children[0].scrollTop,
-    () => 0,
-  )
+  return [...new Array(length)].map(() => ({
+    color: colors[Math.floor(random() * colors.length)],
+    x: randomQuad() * 300 + 50,
+    y: randomQuad() * 500 + 50,
+    z: random() * -2000,
+    size: random() * 80,
+  }))
+}
 
 export interface FancyPanelProps {
   animate?: boolean
+  randomSeed?: number
 }
 
 export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): JSX.Element => {
   const animate = !!props.animate
 
-  const items: Triangle[] = triangles.map((item) => ({
-    ...item,
-    triangleSizeDeg: item.angleSize * 360,
-    ref: undefined,
-  }))
+  const boxes = randomBoxes(props.randomSeed, 70)
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
-  createEffect(() => {
-    if (!animate) {
-      return
-    }
-
-    const transform = makeTransform()
-
-    items.forEach((item) => {
-      const y = scrollY()
-      if (!item.ref) {
-        return
-      }
-
-      item.ref.style.transform = transform(y, item)
-      item.ref.style.opacity = Math.pow(Math.max(0, (5000 - y) / 5000), 2).toFixed(3)
-    })
-  })
 
   bindDocumentEventListener('scroll', () => {
     setScrollY(getScrollTop())
   })
 
-  const initialAngle = 90
-
-  const style = {
-    position: 'absolute',
-    left: '-200px',
-    top: '-200px',
-    bottom: '-200px',
-    right: '-200px',
-    'transform-origin': '0 0',
-    'transition-property': 'all',
-    'transition-timing-function': 'ease-out',
-    'transition-duration': '.05s',
-  }
-
-  const transform = makeTransform()
-
   return (
     <>
-      <Wrapper>
-        <For each={items}>
-          {(item: Triangle) => (
+      <Wrapper scrollY={scrollY()}>
+        <For each={boxes}>
+          {(box: Box) => (
             <div
-              ref={(el) => (item.ref = el)}
               style={{
-                ...style,
-                background: makeGradient(
-                  item.color,
-                  initialAngle - item.triangleSizeDeg / 2,
-                  initialAngle + item.triangleSizeDeg / 2,
-                ),
-                transform: transform(0, item),
+                background: box.color,
+                position: 'absolute',
+                top: `${Math.floor(box.y)}%`,
+                left: `${Math.floor(box.x)}%`,
+                opacity: 0.08,
+                width: `${box.size}vw`,
+                height: `${box.size}vw`,
+                'border-radius': '50%',
+                'transform-origin': '50% 50%',
+                transform: `
+                  translate3d(-50%, -50%, ${box.z}px)
+                  translateY(${-scrollY()}px)
+                `,
               }}
             ></div>
           )}
@@ -112,7 +74,7 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
   ) as JSX.Element
 }
 
-const Wrapper: Component = (props) => {
+const Wrapper: Component<{ scrollY: number }> = (props) => {
   let ref: HTMLElement
 
   createEffect(() => {
@@ -127,9 +89,10 @@ const Wrapper: Component = (props) => {
     <div
       ref={ref}
       style={{
-        position: 'absolute',
+        position: 'fixed',
         left: 0,
         top: 0,
+        width: '100%',
         bottom: 0,
         right: 0,
         overflow: 'hidden',
@@ -142,7 +105,17 @@ const Wrapper: Component = (props) => {
         `,
       }}
     >
-      {props.children}
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100vh',
+          perspective: '100px',
+          'perspective-origin': `50% 50%`,
+        }}
+      >
+        {props.children}
+      </div>
     </div>
   )
 }

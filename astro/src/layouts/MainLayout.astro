@@ -14,7 +14,7 @@ import '../styles/global.css'
 const { title, animate = false } = Astro.props
 
 const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
-
+const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
 ---
 <html lang="en">
 
@@ -32,7 +32,7 @@ const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 <body>
   <TagManagerBody />
 
-  <FancyPanel client:load animate={animate} />
+  <FancyPanel client:load randomSeed={fancySeed} animate={animate} />
 
   <div class="px-2 md:px-0">
     <header>
