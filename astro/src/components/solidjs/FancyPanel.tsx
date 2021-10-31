@@ -1,4 +1,4 @@
-import { getScrollTop, mulberry32 } from '../../lib'
+import { getScrollTop, mulberry32, debounce } from '../../lib'
 import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
 
@@ -42,9 +42,12 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
 
-  bindDocumentEventListener('scroll', () => {
-    setScrollY(getScrollTop())
-  })
+  bindDocumentEventListener(
+    'scroll',
+    debounce(() => {
+      setScrollY(getScrollTop())
+    }, 0),
+  )
 
   return (
     <>
