@@ -20,5 +20,8 @@
     "export": "yarn build-posts && yarn astro build",
     "dev": "yarn build-posts && yarn astro dev"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "highlight.js": "^10.4.1"
+  }
 }
