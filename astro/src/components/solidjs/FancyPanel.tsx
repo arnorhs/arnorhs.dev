@@ -5,7 +5,7 @@ import { bindDocumentEventListener } from './solid-hooks'
 const colors = [
   'rgb(240, 240, 128)',
   'rgb(64, 128, 64)',
-  'rgb(20, 20, 255)',
+  'rgba(20, 44, 255, 0.7)',
   'rgb(128, 0, 128)',
   'rgb(255, 160, 200)',
   'rgb(228, 255, 208)',
@@ -25,7 +25,8 @@ const randomBoxes = (seed, length): Box[] => {
     x: randomQuad() * 300 + 50,
     y: randomQuad() * 500 + 50,
     z: random() * -2000,
-    size: random() * 80,
+    rotation: random() * 360,
+    size: random() * 120 + 40,
   }))
 }
 
@@ -37,7 +38,7 @@ export interface FancyPanelProps {
 export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): JSX.Element => {
   const animate = !!props.animate
 
-  const boxes = randomBoxes(props.randomSeed, 70)
+  const boxes = randomBoxes(props.randomSeed, 40)
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
 
@@ -57,12 +58,13 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
                 top: `${box.y}%`,
                 left: `${box.x}%`,
                 opacity: 0.08,
-                width: `${box.size}vw`,
-                height: `${box.size}vw`,
+                width: `${box.size}vh`,
+                height: `${box.size}vh`,
                 'transform-origin': '50% 50%',
                 transform: `
                   translate3d(-50%, -50%, ${box.z}px)
                   translateY(${-scrollY()}px)
+                  rotate(${box.rotation}deg)
                 `,
               }}
             ></div>
@@ -98,9 +100,9 @@ const Wrapper: Component<{ scrollY: number }> = (props) => {
         'z-index': '-1',
         // opacity: 0,
         background: `
-          linear-gradient(90deg, rgba(240,20,20,.07), rgba(240,20,20,0) 70.71%),
-          linear-gradient(270deg, rgba(20,240,20,.05), rgba(20,240,20,0) 70.71%),
-          linear-gradient(180deg, rgba(20,20,240,.07), rgba(20,20,240,0) 70.71%)
+          linear-gradient(90deg, rgba(240,20,20,.06), rgba(240,20,20,0) 70.71%),
+          linear-gradient(270deg, rgba(20,240,20,.04), rgba(20,240,20,0) 70.71%),
+          linear-gradient(180deg, rgba(20,20,240,.06), rgba(20,20,240,0) 70.71%)
         `,
       }}
     >
