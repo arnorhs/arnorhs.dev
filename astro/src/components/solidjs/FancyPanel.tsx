@@ -54,8 +54,8 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
               style={{
                 background: box.color,
                 position: 'absolute',
-                top: `${Math.floor(box.y)}%`,
-                left: `${Math.floor(box.x)}%`,
+                top: `${box.y}%`,
+                left: `${box.x}%`,
                 opacity: 0.08,
                 width: `${box.size}vw`,
                 height: `${box.size}vw`,
