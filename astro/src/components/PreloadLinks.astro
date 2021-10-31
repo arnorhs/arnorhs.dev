@@ -1,0 +1,27 @@
+<script>
+  // Todo: would be better if transpiled etc.. this thing will never work in IE
+
+  const seen = [window.document.location.pathname]
+
+  function preload (href) {
+    return function (e) {
+      if (seen.includes(href)) { return }
+
+      seen.push(href)
+
+      fetch(href)
+        .then(res => res.text())
+        .then(txt => {
+          // find JS/images/css and preload those?
+          // or maybe using the preload meta thing is enough?
+        })
+    }
+  }
+
+  [ ...document.querySelectorAll('a[href]') ]
+    .map(a => ({ a, url: a.getAttribute('href') }))
+    .filter(({ url }) => url.startsWith('/'))
+    .forEach(({ a, url }) => {
+      a.addEventListener('mouseover', preload(url))
+    })
+</script>

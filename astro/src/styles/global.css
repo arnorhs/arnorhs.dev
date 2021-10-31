@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+/* todo: is there a way to get the svelte breakpoint here */
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+a {
+  @apply text-myblue;
+}
+
+article a:visited {
+  @apply text-myblue-lighter;
+}
+
+a:hover,
+article a:hover {
+  @apply text-myorange;
+}
+
+article ul {
+  @apply list-outside;
+  @apply list-disc;
+  @apply ml-4;
+}
+
+article ol {
+  @apply list-outside;
+  @apply list-decimal;
+  @apply ml-7;
+}
+
+article ol li p {
+  @apply mt-0;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article ul,
+article ol,
+article p,
+article figure,
+article h6 {
+  @apply mt-4;
+  @apply mb-2;
+}
+
+article h1 {
+  @apply text-4xl;
+}
+
+article h2 {
+  @apply text-3xl;
+}
+
+article h3 {
+  @apply text-2xl;
+}
+
+article h4 {
+  @apply text-xl;
+}
+
+article h5 {
+  @apply text-lg;
+}
+
+article h6 {
+  @apply text-base;
+}

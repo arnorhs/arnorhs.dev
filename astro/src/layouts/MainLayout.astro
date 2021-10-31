@@ -1,0 +1,73 @@
+---
+import { pages } from '$lib/data/pages'
+import Container from '$components/Container.astro'
+import Nav from '$components/nav/Nav.astro'
+import NavItem from '$components/nav/Item.astro'
+import PreloadLinks from '$components/PreloadLinks.astro'
+import { FancyPanel } from '../components/solidjs/FancyPanel.tsx'
+import TagManagerHead from '$components/meta/TagManagerHead.astro'
+import TagManagerBody from '$components/meta/TagManagerBody.astro'
+import Fonts from '$components/meta/Fonts.astro'
+import Favicon from '$components/meta/Favicon.astro'
+import '../styles/global.css'
+
+const { title, animate = false } = Astro.props
+
+const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
+const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
+---
+<html lang="en">
+
+<head>
+  <TagManagerHead />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{titleTag}</title>
+
+  <Fonts />
+  <Favicon />
+</head>
+
+<body
+  style="
+    background:
+      linear-gradient(95deg, rgba(240,20,20,.04), rgba(240,20,20,0) 70.71%),
+      linear-gradient(270deg, rgba(20,240,20,.03), rgba(20,240,20,0) 70.71%),
+      linear-gradient(150deg, rgba(20,20,240,.04), rgba(20,20,240,0) 70.71%)
+  "
+>
+  <TagManagerBody />
+
+  <FancyPanel client:load randomSeed={fancySeed} animate={animate} />
+
+  <div class="px-2 md:px-0">
+    <header>
+      <Container>
+        <Nav>
+          <NavItem first title="home" href="/">arnorhs</NavItem>
+
+          {pages.map(({ slug, shortTitle, title }) => (
+            <NavItem href={`/${slug}/`} title={title}>{shortTitle}</NavItem>
+          ))}
+        </Nav>
+      </Container>
+    </header>
+
+    <Container>
+      <main class="min-h-screen">
+        <slot />
+      </main>
+    </Container>
+
+    <div>
+      <footer class='mt-8 py-5 bg-myblue text-myblue-lighter'>
+        <Container>
+          &copy; 2008 - Arnór Heiðar Sigurðsson, all rights reserved
+        </Container>
+      </footer>
+    </div>
+  </div>
+  <PreloadLinks />
+</body>
+</html>

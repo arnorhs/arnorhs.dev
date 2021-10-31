@@ -1,16 +1,24 @@
 {
   "name": "arnorhs.dev",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "joshnuss-svelte-copy-pasta"
-  ],
+  "workspaces": {
+    "packages": [
+      "astro",
+      "posts",
+      "post-exporter"
+    ]
+  },
   "scripts": {
-    "export": "NODE_ENV=production yarn workspace joshnuss-svelte-copy-pasta export",
-    "serve": "http-server joshnuss-svelte-copy-pasta/__sapper__/export",
-    "start": "yarn workspace joshnuss-svelte-copy-pasta start"
-  }
+    "posts": "yarn workspace @arnorhs/posts",
+    "post-exporter": "yarn workspace @arnorhs/post-exporter",
+    "astro": "yarn workspace @arnorhs/astro",
+
+    "build-posts": "yarn posts build && TARGET_DIR=astro/src/gen yarn post-exporter build",
+    "export": "yarn build-posts && yarn astro build",
+    "dev": "yarn build-posts && yarn astro dev"
+  },
+  "dependencies": {}
 }

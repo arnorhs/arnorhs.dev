@@ -1,0 +1,14 @@
+{
+  "moduleResolution": "node",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "paths": {
+      "$src": ["src/*"],
+      "$lib": ["src/lib/index.ts"],
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"]
+    }
+  }
+}

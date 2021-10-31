@@ -1,0 +1,34 @@
+{
+  "name": "@arnorhs/posts",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "content"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "ts-node -P tsconfig.json src/index.ts"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/node": "^16.11.4",
+    "@types/remarkable": "^2.0.3",
+    "@types/yaml-front-matter": "^4.1.0",
+    "rollup": "^2.58.0",
+    "ts-node": "*",
+    "tslib": "^2.3.1",
+    "typescript": "4.4.4"
+  },
+  "dependencies": {
+    "remarkable": "^2.0.1",
+    "yaml-front-matter": "3.4.1"
+  }
+}
