@@ -1,6 +1,7 @@
 import { getScrollTop, mulberry32, debounce } from '../../lib'
 import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
+import { Box } from './types'
 
 const colors = [
   // yellow

@@ -1,4 +1,4 @@
-interface Box {
+export interface Box {
   color: string
   x: number
   y: number
