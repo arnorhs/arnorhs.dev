@@ -65,7 +65,7 @@ All in all, I'm super excited to see where this thing goes.
 I think you should give it a try: [astro.build](https://astro.build)
 
 If you are curious how I built the site, you can take a look at the github repo:
-[arnorhs/arnorhs.dev][https://github.com/arnorhs/arnorhs.dev]
+[arnorhs/arnorhs.dev](https://github.com/arnorhs/arnorhs.dev)
 
 PS. I actually contemplated naming this post "arnorhs.dev launches (again)", which would be an
 apt name. Because since last time I posted, I actually rewrote this thing in "Astro".

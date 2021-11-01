@@ -19,10 +19,10 @@ export interface Props {
   </Heading>
 
   {showByline && (
-    <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
+    <p class="mt-1 md:mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
   )}
 
-  <p class={featured ? 'md:w-2/4 text-lg md:text-base' : 'text-sm'}>{post.meta.summary}</p>
+  <p class={`text-lg md:text-base ${featured ? 'md:w-2/4 ' : ''}`}>{post.meta.summary}</p>
 
   <p>
     <a href={post.url}>Read on</a>
