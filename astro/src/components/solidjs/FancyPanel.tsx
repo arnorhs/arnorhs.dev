@@ -1,41 +1,7 @@
-import { getScrollTop, mulberry32, debounce } from '../../lib'
-import { For, createSignal, createEffect, Component, JSX, ComponentProps } from 'solid-js'
+import { getScrollTop, debounce } from '../../lib'
+import { For, createSignal, Component, JSX } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
-import { Box } from './types'
-
-const colors = [
-  // yellow
-  'rgb(240, 240, 128)',
-  // green
-  'rgb(64, 128, 64)',
-  // blue
-  'rgba(20, 44, 255, 0.7)',
-  // purple
-  'rgb(128, 0, 128)',
-  // pink
-  'rgb(255,192,203)',
-  // yellow
-  'rgb(228, 255, 208)',
-]
-
-const randomBoxes = (seed, length): Box[] => {
-  const random = mulberry32(seed)
-
-  const randomQuad = () => {
-    const x = random() * 2 - 1
-    const p = Math.pow(x, 2)
-    return x < 0 ? -p : p
-  }
-
-  return [...new Array(length)].map(() => ({
-    color: colors[Math.floor(random() * colors.length)],
-    x: randomQuad() * 300 + 50,
-    y: randomQuad() * 500 + 50,
-    z: random() * -2000,
-    rotation: random() * 360,
-    size: random() * 120 + 60,
-  }))
-}
+import { Box, randomBoxes } from './box'
 
 export interface FancyPanelProps {
   animate?: boolean
@@ -89,7 +55,7 @@ const Wrapper: Component<{ scrollY: number }> = (props) => {
     <div
       class="left-0 top-0 w-100 fixed bottom-0 right-0 overflow-hidden"
       style={{
-        'z-index': '-1',
+        'z-index': -1,
       }}
     >
       <div
