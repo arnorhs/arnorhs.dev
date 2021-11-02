@@ -21,7 +21,7 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
 
   return (
     <>
-      <Wrapper scrollY={scrollY()}>
+      <Wrapper shouldAnimate={animate}>
         <For each={boxes}>
           {(box: Box) => (
             <div
@@ -47,7 +47,20 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
   ) as JSX.Element
 }
 
-const Wrapper: Component<{ scrollY: number }> = (props) => {
+const Wrapper: Component<{ shouldAnimate: boolean }> = (props) => {
+  const [closer, setCloser] = createSignal(0)
+  const startTimer = () => {
+    setTimeout(() => {
+      setCloser(closer() + 0.3)
+
+      startTimer()
+    }, 20)
+  }
+
+  if (props.shouldAnimate) {
+    startTimer()
+  }
+
   return (
     <div
       class="left-0 top-0 w-100 fixed bottom-0 right-0 overflow-hidden"
@@ -59,7 +72,7 @@ const Wrapper: Component<{ scrollY: number }> = (props) => {
         class="relative w-100"
         style={{
           height: '100vh',
-          perspective: '100px',
+          perspective: `${100 + closer()}px`,
           'perspective-origin': `50% 50%`,
         }}
       >
