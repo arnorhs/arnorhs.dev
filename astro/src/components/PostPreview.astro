@@ -13,9 +13,28 @@ export interface Props {
 }
 
 ---
+<style>
+.featured-transition {
+  transition: all 0.7s ease-out;
+  animation: splash 0.5s normal forwards ease-in-out
+}
+
+@keyframes splash {
+  from {
+    perspective-origin: 20%;
+    transform: perspective(100px) translateX(-200px) translateZ(-40px);
+    opacity: 0;
+  }
+  to {
+    perspective-origin: 20%;
+    transform: perspective(80px) translate3d(-20px, 0, -20px) rotate3d(0, 2, 1, 2deg);
+    opacity: 1;
+  }
+}
+</style>
 <article class={`font-serif ${featured ? 'pt-6' : ''}`}>
   <Heading tag='h2' variation={featured ? 'big' : 'dense'}>
-    <a href={post.url}>{post.meta.title || 'missing title'}</a>
+    <a class={featured ? 'featured-transition block' : ''} href={post.url}>{post.meta.title || 'missing title'}</a>
   </Heading>
 
   {showByline && (

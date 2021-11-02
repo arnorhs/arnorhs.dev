@@ -15,6 +15,8 @@ const { title, animate = false } = Astro.props
 
 const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
+
+const activePath = Astro.request.url.pathname
 ---
 <html lang="en">
 
@@ -48,7 +50,7 @@ const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
           <NavItem first title="home" href="/">arnorhs</NavItem>
 
           {pages.map(({ slug, shortTitle, title }) => (
-            <NavItem href={`/${slug}/`} title={title}>{shortTitle}</NavItem>
+            <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>{shortTitle}</NavItem>
           ))}
         </Nav>
       </Container>

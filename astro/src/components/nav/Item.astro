@@ -3,17 +3,24 @@ export interface Props {
   title: string
   href: string
   first?: boolean
+  active?: boolean
 }
 
-const { title, href, first = false } = Astro.props
+const { title, href, first = false, active = false } = Astro.props
 const classes = `
   md:inline-block
   py-3
   font-nav
+  transition-all
+  duration-200
+  ease-in
   ${first
     ? `md:mr-5 text-xl`
     : `md:mx-1 md:px-4`
   }
+  ${active
+    ? `underline`
+    : ''}
 `
 ---
 <li class="md:inline-block xs:block">
