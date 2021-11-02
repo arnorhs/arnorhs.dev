@@ -1,6 +1,6 @@
-import { getPostCollection } from '@arnorhs/posts'
 import { writeFile, mkdir } from 'fs/promises'
 import { resolve } from 'path'
+import { getPostCollection } from './lib/getPostCollection'
 
 const TARGET_DIR = process.env.TARGET_DIR
 

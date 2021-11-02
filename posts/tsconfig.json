@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "resolveJsonModule": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "rootDir": "./",
     "baseUrl": "./src"
   },

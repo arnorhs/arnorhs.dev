@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "test": "ts-node -P tsconfig.json src/index.ts"
+    "gen": "ts-node -P tsconfig.json src/export.ts"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",

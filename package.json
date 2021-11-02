@@ -7,16 +7,13 @@
   "workspaces": {
     "packages": [
       "astro",
-      "posts",
-      "post-exporter"
+      "posts"
     ]
   },
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
-    "post-exporter": "yarn workspace @arnorhs/post-exporter",
     "astro": "yarn workspace @arnorhs/astro",
-
-    "build-posts": "yarn posts build && TARGET_DIR=astro/src/gen yarn post-exporter build",
+    "build-posts": "TARGET_DIR=astro/src/gen yarn posts gen",
     "export": "yarn build-posts && yarn astro build",
     "dev": "yarn build-posts && yarn astro dev"
   },

@@ -5,8 +5,8 @@ import { Collection } from './Collection'
 import { loadFront } from './yfm'
 import { Remarkable } from 'remarkable'
 
-const markdownPath = resolvePath(__dirname, '../content/md')
-const wpPath = resolvePath(__dirname, '../content/wp/wpposts.json')
+const markdownPath = resolvePath(__dirname, '../../content/md')
+const wpPath = resolvePath(__dirname, '../../content/wp/wpposts.json')
 const utf8 = { encoding: 'utf-8' as BufferEncoding }
 const remarkable = new Remarkable()
 
