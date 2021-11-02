@@ -1,9 +1,11 @@
 {
-  "moduleResolution": "node",
   "compilerOptions": {
     "resolveJsonModule": true,
     "baseUrl": "./",
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsxImportSource": "solid-js",
+    "jsx": "preserve",
     "paths": {
       "$src": ["src/*"],
       "$lib": ["src/lib/index.ts"],
