@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
+    "strict": true,
     "paths": {
       "$src": ["src/*"],
       "$lib": ["src/lib/index.ts"],

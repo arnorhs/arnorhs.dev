@@ -15,12 +15,9 @@ export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): 
 
   const [scrollY, setScrollY] = createSignal(getScrollTop())
 
-  bindDocumentEventListener(
-    'scroll',
-    debounce(() => {
-      setScrollY(getScrollTop())
-    }, 0),
-  )
+  bindDocumentEventListener('scroll', () => {
+    setScrollY(getScrollTop())
+  })
 
   return (
     <>
