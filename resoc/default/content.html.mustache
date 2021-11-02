@@ -1,0 +1,19 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&display=block" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+
+<div class="wrapper">
+  <h2 class="subtitle">arnorhs.dev</h2>
+  <h1 class="title">{{ title }}</h1>
+</div>
+
+<script src="textFit.js"></script>
+<script>
+  window.onload = function() {
+    textFit(document.querySelector('.title'), { maxFontSize: 100, multiLine: true });
+  };
+</script>
