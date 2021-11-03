@@ -549,13 +549,6 @@
     "@resoc/create-img-core" "^0.8.6"
     puppeteer "^10.2.0"
 
-"@resoc/img-data@^0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@resoc/img-data/-/img-data-0.8.5.tgz#33f7cea8dc874003e09a301ee1c56ea812a95286"
-  integrity sha512-0NOQq6PPMx+ROjjqX0UmCKlx6OQwFOPOf5JT+acARwXqZgWcFf4AY1XXwjMpCXPkdlsqkSXeDTrGa3KNRz/akQ==
-  dependencies:
-    "@resoc/core" "^0.8.5"
-
 "@rollup/plugin-commonjs@^16.0.0":
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-16.0.0.tgz#169004d56cd0f0a1d0f35915d31a036b0efe281f"
@@ -1287,7 +1280,7 @@ autolinker@^3.11.0:
   dependencies:
     tslib "^1.9.3"
 
-autoprefixer@^10.2.5:
+autoprefixer@^10.0.2, autoprefixer@^10.2.5:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.0.tgz#c3577eb32a1079a440ec253e404eaf1eb21388c8"
   integrity sha512-7FdJ1ONtwzV1G43GDD0kpVMn/qbiNqyOPMFTX5nRffI+7vgWoFEc6DcXOxHJxrWNDXrZh18eDsZjvZGUljSRGA==
@@ -4877,7 +4870,7 @@ postcss@^6.0.2:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^8.1.10, postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.15, postcss@^8.3.5:
+postcss@^8.1.10, postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.14, postcss@^8.2.15, postcss@^8.3.5:
   version "8.3.11"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.11.tgz#c3beca7ea811cd5e1c4a3ec6d2e7599ef1f8f858"
   integrity sha512-hCmlUAIlUiav8Xdqw3Io4LcpA1DOt7h3LSTAC4G6JGHFFaWzI6qvFt9oilvl8BmkbBRX1IhM90ZAmpk68zccQA==
