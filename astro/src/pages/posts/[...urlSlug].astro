@@ -13,21 +13,6 @@ export async function getStaticPaths () {
   }))
 }
 
-await storeImageData(
-  '../../gen/resoc-image-data.json', // Mapping file, as declared in netlify.toml
-  'post', // Slug
-  {
-    // `${templates_dir}/${template}/resoc.manifest.json` should exist,
-    // where templates_dir comes from netlify.toml and template is the parameter below
-    template: 'default',
-
-    values: {
-      title: "Our news",
-      color: "rgb(92, 106, 196)"
-    }
-  }
-)
-
 const {
   permalink
 } = Astro.props
