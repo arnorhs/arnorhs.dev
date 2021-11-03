@@ -5,11 +5,6 @@
   },
   "parameters": [
     {
-      "name": "textColor",
-      "type": "text",
-      "demoValue": "rgb(92, 106, 196)"
-    },
-    {
       "name": "title",
       "type": "text",
       "demoValue": "A picture is worth a thousand words"
