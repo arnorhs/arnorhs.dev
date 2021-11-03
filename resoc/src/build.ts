@@ -28,7 +28,7 @@ export const build = async () => {
     await mkdir(ogDir)
   } catch {}
 
-  const postTemplates = collection.allItems().map(
+  const postTemplates: Templatable[] = collection.allItems().map(
     (post: Post) =>
       ({
         filename: post.contentHash,
@@ -36,14 +36,18 @@ export const build = async () => {
       } as Templatable),
   )
 
+  postTemplates.push({
+    title: "Arnor's blog and stuff",
+    filename: 'default',
+  })
+
   const yellow = colorize(ConsoleColor.FgYellow)
   const green = colorize(ConsoleColor.FgGreen)
 
   for (const tpl of postTemplates) {
     const filename = `${tpl.filename}.jpg`
     const imgPath = `${ogDir}/${filename}`
-    const exists = existsSync(imgPath)
-    if (exists) {
+    if (existsSync(imgPath)) {
       console.log('Cached ', green(tpl.title), `(${filename})`)
     } else {
       console.log('Compiling', yellow(tpl.title), `(${filename})`)
