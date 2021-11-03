@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/renderer-solid": "^0.1.1",
+    "@resoc/img-data": "^0.8.5",
     "astro": "^0.20.12",
     "solid-js": "^1.1.7",
     "tailwindcss": "^2.2.17"

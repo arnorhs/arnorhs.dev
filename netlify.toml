@@ -7,4 +7,4 @@
   [plugins.inputs]
     templates_dir = "resoc"
     open_graph_base_path = "/og-images"
-    slug_to_image_data_function = "resoc/slug-to-image-data.js"
+    slug_to_image_data_mapping_file = "resoc/resoc-image-data.json"
