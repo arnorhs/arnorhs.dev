@@ -1,10 +1,14 @@
 import { getPostCollection, Post } from '@arnorhs/posts'
 import { compileLocalTemplate } from '@resoc/create-img'
 import { resolve } from 'path'
-import { mkdir, access } from 'fs/promises'
+import { mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
 import { Templatable } from './types'
 import { colorize, ConsoleColor } from './util'
+
+const yellow = colorize(ConsoleColor.FgYellow)
+const green = colorize(ConsoleColor.FgGreen)
+const red = colorize(ConsoleColor.FgRed)
 
 const compileTemplate = async (imgUrl, title: string) => {
   await compileLocalTemplate(
@@ -21,12 +25,18 @@ const compileTemplate = async (imgUrl, title: string) => {
 }
 
 export const build = async () => {
+  if (!process.env.TARGET_DIR) {
+    throw new Error('TARGET_DIR environment variable must be set')
+  }
   const collection = await getPostCollection()
 
-  const ogDir = resolve(__dirname, '../../astro/dist/og-image')
+  const ogDir = resolve(process.cwd(), '..', process.env.TARGET_DIR)
   try {
-    await mkdir(ogDir)
-  } catch {}
+    await mkdir(ogDir, { recursive: true })
+    console.log('Created directory: ', green(ogDir))
+  } catch {
+    console.error('Could not create directory: ', red(ogDir))
+  }
 
   const postTemplates: Templatable[] = collection.allItems().map(
     (post: Post) =>
@@ -40,9 +50,6 @@ export const build = async () => {
     title: "Arnor's blog and stuff",
     filename: 'default',
   })
-
-  const yellow = colorize(ConsoleColor.FgYellow)
-  const green = colorize(ConsoleColor.FgGreen)
 
   for (const tpl of postTemplates) {
     const filename = `${tpl.filename}.jpg`

@@ -15,9 +15,10 @@
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",
     "resoc": "yarn workspace @arnorhs/resoc",
-    "build-posts": "TARGET_DIR=astro/src/gen yarn posts gen",
-    "export": "yarn build-posts && yarn astro build",
-    "dev": "yarn build-posts && yarn astro dev"
+    "gen:posts": "TARGET_DIR=astro/src/gen yarn posts gen",
+    "build:resoc": "TARGET_DIR=astro/dist/og-image yarn resoc build",
+    "export": "yarn gen:posts && yarn astro build && yarn build:resoc",
+    "dev": "yarn gen:posts && yarn astro dev"
   },
   "dependencies": {},
   "resolutions": {

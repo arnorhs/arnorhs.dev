@@ -1,8 +1,7 @@
 ---
-import MainLayout from '$layouts/MainLayout.astro'
+import MainLayout from '../../layouts/MainLayout.astro'
 import PostFull from '$components/PostFull.astro'
-import { dateFormat, Post, findPost, getAllPosts } from '$lib'
-import { storeImageData } from '@resoc/img-data'
+import { findPost, getAllPosts } from '$lib'
 
 export async function getStaticPaths () {
   const allPosts = await getAllPosts()
@@ -20,6 +19,6 @@ const {
 const post = await findPost(permalink)
 
 ---
-<MainLayout>
+<MainLayout title={post.meta.title} ogImage={post.contentHash}>
     <PostFull {post} />
 </MainLayout>
