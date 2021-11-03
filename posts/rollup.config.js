@@ -18,5 +18,11 @@ export default {
     },
   ],
   external: Object.keys(packageJson.dependencies),
-  plugins: [resolve({ preferBuiltins: true }), commonjs(), typescript()],
+  plugins: [
+    resolve({ preferBuiltins: true }),
+    commonjs(),
+    typescript({
+      tsconfig: 'tsconfig.build.json',
+    }),
+  ],
 }

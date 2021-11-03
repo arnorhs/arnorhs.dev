@@ -1,0 +1,17 @@
+{
+  "name": "@arnorhs/resoc",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@arnorhs/posts": "*",
+    "ts-node": "*"
+  },
+  "scripts": {
+    "build": "ts-node -P tsconfig.json src/index.ts"
+  },
+  "dependencies": {
+    "@resoc/create-img": "^0.8.6"
+  }
+}

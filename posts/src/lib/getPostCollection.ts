@@ -5,8 +5,11 @@ import { Collection } from './Collection'
 import { loadFront } from './yfm'
 import { Remarkable } from 'remarkable'
 
-const markdownPath = resolvePath(__dirname, '../../content/md')
-const wpPath = resolvePath(__dirname, '../../content/wp/wpposts.json')
+// jeez.. rollup please save me
+const rootDir = resolvePath(__dirname, __filename.endsWith('.ts') ? '../..' : '..')
+
+const markdownPath = resolvePath(rootDir, 'content/md')
+const wpPath = resolvePath(rootDir, 'content/wp/wpposts.json')
 const utf8 = { encoding: 'utf-8' as BufferEncoding }
 const remarkable = new Remarkable()
 

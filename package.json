@@ -7,15 +7,19 @@
   "workspaces": {
     "packages": [
       "astro",
-      "posts"
+      "posts",
+      "resoc"
     ]
   },
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",
-    "build-posts": "TARGET_DIR=astro/src/gen yarn posts gen",
-    "export": "yarn build-posts && yarn astro build",
-    "dev": "yarn build-posts && yarn astro dev"
+    "resoc": "yarn workspace @arnorhs/resoc",
+    "gen:posts": "TARGET_DIR=astro/src/gen yarn posts gen",
+    "build:posts": "yarn posts build",
+    "build:resoc": "TARGET_DIR=astro/dist/og-image yarn resoc build",
+    "export": "yarn gen:posts && yarn astro build && yarn build:posts && yarn build:resoc",
+    "dev": "yarn gen:posts && yarn astro dev"
   },
   "dependencies": {},
   "resolutions": {

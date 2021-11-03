@@ -1,3 +1,4 @@
+import md5 from 'md5'
 import { Post, WpPost } from '../types'
 
 export const transformWp = (o: WpPost): Post => {
@@ -25,7 +26,9 @@ export const transformWp = (o: WpPost): Post => {
 
   const urlSlug = `${dateStr}/${permalink}`
 
-  return { meta: metaData, urlSlug, html, permalink, date }
+  const contentHash = md5(`${permalink}:${metaData.title}`)
+
+  return { meta: metaData, urlSlug, html, permalink, date, contentHash }
 }
 
 const fromWordPressHtml = (postContent: string) => {

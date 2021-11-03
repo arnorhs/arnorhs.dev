@@ -1,3 +1,4 @@
+import md5 from 'md5'
 import { MdFile, Post } from '../types'
 
 // function for reshaping each post
@@ -11,6 +12,15 @@ export const transformMd = ({ filename, html, metadata }: MdFile): Post => {
 
   const urlSlug = `${dateStr}/${permalink}`
 
+  const contentHash = md5(`${permalink}:${metadata.title}`)
+
   // return the new shape
-  return { meta: metadata, urlSlug, html, permalink, date }
+  return {
+    meta: metadata,
+    urlSlug,
+    html,
+    permalink,
+    date,
+    contentHash,
+  }
 }
