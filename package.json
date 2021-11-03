@@ -14,6 +14,7 @@
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",
+    "resoc": "yarn workspace @arnorhs/resoc",
     "build-posts": "TARGET_DIR=astro/src/gen yarn posts gen",
     "export": "yarn build-posts && yarn astro build",
     "dev": "yarn build-posts && yarn astro dev"

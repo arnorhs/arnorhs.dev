@@ -22,5 +22,6 @@ export interface Post extends Record<string, unknown> {
   html: string
   permalink: string
   date: Date
+  contentHash: string
   meta: Meta
 }

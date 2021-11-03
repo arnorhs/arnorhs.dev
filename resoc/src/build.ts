@@ -1,7 +1,10 @@
 import { getPostCollection, Post } from '@arnorhs/posts'
 import { compileLocalTemplate } from '@resoc/create-img'
 import { resolve } from 'path'
-import { mkdir } from 'fs/promises'
+import { mkdir, access } from 'fs/promises'
+import { existsSync } from 'fs'
+import { Templatable } from './types'
+import { colorize, ConsoleColor } from './util'
 
 const compileTemplate = async (imgUrl, title: string) => {
   await compileLocalTemplate(
@@ -25,11 +28,26 @@ export const build = async () => {
     await mkdir(ogDir)
   } catch {}
 
-  // todo: config or variable
-  const posts = collection.allItems()
-  for (const post of posts) {
-    const imgPath = `${ogDir}/${post.permalink}.jpg`
-    console.log('compiling ', imgPath, post.meta.title)
-    await compileTemplate(imgPath, post.meta.title)
+  const postTemplates = collection.allItems().map(
+    (post: Post) =>
+      ({
+        filename: post.contentHash,
+        title: post.meta.title,
+      } as Templatable),
+  )
+
+  const yellow = colorize(ConsoleColor.FgYellow)
+  const green = colorize(ConsoleColor.FgGreen)
+
+  for (const tpl of postTemplates) {
+    const filename = `${tpl.filename}.jpg`
+    const imgPath = `${ogDir}/${filename}`
+    const exists = existsSync(imgPath)
+    if (exists) {
+      console.log('Cached ', green(tpl.title), `(${filename})`)
+    } else {
+      console.log('Compiling', yellow(tpl.title), `(${filename})`)
+      await compileTemplate(imgPath, tpl.title)
+    }
   }
 }
