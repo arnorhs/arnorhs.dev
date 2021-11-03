@@ -2,6 +2,7 @@
 import MainLayout from '$layouts/MainLayout.astro'
 import PostFull from '$components/PostFull.astro'
 import { dateFormat, Post, findPost, getAllPosts } from '$lib'
+import { storeImageData } from '@resoc/img-data'
 
 export async function getStaticPaths () {
   const allPosts = await getAllPosts()
@@ -11,10 +12,9 @@ export async function getStaticPaths () {
     props: { permalink: post.permalink }
   }))
 }
-import { storeImageData } from '@resoc/img-data'
 
 await storeImageData(
-  '../../../../resoc/resoc-image-data.json', // Mapping file, as declared in netlify.toml
+  '../../gen/resoc-image-data.json', // Mapping file, as declared in netlify.toml
   'post', // Slug
   {
     // `${templates_dir}/${template}/resoc.manifest.json` should exist,
