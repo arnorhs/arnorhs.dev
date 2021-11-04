@@ -2,3 +2,6 @@
   command = "yarn export"
   publish = "astro/dist/"
 
+[[plugins]]
+  package = "./netlify-plugin-custom-cache"
+
