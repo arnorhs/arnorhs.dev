@@ -19,6 +19,11 @@ const {
 const post = await findPost(permalink)
 
 ---
-<MainLayout title={post.meta.title} ogImage={post.contentHash}>
+<MainLayout
+  title={post.meta.title}
+  ogImage={post.contentHash}
+  ogType='article'
+  description={post.meta.summary}
+>
     <PostFull {post} />
 </MainLayout>

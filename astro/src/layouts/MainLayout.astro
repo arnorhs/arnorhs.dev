@@ -15,14 +15,27 @@ export interface Props {
   title: string
   animate?: boolean
   ogImage?: string
+  ogType?: string
+  description?: string
 }
 
-const { title, animate = false, ogImage = 'default' } = Astro.props as Props
+const {
+  title,
+  animate = false,
+  ogImage = 'default',
+  ogType = 'blog',
+  description = `
+    Arnor is a software developer and designer hailing from Iceland who writes
+    about software development and design
+  `,
+} = Astro.props as Props
 
 const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
 
 const activePath = Astro.request.url.pathname
+const fullUrl = Astro.request.url.toString()
+const dtUpdated = new Date().toISOString()
 ---
 <html lang="en">
 
@@ -32,7 +45,13 @@ const activePath = Astro.request.url.pathname
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>{titleTag}</title>
+  <meta name="description" content={description} />
   <meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
+  <meta property="og:title" content={titleTag} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={fullUrl} />
+  <meta property="og:description" content={description} />
+  <meta property="og:updated_time" content={dtUpdated} />
 
   <Fonts />
   <Favicon />
