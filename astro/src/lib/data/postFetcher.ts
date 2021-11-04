@@ -10,6 +10,7 @@ export interface Post {
   permalink: string
   date: Date
   meta: Meta
+  contentHash: string
 }
 
 const processPost = (item: Record<string, unknown>): Post => {
@@ -20,11 +21,16 @@ const processPost = (item: Record<string, unknown>): Post => {
     html: item.html as string,
     permalink: item.permalink as string,
     meta: item.meta as Meta,
+    contentHash: item.contentHash as string,
   }
 }
 
 export const findPost = async (permalink: string): Promise<Post | null> => {
-  return processPost(allPosts.find((x) => x.permalink === permalink))
+  const post = allPosts.find((x) => x.permalink === permalink)
+  if (!post) {
+    return null
+  }
+  return processPost(post)
 }
 
 export interface PostGroup {
