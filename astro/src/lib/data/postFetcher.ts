@@ -1,29 +1,18 @@
+import type { Post } from '@arnorhs/posts'
 import allPosts from '../../gen/allPosts.json'
 import { groupBy } from '../utils/misc'
 
 export type Meta = Record<string, string>
 
-export interface Post {
-  urlSlug: string
-  url: string
-  html: string
-  permalink: string
-  date: Date
-  meta: Meta
-  contentHash: string
-}
-
-const processPost = (item: Record<string, unknown>): Post => {
-  return {
-    url: `/posts/${item.urlSlug}`,
-    urlSlug: item.urlSlug as string,
-    date: new Date(item.date as string),
-    html: item.html as string,
-    permalink: item.permalink as string,
-    meta: item.meta as Meta,
-    contentHash: item.contentHash as string,
-  }
-}
+const processPost = (item: Record<string, unknown>): Post => ({
+  url: `/posts/${item.urlSlug}`,
+  urlSlug: item.urlSlug as string,
+  date: new Date(item.date as string),
+  html: item.html as string,
+  permalink: item.permalink as string,
+  meta: item.meta as Meta,
+  contentHash: item.contentHash as string,
+})
 
 export const findPost = async (permalink: string): Promise<Post | null> => {
   const post = allPosts.find((x) => x.permalink === permalink)
