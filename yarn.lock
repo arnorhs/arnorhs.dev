@@ -6669,15 +6669,10 @@ socks@^2.6.1:
     ip "^1.1.5"
     smart-buffer "^4.1.0"
 
-solid-js@^1.0.0:
+solid-js@^1.0.0, solid-js@^1.1.7:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.2.0.tgz#d6e85d4455e5a3cabffede3f1f6be0c48428ecdc"
   integrity sha512-4zi7Ip+wH0ctZIiQkDPC9of4v9TDYK33/4oqn2cu7wHfBjWElk8wnwSwlkZLkmtr9VYbsEfrroXsNH1mKJdJFg==
-
-solid-js@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.2.2.tgz#a12170ee2c09db4ef2c494a1be2767bde19d9e62"
-  integrity sha512-2FtxO+bHDzS7RwGUU/aQ36VOX81e3Cf1KE4GzbySrG1huYP51zotjqLqfWbKe89nwPjXQBoxnEK5hnBfDj0O0Q==
 
 sorcery@^0.10.0:
   version "0.10.0"
