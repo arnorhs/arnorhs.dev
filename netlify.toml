@@ -2,7 +2,7 @@
   command = "yarn export"
   publish = "astro/dist/"
 
-[context.deploy-preview.environment]
+[context.deploy-preview]
   SKIP_RESOC=1
 
 [[plugins]]
