@@ -3,7 +3,7 @@
   publish = "astro/dist/"
 
 [context.deploy-preview]
-  SKIP_RESOC=1
+  environment = { SKIP_RESOC = "1" }
 
 [[plugins]]
   package = "./netlify-plugin-custom-cache"
