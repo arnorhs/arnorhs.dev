@@ -2,6 +2,9 @@
   command = "yarn export"
   publish = "astro/dist/"
 
+[context.deploy-preview.environment]
+  SKIP_RESOC=1
+
 [[plugins]]
   package = "./netlify-plugin-custom-cache"
 
