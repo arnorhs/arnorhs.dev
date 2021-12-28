@@ -1,13 +1,14 @@
 ---
+type HeadingVariation = 'normal'|'big'|'semi'|'dense'
 // surely there must be a better way
 export interface Props {
-  tag: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6'
-  variation: 'normal'|'big'|'semi'|'dense'
+  tag?: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6'
+  variation?: HeadingVariation
 }
 
 const { tag = 'h3', variation = 'normal' } = Astro.props as Props
 
-const variations: Record<Props['variation'],string> = {
+const variations: Record<HeadingVariation,string> = {
   'big': `
     my-6
     text-5xl
@@ -36,7 +37,6 @@ const variations: Record<Props['variation'],string> = {
 const classes = variations[variation]
 
 ---
-
 {tag === 'h1' && (
   <h1 class={classes + 'featured-transition'}><slot /></h1>
 )}

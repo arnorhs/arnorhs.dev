@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "jsxImportSource": "solid-js",
     "jsx": "preserve",
     "strict": true
   }

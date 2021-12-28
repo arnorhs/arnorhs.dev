@@ -1,4 +1,4 @@
-import { mulberry32 } from '../../../lib'
+import { mulberry32 } from '../lib'
 import { Box, Color } from './types'
 
 const colors: Color[] = [
@@ -10,7 +10,7 @@ const colors: Color[] = [
   Color.YELLOW_LIGHT,
 ]
 
-export const randomBoxes = (seed, length): Box[] => {
+export const randomBoxes = (seed: number, length: number): Box[] => {
   const random = mulberry32(seed)
 
   const randomQuad = () => {

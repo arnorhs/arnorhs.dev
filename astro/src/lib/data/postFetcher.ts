@@ -4,6 +4,8 @@ import { groupBy } from '../utils/misc'
 
 export type Meta = Record<string, string>
 
+export { Post }
+
 const processPost = (item: Record<string, unknown>): Post => ({
   url: `/posts/${item.urlSlug}`,
   urlSlug: item.urlSlug as string,
