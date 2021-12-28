@@ -18,8 +18,6 @@ export interface Props {
   description?: string
 }
 
-import '../styles/global.css'
-
 const {
   title = undefined,
   animate = false,
@@ -56,6 +54,8 @@ const dtUpdated = new Date().toISOString()
 
   <Fonts />
   <Favicon />
+
+  <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
 </head>
 
 <body
