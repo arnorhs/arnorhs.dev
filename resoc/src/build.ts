@@ -29,10 +29,6 @@ export const build = async () => {
     throw new Error('TARGET_DIR environment variable must be set')
   }
 
-  if (process.env.SKIP_RESOC) {
-    return
-  }
-
   const collection = await getPostCollection()
 
   const ogDir = resolve(process.cwd(), '..', process.env.TARGET_DIR)
