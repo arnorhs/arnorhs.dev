@@ -1,11 +1,11 @@
-import { getScrollTop, debounce } from '../../lib'
+import { getScrollTop } from './lib'
 import { For, createSignal, Component, JSX } from 'solid-js'
 import { bindDocumentEventListener } from './solid-hooks'
 import { Box, randomBoxes } from './box'
 
 export interface FancyPanelProps {
   animate?: boolean
-  randomSeed?: number
+  randomSeed: number
 }
 
 export const FancyPanel: Component<FancyPanelProps> = (props: FancyPanelProps): JSX.Element => {

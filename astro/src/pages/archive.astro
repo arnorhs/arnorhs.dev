@@ -1,9 +1,9 @@
 ---
-import MainLayout from '$layouts/MainLayout.astro'
-import PostPreview from '$components/PostPreview.astro'
-import Heading from '$components/Heading.astro'
-import Card from '$components/Card.astro'
-import { getAllGroupedPosts } from '$lib/'
+import MainLayout from '../layouts/MainLayout.astro'
+import PostPreview from '../components/PostPreview.astro'
+import Heading from '../components/Heading.astro'
+import Card from '../components/Card.astro'
+import { getAllGroupedPosts } from '../lib/'
 
 const groupedPosts = await getAllGroupedPosts()
 ---

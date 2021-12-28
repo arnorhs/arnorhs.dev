@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro'
-import PostFull from '$components/PostFull.astro'
-import { findPost, getAllPosts } from '$lib'
+import PostFull from '../../components/PostFull.astro'
+import { findPost, getAllPosts } from '../../lib'
 
 export async function getStaticPaths () {
   const allPosts = await getAllPosts()
@@ -17,6 +17,10 @@ const {
 } = Astro.props
 
 const post = await findPost(permalink)
+
+if (!post) {
+  throw new Error(`No corresponding post: ${permalink}`)
+}
 
 ---
 <MainLayout

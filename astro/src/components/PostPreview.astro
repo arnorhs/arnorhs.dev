@@ -1,16 +1,16 @@
 ---
-import { dateFormat, Post } from '$lib'
+import { dateFormat, Post } from '../lib'
 import Heading from './Heading.astro'
-
-const post = Astro.props.post as Post
-const featured = Astro.props.featured ?? false
-const showByline = Astro.props.showByline ?? !featured
 
 export interface Props {
   post: Post
   featured?: boolean
   showByline?: boolean
 }
+
+const post = Astro.props.post as Post
+const featured = Astro.props.featured ?? false
+const showByline = Astro.props.showByline ?? !featured
 
 ---
 <style>
