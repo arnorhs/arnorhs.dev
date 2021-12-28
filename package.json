@@ -18,7 +18,7 @@
     "gen:posts": "TARGET_DIR=astro/src/gen yarn posts gen",
     "build:posts": "yarn posts build",
     "build:resoc": "TARGET_DIR=resoc/dist yarn resoc build",
-    "export": "yarn gen:posts && yarn build:posts && yarn build:resoc && yarn astro build && cp -rf resoc/dist astro/dist/og-image",
+    "export": "./scripts/export.sh",
     "dev": "yarn gen:posts && yarn astro dev"
   },
   "dependencies": {},
