@@ -1,6 +1,7 @@
 ---
 import { dateFormat, Post } from '../lib'
 import Heading from './Heading.astro'
+import { escape} from 'entities'
 
 export interface Props {
   post: Post
@@ -49,7 +50,7 @@ const showByline = Astro.props.showByline ?? !featured
     <p class="mt-1 md:mt-0 text-xs" aria-label="published date">{dateFormat(post.date)}</p>
   )}
 
-  <p class={`text-lg md:text-base ${featured ? 'md:w-2/4 ' : ''}`}>{post.meta.summary}</p>
+  <p class={`text-lg md:text-base ${featured ? 'md:w-2/4 ' : ''}`}>{escape(post.meta.summary)}</p>
 
   <p>
     <a href={post.url}>Read on</a>
