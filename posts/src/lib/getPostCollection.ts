@@ -3,7 +3,7 @@ import { Post, WpPost } from './types'
 import { resolvePath, readDir, readFile } from './util'
 import { Collection } from './Collection'
 import { loadFront } from './yfm'
-import { Remarkable } from 'remarkable'
+import { marked } from 'marked'
 
 // jeez.. rollup please save me
 const rootDir = resolvePath(__dirname, __filename.endsWith('.ts') ? '../..' : '..')
@@ -11,7 +11,6 @@ const rootDir = resolvePath(__dirname, __filename.endsWith('.ts') ? '../..' : '.
 const markdownPath = resolvePath(rootDir, 'content/md')
 const wpPath = resolvePath(rootDir, 'content/wp/wpposts.json')
 const utf8 = { encoding: 'utf-8' as BufferEncoding }
-const remarkable = new Remarkable()
 
 const getLegacyPosts = async (): Promise<Post[]> => {
   const posts = JSON.parse(await readFile(wpPath, utf8)) as WpPost[]
@@ -38,7 +37,7 @@ const getMarkdownPosts = async (): Promise<Post[]> => {
 
       return {
         filename: fn,
-        html: remarkable.render(__content),
+        html: marked.parse(__content),
         metadata: frontmatter,
       }
     })
