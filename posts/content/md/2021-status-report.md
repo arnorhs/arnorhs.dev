@@ -1,6 +1,8 @@
 ---
 title: 2021 status report
-summary: What excites me most coming into 2022
+summary: '
+  What excites me most coming into 2022. Solid.js, Astro, Next.js, Remix, Netlify,
+  Cloudflare workers, trpc, magic.link, planetscale, my npm packages and more.'
 date: 2021-12-31
 ---
 
@@ -29,5 +31,10 @@ I intend to try out:
 
 I'm still really into netlify, although I'm looking more towards
 Clourflare and [Cloudflare Workers](https://workers.cloudflare.com/) right now
+Ultimately, I wonder what I can do to help with
+
+Professionally I'm excited for the coming year for [Júní](https://www.juni.is/). Still not
+sure what I can do or how I can be most impactful when it comes to climate change and
+the environment.
 
 That is it for now.
