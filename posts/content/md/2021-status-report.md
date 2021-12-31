@@ -12,7 +12,7 @@ made things simpler such as Vite and snowpack.
 
 [Solid.js](https://www.solidjs.com/) is pretty exciting - I have been working on some projects in solid.
 
-I'm also excited about [astro][/posts/2021-10-29/astro-static-site-builder-of-dreams/], obviously.
+I'm also excited about [astro][https://arnorhs.dev/posts/2021-10-29/astro-static-site-builder-of-dreams/], obviously.
 
 I want to write more blog posts in 2022.
 
