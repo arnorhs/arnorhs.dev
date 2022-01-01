@@ -5432,12 +5432,7 @@ slash@^4.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
 
-solid-js@^1.1.7:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.2.0.tgz#d6e85d4455e5a3cabffede3f1f6be0c48428ecdc"
-  integrity sha512-4zi7Ip+wH0ctZIiQkDPC9of4v9TDYK33/4oqn2cu7wHfBjWElk8wnwSwlkZLkmtr9VYbsEfrroXsNH1mKJdJFg==
-
-solid-js@^1.2.3:
+solid-js@^1.2.3, solid-js@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.2.6.tgz#54e91ecb78bb6cc78efea2f05f979f6aa71b25ef"
   integrity sha512-NvPHJ5Vj5f+ZJWIioickrC55seovSkDtm5NzSpnoUk3z4tATv0STpy5iuGNEn51ZORUcwpZzrMAtOCGziXU1XA==
