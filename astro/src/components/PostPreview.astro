@@ -41,7 +41,7 @@ const showByline = Astro.props.showByline ?? !featured
   }
 }
 </style>
-<article class={`font-serif ${featured ? 'pt-6' : ''}`}>
+<article class={`font-sans ${featured ? 'pt-6' : ''}`}>
   <Heading tag='h2' variation={featured ? 'big' : 'dense'}>
     <a class={featured ? 'featured-transition' : ''} href={post.url}>{post.meta.title || 'missing title'}</a>
   </Heading>

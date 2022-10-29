@@ -58,17 +58,8 @@ const dtUpdated = new Date().toISOString()
   <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
 </head>
 
-<body
-  style="
-    background:
-      linear-gradient(95deg, rgba(240,20,20,.04), rgba(240,20,20,0) 70.71%),
-      linear-gradient(270deg, rgba(20,240,20,.03), rgba(20,240,20,0) 70.71%),
-      linear-gradient(150deg, rgba(20,20,240,.04), rgba(20,20,240,0) 70.71%)
-  "
->
+<body>
   <TagManagerBody />
-
-  <FancyPanel client:load randomSeed={fancySeed} animate={animate} />
 
   <div class="px-2 lg:px-0">
     <header>
@@ -77,7 +68,11 @@ const dtUpdated = new Date().toISOString()
           <NavItem first title="home" href="/">arnorhs</NavItem>
 
           {pages.map(({ slug, shortTitle, title }) => (
-            <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>{shortTitle}</NavItem>
+            <NavItem
+              href={`/${slug}/`}
+              active={activePath === `/${slug}/`}
+              title={title}
+            >{shortTitle}</NavItem>
           ))}
         </Nav>
       </Container>

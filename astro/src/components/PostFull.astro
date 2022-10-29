@@ -4,7 +4,7 @@ import { Post, dateFormat } from '../lib'
 const post = Astro.props.post as Post
 ---
 <article class="font-serif">
-  <h1 class='mb-1 leading-tight text-5xl font-display'>{post.meta.title}</h1>
+  <h1 class='mb-1 leading-tight text-5xl font-semibold font-display'>{post.meta.title}</h1>
   <p class='mt-0 text-xs' aria-label='published date'>{dateFormat(post.date)}</p>
 
   {post.html}

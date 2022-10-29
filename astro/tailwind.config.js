@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     fontFamily: {
       // there's maybe a way to set the serif to be the default?
-      sans: '"Andada Pro"',
-      serif: '"Andada Pro"',
-      display: '"Bungee Shade"',
-      nav: '"Bungee"',
+      sans: '"Figtree"',
+      serif: '"Figtree"',
+      display: '"Figtree"',
+      nav: '"Figtree"',
     },
 
     container: {

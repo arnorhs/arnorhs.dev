@@ -7,8 +7,8 @@ export interface Page {
 export const pages: Page[] = [
   {
     slug: 'archive',
-    shortTitle: 'Blog archive',
-    title: 'Blog archive',
+    shortTitle: 'Posts',
+    title: 'Blog posts',
   },
   {
     slug: 'about',
