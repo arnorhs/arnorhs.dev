@@ -7,5 +7,5 @@ const post = Astro.props.post as Post
   <h1 class='mb-1 leading-tight text-5xl font-semibold font-display'>{post.meta.title}</h1>
   <p class='mt-0 text-xs' aria-label='published date'>{dateFormat(post.date)}</p>
 
-  {post.html}
+  <div set:html={post.html} />
 </article>

@@ -6,5 +6,5 @@ import { getFeaturedPost } from '../lib'
 const post = await getFeaturedPost()
 ---
 <MainLayout animate={true}>
-  <PostPreview {post} featured />
+  <PostPreview post={post} featured />
 </MainLayout>

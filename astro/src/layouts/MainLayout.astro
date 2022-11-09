@@ -4,11 +4,11 @@ import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
 import PreloadLinks from '../components/PreloadLinks.astro'
-import { FancyPanel } from '../solidjs/src/FancyPanel.tsx'
 import TagManagerHead from '../components/meta/TagManagerHead.astro'
 import TagManagerBody from '../components/meta/TagManagerBody.astro'
 import Fonts from '../components/meta/Fonts.astro'
 import Favicon from '../components/meta/Favicon.astro'
+import '../styles/global.css'
 
 export interface Props {
   title?: string
@@ -20,7 +20,6 @@ export interface Props {
 
 const {
   title = undefined,
-  animate = false,
   ogImage = 'default',
   ogType = 'blog',
   description = `
@@ -30,7 +29,6 @@ const {
 } = Astro.props as Props
 
 const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
-const fancySeed = Math.random() * Number.MAX_SAFE_INTEGER
 
 const activePath = Astro.request.url.pathname
 const fullUrl = Astro.request.url.toString()
@@ -54,8 +52,6 @@ const dtUpdated = new Date().toISOString()
 
   <Fonts />
   <Favicon />
-
-  <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
 </head>
 
 <body>

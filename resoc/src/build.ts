@@ -1,5 +1,5 @@
 import { getPostCollection, Post } from '@arnorhs/posts'
-import { compileLocalTemplate } from '@resoc/create-img'
+import { compileLocalTemplate, compileTemplate } from '@resoc/create-img'
 import { resolve } from 'path'
 import { mkdir } from 'fs/promises'
 import { existsSync } from 'fs'
@@ -10,7 +10,7 @@ const yellow = colorize(ConsoleColor.FgYellow)
 const green = colorize(ConsoleColor.FgGreen)
 const red = colorize(ConsoleColor.FgRed)
 
-const compileTemplate = async (imgUrl, title: string) => {
+const compileTemplateWithData = async (imgUrl, title: string) => {
   await compileLocalTemplate(
     resolve(__dirname, './../default/resoc.manifest.json'),
     {
@@ -56,10 +56,10 @@ export const build = async () => {
     const filename = `${tpl.filename}.jpg`
     const imgPath = `${ogDir}/${filename}`
     if (existsSync(imgPath)) {
-      console.log('Cached ', green(tpl.title), `(${filename})`)
+      console.log('Cached ', green(tpl.title), `(${imgPath})`)
     } else {
-      console.log('Compiling', yellow(tpl.title), `(${filename})`)
-      await compileTemplate(imgPath, tpl.title)
+      console.log('Compiling', yellow(tpl.title), `(${imgPath})`)
+      await compileTemplateWithData(imgPath, tpl.title)
     }
   }
 }

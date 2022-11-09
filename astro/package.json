@@ -12,7 +12,7 @@
     "@arnorhs/posts": "*",
     "@astrojs/renderer-solid": "^0.3.1",
     "@types/entities": "^2.0.0",
-    "astro": "^0.22.20",
+    "astro": "0.24",
     "autoprefixer": "^10.0.2",
     "entities": "^3.0.1",
     "postcss": "^8.2.14",
