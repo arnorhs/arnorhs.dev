@@ -34,60 +34,65 @@ const activePath = Astro.request.url.pathname
 const fullUrl = Astro.request.url.toString()
 const dtUpdated = new Date().toISOString()
 ---
+
 <html lang="en">
+  <head>
+    <TagManagerHead />
 
-<head>
-  <TagManagerHead />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{titleTag}</title>
+    <meta name="description" content={description} />
+    <meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
+    <meta property="og:title" content={titleTag} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:description" content={description} />
+    <meta property="og:updated_time" content={dtUpdated} />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>{titleTag}</title>
-  <meta name="description" content={description} />
-  <meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
-  <meta property="og:title" content={titleTag} />
-  <meta property="og:type" content={ogType} />
-  <meta property="og:url" content={fullUrl} />
-  <meta property="og:description" content={description} />
-  <meta property="og:updated_time" content={dtUpdated} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed for petefreitag.com"
+      href="/rss.xml"
+    />
 
-  <Fonts />
-  <Favicon />
-</head>
+    <Fonts />
+    <Favicon />
+  </head>
 
-<body>
-  <TagManagerBody />
+  <body>
+    <TagManagerBody />
 
-  <div class="px-2 lg:px-0">
-    <header>
+    <div class="px-2 lg:px-0">
+      <header>
+        <Container>
+          <Nav>
+            <NavItem first title="home" href="/">arnorhs</NavItem>
+
+            {
+              pages.map(({ slug, shortTitle, title }) => (
+                <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>
+                  {shortTitle}
+                </NavItem>
+              ))
+            }
+          </Nav>
+        </Container>
+      </header>
+
       <Container>
-        <Nav>
-          <NavItem first title="home" href="/">arnorhs</NavItem>
-
-          {pages.map(({ slug, shortTitle, title }) => (
-            <NavItem
-              href={`/${slug}/`}
-              active={activePath === `/${slug}/`}
-              title={title}
-            >{shortTitle}</NavItem>
-          ))}
-        </Nav>
+        <main class="min-h-screen">
+          <slot />
+        </main>
       </Container>
-    </header>
+    </div>
 
-    <Container>
-      <main class="min-h-screen">
-        <slot />
-      </main>
-    </Container>
-  </div>
-
-  <div>
-    <footer class='mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-lighter'>
-      <Container>
-        &copy; 2008 - Arnór Heiðar Sigurðsson, all rights reserved
-      </Container>
-    </footer>
-  </div>
-  <PreloadLinks />
-</body>
+    <div>
+      <footer class="mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-lighter">
+        <Container>&copy; 2008 - Arnór Heiðar Sigurðsson, all rights reserved</Container>
+      </footer>
+    </div>
+    <PreloadLinks />
+  </body>
 </html>
