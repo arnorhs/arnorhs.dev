@@ -5,6 +5,9 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "jsx": "preserve",
-    "strict": true
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "types": ["vite/client"]
   }
 }
