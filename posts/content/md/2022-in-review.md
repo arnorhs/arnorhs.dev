@@ -2,7 +2,7 @@
 title: 2022 in review
 summary: '
   The past couple of years have been pretty intense. In this post I go over the highlights of the last year or
-  so and what I'm excited about in 2023
+  so and what Im excited about in 2023'
 date: 2023-01-03
 ---
 

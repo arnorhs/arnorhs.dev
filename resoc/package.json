@@ -12,7 +12,7 @@
     "build": "ts-node -P tsconfig.json src/index.ts"
   },
   "dependencies": {
-    "@resoc/create-img": "^0.8.6"
+    "@resoc/create-img": "^0.9.1"
   },
   "resolutions": {
     "highlight.js": "^10.4.1"

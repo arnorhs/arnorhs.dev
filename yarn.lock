@@ -1399,32 +1399,32 @@
   dependencies:
     tsm "^2.1.4"
 
-"@resoc/core@^0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@resoc/core/-/core-0.8.5.tgz#e702fb00717953997b6c779e58a2545f204fe9ce"
-  integrity sha512-RZcI0YuCqkjVPiwd+bWZNAGtnjEZoe6AoKrJlSLq57Buqu2NDZPkS7UqiDp/xRtaGStvQTTsQ32nUYImo+bSew==
+"@resoc/core@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@resoc/core/-/core-0.9.1.tgz#bbafebbcf263f2c4006b40d44f20a764402bf71f"
+  integrity sha512-E0SiyXTHF/gMCvc6D5YOAqQO3ZEwvNQw15vQ4Wzanixv1wdSneEW5FLgE5EXMWfmDXzFDAeX8itrrTd+M3L91A==
   dependencies:
     isomorphic-fetch "^3.0.0"
     mustache "^4.2.0"
 
-"@resoc/create-img-core@^0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@resoc/create-img-core/-/create-img-core-0.8.6.tgz#3177b747a9febdbf6367861ae7cd80a66605779e"
-  integrity sha512-8JxFA/LrKUSnytLedeF900C+W7uvRwbxTCAZTYvG9Mi0MjDirnxO60cqpBnyTtKAh+3i6PlVH6Wp2eWXKfAxpg==
+"@resoc/create-img-core@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@resoc/create-img-core/-/create-img-core-0.9.1.tgz#8c639ce8ea1804d6572fe5298b43d283e1934fca"
+  integrity sha512-Dht+bSwG9orNCx+mj8Dk8f4+kgyHsPfSvCgRrFjS1nLlfI9M4BYygt67/tsfpS2Yu+jE+hyRA0hwvBuoRaSRSA==
   dependencies:
-    "@resoc/core" "^0.8.5"
+    "@resoc/core" "^0.9.1"
     folder-hash "^4.0.1"
     mustache "^4.2.0"
     recursive-copy "^2.0.13"
     sha256 "^0.2.0"
     uuid "^8.3.2"
 
-"@resoc/create-img@^0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@resoc/create-img/-/create-img-0.8.6.tgz#303b1ab033c5faf95c23f2ea22bf435c5a312c54"
-  integrity sha512-E9DNg1PPlXeEzulkvjxo9vfk4OZm1zvy6psacV8Fg/HhRr/gDEvRQIJT9VlUQ+dUBltHFKU72/BNhPoGayBweg==
+"@resoc/create-img@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@resoc/create-img/-/create-img-0.9.1.tgz#8d77d4b6ca6f93cd26f0a5d067f36dbc4afe335f"
+  integrity sha512-e05crv8v2s4bOOGg/1ho8t8ibBY7nPumBxiHaFlu0LbNWccimsd7P5VuVi+beIUDeQm59UaZ7+cmC+SKA5tWhw==
   dependencies:
-    "@resoc/create-img-core" "^0.8.6"
+    "@resoc/create-img-core" "^0.9.1"
     puppeteer "^10.2.0"
 
 "@rollup/plugin-commonjs@^21.0.1":
@@ -3449,6 +3449,11 @@ helpertypes@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/helpertypes/-/helpertypes-0.0.4.tgz#99c04bfdb332790e0eb6857ec939143e5feeb535"
   integrity sha512-q8f29R4Rdw9n5L4vGmUR8Ld6CXbxPxA7Xrcs4vto3K6w0LSF13TnWSm67uDrZRulf3t/ZHKCfeZ0qIletxSEow==
+
+highlight.js@^10.4.1:
+  version "10.7.3"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
+  integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
 
 html-entities@^2.3.3:
   version "2.3.3"
