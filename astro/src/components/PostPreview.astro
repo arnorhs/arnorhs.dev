@@ -1,7 +1,6 @@
 ---
 import { dateFormat, Post } from '../lib'
 import Heading from './Heading.astro'
-import { escape } from 'entities'
 
 export interface Props {
   post: Post
@@ -43,7 +42,7 @@ const showByline = Astro.props.showByline ?? !featured
 </style>
 <article class={`font-sans ${featured ? 'pt-6' : ''}`}>
   <Heading tag="h2" variation={featured ? 'big' : 'dense'}>
-    <a class={featured ? 'featured-transition' : ''} href={post.url}
+    <a class={featured ? 'featured-transition' : ''} href={post.url as string}
       >{post.meta.title || 'missing title'}</a
     >
   </Heading>
@@ -59,6 +58,6 @@ const showByline = Astro.props.showByline ?? !featured
   <p class={`text-lg md:text-base ${featured ? 'md:w-2/4 ' : ''}`} set:html={post.meta.summary}></p>
 
   <p>
-    <a href={post.url}>Read on</a>
+    <a href={post.url as string}>Read on</a>
   </p>
 </article>

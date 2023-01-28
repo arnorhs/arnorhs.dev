@@ -4,13 +4,11 @@
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "astro",
-      "posts",
-      "resoc"
-    ]
-  },
+  "workspaces": [
+    "astro",
+    "posts",
+    "resoc"
+  ],
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",

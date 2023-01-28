@@ -7,17 +7,22 @@ import { getAllGroupedPosts } from '../lib/'
 
 const groupedPosts = await getAllGroupedPosts()
 ---
-<MainLayout title='Blog archive'>
-  {groupedPosts.map(({ year, posts }) => (
-    <>
-      <Heading variation='semi' tag='h1'>{year}</Heading>
-      <div class="md:grid md:grid-cols-2 gap-3">
-        {posts.map((post) => (
-          <Card>
-            <PostPreview {post} />
-          </Card>
-        ))}
-      </div>
-    </>
-  ))}
+
+<MainLayout title="Blog archive">
+  {
+    groupedPosts.map(({ year, posts }) => (
+      <>
+        <Heading variation="semi" tag="h1">
+          {year}
+        </Heading>
+        <div class="md:grid md:grid-cols-2 gap-3">
+          {posts.map((post) => (
+            <Card>
+              <PostPreview post={post} />
+            </Card>
+          ))}
+        </div>
+      </>
+    ))
+  }
 </MainLayout>

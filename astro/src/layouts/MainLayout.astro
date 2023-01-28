@@ -4,8 +4,6 @@ import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
 import PreloadLinks from '../components/PreloadLinks.astro'
-import TagManagerHead from '../components/meta/TagManagerHead.astro'
-import TagManagerBody from '../components/meta/TagManagerBody.astro'
 import Fonts from '../components/meta/Fonts.astro'
 import Favicon from '../components/meta/Favicon.astro'
 import '../styles/global.css'
@@ -30,15 +28,13 @@ const {
 
 const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 
-const activePath = Astro.request.url.pathname
+const activePath = (Astro.request.url as unknown as URL).pathname
 const fullUrl = Astro.request.url.toString()
 const dtUpdated = new Date().toISOString()
 ---
 
 <html lang="en">
   <head>
-    <TagManagerHead />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{titleTag}</title>
@@ -59,11 +55,16 @@ const dtUpdated = new Date().toISOString()
 
     <Fonts />
     <Favicon />
+
+    <script
+      async
+      defer
+      data-website-id="32a08c5e-7ba7-46c0-ae6d-cf98a5b41582"
+      src="https://app.usehardal.com/hardal.js"
+    ></script>
   </head>
 
   <body>
-    <TagManagerBody />
-
     <div class="px-2 lg:px-0">
       <header>
         <Container>
@@ -90,7 +91,12 @@ const dtUpdated = new Date().toISOString()
 
     <div>
       <footer class="mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-lighter">
-        <Container>&copy; 2008 - Arnór Heiðar Sigurðsson, all rights reserved</Container>
+        <Container
+          >&copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
+            class="text-myblue-lighter underline"
+            href="/disclaimer">Disclaimer</a
+          >
+        </Container>
       </footer>
     </div>
     <PreloadLinks />
