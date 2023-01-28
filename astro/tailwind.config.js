@@ -17,6 +17,7 @@ module.exports = {
     },
 
     screens: {
+      xs: '420px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -28,6 +29,7 @@ module.exports = {
         DEFAULT: '#fdfdfd',
       },
       myblue: {
+        bright: '#e6e9fc',
         lighter: '#a3ace5',
         DEFAULT: '#5c6ac4',
       },

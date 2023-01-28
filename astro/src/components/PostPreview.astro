@@ -55,7 +55,11 @@ const showByline = Astro.props.showByline ?? !featured
     )
   }
 
-  <p class={`text-lg md:text-base ${featured ? 'md:w-2/4 ' : ''}`} set:html={post.meta.summary}></p>
+  <p
+    class={`text-lg sm:text-2xl lg:text-base ${featured ? 'md:w-3/4 ' : ''}`}
+    set:html={post.meta.summary}
+  >
+  </p>
 
   <p>
     <a href={post.url as string}>Read on</a>

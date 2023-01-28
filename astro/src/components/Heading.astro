@@ -1,59 +1,84 @@
 ---
-export type HeadingVariation = 'normal'|'big'|'semi'|'dense'
+export type HeadingVariation = 'normal' | 'big' | 'semi' | 'dense'
 // surely there must be a better way
 export interface Props {
-  tag?: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6'
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   variation?: HeadingVariation
 }
 
 const { tag = 'h3', variation = 'normal' } = Astro.props as Props
 
-const variations: Record<HeadingVariation,string> = {
-  'big': `
-    my-6
+const variations: Record<HeadingVariation, string> = {
+  big: `
+    my-0
+    sm:my-6
     text-[5rem]
     font-black
     font-display
-    leading-tight
+    leading-[1em]
   `,
-  'semi': `
+  semi: `
     mt-5
     mb-3
     text-4xl
     font-bold
   `,
-  'normal': `
+  normal: `
     mb-4
     mt-6
     text-3xl
     font-nav
   `,
-  'dense': `
+  dense: `
     my-2
     text-xl
     font-nav
     font-semibold
-  `
+  `,
 }
 
 const classes = variations[variation]
-
 ---
-{tag === 'h1' && (
-  <h1 class={classes + 'featured-transition'}><slot /></h1>
-)}
-{tag === 'h2' && (
-  <h2 class={classes}><slot /></h2>
-)}
-{tag === 'h3' && (
-  <h3 class={classes}><slot /></h3>
-)}
-{tag === 'h4' && (
-  <h4 class={classes}><slot /></h4>
-)}
-{tag === 'h5' && (
-  <h5 class={classes}><slot /></h5>
-)}
-{tag === 'h6' && (
-  <h6 class={classes}><slot /></h6>
-)}
+
+{
+  tag === 'h1' && (
+    <h1 class={classes + 'featured-transition'}>
+      <slot />
+    </h1>
+  )
+}
+{
+  tag === 'h2' && (
+    <h2 class={classes}>
+      <slot />
+    </h2>
+  )
+}
+{
+  tag === 'h3' && (
+    <h3 class={classes}>
+      <slot />
+    </h3>
+  )
+}
+{
+  tag === 'h4' && (
+    <h4 class={classes}>
+      <slot />
+    </h4>
+  )
+}
+{
+  tag === 'h5' && (
+    <h5 class={classes}>
+      <slot />
+    </h5>
+  )
+}
+{
+  tag === 'h6' && (
+    <h6 class={classes}>
+      <slot />
+    </h6>
+  )
+}
