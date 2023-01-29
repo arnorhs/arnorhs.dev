@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind'
 import allPosts from './src/gen/allPosts.json'
 import fs from 'fs/promises'
 
+// https://astro.build/config
 export default defineConfig({
   // projectRoot: '.',     // Where to resolve all URLs relative to. Useful if you have a monorepo project.
   // pages: './src/pages', // Path to Astro components, pages, and data

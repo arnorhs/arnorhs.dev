@@ -9,11 +9,26 @@ const groupedPosts = await getAllGroupedPosts()
 ---
 
 <MainLayout title="Blog archive">
+  <Heading tag="h1" variation="semi">All posts by arnorhs</Heading>
+  <p>
+    Follow my updates on twitter <a
+      href="https://twitter.com/arnorhs"
+      target="_blank"
+      rel="no-follow">@arnorhs</a
+    >.
+  </p>
+  <p>
+    If you use an RSS reader, you can access the <a
+      aria-roledescription="RSS feed"
+      title="Subscribe to RSS feed"
+      href="/rss.xml">RSS feed here</a
+    >.
+  </p>
   {
     groupedPosts.map(({ year, posts }) => (
       <ol>
         <li>
-          <Heading variation="semi" tag="h1">
+          <Heading variation="semi" tag="h2">
             {year}
           </Heading>
           {parseInt(year, 10) >= 2012 ? (
