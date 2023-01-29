@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro'
 import PostPreview from '../components/PostPreview.astro'
 import Heading from '../components/Heading.astro'
 import Card from '../components/Card.astro'
-import { getAllGroupedPosts } from '../lib/'
+import { dateFormat, getAllGroupedPosts } from '../lib/'
 
 const groupedPosts = await getAllGroupedPosts()
 ---
@@ -11,18 +11,36 @@ const groupedPosts = await getAllGroupedPosts()
 <MainLayout title="Blog archive">
   {
     groupedPosts.map(({ year, posts }) => (
-      <>
-        <Heading variation="semi" tag="h1">
-          {year}
-        </Heading>
-        <div class="md:grid md:grid-cols-2 gap-3">
-          {posts.map((post) => (
-            <Card>
-              <PostPreview post={post} />
-            </Card>
-          ))}
-        </div>
-      </>
+      <ol>
+        <li>
+          <Heading variation="semi" tag="h1">
+            {year}
+          </Heading>
+          {parseInt(year, 10) >= 2012 ? (
+            <ol class="md:grid md:grid-cols-2 gap-3">
+              {posts.map((post) => (
+                <li>
+                  <Card>
+                    <PostPreview post={post} />
+                  </Card>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <ol>
+              {posts.map((post) => (
+                <li class="mb-2">
+                  <a class="font-semibold text-lg" href={post.url as string}>
+                    {post.meta.title}
+                  </a>
+                  &middot;
+                  <span>{dateFormat(post.date)}</span>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      </ol>
     ))
   }
 </MainLayout>

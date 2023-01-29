@@ -3,25 +3,23 @@
 
   const seen = [window.document.location.pathname]
 
-  function preload (href) {
-    return function (e) {
-      if (seen.includes(href)) { return }
-
-      seen.push(href)
-
-      fetch(href)
-        .then(res => res.text())
-        .then(txt => {
-          // find JS/images/css and preload those?
-          // or maybe using the preload meta thing is enough?
-        })
+  function preload(href: string) {
+    if (seen.includes(href)) {
+      return
     }
+
+    seen.push(href)
+
+    const preloadEl = document.createElement('link')
+    preloadEl.rel = 'prerender'
+    preloadEl.href = href
+    window.document.head.appendChild(preloadEl)
   }
 
-  [ ...document.querySelectorAll('a[href]') ]
-    .map(a => ({ a, url: a.getAttribute('href') }))
-    .filter(({ url }) => url.startsWith('/'))
+  ;[...document.querySelectorAll('a[href]')]
+    .map((a) => ({ a, url: a.getAttribute('href') }))
+    .filter(({ url }) => url?.startsWith('/'))
     .forEach(({ a, url }) => {
-      a.addEventListener('mouseover', preload(url))
+      a.addEventListener('mouseover', () => preload(url!))
     })
 </script>
