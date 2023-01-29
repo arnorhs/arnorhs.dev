@@ -31,7 +31,7 @@ module.exports = {
       myblue: {
         bright: '#e6e9fc',
         lighter: '#a3ace5',
-        DEFAULT: '#5c6ac4',
+        DEFAULT: '#4151b5',
         darker: '#4f5680',
       },
       myorange: {

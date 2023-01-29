@@ -15,12 +15,14 @@ a {
   @apply text-myblue;
 }
 
-article a:visited {
-  @apply text-myblue-lighter;
+p a {
+  @apply underline;
 }
 
 a:hover,
 article a:hover {
+  @apply transition-colors;
+  @apply duration-200;
   @apply text-myorange;
 }
 
