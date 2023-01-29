@@ -60,6 +60,7 @@ article h1 {
 
 article h2 {
   @apply text-3xl;
+  @apply font-semibold;
 }
 
 article h3 {
