@@ -1,4 +1,11 @@
 <script>
+  function ready(fn: () => void) {
+    if (document.readyState !== 'loading') {
+      fn()
+    } else {
+      document.addEventListener('DOMContentLoaded', fn)
+    }
+  }
   // Todo: would be better if transpiled etc.. this thing will never work in IE
 
   const seen = [window.document.location.pathname]
@@ -16,10 +23,14 @@
     window.document.head.appendChild(preloadEl)
   }
 
-  ;[...document.querySelectorAll('a[href]')]
-    .map((a) => ({ a, url: a.getAttribute('href') }))
-    .filter(({ url }) => url?.startsWith('/'))
-    .forEach(({ a, url }) => {
-      a.addEventListener('mouseover', () => preload(url!))
-    })
+  ready(() => {
+    const links = [...document.querySelectorAll('a[href]')]
+
+    links
+      .map((a) => ({ a, url: a.getAttribute('href') }))
+      .filter(({ url }) => url?.startsWith('/'))
+      .forEach(({ a, url }) => {
+        a.addEventListener('mouseover', () => preload(url!))
+      })
+  })
 </script>

@@ -6,7 +6,6 @@ import NavItem from '../components/nav/Item.astro'
 import PreloadLinks from '../components/PreloadLinks.astro'
 import Fonts from '../components/meta/Fonts.astro'
 import Favicon from '../components/meta/Favicon.astro'
-import '../styles/global.css'
 
 export interface Props {
   title?: string
@@ -33,72 +32,143 @@ const fullUrl = Astro.request.url.toString()
 const dtUpdated = new Date().toISOString()
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{titleTag}</title>
-    <meta name="description" content={description} />
-    <meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
-    <meta property="og:title" content={titleTag} />
-    <meta property="og:type" content={ogType} />
-    <meta property="og:url" content={fullUrl} />
-    <meta property="og:description" content={description} />
-    <meta property="og:updated_time" content={dtUpdated} />
+<style is:global>
+  html {
+    font-size: 24px;
+  }
 
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="RSS Feed for arnorhs.dev"
-      href="/rss.xml"
-    />
+  html,
+  body {
+    min-height: 100%;
+  }
 
-    <Fonts />
-    <Favicon />
+  a {
+    @apply text-myblue;
+  }
 
-    <script
-      async
-      defer
-      data-website-id="32a08c5e-7ba7-46c0-ae6d-cf98a5b41582"
-      src="https://app.usehardal.com/hardal.js"
-    ></script>
-  </head>
+  p a {
+    @apply underline;
+  }
 
-  <body>
-    <div class="px-4 sm:px-8 lg:px-0">
-      <header>
-        <Container>
-          <Nav>
-            <NavItem first title="home" href="/">arnorhs</NavItem>
+  a:hover,
+  article a:hover {
+    @apply transition-colors;
+    @apply duration-200;
+    @apply text-myorange;
+  }
 
-            {
-              pages.map(({ slug, shortTitle, title }) => (
-                <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>
-                  {shortTitle}
-                </NavItem>
-              ))
-            }
-          </Nav>
-        </Container>
-      </header>
+  article ul {
+    @apply list-outside;
+    @apply list-disc;
+    @apply ml-4;
+  }
 
+  article ol {
+    @apply list-outside;
+    @apply list-decimal;
+    @apply ml-7;
+  }
+
+  article ol li p {
+    @apply mt-0;
+  }
+
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article ul,
+  article ol,
+  article p,
+  article figure,
+  article h6 {
+    @apply mt-4;
+    @apply mb-2;
+  }
+
+  article h1 {
+    @apply text-4xl;
+  }
+
+  article h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+  }
+
+  article h3 {
+    @apply text-2xl;
+  }
+
+  article h4 {
+    @apply text-xl;
+  }
+
+  article h5 {
+    @apply text-lg;
+  }
+
+  article h6 {
+    @apply text-base;
+  }
+</style>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>{titleTag}</title>
+<meta name="description" content={description} />
+<meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
+<meta property="og:title" content={titleTag} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={fullUrl} />
+<meta property="og:description" content={description} />
+<meta property="og:updated_time" content={dtUpdated} />
+
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for arnorhs.dev" href="/rss.xml" />
+
+<Fonts />
+<Favicon />
+
+<body>
+  <div class="px-4 sm:px-8 lg:px-0">
+    <header>
       <Container>
-        <main class="min-h-screen">
-          <slot />
-        </main>
-      </Container>
-    </div>
+        <Nav>
+          <NavItem first title="home" href="/">arnorhs</NavItem>
 
-    <div>
-      <footer class="mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-bright">
-        <Container
-          >&copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
-            class="text-myblue-bright underline"
-            href="/disclaimer">Disclaimer</a
-          >
-        </Container>
-      </footer>
-    </div>
-    <PreloadLinks />
-  </body>
-</html>
+          {
+            pages.map(({ slug, shortTitle, title }) => (
+              <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>
+                {shortTitle}
+              </NavItem>
+            ))
+          }
+        </Nav>
+      </Container>
+    </header>
+
+    <Container>
+      <main class="min-h-screen">
+        <slot />
+      </main>
+    </Container>
+  </div>
+
+  <div>
+    <footer class="mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-bright">
+      <Container
+        >&copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
+          class="text-myblue-bright underline"
+          href="/disclaimer">Disclaimer</a
+        >
+      </Container>
+    </footer>
+  </div>
+  <PreloadLinks />
+  <script
+    async
+    defer
+    data-website-id="32a08c5e-7ba7-46c0-ae6d-cf98a5b41582"
+    src="https://app.usehardal.com/hardal.js"
+  ></script>
+</body>

@@ -12,11 +12,7 @@ export default defineConfig({
   site: 'https://arnorhs.dev',
   integrations: [
     sitemap(),
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
+    tailwind(),
     {
       name: 'redirects',
       hooks: {
