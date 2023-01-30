@@ -27,4 +27,17 @@ export default defineConfig({
       },
     },
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.endsWith('.css')) {
+              return 'styles'
+            }
+          },
+        },
+      },
+    },
+  },
 })

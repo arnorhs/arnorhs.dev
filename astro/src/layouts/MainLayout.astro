@@ -6,6 +6,7 @@ import NavItem from '../components/nav/Item.astro'
 import PreloadLinks from '../components/PreloadLinks.astro'
 import Fonts from '../components/meta/Fonts.astro'
 import Favicon from '../components/meta/Favicon.astro'
+import '../styles/global.css'
 
 export interface Props {
   title?: string
@@ -31,87 +32,6 @@ const activePath = (Astro.request.url as unknown as URL).pathname
 const fullUrl = Astro.request.url.toString()
 const dtUpdated = new Date().toISOString()
 ---
-
-<style is:global>
-  html {
-    font-size: 24px;
-  }
-
-  html,
-  body {
-    min-height: 100%;
-  }
-
-  a {
-    @apply text-myblue;
-  }
-
-  p a {
-    @apply underline;
-  }
-
-  a:hover,
-  article a:hover {
-    @apply transition-colors;
-    @apply duration-200;
-    @apply text-myorange;
-  }
-
-  article ul {
-    @apply list-outside;
-    @apply list-disc;
-    @apply ml-4;
-  }
-
-  article ol {
-    @apply list-outside;
-    @apply list-decimal;
-    @apply ml-7;
-  }
-
-  article ol li p {
-    @apply mt-0;
-  }
-
-  article h1,
-  article h2,
-  article h3,
-  article h4,
-  article h5,
-  article ul,
-  article ol,
-  article p,
-  article figure,
-  article h6 {
-    @apply mt-4;
-    @apply mb-2;
-  }
-
-  article h1 {
-    @apply text-4xl;
-  }
-
-  article h2 {
-    @apply text-3xl;
-    @apply font-semibold;
-  }
-
-  article h3 {
-    @apply text-2xl;
-  }
-
-  article h4 {
-    @apply text-xl;
-  }
-
-  article h5 {
-    @apply text-lg;
-  }
-
-  article h6 {
-    @apply text-base;
-  }
-</style>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
