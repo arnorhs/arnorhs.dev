@@ -9,7 +9,8 @@
     "ts-node": "*"
   },
   "scripts": {
-    "build": "ts-node -P tsconfig.json src/index.ts"
+    "build": "ts-node -P tsconfig.json src/index.ts",
+    "debug": "DEBUG=1 yarn build"
   },
   "dependencies": {
     "@resoc/create-img": "^0.9.1"

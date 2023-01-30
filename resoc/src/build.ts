@@ -10,6 +10,14 @@ const yellow = colorize(ConsoleColor.FgYellow)
 const green = colorize(ConsoleColor.FgGreen)
 const red = colorize(ConsoleColor.FgRed)
 
+const DEBUG = !!process.env.DEBUG
+const TARGET_DIR = DEBUG ? '.' : process.env.TARGET_DIR
+if (!TARGET_DIR) {
+  throw new Error('TARGET_DIR environment variable must be set when not in debug mode')
+}
+
+const ogDir = resolve(process.cwd(), '..', TARGET_DIR)
+
 const compileTemplateWithData = async (imgUrl, title: string) => {
   await compileLocalTemplate(
     resolve(__dirname, './../default/resoc.manifest.json'),
@@ -25,13 +33,8 @@ const compileTemplateWithData = async (imgUrl, title: string) => {
 }
 
 export const build = async () => {
-  if (!process.env.TARGET_DIR) {
-    throw new Error('TARGET_DIR environment variable must be set')
-  }
-
   const collection = await getPostCollection()
 
-  const ogDir = resolve(process.cwd(), '..', process.env.TARGET_DIR)
   try {
     await mkdir(ogDir, { recursive: true })
     console.log('Created directory: ', green(ogDir))
@@ -39,13 +42,18 @@ export const build = async () => {
     console.error('Could not create directory: ', red(ogDir))
   }
 
-  const postTemplates: Templatable[] = collection.allItems().map(
-    (post: Post) =>
-      ({
-        filename: post.contentHash,
-        title: post.meta.title,
-      } as Templatable),
-  )
+  const postTemplates: Templatable[] = collection
+    .allItems()
+    .sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime())
+    .map(
+      (post: Post) =>
+        ({
+          filename: post.contentHash,
+          title: post.meta.title,
+        } as Templatable),
+    )
+    // only take the first one in debug mode
+    .filter((x, i) => (DEBUG ? i === 0 : true))
 
   postTemplates.push({
     title: "Arnor's blog and stuff",
@@ -55,7 +63,7 @@ export const build = async () => {
   for (const tpl of postTemplates) {
     const filename = `${tpl.filename}.jpg`
     const imgPath = `${ogDir}/${filename}`
-    if (existsSync(imgPath)) {
+    if (!DEBUG && existsSync(imgPath)) {
       console.log('Cached ', green(tpl.title), `(${imgPath})`)
     } else {
       console.log('Compiling', yellow(tpl.title), `(${imgPath})`)

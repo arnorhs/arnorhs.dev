@@ -26,7 +26,7 @@ export const transformWp = (o: WpPost): Post => {
 
   const urlSlug = `${dateStr}/${permalink}`
 
-  const contentHash = md5(`${permalink}:${metaData.title}`)
+  const contentHash = md5(`design-v2-${permalink}:${metaData.title}`)
 
   return { meta: metaData, urlSlug, html, permalink, date, contentHash }
 }

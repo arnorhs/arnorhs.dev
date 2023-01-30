@@ -38,12 +38,18 @@ const dtUpdated = new Date().toISOString()
     <meta name="viewport" content="width=device-width" />
     <title>{titleTag}</title>
     <meta name="description" content={description} />
-    <meta property="og:image" content={`${Astro.site}/og-image/${ogImage}.jpg`} />
+    <meta property="og:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
     <meta property="og:title" content={titleTag} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={fullUrl} />
     <meta property="og:description" content={description} />
     <meta property="og:updated_time" content={dtUpdated} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@arnorhs" />
+    <meta name="twitter:title" content={titleTag} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
 
     <link
       rel="alternate"
@@ -81,14 +87,14 @@ const dtUpdated = new Date().toISOString()
 
     <div>
       <footer class="mt-8 px-2 lg:px-0 py-6 bg-myblue text-myblue-bright">
-        <Container
-          >&copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
-            class="text-myblue-bright underline"
-            href="/disclaimer">Disclaimer</a
-          >
-        </Container>
+        <Container />
+        &copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
+          class="text-myblue-bright underline"
+          href="/disclaimer">Disclaimer</a
+        >
       </footer>
     </div>
+
     <PreloadLinks />
     <script
       async
