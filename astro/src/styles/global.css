@@ -56,6 +56,14 @@ article h6 {
   @apply mb-2;
 }
 
+article blockquote {
+  @apply border-l-8;
+  @apply border-l-myblue-bright;
+  @apply italic;
+  @apply pl-4 py-0;
+  @apply xl:w-4/5;
+}
+
 article h1 {
   @apply text-4xl;
 }
