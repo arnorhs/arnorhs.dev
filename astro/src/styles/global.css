@@ -29,7 +29,11 @@ article a:hover {
 article ul {
   @apply list-outside;
   @apply list-disc;
-  @apply ml-4;
+  @apply ml-6;
+}
+article ul ul {
+  @apply ml-6;
+  @apply text-sm;
 }
 
 article ol {
@@ -40,6 +44,10 @@ article ol {
 
 article ol li p {
   @apply mt-0;
+}
+
+article li {
+  @apply mb-1;
 }
 
 article h1,
@@ -87,38 +95,4 @@ article h5 {
 
 article h6 {
   @apply text-base;
-}
-
-/* figtree-300 - latin */
-@font-face {
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 300;
-  src: local(''), url('/fonts/figtree-v2-latin-300.woff2') format('woff2'),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/figtree-v2-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* figtree-regular - latin */
-@font-face {
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''), url('/fonts/figtree-v2-latin-regular.woff2') format('woff2'),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/figtree-v2-latin-regular.woff')
-      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* figtree-600 - latin */
-@font-face {
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 600;
-  src: local(''), url('/fonts/figtree-v2-latin-600.woff2') format('woff2'),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/figtree-v2-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* figtree-800 - latin */
-@font-face {
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 800;
-  src: local(''), url('/fonts/figtree-v2-latin-800.woff2') format('woff2'),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/figtree-v2-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
