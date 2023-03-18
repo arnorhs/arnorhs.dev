@@ -1,11 +1,12 @@
 ---
-import { Post, dateFormat } from '../lib'
+import { PostWithUrl, dateFormat } from '../lib'
 
-const post = Astro.props.post as Post
+const post = Astro.props.post as PostWithUrl
 ---
-<article class="font-serif">
-  <h1 class='mb-1 leading-tight text-5xl font-semibold font-display'>{post.meta.title}</h1>
-  <p class='mt-0 text-xs' aria-label='published date'>{dateFormat(post.date)}</p>
 
-  <div set:html={post.html} />
+<article class="font-serif">
+  <h1 class="mb-1 leading-tight text-5xl font-semibold font-display">{post.title}</h1>
+  <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.publishedDate)}</p>
+
+  <div set:html={post.htmlBody} />
 </article>

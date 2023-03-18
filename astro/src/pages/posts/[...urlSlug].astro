@@ -1,16 +1,16 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro'
 import PostFull from '../../components/PostFull.astro'
-import { findPost, getAllPosts, Post } from '../../lib'
+import { findPost, getAllPosts, PostWithUrl } from '../../lib'
 
 export async function getStaticPaths() {
   const allPosts = await getAllPosts()
 
-  return allPosts.map((post: Post) => {
-    console.log('mapping through posts, url slug: ' + post.urlSlug, post.meta.title)
+  return allPosts.map((post: PostWithUrl) => {
+    console.log('mapping through posts, url slug: ' + post.uriId, post.title)
     return {
-      params: { urlSlug: post.urlSlug },
-      props: { permalink: post.permalink },
+      params: { urlSlug: post.uriId },
+      props: { permalink: post.slug },
     }
   })
 }
@@ -25,10 +25,10 @@ if (!post) {
 ---
 
 <MainLayout
-  title={post.meta.title}
+  title={post.title}
   ogImage={post.contentHash}
   ogType="article"
-  description={post.meta.summary}
+  description={post.summary}
 >
   <PostFull {post} />
 </MainLayout>

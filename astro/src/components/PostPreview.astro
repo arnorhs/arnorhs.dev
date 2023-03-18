@@ -1,14 +1,14 @@
 ---
-import { dateFormat, Post } from '../lib'
+import { dateFormat, PostWithUrl } from '../lib'
 import Heading from './Heading.astro'
 
 export interface Props {
-  post: Post
+  post: PostWithUrl
   featured?: boolean
   showByline?: boolean
 }
 
-const post = Astro.props.post as Post
+const post = Astro.props.post as PostWithUrl
 const featured = Astro.props.featured ?? false
 const showByline = Astro.props.showByline ?? !featured
 ---
@@ -44,27 +44,24 @@ const showByline = Astro.props.showByline ?? !featured
   <Heading tag={featured ? 'h2' : 'h3'} variation={featured ? 'big' : 'dense'}>
     <a
       class={featured ? 'featured-transition text-myblue' : 'text-[#000] visited:text-[#000]'}
-      href={post.url as string}>{post.meta.title || 'missing title'}</a
+      href={post.url as string}>{post.title || 'missing title'}</a
     >
   </Heading>
 
   {
     showByline && (
       <p class="mt-1 md:mt-0 text-xs font-normal" aria-label="published date">
-        {dateFormat(post.date)}
+        {dateFormat(post.publishedDate)}
       </p>
     )
   }
 
   <p
     class={`text-lg mt-2 sm:text-2xl font-normal lg:text-base ${featured ? 'md:w-3/4 ' : ''}`}
-    set:html={post.meta.summary}
-  >
-  </p>
+    set:html={post.summary}
+  />
 
   <p>
-    <a class="text-myblue text-base font-semibold visited:text-myblue" href={post.url as string}
-      >Read on →</a
-    >
+    <a class="text-myblue text-base font-semibold visited:text-myblue" href={post.url}>Read on →</a>
   </p>
 </article>

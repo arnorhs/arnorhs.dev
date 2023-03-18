@@ -33,13 +33,13 @@ export interface WpPost {
   to_ping: string
 }
 
-export interface Post extends Record<string, any> {
+export interface Post<T extends 'fromJson' | 'fromJs' = 'fromJs'> {
   uriId: string
   title: string
   summary: string
   htmlBody: string
   slug: string
-  publishedDate: Date
+  publishedDate: T extends 'fromJson' ? string : Date
   contentHash: string
   meta?: RandomShi
 }

@@ -116,5 +116,6 @@ const getMarkdownPosts = async (): Promise<Post[]> => {
 export const getPostCollection = async (): Promise<Post[]> => {
   const [mdPosts, wpPosts] = await Promise.all([getMarkdownPosts(), getLegacyPosts()])
 
-  return [...mdPosts, ...wpPosts].sort(sortBy('publishedDate', 'desc'))
+  // TODO: i guess it would be nice to have proper type inferrence here
+  return [...mdPosts, ...wpPosts].sort(sortBy<{}>('publishedDate', 'desc'))
 }

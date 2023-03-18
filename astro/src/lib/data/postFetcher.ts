@@ -2,38 +2,33 @@ import type { Post } from '@arnorhs/posts'
 import allPosts from '../../gen/allPosts.json'
 import { groupBy } from '../utils/misc'
 
-export type Meta = Record<string, string>
+export type PostWithUrl = Post<'fromJs'> & { url: string }
 
-export { Post }
-
-const processPost = (item: Record<string, unknown>): Post => ({
-  url: `/posts/${item.urlSlug}`,
-  urlSlug: item.urlSlug as string,
-  date: new Date(item.date as string),
-  html: item.html as string,
-  permalink: item.permalink as string,
-  meta: item.meta as Meta,
-  contentHash: item.contentHash as string,
+const processPost = (item: Post<'fromJson'>): PostWithUrl => ({
+  ...item,
+  publishedDate: new Date(item.publishedDate),
+  url: `/posts/${item.uriId}`,
 })
 
-export const findPost = async (permalink: string): Promise<Post | null> => {
-  const post = allPosts.find((x) => x.permalink === permalink)
+export const findPost = async (permalink: string): Promise<PostWithUrl | null> => {
+  const post = allPosts.find((x) => x.slug === permalink)
   if (!post) {
     return null
   }
-  return processPost(post)
+
+  return processPost(post as Post<'fromJson'>)
 }
 
 export interface PostGroup {
   year: string
-  posts: Post[]
+  posts: PostWithUrl[]
 }
 
 export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
   const groupedPosts = allPosts.map(processPost).reduce(
-    groupBy((post) => post.date.getFullYear()),
-    {} as Record<string, Post[]>,
-  ) as Record<string, Post[]>
+    groupBy((post) => post.publishedDate.getFullYear()),
+    {} as Record<string, PostWithUrl[]>,
+  )
 
   const posts = Object.entries(groupedPosts)
     .map(
@@ -50,6 +45,6 @@ export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
   return posts
 }
 
-export const getAllPosts = async (): Promise<Post[]> => allPosts.map(processPost)
+export const getAllPosts = () => allPosts.map(processPost)
 
-export const getFeaturedPost = async (): Promise<Post> => processPost(allPosts[0])
+export const getFeaturedPost = () => processPost(allPosts[0])
