@@ -9,8 +9,7 @@ if (!TARGET_DIR) {
 }
 
 const run = async () => {
-  const collection = await getPostCollection()
-  const items = collection.allItems()
+  const items = await getPostCollection()
 
   const dist = resolve(__dirname, '../..', TARGET_DIR)
 

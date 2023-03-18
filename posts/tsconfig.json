@@ -5,7 +5,7 @@
     "target": "ESNext",
     "declaration": true,
     "declarationDir": "dist",
-    "strict": false,
+    "strict": true,
     "moduleResolution": "node",
     "noEmitOnError": true,
     "resolveJsonModule": true,
@@ -13,6 +13,7 @@
     "rootDir": "./",
     "baseUrl": "./src"
   },
+  "files": ["global.d.ts"],
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

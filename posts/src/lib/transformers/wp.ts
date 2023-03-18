@@ -1,5 +1,6 @@
 import md5 from 'md5'
 import { Post, WpPost } from '../types'
+import pretty from 'pretty'
 
 export const transformWp = (o: WpPost): Post => {
   const {
@@ -17,8 +18,6 @@ export const transformWp = (o: WpPost): Post => {
   const metaData = {
     modifiedDate,
     status,
-    summary,
-    title,
   }
 
   const date = new Date(publishedDate)
@@ -26,16 +25,27 @@ export const transformWp = (o: WpPost): Post => {
 
   const urlSlug = `${dateStr}/${permalink}`
 
-  const contentHash = md5(`design-v2-${permalink}:${metaData.title}`)
+  const contentHash = md5(`design-v2-${permalink}:${title}`)
 
-  return { meta: metaData, urlSlug, html, permalink, date, contentHash }
+  return {
+    meta: metaData,
+    uriId: urlSlug,
+    htmlBody: html,
+    slug: permalink,
+    publishedDate: date,
+    contentHash,
+    title,
+    summary,
+  }
 }
 
-const fromWordPressHtml = (postContent: string) => {
+export const fromWordPressHtml = (postContent: string) => {
   // WP's post content comes with newlines for paragraphs
-  return postContent
-    .split(/\n\n|\r\n\r\n/)
-    .map((s) => `<p>${s}</p>`)
-    .join('\n')
-    .replace(/http:\/\//gi, 'https://')
+  return pretty(
+    postContent
+      .split(/\n\n|\r\n\r\n/)
+      .map((s) => `<div>${s}</div>`)
+      .join('\n')
+      .replace(/http:\/\//gi, 'https://'),
+  )
 }
