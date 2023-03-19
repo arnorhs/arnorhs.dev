@@ -7,7 +7,6 @@ export async function getStaticPaths() {
   const allPosts = await getAllPosts()
 
   return allPosts.map((post: PostWithUrl) => {
-    console.log('mapping through posts, url slug: ' + post.uriId, post.title)
     return {
       params: { urlSlug: post.uriId },
       props: { permalink: post.slug },
