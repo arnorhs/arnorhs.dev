@@ -17,12 +17,6 @@ const getLegacyPosts = async (): Promise<Post[]> => {
 
   // for printing
   return posts
-    .sort((a, b) => {
-      const aDate = new Date(a.post_date).getTime()
-      const bDate = new Date(b.post_date).getTime()
-
-      return aDate - bDate
-    })
     .filter((p) => p.post_parent === 0)
     .filter((p) => p.post_type === 'post' && p.post_status === 'publish')
     .map((x) => transformWp(x))
