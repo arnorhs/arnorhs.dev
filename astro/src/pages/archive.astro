@@ -46,10 +46,10 @@ const groupedPosts = await getAllGroupedPosts()
               {posts.map((post) => (
                 <li class="mb-2">
                   <a class="font-semibold text-lg" href={post.url as string}>
-                    {post.meta.title}
+                    {post.title}
                   </a>
                   &middot;
-                  <span>{dateFormat(post.date)}</span>
+                  <span>{dateFormat(post.publishedDate)}</span>
                 </li>
               ))}
             </ol>

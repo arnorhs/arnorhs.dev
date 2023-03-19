@@ -1,33 +1,33 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro'
 import PostFull from '../../components/PostFull.astro'
-import { findPost, getAllPosts } from '../../lib'
+import { findPost, getAllPosts, PostWithUrl } from '../../lib'
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const allPosts = await getAllPosts()
 
-  return allPosts.map((post) => ({
-    params: { urlSlug: post.urlSlug },
-    props: { permalink: post.permalink }
-  }))
+  return allPosts.map((post: PostWithUrl) => {
+    return {
+      params: { urlSlug: post.uriId },
+      props: { permalink: post.slug },
+    }
+  })
 }
 
-const {
-  permalink
-} = Astro.props
+const { permalink } = Astro.props
 
 const post = await findPost(permalink)
 
 if (!post) {
   throw new Error(`No corresponding post: ${permalink}`)
 }
-
 ---
+
 <MainLayout
-  title={post.meta.title}
+  title={post.title}
   ogImage={post.contentHash}
-  ogType='article'
-  description={post.meta.summary}
+  ogType="article"
+  description={post.summary}
 >
-    <PostFull {post} />
+  <PostFull {post} />
 </MainLayout>

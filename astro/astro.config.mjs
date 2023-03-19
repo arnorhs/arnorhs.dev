@@ -22,9 +22,7 @@ export default defineConfig({
       name: 'redirects',
       hooks: {
         'astro:build:done': async ({ dir, routes }) => {
-          const str = allPosts
-            .map((post) => `/${post.permalink} /posts/${post.urlSlug} 301`)
-            .join('\n')
+          const str = allPosts.map((post) => `/${post.slug} /posts/${post.uriId} 301`).join('\n')
           await fs.writeFile(`${dir.pathname}_redirects`, str, 'utf8')
           console.log('Wrote redirects to _redirects')
         },

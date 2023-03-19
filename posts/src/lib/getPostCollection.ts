@@ -1,9 +1,9 @@
 import { transformMd, transformWp } from './transformers'
 import { Post, WpPost } from './types'
 import { resolvePath, readDir, readFile } from './util'
-import { Collection } from './Collection'
 import { loadFront } from './yfm'
 import { marked } from 'marked'
+import { sortBy } from './sortBy'
 
 // jeez.. rollup please save me
 const rootDir = resolvePath(__dirname, __filename.endsWith('.ts') ? '../..' : '..')
@@ -14,7 +14,10 @@ const utf8 = { encoding: 'utf-8' as BufferEncoding }
 
 const getLegacyPosts = async (): Promise<Post[]> => {
   const posts = JSON.parse(await readFile(wpPath, utf8)) as WpPost[]
+
+  // for printing
   return posts
+    .filter((p) => p.post_parent === 0)
     .filter((p) => p.post_type === 'post' && p.post_status === 'publish')
     .map((x) => transformWp(x))
 }
@@ -44,8 +47,9 @@ const getMarkdownPosts = async (): Promise<Post[]> => {
     .map((x) => transformMd(x))
 }
 
-export const getPostCollection = async (): Promise<Collection<Post>> => {
+export const getPostCollection = async (): Promise<Post[]> => {
   const [mdPosts, wpPosts] = await Promise.all([getMarkdownPosts(), getLegacyPosts()])
 
-  return new Collection([...mdPosts, ...wpPosts])
+  // TODO: i guess it would be nice to have proper type inferrence here
+  return [...mdPosts, ...wpPosts].sort(sortBy<{}>('publishedDate', 'desc'))
 }

@@ -33,7 +33,7 @@ const compileTemplateWithData = async (imgUrl, title: string) => {
 }
 
 export const build = async () => {
-  const collection = await getPostCollection()
+  const allItems = await getPostCollection()
 
   try {
     await mkdir(ogDir, { recursive: true })
@@ -42,14 +42,12 @@ export const build = async () => {
     console.error('Could not create directory: ', red(ogDir))
   }
 
-  const postTemplates: Templatable[] = collection
-    .allItems()
-    .sort((a, b) => new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime())
+  const postTemplates: Templatable[] = allItems
     .map(
       (post: Post) =>
         ({
           filename: post.contentHash,
-          title: post.meta.title,
+          title: post.title,
         } as Templatable),
     )
     // only take the first one in debug mode
