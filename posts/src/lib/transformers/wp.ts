@@ -12,7 +12,6 @@ export const transformWp = (o: WpPost): Post => {
     post_name: permalink,
     post_modified: modifiedDate,
   } = o
-
   const html = fromWordPressHtml(postContent)
 
   const metaData = {
@@ -44,6 +43,15 @@ export const fromWordPressHtml = (postContent: string) => {
   return pretty(
     postContent
       .split(/\n\n|\r\n\r\n/)
+      .map((s) => {
+        const matches = s.match(/"(http[^"]+)"/)
+        if (matches && matches[1].includes('cl.ly')) {
+          console.log('skipping image', matches[1])
+          return '<code>There was an image here that has been removed.</code>'
+        }
+        return s
+      })
+      .map((s) => s.trim())
       .map((s) => `<p>${s}</p>`)
       .join('\n')
       .replace(/http:\/\//gi, 'https://'),
