@@ -12,7 +12,7 @@ export const get = () =>
     // simple example: generate items for every md file in /src/pages
     // see "Generating items" section for required frontmatter and advanced use cases
     items: posts.map((post) => ({
-      link: post.uriId,
+      link: post.url,
       title: post.title,
       description: post.summary,
       pubDate: post.publishedDate,
