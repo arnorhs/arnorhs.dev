@@ -44,7 +44,7 @@ export const fromWordPressHtml = (postContent: string) => {
   return pretty(
     postContent
       .split(/\n\n|\r\n\r\n/)
-      .map((s) => `<div>${s}</div>`)
+      .map((s) => `<p>${s}</p>`)
       .join('\n')
       .replace(/http:\/\//gi, 'https://'),
   )
