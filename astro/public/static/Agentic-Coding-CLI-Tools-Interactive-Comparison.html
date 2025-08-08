@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- This was generated using Google Gemini's web UI -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agentic Coding CLI Tools: An Interactive Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page dashboard application with tab-based navigation. This structure was chosen to allow users to easily switch between different views of the data (high-level overview, deep-dive profiles, direct comparison) without losing context. The flow is designed to guide the user from a broad market understanding (Overview), to specific tool details (Tool Profiles), to a multi-faceted comparison (Feature Comparison & Recommendations). This non-linear exploration is more effective for a comparative report than a simple linear document. -->
+    <!-- Visualization & Content Choices:
+        1. Report Info: Overall tool characteristics -> Goal: Compare -> Viz/Method: Radar Chart -> Interaction: Toggle tools on/off -> Justification: Provides an immediate, multi-axis visual summary of each tool's strategic strengths and weaknesses, which is more impactful than reading paragraphs of text. Library: Chart.js.
+        2. Report Info: Feature Matrix -> Goal: Compare -> Viz/Method: Interactive HTML Table -> Interaction: Filter columns by selecting tools -> Justification: The full report matrix is too dense. A filterable table allows users to create focused, side-by-side comparisons of only the tools they are interested in, dramatically improving usability. Library: Vanilla JS.
+        3. Report Info: Tool Profiles -> Goal: Inform -> Viz/Method: Tabbed content layout -> Interaction: Click tool name to view its detailed profile -> Justification: Organizes the large amount of information for each tool into a clean, single-view layout, preventing overwhelming scrolling and making information easy to locate. Library: Vanilla JS.
+        4. Report Info: Recommendations -> Goal: Guide -> Viz/Method: Interactive Cards -> Interaction: Click persona to reveal recommendations -> Justification: A more engaging and task-oriented way to present recommendations than a static list. Library: Vanilla JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f7f4;
+        color: #2d3748;
+      }
+      .font-mono {
+        font-family: 'Roboto Mono', monospace;
+      }
+      .nav-link {
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+      .nav-link.active {
+        border-bottom-color: #4a90e2;
+        color: #4a90e2;
+      }
+      .chart-container {
+        position: relative;
+        margin: auto;
+        height: 50vh;
+        max-height: 450px;
+        width: 100%;
+        max-width: 700px;
+      }
+      .feature-table th,
+      .feature-table td {
+        transition: all 0.3s ease;
+      }
+      .tool-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .persona-card {
+        perspective: 1000px;
+      }
+      .persona-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .persona-card.is-flipped .persona-card-inner {
+        transform: rotateY(180deg);
+      }
+      .persona-card-front,
+      .persona-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .persona-card-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">
+          Agentic Coding CLI Tools
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          An interactive analysis of the next generation of AI-powered developer tools.
+        </p>
+      </header>
+
+      <nav class="flex justify-center border-b border-gray-200 mb-12">
+        <a
+          href="#overview"
+          class="nav-link active text-gray-500 hover:text-gray-800 py-4 px-6 block font-medium text-lg"
+          >Overview</a
+        >
+        <a
+          href="#profiles"
+          class="nav-link text-gray-500 hover:text-gray-800 py-4 px-6 block font-medium text-lg"
+          >Tool Profiles</a
+        >
+        <a
+          href="#comparison"
+          class="nav-link text-gray-500 hover:text-gray-800 py-4 px-6 block font-medium text-lg"
+          >Feature Comparison</a
+        >
+        <a
+          href="#recommendations"
+          class="nav-link text-gray-500 hover:text-gray-800 py-4 px-6 block font-medium text-lg"
+          >Recommendations</a
+        >
+      </nav>
+
+      <main>
+        <section id="overview" class="content-section">
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Market at a Glance</h2>
+            <p class="text-center text-gray-600 mb-10">
+              The agentic CLI market is rapidly evolving, with tools moving beyond simple code
+              completion to become active partners in the development lifecycle. This application
+              provides an interactive way to explore the key players, their philosophies, and their
+              core capabilities. The chart below offers a high-level visual comparison across key
+              strategic dimensions, providing an immediate sense of each tool's market position and
+              core strengths.
+            </p>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="chart-container">
+                <canvas id="radarChart"></canvas>
+              </div>
+              <div id="radar-legend" class="flex flex-wrap justify-center gap-4 mt-6"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="profiles" class="content-section hidden">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
+              In-Depth Tool Profiles
+            </h2>
+            <p class="text-center text-gray-600 mb-10">
+              Dive deep into the specifics of each tool. Select a tool from the list to view a
+              detailed breakdown of its identity, features, context handling, ecosystem integration,
+              and pricing model. This section allows for a focused study of each competitor's
+              offerings, based on the comprehensive analysis in the source report.
+            </p>
+            <div class="flex flex-col md:flex-row gap-8">
+              <aside class="md:w-1/4">
+                <ul id="tool-selector" class="space-y-2"></ul>
+              </aside>
+              <div id="tool-details" class="md:w-3/4 bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                <p class="text-gray-500 text-center h-full flex items-center justify-center">
+                  Select a tool to see the details.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="comparison" class="content-section hidden">
+          <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
+              Side-by-Side Feature Comparison
+            </h2>
+            <p class="text-center text-gray-600 mb-10">
+              The feature matrix from the report is dense. Use this interactive version to create a
+              targeted comparison. Select the tools you're most interested in to generate a custom,
+              side-by-side view of their features. This makes it easy to evaluate specific
+              capabilities across your shortlist of potential tools.
+            </p>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <div class="mb-6">
+                <h3 class="text-lg font-semibold mb-2">Filter Tools:</h3>
+                <div id="tool-filter-checkboxes" class="flex flex-wrap gap-x-6 gap-y-2"></div>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 feature-table">
+                  <thead
+                    id="feature-table-head"
+                    class="text-xs text-gray-700 uppercase bg-gray-50"
+                  ></thead>
+                  <tbody id="feature-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="recommendations" class="content-section hidden">
+          <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
+              Recommendations by Persona
+            </h2>
+            <p class="text-center text-gray-600 mb-10">
+              Which tool is right for you? The best choice depends on your specific needs and
+              context. Click on a persona card below to see tailored recommendations based on the
+              report's strategic analysis. This helps translate the detailed comparison into
+              actionable advice for different types of users and teams.
+            </p>
+            <div id="persona-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const appData = {
+        tools: {
+          'gemini-cli': {
+            name: 'gemini-cli',
+            fullName: 'Google gemini-cli',
+            logoColor: '#4285F4',
+            profile: {
+              'Identity & Philosophy':
+                'An open-source AI agent from Google, designed as a versatile and extensible foundation for AI-assisted development. It aims to be a central component in the Google Cloud ecosystem through a generous free tier and deep GitHub Actions integration.',
+              'Core Capabilities':
+                'Performs complex, multi-step tasks on large codebases. Features built-in tools for file operations, shell commands, and web search. A standout feature is its ability to process multimodal inputs like PDFs and sketches to generate applications.',
+              'Context Handling':
+                'Leverages the massive 1 million token context window of Gemini 2.5 Pro. Uses a `GEMINI.md` file for persistent project context and supports the Model Context Protocol (MCP) to pull in data from external sources.',
+              'Ecosystem & Git Integration':
+                'Its primary strategic advantage is deep, seamless integration with GitHub via the `run-gemini-cli` GitHub Action for automated issue triage and PR reviews. Developers can also interact with the agent directly in GitHub comments.',
+              'Pricing & Licensing':
+                'Open-source with one of the most generous free tiers (1,000 requests/day). Pay-as-you-go and Enterprise subscription models are also available for higher limits and additional features.',
+            },
+          },
+          'cursor-cli': {
+            name: 'cursor-cli',
+            fullName: 'Cursor CLI',
+            logoColor: '#1a1a1a',
+            profile: {
+              'Identity & Philosophy':
+                "The command-line interface for the Cursor AI Code Editor. It's a strategic extension of the IDE, designed to bring Cursor's agentic power to any terminal or third-party editor, emphasizing flexibility and preventing vendor lock-in.",
+              'Core Capabilities':
+                'Its most significant feature is multi-model support, allowing users to switch between models from OpenAI, Anthropic, Google, and others. It operates in both interactive and non-interactive modes, suitable for development and CI/CD pipelines.',
+              'Context Handling':
+                'Employs automatic context retrieval to find relevant files. Allows precise manual context via `@` symbols (`@file`, `@code`, `@Git`). Supports persistent context via `AGENTS.md` and can connect to external tools like Jira or Confluence via MCP.',
+              'Ecosystem & Git Integration':
+                'Designed for interoperability, it works within the integrated terminal of any IDE (VSCode, JetBrains). While it uses Git for context, its deeper Git workflow features (like AI commit messages) are part of the main GUI application.',
+              'Pricing & Licensing':
+                'Proprietary software, currently in Beta. Access is included with a Cursor subscription, with tiered plans (Pro, Pro+, Ultra) based on agent usage levels. Enterprise plans with SOC 2 certification are available.',
+            },
+          },
+          'claude-code': {
+            name: 'claude-code',
+            fullName: 'Anthropic claude code',
+            logoColor: '#D97706',
+            profile: {
+              'Identity & Philosophy':
+                "A premium, terminal-native agent for professional and enterprise teams. Rooted in Unix philosophy, it's a powerful, composable, and 'unopinionated' utility that prioritizes flexibility, safety, and deep codebase understanding.",
+              'Core Capabilities':
+                "Features sophisticated agency, including 'extended thinking' to allocate more computation to complex problems and the ability to delegate tasks to specialized 'subagents'. It excels at multi-file edits and conversational Git operations.",
+              'Context Handling':
+                'Uses a `CLAUDE.md` file for persistent context. The `/compact` command intelligently summarizes long conversations to manage the context window. It fully supports MCP for connecting to external data sources like Google Drive.',
+              'Ecosystem & Git Integration':
+                'Offers deep, conversational control over Git. Provides robust GitHub Actions integration, allowing developers to trigger the agent from issues and PRs to perform reviews or implement features. Integrates directly with VS Code and JetBrains.',
+              'Pricing & Licensing':
+                'A premium, proprietary tool. Access is typically via a Claude Pro or Max subscription, or on a pay-as-you-go basis via the Anthropic API. It can also be deployed on enterprise cloud platforms like AWS Bedrock and Vertex AI.',
+            },
+          },
+          'qwen-code': {
+            name: 'qwen-code',
+            fullName: 'Alibaba qwen-code',
+            logoColor: '#FF6A00',
+            profile: {
+              'Identity & Philosophy':
+                "An open-source AI tool from Alibaba Cloud, explicitly positioned as a strategic adaptation of Google's `gemini-cli`. It leverages the proven framework but is specialized to showcase Alibaba's high-performance Qwen-Coder models.",
+              'Core Capabilities':
+                'Inherits the core agentic loop and capabilities of `gemini-cli`. The key modification is an enhanced parser and function-calling protocol optimized for Qwen models. Includes session management commands like `/compress` to manage token costs.',
+              'Context Handling':
+                'Designed to be paired with Qwen models that have massive context windows (up to 1M tokens). Context can be enhanced with MCP plugins, such as connecting to a vector database for semantic codebase search.',
+              'Ecosystem & Git Integration':
+                'Focuses on local, CLI-driven workflows. Comes with pre-defined prompts for Git automation, such as generating changelogs or creating GitHub issues from `TODO` comments in the code. Lacks the event-driven GitHub Actions of its competitors.',
+              'Pricing & Licensing':
+                'Open-source (Apache-2.0 license). The tool is free, with costs incurred from API calls to the backend model provider. Free tiers are available through services like OpenRouter, with the primary model being pay-as-you-go.',
+            },
+          },
+          'openai-codex-cli': {
+            name: 'openai-codex-cli',
+            fullName: 'OpenAI codex cli',
+            logoColor: '#4CAF50',
+            profile: {
+              'Identity & Philosophy':
+                "OpenAI's official open-source, terminal-native agent. It's distinct from the cloud-based 'Codex' agent. Its philosophy prioritizes security through robust sandboxing, user control via explicit approvals, and deep integration with local Git as a safety net.",
+              'Core Capabilities':
+                'Its key differentiator is a rich approval workflow with three modes: `Suggest` (safest), `Auto Edit`, and `Full Auto`. In `Full Auto` mode, all actions are confined to a network-disabled, OS-native sandbox for security. Supports multimodal input like screenshots.',
+              'Context Handling':
+                'Uses a layered system of `codex.md` files for context (global, repository-level, and directory-level). A core tenet is privacy: user source code never leaves the local environment; only prompts and metadata are sent to the API.',
+              'Ecosystem & Git Integration':
+                'Built with deep, intrinsic awareness of Git. It warns the user if they try to use autonomous modes outside a Git repository, treating version control as an essential safety mechanism. Its integration is focused on the local repo, not cloud-based GitHub Actions.',
+              'Pricing & Licensing':
+                'Open-source. A major advantage is its pricing model: usage is included at no extra cost for users with a paid ChatGPT (Plus, Pro, Team) subscription. A standard pay-as-you-go model is also available.',
+            },
+          },
+          'open-code': {
+            name: 'open-code',
+            fullName: 'SST open code',
+            logoColor: '#6366F1',
+            profile: {
+              'Identity & Philosophy':
+                "A fully open-source, terminal-based agent that champions provider agnosticism and user freedom. It's a community-driven alternative to proprietary tools, differentiating itself with a rich Terminal User Interface (TUI) and support for local models.",
+              'Core Capabilities':
+                'Its defining feature is support for over 75 LLM providers, including full integration with Ollama for running local models (e.g., LLaMA 3) for complete privacy and zero cost. It features a sophisticated, multi-panel TUI for an IDE-like terminal experience.',
+              'Context Handling':
+                "Uses an `AGENTS.md` file for project context. Features an 'auto compact' capability that automatically summarizes long conversations to manage the context window. All session data is stored locally in an SQLite database.",
+              'Ecosystem & Git Integration':
+                'Offers a full-featured GitHub integration via a GitHub App, allowing the agent to be invoked from issues and PRs. The TUI has built-in Git awareness, allowing users to view diffs, stage, and commit changes made by the AI directly.',
+              'Pricing & Licensing':
+                "100% open-source and free to use. All costs are determined by the user's choice of backend LLM provider. When used with a local Ollama model, the entire workflow is completely free.",
+            },
+          },
+        },
+        radarData: {
+          labels: [
+            'Provider Agnosticism',
+            'Local Model Support',
+            'GitHub Actions',
+            'Security Focus',
+            'Free Tier Generosity',
+            'Extensibility',
+          ],
+          datasets: [
+            {
+              label: 'gemini-cli',
+              data: [1, 1, 5, 3, 5, 4],
+              backgroundColor: 'rgba(66, 133, 244, 0.2)',
+              borderColor: '#4285F4',
+              pointBackgroundColor: '#4285F4',
+            },
+            {
+              label: 'cursor-cli',
+              data: [4, 1, 1, 3, 1, 3],
+              backgroundColor: 'rgba(26, 26, 26, 0.2)',
+              borderColor: '#1a1a1a',
+              pointBackgroundColor: '#1a1a1a',
+            },
+            {
+              label: 'claude code',
+              data: [1, 1, 5, 4, 1, 5],
+              backgroundColor: 'rgba(217, 119, 6, 0.2)',
+              borderColor: '#D97706',
+              pointBackgroundColor: '#D97706',
+            },
+            {
+              label: 'qwen code',
+              data: [1, 1, 1, 3, 3, 1],
+              backgroundColor: 'rgba(255, 106, 0, 0.2)',
+              borderColor: '#FF6A00',
+              pointBackgroundColor: '#FF6A00',
+            },
+            {
+              label: 'openai codex cli',
+              data: [1, 1, 1, 5, 4, 1],
+              backgroundColor: 'rgba(76, 175, 80, 0.2)',
+              borderColor: '#4CAF50',
+              pointBackgroundColor: '#4CAF50',
+            },
+            {
+              label: 'open code',
+              data: [5, 5, 4, 4, 5, 4],
+              backgroundColor: 'rgba(99, 102, 241, 0.2)',
+              borderColor: '#6366F1',
+              pointBackgroundColor: '#6366F1',
+            },
+          ],
+        },
+        featureMatrix: {
+          headers: ['Feature Category', 'Feature'],
+          rows: [
+            {
+              category: 'Core Identity',
+              feature: 'Primary Nature',
+              values: [
+                'Google ecosystem agent',
+                'CLI for Cursor IDE',
+                'Premium enterprise utility',
+                'Agent for Qwen models',
+                'Security-focused local agent',
+                'Provider-agnostic TUI agent',
+              ],
+            },
+            {
+              category: 'Core Identity',
+              feature: 'Licensing',
+              values: [
+                'Open Source',
+                'Proprietary',
+                'Proprietary',
+                'Apache-2.0',
+                'Open Source',
+                'Open Source',
+              ],
+            },
+            {
+              category: 'Model Access',
+              feature: 'Provider Agnostic?',
+              values: [
+                'No (Google only)',
+                'Yes (Multi-provider)',
+                'No (Anthropic only)',
+                'No (Qwen providers)',
+                'No (OpenAI only)',
+                'Yes (75+ providers)',
+              ],
+            },
+            {
+              category: 'Model Access',
+              feature: 'Local Model Support',
+              values: ['No', 'No', 'No', 'No', 'No', 'Yes (via Ollama)'],
+            },
+            {
+              category: 'Context Handling',
+              feature: 'Context Files',
+              values: [
+                '`GEMINI.md`',
+                '`AGENTS.md`',
+                '`CLAUDE.md`',
+                '`.qwen/settings.json`',
+                'Layered `codex.md`',
+                '`AGENTS.md`',
+              ],
+            },
+            {
+              category: 'Context Handling',
+              feature: 'Context Summarization',
+              values: [
+                'No',
+                'No',
+                '`/compact` command',
+                '`/compress` command',
+                'No',
+                'Auto-compact feature',
+              ],
+            },
+            {
+              category: 'Git & GitHub',
+              feature: 'GitHub Actions',
+              values: ['Yes', 'No', 'Yes', 'No', 'No', 'Yes'],
+            },
+            {
+              category: 'Extensibility',
+              feature: 'Plugin Protocol',
+              values: ['MCP', 'MCP', 'MCP', 'MCP', 'No', 'MCP, LSP'],
+            },
+            {
+              category: 'Security/Privacy',
+              feature: 'Sandboxing',
+              values: [
+                'GH Action containers',
+                'Not specified',
+                'Not specified',
+                'Not specified',
+                'Yes (OS-native)',
+                'Not specified',
+              ],
+            },
+            {
+              category: 'Security/Privacy',
+              feature: 'Local Data Policy',
+              values: [
+                'Code not uploaded',
+                'Not specified',
+                'Code not uploaded',
+                'Not specified',
+                'Code not uploaded',
+                '100% local with Ollama',
+              ],
+            },
+            {
+              category: 'Pricing',
+              feature: 'Free Tier',
+              values: [
+                'Yes (very generous)',
+                'No (needs Pro plan)',
+                'No (needs Pro plan)',
+                'Yes (via 3rd party)',
+                'Yes (with ChatGPT sub)',
+                'Yes (tool & local models)',
+              ],
+            },
+          ],
+          toolOrder: [
+            'gemini-cli',
+            'cursor-cli',
+            'claude-code',
+            'qwen-code',
+            'openai-codex-cli',
+            'open-code',
+          ],
+        },
+        personas: [
+          {
+            name: 'The Enterprise Team',
+            icon: '🏢',
+            frontText:
+              'Seeking robust, scalable, and secure solutions for professional development workflows.',
+            recommendations: [
+              {
+                tool: 'claude-code',
+                reason:
+                  'Unparalleled agentic sophistication, advanced security, and deployment options on AWS/GCP make it ideal for complex, bespoke automation.',
+              },
+              {
+                tool: 'gemini-cli',
+                reason:
+                  'A compelling, cost-effective package for teams in the Google ecosystem, with a powerful free tier for adoption and robust GitHub Actions.',
+              },
+            ],
+          },
+          {
+            name: 'The Individual Pro',
+            icon: '🧑‍💻',
+            frontText:
+              'A developer who values flexibility, power, and seamless integration into their personal workflow.',
+            recommendations: [
+              {
+                tool: 'cursor-cli',
+                reason:
+                  'Perfect for bridging a GUI and the terminal. Its ability to switch between top-tier models from multiple providers is a significant advantage.',
+              },
+              {
+                tool: 'openai-codex-cli',
+                reason:
+                  'An exceptional value for ChatGPT subscribers, providing a powerful, highly secure, and locally-run tool with no additional fees.',
+              },
+            ],
+          },
+          {
+            name: 'The FOSS Contributor',
+            icon: '❤️',
+            frontText:
+              'A hobbyist or contributor who prioritizes open-source principles, community, and cost control.',
+            recommendations: [
+              {
+                tool: 'open-code',
+                reason:
+                  'The definitive choice for FOSS enthusiasts. Provider-agnostic, supports local models, and offers complete freedom from vendor lock-in.',
+              },
+              {
+                tool: 'gemini-cli',
+                reason:
+                  'Its incredibly generous free tier makes it one of the most powerful and feature-rich coding agents available at no cost.',
+              },
+            ],
+          },
+          {
+            name: 'The Security-Conscious Dev',
+            icon: '🔒',
+            frontText:
+              'A developer working on sensitive or proprietary code where security and data privacy are paramount.',
+            recommendations: [
+              {
+                tool: 'openai-codex-cli',
+                reason:
+                  'Offers the most robust security model of any cloud-connected tool, with explicit approval modes and OS-native sandboxing.',
+              },
+              {
+                tool: 'open-code',
+                reason:
+                  'Paired with a local Ollama model, it provides a completely offline, air-gapped solution, ensuring no code ever leaves the local machine.',
+              },
+            ],
+          },
+        ],
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link')
+        const contentSections = document.querySelectorAll('.content-section')
+        let radarChart
+
+        function navigateTo(hash) {
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.hash === hash)
+          })
+          contentSections.forEach((section) => {
+            section.classList.toggle('hidden', section.id !== hash.substring(1))
+          })
+        }
+
+        navLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault()
+            history.pushState(null, '', e.currentTarget.href)
+            navigateTo(e.currentTarget.hash)
+          })
+        })
+
+        window.addEventListener('popstate', () => {
+          navigateTo(window.location.hash || '#overview')
+        })
+
+        function setupRadarChart() {
+          const ctx = document.getElementById('radarChart').getContext('2d')
+          radarChart = new Chart(ctx, {
+            type: 'radar',
+            data: appData.radarData,
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: false,
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function (context) {
+                      let label = context.dataset.label || ''
+                      if (label) {
+                        label += ': '
+                      }
+                      if (context.parsed.r !== null) {
+                        label += context.parsed.r
+                      }
+                      return label
+                    },
+                  },
+                },
+              },
+              scales: {
+                r: {
+                  angleLines: {
+                    color: '#e2e8f0',
+                  },
+                  grid: {
+                    color: '#e2e8f0',
+                  },
+                  pointLabels: {
+                    font: {
+                      size: 12,
+                      weight: '500',
+                    },
+                    color: '#4a5568',
+                  },
+                  ticks: {
+                    backdropColor: 'transparent',
+                    stepSize: 1,
+                    font: {
+                      size: 10,
+                    },
+                  },
+                  suggestedMin: 0,
+                  suggestedMax: 5,
+                },
+              },
+            },
+          })
+
+          const legendContainer = document.getElementById('radar-legend')
+          appData.radarData.datasets.forEach((dataset, index) => {
+            const legendItem = document.createElement('div')
+            legendItem.classList.add('flex', 'items-center', 'cursor-pointer')
+            legendItem.innerHTML = `
+                        <div class="w-4 h-4 rounded-full mr-2" style="background-color: ${dataset.borderColor}"></div>
+                        <span class="text-sm font-medium text-gray-700">${dataset.label}</span>
+                    `
+            legendItem.onclick = () => {
+              const meta = radarChart.getDatasetMeta(index)
+              meta.hidden = !meta.hidden
+              legendItem.classList.toggle('opacity-50', meta.hidden)
+              radarChart.update()
+            }
+            legendContainer.appendChild(legendItem)
+          })
+        }
+
+        function setupToolProfiles() {
+          const selector = document.getElementById('tool-selector')
+          const detailsContainer = document.getElementById('tool-details')
+
+          Object.keys(appData.tools).forEach((toolKey) => {
+            const tool = appData.tools[toolKey]
+            const li = document.createElement('li')
+            const button = document.createElement('button')
+            button.classList.add(
+              'w-full',
+              'text-left',
+              'p-3',
+              'rounded-md',
+              'hover:bg-gray-100',
+              'focus:outline-none',
+              'focus:ring-2',
+              'focus:ring-offset-2',
+              'focus:ring-blue-500',
+              'transition-colors',
+              'tool-selector-btn',
+              'flex',
+              'items-center',
+              'gap-3',
+            )
+            button.dataset.toolId = toolKey
+            button.innerHTML = `
+                        <span class="w-5 h-5 rounded-full" style="background-color: ${tool.logoColor};"></span>
+                        <span class="font-medium">${tool.fullName}</span>
+                    `
+            button.addEventListener('click', () => {
+              document
+                .querySelectorAll('.tool-selector-btn')
+                .forEach((btn) => btn.classList.remove('bg-blue-100', 'text-blue-700'))
+              button.classList.add('bg-blue-100', 'text-blue-700')
+              renderToolDetails(toolKey)
+            })
+            li.appendChild(button)
+            selector.appendChild(li)
+          })
+
+          function renderToolDetails(toolKey) {
+            const tool = appData.tools[toolKey]
+            if (!tool) {
+              console.error('Tool not found for key:', toolKey)
+              return
+            }
+            let detailsHtml = `<h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-3">
+                        <span class="w-6 h-6 rounded-full" style="background-color: ${tool.logoColor};"></span>
+                        ${tool.fullName}
+                    </h3><div class="space-y-6">`
+            for (const [key, value] of Object.entries(tool.profile)) {
+              detailsHtml += `
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-700 mb-2">${key}</h4>
+                                <p class="text-gray-600 leading-relaxed">${value}</p>
+                            </div>
+                        `
+            }
+            detailsHtml += '</div>'
+            detailsContainer.innerHTML = detailsHtml
+          }
+        }
+
+        function setupComparisonTable() {
+          const checkboxesContainer = document.getElementById('tool-filter-checkboxes')
+          const tableHead = document.getElementById('feature-table-head')
+          const tableBody = document.getElementById('feature-table-body')
+          const toolKeys = appData.featureMatrix.toolOrder
+          let selectedTools = [...toolKeys]
+
+          toolKeys.forEach((key) => {
+            const tool = appData.tools[key]
+            const label = document.createElement('label')
+            label.classList.add('flex', 'items-center', 'space-x-2', 'cursor-pointer')
+            label.innerHTML = `
+                        <input type="checkbox" data-tool="${key}" class="form-checkbox h-5 w-5 rounded text-blue-600 focus:ring-blue-500" checked>
+                        <span class="text-sm">${tool.fullName}</span>
+                    `
+            checkboxesContainer.appendChild(label)
+          })
+
+          checkboxesContainer.addEventListener('change', (e) => {
+            if (e.target.type === 'checkbox') {
+              selectedTools = Array.from(checkboxesContainer.querySelectorAll('input:checked')).map(
+                (cb) => cb.dataset.tool,
+              )
+              renderTable()
+            }
+          })
+
+          function renderTable() {
+            const selectedIndices = selectedTools.map((tool) => toolKeys.indexOf(tool))
+
+            let headHtml = '<tr>'
+            appData.featureMatrix.headers.forEach((header) => {
+              headHtml += `<th scope="col" class="py-3 px-6">${header}</th>`
+            })
+            selectedTools.forEach((key) => {
+              const tool = appData.tools[key]
+              headHtml += `<th scope="col" class="py-3 px-6 text-center">${tool.fullName}</th>`
+            })
+            headHtml += '</tr>'
+            tableHead.innerHTML = headHtml
+
+            let bodyHtml = ''
+            let currentCategory = ''
+            appData.featureMatrix.rows.forEach((row) => {
+              if (row.category !== currentCategory) {
+                currentCategory = row.category
+                bodyHtml += `<tr class="bg-white border-b"><td colspan="${
+                  2 + selectedTools.length
+                }" class="py-3 px-6 font-bold text-gray-900 bg-gray-50">${currentCategory}</td></tr>`
+              }
+              bodyHtml += `<tr class="bg-white border-b hover:bg-gray-50">
+                            <td class="py-4 px-6" colspan="2">${row.feature}</td>`
+
+              selectedIndices.forEach((index) => {
+                const value = row.values[index]
+                let cellContent = value.replace(
+                  /`([^`]+)`/g,
+                  '<code class="font-mono text-xs bg-gray-200 text-gray-800 rounded px-1 py-0.5">$1</code>',
+                )
+                bodyHtml += `<td class="py-4 px-6 text-center">${cellContent}</td>`
+              })
+              bodyHtml += `</tr>`
+            })
+            tableBody.innerHTML = bodyHtml
+          }
+          renderTable()
+        }
+
+        function setupPersonas() {
+          const grid = document.getElementById('persona-grid')
+          appData.personas.forEach((persona) => {
+            const card = document.createElement('div')
+            card.classList.add('persona-card', 'h-64', 'cursor-pointer')
+            card.innerHTML = `
+                        <div class="persona-card-inner">
+                            <div class="persona-card-front">
+                                <span class="text-5xl mb-4">${persona.icon}</span>
+                                <h3 class="text-xl font-bold text-gray-800">${persona.name}</h3>
+                                <p class="text-gray-600 text-center mt-2">${persona.frontText}</p>
+                                <p class="text-xs text-gray-400 mt-4">(Click to see recommendations)</p>
+                            </div>
+                            <div class="persona-card-back items-start text-left">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">${
+                                  persona.name
+                                }</h3>
+                                <ul class="space-y-3 text-sm">
+                                    ${persona.recommendations
+                                      .map((rec) => {
+                                        const toolKey = rec.tool.replace(/\s+/g, '-').toLowerCase()
+                                        const tool = appData.tools[toolKey]
+                                        return `
+                                            <li>
+                                                <strong class="text-gray-900">${
+                                                  tool ? tool.fullName : rec.tool
+                                                }:</strong>
+                                                <span class="text-gray-600">${rec.reason}</span>
+                                            </li>
+                                        `
+                                      })
+                                      .join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `
+            card.addEventListener('click', () => card.classList.toggle('is-flipped'))
+            grid.appendChild(card)
+          })
+        }
+
+        setupRadarChart()
+        setupToolProfiles()
+        setupComparisonTable()
+        setupPersonas()
+
+        navigateTo(window.location.hash || '#overview')
+      })
+    </script>
+  </body>
+</html>
