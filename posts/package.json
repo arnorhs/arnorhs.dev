@@ -21,7 +21,8 @@
     }
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --run",
+    "typecheck": "tsc --noEmit",
     "build": "vite build"
   },
   "devDependencies": {

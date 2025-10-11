@@ -1,19 +1,19 @@
 import { transformMd } from './markdown'
-import { resolvePath, readDir, readFile } from './util'
 import { marked } from 'marked'
 import { sortBy } from './sortBy'
 import type { Post } from '../lib/types'
+import path from 'node:path'
+import { readdir, readFile } from 'node:fs/promises'
 
-// jeez.. rollup please save me
-const rootDir = resolvePath(__dirname, __filename.endsWith('.ts') ? '../..' : '..')
-
-const markdownPath = resolvePath(rootDir, 'content/md')
+const markdownPath = path.resolve(process.cwd(), 'content/md')
 const utf8 = { encoding: 'utf-8' as BufferEncoding }
 
 const getMarkdownPosts = async (): Promise<Post[]> => {
-  const x = await import('yaml-front-matter')
-  const loadFront = x.default.loadFront
-  const files = await readDir(markdownPath, {
+  const {
+    default: { loadFront },
+  } = await import('yaml-front-matter')
+
+  const files = await readdir(markdownPath, {
     encoding: 'utf-8',
     recursive: true,
   })
@@ -32,7 +32,7 @@ const getMarkdownPosts = async (): Promise<Post[]> => {
       const { __content, ...frontmatter } = loadFront(contents)
 
       return {
-        filename: fn,
+        filename: path.basename(fn),
         html: marked.parse(__content),
         metadata: frontmatter,
       }

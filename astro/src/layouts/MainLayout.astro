@@ -1,10 +1,10 @@
 ---
-import '../styles/global.css'
+import '../styles/fonts.css'
+import '../styles/styles.css'
 import { pages } from '../lib/data/pages'
 import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
-import PreloadLinks from '../components/PreloadLinks.astro'
 import Favicon from '../components/meta/Favicon.astro'
 
 export interface Props {
@@ -60,12 +60,7 @@ const dtUpdated = new Date().toISOString()
 
     <Favicon />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div class="px-4 sm:px-8 lg:px-0">
@@ -102,13 +97,5 @@ const dtUpdated = new Date().toISOString()
         </Container>
       </footer>
     </div>
-
-    <PreloadLinks />
-    <script
-      async
-      defer
-      data-website-id="32a08c5e-7ba7-46c0-ae6d-cf98a5b41582"
-      src="https://app.usehardal.com/hardal.js"
-    ></script>
   </body>
 </html>

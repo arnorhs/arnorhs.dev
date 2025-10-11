@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
 import { getAllPosts } from '@arnorhs/posts'
 import fs from 'fs/promises'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,11 +13,6 @@ export default defineConfig({
   site: 'https://arnorhs.dev',
   integrations: [
     sitemap(),
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
     {
       name: 'redirects',
       hooks: {
@@ -32,16 +27,14 @@ export default defineConfig({
     },
   ],
   vite: {
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (id.endsWith('.css')) {
-              return 'styles'
-            }
-          },
-        },
-      },
-    },
+    plugins: [
+      // @ts-expect-error - I don't know why
+      tailwindcss({
+        content: [
+          './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}',
+          // Add any other paths where you use Tailwind classes
+        ],
+      }),
+    ],
   },
 })

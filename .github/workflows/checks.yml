@@ -1,0 +1,36 @@
+name: checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main, master]
+
+jobs:
+  checks:
+    name: CI checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+      - id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+          key: global-cache
+      - name: Install dependencies (yarn)
+        run: yarn install --frozen-lockfile
+      - name: Prettier format check
+        run: yarn prettier --check .
+      - name: Turbo typecheck
+        run: yarn turbo typecheck
+      - name: Turbo test
+        run: yarn turbo test
+      - name: Turbo build
+        run: yarn turbo build

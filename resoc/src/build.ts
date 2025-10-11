@@ -26,6 +26,8 @@ const compileTemplateWithData = async (imgUrl, title: string) => {
 
 export const build = async (DEBUG: boolean, dest: string) => {
   const ogDir = resolve(process.cwd(), dest)
+
+  await mkdir(ogDir, { recursive: true })
   const allItems = getAllPosts()
 
   try {
