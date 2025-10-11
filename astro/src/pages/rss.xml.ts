@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss'
-import { getAllPosts } from 'src/lib'
+import { getAllPosts } from '@arnorhs/posts'
 
-const posts = await getAllPosts()
+const posts = getAllPosts()
 
 export const get = () =>
   rss({

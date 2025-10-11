@@ -3,7 +3,8 @@ import MainLayout from '../layouts/MainLayout.astro'
 import PostPreview from '../components/PostPreview.astro'
 import Heading from '../components/Heading.astro'
 import Card from '../components/Card.astro'
-import { dateFormat, getAllGroupedPosts } from '../lib/'
+import { getAllGroupedPosts } from '@arnorhs/posts'
+import { dateFormat } from '../lib/dateFormat'
 
 const groupedPosts = await getAllGroupedPosts()
 ---

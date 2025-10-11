@@ -1,0 +1,11 @@
+---
+title: "Jason Nation - e-mail newsletters still have value"
+summary: "I thought e-mail newsletters were, in essence, dead. I thought no \\*real\\* value could be derived from them any more. I subscribe to a few e-mail newsletters. Mostly of blogs and companies/services that I use. Some of them are annoying, some of them are sometimes useful, but I don't really remember learning anything useful from an e-mail newsletter. Untill today."
+date: 2010-07-02
+---
+
+I thought e-mail newsletters were, in essence, dead. I thought no \*real\* value could be derived from them any more. I subscribe to a few e-mail newsletters. Mostly of blogs and companies/services that I use. Some of them are annoying, some of them are sometimes useful, but I don't really remember learning anything useful from an e-mail newsletter. Untill today.
+
+### Enter "Jason Nation"
+
+I subscribed the other day to Jason Calacanis' newsletter, [Jason Nation](https://jasonnation.com/mailman/listinfo/jasons-list). He has sent out a few semi-interesting things. A Facebook rant etc. but yesterday he sent out a really long e-mail with helpful tips on how to get angel investors. I read every word of it and despite it's length, it was really informative, helpful and I've actually saved it as a Google Document just to make sure I can always get to it. This has also made me reevaluate what value can be derived from e-mail. I've always assumed that people don't want to read e-mail and that e-mail is obtrusive and annoying. Well, maybe that's because nobody ever sends anything helpful out by e-mail! E-mail newsletters are always aimed at you clicking something and going somewhere else. The end objective/goal is never in the e-mail itself, so you logically get to the conclusion that e-mail has no value. If you are interested in startups, investing, poker, the internet, etc, you should subscribe to this e-mail newsletter NOW. [Subscribe to the Jason Nation newsletter](https://jasonnation.com/mailman/listinfo/jasons-list)

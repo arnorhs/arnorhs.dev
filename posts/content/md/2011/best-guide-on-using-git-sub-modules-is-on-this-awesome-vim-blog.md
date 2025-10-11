@@ -1,0 +1,7 @@
+---
+title: "Best guide on using git sub modules is on this awesome vim blog"
+summary: "I found this blog the other day when trying to brush up on my vim knowledge. I'm getting tired of my editor situation (Long story, used to be a scite man, migrated to e-text editor, then to notepad plus plus, all horrible) and wanted a refresh. Anyways, I was going to start to use pathogen, which is a vim plugin that makes it a bit more easy to manage a few vim plugins (so, a \"meta\" plugin) when I ran into this tutorial:"
+date: 2011-05-28
+---
+
+I found this blog the other day when trying to brush up on my vim knowledge. I'm getting tired of my editor situation (Long story, used to be a scite man, migrated to e-text editor, then to notepad plus plus, all horrible) and wanted a refresh. Anyways, I was going to start to use pathogen, which is a vim plugin that makes it a bit more easy to manage a few vim plugins (so, a "meta" plugin) when I ran into this tutorial: [Synchronizing plugins with git submodules and pathogen](https://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/). Actually the best part about this tutorial is how well it explains how to use sub modules within a git repo. I had actually read up on the topic before but it seemed to be more advanced, when in fact it isn't I also love the video + text blog format for a blog like this. It's well done isn't it? Hope it helps someone else as well :)

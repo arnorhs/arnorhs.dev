@@ -1,2 +1,2 @@
-export * from './lib/getPostCollection'
 export * from './lib/types'
+export * from './lib/getAllPosts'

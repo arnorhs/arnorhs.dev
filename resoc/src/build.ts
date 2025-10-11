@@ -1,22 +1,14 @@
-import { getPostCollection, Post } from '@arnorhs/posts'
-import { compileLocalTemplate, compileTemplate } from '@resoc/create-img'
-import { resolve } from 'path'
-import { mkdir } from 'fs/promises'
+import { getAllPosts, type Post } from '@arnorhs/posts'
+import { compileLocalTemplate } from '@resoc/create-img'
 import { existsSync } from 'fs'
+import { mkdir } from 'fs/promises'
+import { resolve } from 'path'
 import { Templatable } from './types'
 import { colorize, ConsoleColor } from './util'
 
 const yellow = colorize(ConsoleColor.FgYellow)
 const green = colorize(ConsoleColor.FgGreen)
 const red = colorize(ConsoleColor.FgRed)
-
-const DEBUG = !!process.env.DEBUG
-const TARGET_DIR = DEBUG ? '.' : process.env.TARGET_DIR
-if (!TARGET_DIR) {
-  throw new Error('TARGET_DIR environment variable must be set when not in debug mode')
-}
-
-const ogDir = resolve(process.cwd(), '..', TARGET_DIR)
 
 const compileTemplateWithData = async (imgUrl, title: string) => {
   await compileLocalTemplate(
@@ -32,8 +24,9 @@ const compileTemplateWithData = async (imgUrl, title: string) => {
   )
 }
 
-export const build = async () => {
-  const allItems = await getPostCollection()
+export const build = async (DEBUG: boolean, dest: string) => {
+  const ogDir = resolve(process.cwd(), dest)
+  const allItems = getAllPosts()
 
   try {
     await mkdir(ogDir, { recursive: true })

@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import allPosts from './src/gen/allPosts.json'
+import { getAllPosts } from '@arnorhs/posts'
 import fs from 'fs/promises'
 
 // https://astro.build/config
@@ -22,7 +22,9 @@ export default defineConfig({
       name: 'redirects',
       hooks: {
         'astro:build:done': async ({ dir, routes }) => {
-          const str = allPosts.map((post) => `/${post.slug} /posts/${post.uriId} 301`).join('\n')
+          const str = getAllPosts()
+            .map((post) => `/${post.slug} /posts/${post.uriId} 301`)
+            .join('\n')
           await fs.writeFile(`${dir.pathname}_redirects`, str, 'utf8')
           console.log('Wrote redirects to _redirects')
         },

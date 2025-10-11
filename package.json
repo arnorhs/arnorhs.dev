@@ -4,6 +4,10 @@
   "author": "arnorhs <arnorhs@gmail.com>",
   "license": "MIT",
   "private": true,
+  "resolutions": {
+    "@types/node": "^22.18.0",
+    "typescript": "^5.9.3"
+  },
   "workspaces": [
     "astro",
     "posts",
@@ -13,11 +17,12 @@
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",
     "resoc": "yarn workspace @arnorhs/resoc",
-    "gen:posts": "TARGET_DIR=astro/src/gen yarn posts gen",
-    "build:posts": "yarn posts build",
-    "build:resoc": "TARGET_DIR=resoc/dist yarn resoc build",
     "export": "./scripts/export.sh",
-    "dev": "yarn gen:posts && yarn astro dev"
+    "dev": "yarn posts build && yarn astro dev"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/turndown": "^5.0.5",
+    "caniuse-lite": "^1.0.30001746",
+    "turndown": "^7.2.1"
+  }
 }

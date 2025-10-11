@@ -1,0 +1,7 @@
+---
+title: "Responsive Grid Framework written in Stylus for Node.js"
+summary: "I've been hooked on Node.js for the last 2-3 months. I've been doing some small projects for fun in Express, and at first I used the SASS complier that ships with Express by default. That framework is pretty limited and TJ Holowaychuk pointed me towards Stylus, a much better sass complier for Node.js. I tweeted something about Stylus a couple of days ago which resulted in a fellow countryman, named Jokull Solberg (www.solberg.is), showing me a responsive grid framework he made in Stylus."
+date: 2011-12-30
+---
+
+I've been hooked on Node.js for the last 2-3 months. I've been doing some small projects for fun in Express, and at first I used the SASS complier that ships with Express by default. That framework is pretty limited and [TJ Holowaychuk](https://twitter.com/#!/tjholowaychuk) pointed me towards [Stylus](https://learnboost.github.com/stylus/), a much better sass complier for Node.js. I tweeted something about Stylus a couple of days ago which resulted in a fellow countryman, named [Jokull Solberg](https://twitter.com/#!/jokull) ([www.solberg.is](https://www.solberg.is/)), showing me a responsive grid framework he made in Stylus. So far it's only a gist on github, but feel free to check it out: [https://gist.github.com/1501983](https://gist.github.com/1501983) So far it supports four screen sizes, but it's easy to extend.

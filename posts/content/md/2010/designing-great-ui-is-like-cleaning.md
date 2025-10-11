@@ -1,0 +1,11 @@
+---
+title: "Designing Great UI is like Cleaning"
+summary: "Usually, when you need to put something down, you just place it on the next table and don't think much about it. After a few days (or weeks/months/years) your appartment looks like shit and you have to clean it up. How do you clean? One thing at a time. So one by one you take each item lying on the floor, on a table, in a shelf and find it a new home. Sometimes you can see a pattern in all your stuff that's lying around and you might find a good place to put many of those things, like a cupboard a drawer, etc. Often you'll already have great places to put them in, so you put them there."
+date: 2010-08-13
+---
+
+_Designing and developing a UI is a lot like cleaning your apartment._ Usually, when you need to put something down, you just place it on the next table and don't think much about it. After a few days (or weeks/months/years) your appartment **looks like shit** and you have to clean it up. How do you clean? One thing at a time. So one by one you take each item lying on the floor, on a table, in a shelf and find it a new home. Sometimes you can see a **pattern** in all your stuff that's lying around and you might find a good place to put many of those things, like a cupboard a drawer, etc. Often you'll **already have** great places to put them in, so you put them there.
+
+### Things to keep, things to throw away
+
+Some things you just throw away and you know you'll never need them. Other things you'll notice that you can't find exact usage for them **right now,** but you think you'll be able to use them at a later point.  You should throw that away as well. And then there's **that thing** you've kept for 5 years and you've never ever used it, but you **really** like the **thought** of using it or the way it **looks.** You find it incredibly hard to part with this wonderful thing (even though you know, deep down, you'll never ever use it...). That is the most important thing to throw away. We all have this one thing we want to keep, but we should just throw it away.

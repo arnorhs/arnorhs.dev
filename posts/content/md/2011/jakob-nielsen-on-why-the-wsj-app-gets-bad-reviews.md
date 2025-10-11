@@ -1,0 +1,7 @@
+---
+title: "Jakob Nielsen on why the WSJ app gets bad reviews"
+summary: "Jakob Nielsen recently published this post, where he (and I guess his team) analyze why the Wall Street Journal mobile app gets such bad customer reviews. It all stems from a horrible interface where the customers are led to believe that they need to pay separately for the monthly subscription to to the mobile app, when in fact it's free for existing subscribers."
+date: 2011-07-05
+---
+
+Jakob Nielsen recently published this post, where he (and I guess his team) analyze why the Wall Street Journal mobile app gets such bad customer reviews. It all stems from a horrible interface where the customers are led to believe that they need to pay separately for the monthly subscription to to the mobile app, when in fact it's free for existing subscribers. The article also goes into details on how the app might be redesigned for improvements and gives a lot of insightful details. The results are butt-ugly (and frankly the current WSJ app design is also pretty ugly), but at least they look very usable and clear. So a decent designer should be able to take Jakob's raw design and make it more beautiful. The article is very interesting so I encourage you to read it: [Why WSJ Mobile App Gets Customer Reviews Jakob Nielsens Alertbox](https://www.useit.com/alertbox/mobile-startup-screen.html). This post was written from an airport.. Picture that.
