@@ -1,0 +1,11 @@
+---
+title: "Which Javascript Templating Engine Should You Use"
+summary: "You may know John as the author of jQuery, so this fellow really knows what he's doing when it comes to Javascript. John's templating engine is extremely fast. In fact it's the fastest of the templating engines featured on this jsPerf benchmark comparison test. What's more amazing is if you view the code behind it, it is extremely short and simple which also means that it minifizes pretty easily to just under 500 characters. That's impressive."
+date: 2011-03-23
+---
+
+Short answer: [John Resig's Javascript Micro Templating](https://ejohn.org/blog/javascript-micro-templating/). The long answer: It depends on your requirements. You may know John as the author of jQuery, so this fellow really knows what he's doing when it comes to Javascript. John's templating engine is extremely fast. In fact it's the fastest of the templating engines featured on [this jsPerf benchmark comparison test](https://jsperf.com/dom-vs-innerhtml-based-templating/112). What's more amazing is if you view the code behind it, it is extremely short and simple which also means that it minifizes pretty easily to just under 500 characters. That's impressive. Obviously, it doesn't have very many features, but none the less you are able to run Javascript code within your template code  and so by that it supports loops and other goodies. So you could argue that it's pretty versatile despite it's small size.
+
+### Different tamplating engine for different use cases
+
+There is a whole bunch of Javascript templating engines out there now. The most popular ones are [Mustache.js](https://github.com/janl/mustache.js) and it's bastard child [ICanHaz.js](https://icanhazjs.com/) - there's also a new one on the block called Tempo which is also pretty sweet. All of those are based upon json objects and so they're intended to provide strict separation of logic and presentation so in some sense they are much "cleaner" I haven't had a chance to take a look at more so far, but I'll do a follow up post if something interesting comes along. There are new ones poping up all the time.

@@ -1,0 +1,11 @@
+---
+title: "Possibly the nicest Node.js beginner's guide (and style guide)"
+summary: "Felix Geisendörfer, one of the node.js contributers has released what can only be dubbed as the ultimate guide to writing node.js applications. He's launched a site called nodeguide.com which has a beginner's guide, a guide for how to convince your boss you should be using node (kind of funny, but sadly there are people who need this) and a style guide for standardization of indentation, naming, etc which should be taken with a grain of salt."
+date: 2011-12-10
+---
+
+Felix Geisendörfer, one of the node.js contributers released a clean cut, simple guide a while ago to writing node.js applications. He launched a site called [nodeguide.com](https://nodeguide.com/) which mostly has a beginner's guide, a guide for how to convince your boss you should be using node (kind of funny) and a style guide for standardization of indentation, naming, etc. The guides are not very comprehensive at the moment, but they are written very clearly using a simple language. If you have some experience with Javascript, the guides should be perfect for you. He also has a few other guides in the works and people are encouraged to contribute. So if you're starting out doing server side javascript using node, this is probably the very best place to start.
+
+### A short summary of the guides
+
+**The beginners guide** is pretty short. It teaches you how to install node, run your first hello world, a little about the packaging system and recommends a few web frameworks. **The style guide** should be taken with a grain of salt. It's good to have some standard but style guides have historically never been popular because most people like writing code however they see fit. **The convincing the boss guide** is probably the most impressive, in my opinion. It's very pragmatic and doesn't try to sell you Node.js as the ultimate solution to every existing problem out there. He quite honestly points out that if you're just trying to put together a simple web application there really isn't much that Node can do that other languages/frameworks can't do just as well. I think he even sells it a bit short, since in my opinion the upsides are more than he mentions. That's it.

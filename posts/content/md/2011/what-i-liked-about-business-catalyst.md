@@ -1,0 +1,26 @@
+---
+title: "What I didn't dislike about Business Catalyst"
+summary: "A couple of weeks ago I wrote a blog post describing my first experiences with Adobe's Business Catalyst. I had been fighting with the software for a few days and was a bit disappointed with the overall experience. The post was titled 11 Reasons Why Business Catalyst Sucks, and it became a bit popular in weird way. That is: Not that many views/visitors but still a whole lot of comments. I don't usually get that many comments and on my blog posts, but this entry almost became the most discussed entry on this blog since I started it. Some of the comments were really helpful and intelligent, so my view on Business Catalyst actually shifted towards a bit more positive attitude. I encourage you to go through the comment thread and read it. I found the comments from one Jason Tinnin, of Simple Flame, to be especially helpful, since he gave me suggestions on how I could solve certain problems I had and was really nice about the whole thing. Since my previous post was a bit negative (to say the least) I wanted to highlight the positive side of Business Catalyst."
+date: 2011-03-16
+---
+
+A couple of weeks ago I wrote a blog post describing my first experiences with Adobe's Business Catalyst. I had been fighting with the software for a few days and was a bit disappointed with the overall experience. The post was titled [11 Reasons Why Business Catalyst Sucks](https://arnorhs.dev/2011/01/19/11-reasons-why-business-catalyst-sucks/), and it became a bit popular in weird way. That is: Not that many views/visitors but still a whole lot of comments. I don't usually get that many comments and on my blog posts, but this entry almost became the most discussed entry on this blog since I started it. Some of the comments were really helpful and intelligent, so my view on Business Catalyst actually shifted towards a bit more positive attitude. I encourage you to go through the comment thread and read it. I found the comments from one Jason Tinnin, of [Simple Flame](https://www.simpleflame.com/), to be especially helpful, since he gave me suggestions on how I could solve certain problems I had and was really nice about the whole thing. Since my previous post was a bit negative (to say the least) I wanted to highlight the positive side of Business Catalyst.
+
+### What _I liked_ about Business Catalyst
+
+1.  **You can define your own "web apps".** Which aren't really applications as such, but you can use it to build data structures/databases of particular information. Eg. you can define a web app of recipes and add your own fields like ingredients, instructions, time to cook, etc.. This is extremely powerful and it's fun to see this integrated into the base of the product.
+2.  **The WYSIWYG editor doesn't F-up your HTML/CSS/JS.** Most WYSIWYG editors strip out all Javascript and that kind of stuff, but the BC editor doesn't do that. But this also \*needs\* to be good, since you need to do a lot of HTML editing through those.
+3.  **Great value for those that have clients.** If you are in the business of servicing clients on websites and/or design, I understand **_deeply_**, how BC can be a very powerful platform to build upon.
+4.  **Easy setup - easy integration.** You don't have to worry about plugins or anything like that and since it's a web service you don't have to host it yourself and never have to worry about the technical side of things.
+
+### What _others_ like about Business Catalyst
+
+1.  **Powerful partner program.** That is probably an understatement. The amount of comments and feedback I've received from a blog post on a blog that only has a few hundred viewers is probably the greatest indicator of this. They're obviously pretty vested on the issue, but that has also got to be very positive for BC. At least it shows what a good business/strategic move this has been on Adobe's side (or whom ever it was that started it)
+2.  **Apparently Adobe's working on a new version.** See [this link](https://businesscatalyst.com/_blog/BC_Blog/post/What's_Up_at_Business_Catalyst_in_November/) for details. I think I've linked to the correct link, but the site seems to be down at the moment of writing. **Update:** according to "bcstatus.com" the site is down for 8 hours of maintenance!
+3.  **all clients' websites managed from a central "partner portal".** So you can set settings for your clients and access their dashboard/admin area from your partner portal. I can see
+4.  **Tight Dreamweaver integration.** I don't have experience with this myself, since I haven't used Dreamweaver for probably around 10 years.
+5.  **It has a lot of features.** This is actually what I also found negative about BC, but it provides a lot of value to clients of BC partners, so this is definitely something to put in the positive bucket.
+
+### Conclusion?
+
+So have I changed my mind about the software? Not really. Does it still suck? Pretty much. The features people like the most don't appeal to me as someone who likes to be at the forefront of technology, embracing new standards and best practices. I just feel that the software is so outdated. But for a lot of people, there is simply no other software out there that can do what Business Catalyst does. Well, that's it. Tell me what you think.

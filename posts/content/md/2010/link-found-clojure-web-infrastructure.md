@@ -1,0 +1,7 @@
+---
+title: "Link found: Clojure Web Infrastructure"
+summary: "This article was posted on Hacker News yesterday. It explains/lists the Clojure web stack. When I started playing with Clojure, I had a very hard time grasping an overview of the libraries out there, this post would have helped me a great deal. There are also some things there that I didn't know about."
+date: 2010-11-06
+---
+
+This article was posted on [Hacker News](https://news.ycombinator.com/) [yesterday](https://news.ycombinator.com/item?id=1872907). It explains/lists the Clojure web stack. When I started playing with Clojure, I had a very hard time grasping an overview of the libraries out there, this post would have helped me a great deal. There are also some things there that I didn't know about. Most of the links/project mentioned are useful, though I always put a question mark on things like [Scriptjure](https://github.com/arohner/scriptjure/), which was mentioned in the article. Frameworks/plugins that are used to encapsulate another programming language are - in my opinion - a **bad idea**. It'll always be a crutch. Anyways, check out the article: [Clojure Web Infrastructure](https://www.glenstampoultzis.net/blog/clojure-web-infrastructure/) (From [The Occasional Blogger](https://www.glenstampoultzis.net/blog/))

@@ -1,10 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import PostPreview from '../components/PostPreview.astro'
-import { getFeaturedPost } from '../lib'
+import { getFeaturedPost } from '@arnorhs/posts'
 
 const post = await getFeaturedPost()
 ---
+
 <MainLayout animate={true}>
   <PostPreview post={post} featured />
 </MainLayout>

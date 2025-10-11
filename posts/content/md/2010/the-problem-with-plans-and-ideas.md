@@ -1,0 +1,15 @@
+---
+title: "The Problem with Plans and Ideas"
+summary: "I've recently been confronted with a problem. I don't have any time. Between my recent and unexpected enrollment into a university level business accelerator , pushing hard to get High Score off the ground and doing various projects on the side to keep me from starving I don't really have any extra time. I don't particularly remember having a lot of free time on my hands in the past (except the time when I went travelling with girlfriend to India) but now things are serious. I have to think really carefully about if I should take on a project with other people."
+date: 2010-11-25
+---
+
+_TL;DR: It takes 10x the amount of time and effort to actually do something as it does to plan something._ I've recently been confronted with a problem. I don't have any time. Between my recent and unexpected enrollment into a [university level business accelerator](https://klak.is/english) , pushing hard to get [High Score](https://highscore.co/) off the ground and doing various projects on the side to keep me from starving I don't really have any extra time. I don't particularly remember having a lot of free time on my hands in the past (except the time when I went travelling with girlfriend to India) but now things are serious. I have to think really carefully about if I should take on a project with other people.
+
+### The Icelandic Haste
+
+Icelanders are known for an idiotic approach to doing things: _In a hurry without any plans._ I guess I'm not a good exception, but I'm really trying to change that part of me. I very often get into this situation where people ask me if I want to help with something or ask me if I want to join them with doing something and usually I don't really think about it, I just think "The idea sounds interesting and I like the people" .. so the answer usually becomes YES. Not only that, I also get incredibly enthusiastic about it. Then you start making plans, maybe meetings etc and before you know it, you're swamped with work. Yes, it is work. You know, that thing you thought you wanted to do with some people? Yes, it is work in disguise.
+
+### Doing the math
+
+It takes 10x the amount of time and effort to actually _do something_ as it does to _plan something_. That's the cold bitter truth. And this is something you probably know, but if you're anything like me, you have a hard time remembering that when you start planning all kinds of stuff. You can actually be planning 10-20 different things with different people in the same time as it takes you to actually work on 1 or 2 things. So when you see somebody that's working on 10-20 different things, you can pretty much guess that he's actually not working on any of them, he's just planning to work on them. It is so much fun to plan things. It is probably the most fun stage of a project, because it you can dream up incredible things. Sometimes you feel like Leonardo DiCaprio in Inception. Just remember: Plans are worthless on their own and ideas are cheap.
