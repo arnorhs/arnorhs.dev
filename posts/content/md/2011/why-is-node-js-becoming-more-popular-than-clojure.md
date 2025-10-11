@@ -1,5 +1,5 @@
 ---
-title: "Why is Node.js becoming more popular than Clojure?"
+title: 'Why is Node.js becoming more popular than Clojure?'
 summary: "I did a post recently about the popularity of Node.js over Clojure. I didn't want to go into \\*why\\* Node is getting much more traction than Clojure, since I didn't want to start a language war in that post. However, I have my opinion on the topic, so here's why I think Node.js is becoming much more popular."
 date: 2011-03-02
 ---

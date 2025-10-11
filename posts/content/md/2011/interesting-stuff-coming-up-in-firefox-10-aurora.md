@@ -1,6 +1,6 @@
 ---
-title: "Interesting stuff coming up in Firefox 10 (Aurora)"
-summary: "Yesterday, Mozilla announced the availability of Firefox 10 beta, named Aurora. The version introduces a bunch of new HTML5 features and some of them sound very interesting."
+title: 'Interesting stuff coming up in Firefox 10 (Aurora)'
+summary: 'Yesterday, Mozilla announced the availability of Firefox 10 beta, named Aurora. The version introduces a bunch of new HTML5 features and some of them sound very interesting.'
 date: 2011-11-12
 ---
 
@@ -20,9 +20,9 @@ It's not linked in the feature list and not at all explained but they mention un
 
 ### Other interesting tweaks and features
 
-*   Firefox will from now on not allow the same website to open more than one popup window.
-*   Further improvements to WebWorkers
-*   Rendering improvements to WebGL
-*   And lots of bug fixes and minor improvements
+- Firefox will from now on not allow the same website to open more than one popup window.
+- Further improvements to WebWorkers
+- Rendering improvements to WebGL
+- And lots of bug fixes and minor improvements
 
 Be sure to check out the [release announcement](https://hacks.mozilla.org/2011/11/announcing-firefox-aurora-10/) for a full list of additions and/or [download the Aurora beta](https://www.mozilla.org/en-US/firefox/channel/) from the Firefox release channel. I'll hopefully be playing with some of these features in the near future, if I have the time.

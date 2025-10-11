@@ -12,8 +12,8 @@ I wanted to be able to simply run a test anywhere on the page just for a single 
 
 ### Requirements
 
-*   The jQuery object ($) must be present on the page (I could make it non-jquery dependent, if anybody is interested enough)
-*   A browser that has a javascript console
+- The jQuery object ($) must be present on the page (I could make it non-jquery dependent, if anybody is interested enough)
+- A browser that has a javascript console
 
 ### How to use it
 

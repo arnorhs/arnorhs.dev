@@ -1,10 +1,10 @@
 ---
-title: "Why Flash-based Websites Are Usually a Bad Idea"
+title: 'Why Flash-based Websites Are Usually a Bad Idea'
 summary: "Through the last years developing websites for various types of clients - from small start ups, retailers, organizations to bigger companies - I've come to realize one thing pretty clearly. Everybody loves Flash. Well, almost everybody..."
 date: 2010-02-27
 ---
 
-Through the last years developing websites for various types of clients - from small start ups, retailers, organizations to bigger companies - I've come to realize one thing pretty clearly. Everybody loves [Flash](https://en.wikipedia.org/wiki/Adobe_Flash). Well [almost everybody](https://www.coated.com/steve-jobs-adobe-flash-is-a-cpu-hog/ "Steve Jobs - Adobe Flash is a CPU hog"). But there's one group of people that absolutely does _NOT_ love flash (for the most part) - Web Developers. Unfortunately, everybody else still loves Flash. Designers love Flash because their design doesn't have to obey any rules or adhere to any conformity, CEOs love Flash because they get a boner when they see stuff moving on their website, artists love Flash because they feel it doesn't "limit their creativity". The list probably goes on. [](https://arnorhs.dev/wp-content/uploads/2010/02/flash1.gif)[![Comic: Flash](https://arnorhs.dev/wp-content/uploads/2010/02/flash1-e1274351570322.gif "flash")](https://arnorhs.dev/wp-content/uploads/2010/02/flash1.gif)
+Through the last years developing websites for various types of clients - from small start ups, retailers, organizations to bigger companies - I've come to realize one thing pretty clearly. Everybody loves [Flash](https://en.wikipedia.org/wiki/Adobe_Flash). Well [almost everybody](https://www.coated.com/steve-jobs-adobe-flash-is-a-cpu-hog/ 'Steve Jobs - Adobe Flash is a CPU hog'). But there's one group of people that absolutely does _NOT_ love flash (for the most part) - Web Developers. Unfortunately, everybody else still loves Flash. Designers love Flash because their design doesn't have to obey any rules or adhere to any conformity, CEOs love Flash because they get a boner when they see stuff moving on their website, artists love Flash because they feel it doesn't "limit their creativity". The list probably goes on. [](https://arnorhs.dev/wp-content/uploads/2010/02/flash1.gif)[![Comic: Flash](https://arnorhs.dev/wp-content/uploads/2010/02/flash1-e1274351570322.gif 'flash')](https://arnorhs.dev/wp-content/uploads/2010/02/flash1.gif)
 
 #### I like Flash
 

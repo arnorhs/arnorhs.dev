@@ -1,5 +1,5 @@
 ---
-title: "Awesome thoughts on how programmers should think about TIME"
+title: 'Awesome thoughts on how programmers should think about TIME'
 summary: "I saw this article on Hacker News today. It's very similar to a blog post I was planning to write, but never did."
 date: 2011-07-04
 ---

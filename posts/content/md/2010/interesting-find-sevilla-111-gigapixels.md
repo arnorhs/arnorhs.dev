@@ -1,5 +1,5 @@
 ---
-title: "Interesting find: Sevilla 111 Gigapixels"
+title: 'Interesting find: Sevilla 111 Gigapixels'
 summary: "I don't exactly know which technology was used to create this, but here is a 111 gigapixel zoomable image of the town of Sevilla in Italy. It really is remarkable and as it stands this image holds the world record for the highest resolution picture ever created."
 date: 2010-12-20
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Open all files from a git diff or git show with this handy command utility"
+title: 'Open all files from a git diff or git show with this handy command utility'
 summary: "We use git as our versioning tool at work and I've gradually been learning a few tricks on how to speed up my development time and time spent managing my repo. When jumping between branches, continuing your work from where you stopped last time, etc., you very often open the same files as you were editing in a previous commit. This may not be a problem if you use something like Command-T for vim or rely on the file browsing in TextMate, but often it might just be quicker to open all the files from a particular ref in git or opening all files from your branch's diff from master/dev or something."
 date: 2011-12-25
 ---

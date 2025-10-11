@@ -1,5 +1,5 @@
 ---
-title: "How to Move a Wordpress site Manually from one Location to another"
+title: 'How to Move a Wordpress site Manually from one Location to another'
 summary: "I've been doing some Wordpress development for the last year or so. A few client projects, some personal etc. A common chore that I find myself doing is developing the sites on one server and then moving them to the next. Very often I'll be developing on a virtual machine instance on my local machine and then placing the files online later. Just copying the files and exporting and importing the database will not do, so there are a few extra steps you need to take to do this successfully. So the best way to move Wordpress sites between two locations is to do it like this:"
 date: 2011-03-13
 ---
@@ -13,7 +13,7 @@ I've been doing some [Wordpress](https://www.wordpress.org/) development for the
 3.  Edit your configuration (in /wp-config.php ) to reflect the new DB settings.
 4.  Execute the following statements in phpMyAdmin's import or from the mysql command prompt (copy paste the following code):
 
-\[gist id="866373" file="move-site-wordpress-mysql-settings.sql"\] Of course if you're using some unorthodox plugin that stores it's own version of your site's location or domain, you might run into additional problems. I can't help you there. But I've used a lot of plugins and I haven't seen any plugin that breaks this method. So it's highly unlikely. Note. You cannot do a simple find/replace on the values in the wp\_options table, because some of the values there are stored as serialized strings and serialized strings are fragile, so you can't replace values so easily within them. A Stack Overflow user called @Yarin pointed out that there is a much easier way to update the site urls: Just harcode the url settings into /wp-config.php. That way you don't have to do the database update on your wp\_options table. Valid point. Here's how you'd do that: \[gist id="866373" file="wp\_options.php"\] That's a nice way to do it if you want to keep it in the config file, but you will still have to update your posts manually.
+\[gist id="866373" file="move-site-wordpress-mysql-settings.sql"\] Of course if you're using some unorthodox plugin that stores it's own version of your site's location or domain, you might run into additional problems. I can't help you there. But I've used a lot of plugins and I haven't seen any plugin that breaks this method. So it's highly unlikely. Note. You cannot do a simple find/replace on the values in the wp_options table, because some of the values there are stored as serialized strings and serialized strings are fragile, so you can't replace values so easily within them. A Stack Overflow user called @Yarin pointed out that there is a much easier way to update the site urls: Just harcode the url settings into /wp-config.php. That way you don't have to do the database update on your wp_options table. Valid point. Here's how you'd do that: \[gist id="866373" file="wp_options.php"\] That's a nice way to do it if you want to keep it in the config file, but you will still have to update your posts manually.
 
 ### But how do the ninjas do it?
 

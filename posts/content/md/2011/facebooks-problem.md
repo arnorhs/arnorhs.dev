@@ -1,6 +1,6 @@
 ---
-title: "Facebook's \"Problem\""
-summary: "My mom had a birthday gathering the other day (happy 52 mom). It was pretty uneventful as you would expect, but as sometimes happens these days, a conversation about Facebook got started. Most techies you meet would say that they hate listening to normal people talk about anything technical - especially the older generation. I usually find these kinds of conversations rather enjoyable, especially if I can withdraw and not have to be a part of it and just listen. Because then you kind of get a sense for how normal people see things and what problems they run to, etc."
+title: 'Facebook''s "Problem"'
+summary: 'My mom had a birthday gathering the other day (happy 52 mom). It was pretty uneventful as you would expect, but as sometimes happens these days, a conversation about Facebook got started. Most techies you meet would say that they hate listening to normal people talk about anything technical - especially the older generation. I usually find these kinds of conversations rather enjoyable, especially if I can withdraw and not have to be a part of it and just listen. Because then you kind of get a sense for how normal people see things and what problems they run to, etc.'
 date: 2011-10-16
 ---
 

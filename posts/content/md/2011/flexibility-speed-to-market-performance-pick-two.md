@@ -1,5 +1,5 @@
 ---
-title: "Flexibility, speed to market, performance - pick two"
+title: 'Flexibility, speed to market, performance - pick two'
 summary: "I'm busy getting stuff done here in sunny California. I'm sorry that this post is written in haste - I just wanted to make one clear point to everybody interested: If you are doing any kind of development - if you are the developer, the company or whoever, there is a general rule that applies:"
 date: 2011-05-09
 ---

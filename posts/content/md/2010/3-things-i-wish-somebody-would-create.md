@@ -1,5 +1,5 @@
 ---
-title: "3 things I wish somebody would create"
+title: '3 things I wish somebody would create'
 summary: "I wish somebody would make any of the following applications or web standards. (a few of these ideas evolve from the reports lately about Facebook's privacy issues and my general discontent with Facebook) Click to see the list."
 date: 2010-05-14
 ---

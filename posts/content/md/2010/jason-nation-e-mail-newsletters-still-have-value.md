@@ -1,5 +1,5 @@
 ---
-title: "Jason Nation - e-mail newsletters still have value"
+title: 'Jason Nation - e-mail newsletters still have value'
 summary: "I thought e-mail newsletters were, in essence, dead. I thought no \\*real\\* value could be derived from them any more. I subscribe to a few e-mail newsletters. Mostly of blogs and companies/services that I use. Some of them are annoying, some of them are sometimes useful, but I don't really remember learning anything useful from an e-mail newsletter. Untill today."
 date: 2010-07-02
 ---

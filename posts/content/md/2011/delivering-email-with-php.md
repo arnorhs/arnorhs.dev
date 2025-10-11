@@ -1,5 +1,5 @@
 ---
-title: "Delivering email with PHP"
+title: 'Delivering email with PHP'
 summary: "I'm not a very active user on Stack Overflow but I sometimes take 1-2 hours off and try to answer a few questions. I noticed recently how many questions come up on the topic of sending email with web forms, often related to PHP. So I decided to write up a small post on what I would say is the best method to send email using PHP. Just being able to send an email is not a problem at all. It takes a single line of code (often times) and the mail is off. However, getting that email to the recipient's inbox is harder, mostly due to spam-filtering and other spam fighting mechanisms designed to keep spam away. Spam filters are only half the story. Email servers utilize multiple automated techniques to find and detect spam these days."
 date: 2011-02-21
 ---
@@ -10,7 +10,7 @@ _TL;DR version: Email delivery is hard, getting through spam filters is hard. Us
 
 Just being able to send an email is not a problem at all. It takes a single line of code (often times) and the mail is off. However, getting that email to the recipient's inbox is harder, mostly due to spam-filtering and other spam fighting mechanisms designed to keep spam away. Spam filters are only half the story. Email servers utilize multiple automated techniques to find and detect spam these days.
 
-[![Network](https://farm3.static.flickr.com/2436/3780220955_f519f4ca70.jpg)](https://www.flickr.com/photos/15939977@N05/3780220955/ "Network") [![Creative Commons License](https://arnorhs.dev/wp-content/plugins/photo-dropper/images/cc.png)](https://creativecommons.org/licenses/by-sa/2.0/ "Attribution-ShareAlike License") credit: [Claus Rebler](https://www.flickr.com/photos/15939977@N05/3780220955/ "Claus Rebler")
+[![Network](https://farm3.static.flickr.com/2436/3780220955_f519f4ca70.jpg)](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Network') [![Creative Commons License](https://arnorhs.dev/wp-content/plugins/photo-dropper/images/cc.png)](https://creativecommons.org/licenses/by-sa/2.0/ 'Attribution-ShareAlike License') credit: [Claus Rebler](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Claus Rebler')
 
 **Most common methods used by servers to keep spam away:**
 
@@ -37,9 +37,9 @@ What I always recommend to people when they ask me about this, is to use class/l
 
 Creating the email itself is only half the story. You also need to get it out there and you need an SMTP server. Most hosting providers provide some sort of SMTP server, but you usually don't have full access to them. If you're using some VM hosting, that will probably also have restrictions in the EULA or the terms around how many emails you can send out, etc. (And if you think you don't need an SMTP server, you're wrong. It may be that the web server running your website is sending the emails, but just know that then the web server itself is running an SMTP server.) The really easy way out of this is to use an email deliverability service. Sometimes they're called transactional email services. There are a few out there, the ones I know about are:
 
-*   SendGrid - Great support, great dedication to delivery and they also have an API. [www.sendgrid.com](https://www.sendgrid.com)
-*   PostmarkApp - [www.postmarkapp.com](https://www.postmarkapp.com)
-*   PostageApp - This is a relatively new service, so I don't know much about them, but they seem to have fair prices - [www.postageapp.com](https://www.postageapp.com)
+- SendGrid - Great support, great dedication to delivery and they also have an API. [www.sendgrid.com](https://www.sendgrid.com)
+- PostmarkApp - [www.postmarkapp.com](https://www.postmarkapp.com)
+- PostageApp - This is a relatively new service, so I don't know much about them, but they seem to have fair prices - [www.postageapp.com](https://www.postageapp.com)
 
 They all have their price point, feature set, etc. I'm very fond of sendgrid.com. They are really doing things right in the marketing side and have grown a lot in a short time. They also offer a free plan if you only send a small amount of emails (200 email per day), which will cover the needs of most websites. Sign up here for sendgrid: [https://sendgrid.com/pricing.html](https://sendgrid.com/pricing.html) (note: at the bottom there's a link to the "free" account). If you want to sign up and you \*also\* want to support an independent blogger (that's me), you can use this link to sign up: [https://sendgrid.tellapal.com/a/clk/v1cMc](https://sendgrid.tellapal.com/a/clk/v1cMc) Here's how you plug sendgrid's SMTP servers into our PHP mailer configuration. Note: You'll need to have signed up for an account for it to work: \[gist id="836042" file="example5.php"\] So what's changed in our example? Almost nothing. Just the login information. It's that simple. SendGrid and most of the other transactional email services offer a very powerful API. SendGrid's API can be used both for sending out the emails, checking for blocked addresses, receiving notifications and more. I don't know the other services' APIs but I expect similar functionality.
 
@@ -47,9 +47,9 @@ They all have their price point, feature set, etc. I'm very fond of sendgrid.com
 
 No fighting the email servers, tweaking MTA config files, no fighting the queue, no spam list delistings, etc. It's a luxury when you don't have to fight your server all the time. As you may hear, I have had my share of those fights in my day and I'm relieved that I'll never have to do that again :) So, what used to amount to a fair share of work, can now be done by a plugin in a library and plugging in a specialized web service. Less code is better code.
 
-*   All the examples are up on this gist, if you're interested: [https://gist.github.com/836042](https://gist.github.com/836042)
-*   Link to SendGrid's documentation: [https://sendgrid.com/documentation/map](https://sendgrid.com/documentation/map)
-*   Swift mailer: [https://swiftmailer.org/](https://swiftmailer.org/)
-*   PHP Mailer: [https://phpmailer.worxware.com/](https://phpmailer.worxware.com/)
+- All the examples are up on this gist, if you're interested: [https://gist.github.com/836042](https://gist.github.com/836042)
+- Link to SendGrid's documentation: [https://sendgrid.com/documentation/map](https://sendgrid.com/documentation/map)
+- Swift mailer: [https://swiftmailer.org/](https://swiftmailer.org/)
+- PHP Mailer: [https://phpmailer.worxware.com/](https://phpmailer.worxware.com/)
 
 If you're interested in more code examples, tips or tricks around emails, etc, let me know in the comments.

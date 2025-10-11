@@ -1,5 +1,5 @@
 ---
-title: "The Problem with Plans and Ideas"
+title: 'The Problem with Plans and Ideas'
 summary: "I've recently been confronted with a problem. I don't have any time. Between my recent and unexpected enrollment into a university level business accelerator , pushing hard to get High Score off the ground and doing various projects on the side to keep me from starving I don't really have any extra time. I don't particularly remember having a lot of free time on my hands in the past (except the time when I went travelling with girlfriend to India) but now things are serious. I have to think really carefully about if I should take on a project with other people."
 date: 2010-11-25
 ---

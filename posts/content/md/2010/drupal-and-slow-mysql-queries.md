@@ -1,6 +1,6 @@
 ---
-title: "Surprising mysql queries in Drupal"
-summary: "Warning: This blog post is unusually technical for most of the posts here. The hosting provider I work for in Iceland has been having some problems with one of the servers. Turns out the problems are caused by a single website running Drupal and it has a lot of traffic."
+title: 'Surprising mysql queries in Drupal'
+summary: 'Warning: This blog post is unusually technical for most of the posts here. The hosting provider I work for in Iceland has been having some problems with one of the servers. Turns out the problems are caused by a single website running Drupal and it has a lot of traffic.'
 date: 2010-05-27
 ---
 
@@ -11,38 +11,38 @@ Warning: This blog post is unusually technical for most of the posts here.
 The hosting provider I work for in Iceland has been having some problems with one of the servers. Turns out the problems are caused by a single website running [Drupal](https://drupal.org/) and it has a lot of traffic. Currently, most websites do not have any issues even though they have quite a bit of traffic, so I wanted to analyze things. My coworker set up something called [mysql slow query log](https://dev.mysql.com/doc/refman/5.0/en/slow-query-log.html). It's basically logs all sql queries that take a long time to parse. What I found was pretty interesting. The recurring theme of the log file was this query:
 
     SELECT DISTINCT n.nid, n.uid, n.title, n.type, e.event_start, e.event_start AS event_start_orig, e.event_end, e.event_end AS event_end_orig, e.timezone, e.has_time, e.has_end_date, tz.offset AS offset, tz.offset_dst AS offset_dst, tz.dst_region, tz.is_dst, e.event_start - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND AS event_start_utc, e.event_end - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND AS event_end_utc, e.event_start - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND + INTERVAL 0 SECOND AS event_start_user, e.event_end - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND + INTERVAL 0 SECOND AS event_end_user, e.event_start - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND + INTERVAL 0 SECOND AS event_start_site, e.event_end - INTERVAL IF(tz.is_dst, tz.offset_dst, tz.offset) HOUR_SECOND + INTERVAL 0 SECOND AS event_end_site, tz.name as timezone_name FROM node n
-    
+
     INNER JOIN event e ON n.nid = e.nid
-    
+
     INNER JOIN event_timezones tz ON tz.timezone = e.timezone
-    
+
     INNER JOIN node_access na ON na.nid = n.nid
-    
+
     LEFT JOIN domain_access da ON n.nid = da.nid
-    
+
     LEFT JOIN node i18n ON n.tnid > 0 AND n.tnid = i18n.tnid AND i18n.language = 'en'
-    
+
     WHERE (na.grant_view >= 1 AND ((na.gid = 0 AND na.realm = 'all'))) AND ((da.realm = "domain_id" AND da.gid = 4) OR (da.realm = "domain_site" AND da.gid = 0)) AND (n.language ='en' OR n.language ='' OR n.language IS NULL OR n.language = 'is' AND i18n.nid IS NULL) AND (  n.status = 1 AND ((e.event_start >= '2010-01-31 00:00:00' AND e.event_start <= '2010-03-01 23:59:59') OR (e.event_end >= '2010-01-31 00:00:00' AND e.event_end <= '2010-03-01 23:59:59') OR (e.event_start <= '2010-01-31 00:00:00' AND e.event_end >= '2010-03-01 23:59:59')) )
-    
+
     GROUP BY n.nid HAVING (event_start >= '2010-02-01 00:00:00' AND event_start <= '2010-02-28 23:59:59') OR (event_end >= '2010-02-01 00:00:00' AND event_end <= '2010-02-28 23:59:59') OR (event_start <= '2010-02-01 00:00:00' AND event_end >= '2010-02-28 23:59:59')
-    
+
     ORDER BY event_start ASC;
 
 **That's one hell of a query.** It's from the built-in events system of Drupal which has a few plugins, such as internationalization and so fourth. The query usually took around **5-6 seconds to compute**. You have to realize that we're running a Dell PowerEdge machine with lots of processing power and memory. I ran the [mysql explain command](https://dev.mysql.com/doc/refman/5.0/en/using-explain.html) on that query to find out what's going on and this is what I found:
 
 id
 
-select\_type
+select_type
 
 table
 
 type
 
-possible\_keys
+possible_keys
 
 key
 
-key\_len
+key_len
 
 ref
 
@@ -76,9 +76,9 @@ SIMPLE
 
 n
 
-eq\_ref
+eq_ref
 
-PRIMARY, node\_status\_type
+PRIMARY, node_status_type
 
 PRIMARY
 
@@ -116,7 +116,7 @@ SIMPLE
 
 na
 
-eq\_ref
+eq_ref
 
 PRIMARY
 
@@ -136,9 +136,9 @@ SIMPLE
 
 e
 
-eq\_ref
+eq_ref
 
-PRIMARY, event\_start, event\_end, timezone
+PRIMARY, event_start, event_end, timezone
 
 PRIMARY
 
@@ -156,7 +156,7 @@ SIMPLE
 
 tz
 
-eq\_ref
+eq_ref
 
 PRIMARY
 

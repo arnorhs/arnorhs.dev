@@ -1,10 +1,10 @@
 ---
-title: "The IE team throws bricks in a glass house"
+title: 'The IE team throws bricks in a glass house'
 summary: "The IE team released a new preview of IE10 beta today along with a video demo. The video goes out of it's way to point out some difference in CSS3 column rendering between IE 10 and Firefox 4:"
 date: 2011-04-12
 ---
 
-The IE team released a new preview of IE10 beta today along with a video demo. The video goes out of it's way to point out some difference in CSS3 column rendering between IE 10 and Firefox 4: [IEBlog - Site Home - MSDN Blogs](https://blogs.msdn.com/b/ie/). [![](https://arnorhs.dev/wp-content/uploads/2011/04/bricks-in-a-glass-house-300x169.jpg "bricks-in-a-glass-house")](https://blogs.msdn.com/b/ie/)
+The IE team released a new preview of IE10 beta today along with a video demo. The video goes out of it's way to point out some difference in CSS3 column rendering between IE 10 and Firefox 4: [IEBlog - Site Home - MSDN Blogs](https://blogs.msdn.com/b/ie/). [![](https://arnorhs.dev/wp-content/uploads/2011/04/bricks-in-a-glass-house-300x169.jpg 'bricks-in-a-glass-house')](https://blogs.msdn.com/b/ie/)
 
 ### Microsoft's pathetic attack on Firefox
 

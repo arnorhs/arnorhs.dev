@@ -18,12 +18,12 @@ Now, I'm not really a big privacy advocate and I don't concern myself with those
 
 If you're interested in those kinds of services, check these sites out:
 
-*   [FetchBacks's official website](https://www.fetchback.com/)
-*   [Criteo](https://www.criteo.com/)
+- [FetchBacks's official website](https://www.fetchback.com/)
+- [Criteo](https://www.criteo.com/)
 
 Other examples of ad retargeting services:
 
-*   [Rocketmedia Retargeting services](https://www.rocketmediastudios.com/retargeting/)
-*   [adretargeting.com](https://adretargeting.com/)
+- [Rocketmedia Retargeting services](https://www.rocketmediastudios.com/retargeting/)
+- [adretargeting.com](https://adretargeting.com/)
 
 And of course, a good source of information is on Wikipedia's entry: [Behavioral Retargeting on Wikipedia](https://en.wikipedia.org/wiki/Behavioral_retargeting)

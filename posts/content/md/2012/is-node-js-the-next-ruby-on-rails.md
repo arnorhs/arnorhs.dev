@@ -1,6 +1,6 @@
 ---
-title: "Is Node.js the next Ruby on Rails?"
-summary: "I got into a conversation at work today about whether or not Node.js might become as popular and as ubiquitous as Ruby on Rails has become, or if it's just a fad. At first I was like \"It's going to become the most used framework evar!\" But then I thought about it a bit more and realized that this might not be the case."
+title: 'Is Node.js the next Ruby on Rails?'
+summary: 'I got into a conversation at work today about whether or not Node.js might become as popular and as ubiquitous as Ruby on Rails has become, or if it''s just a fad. At first I was like "It''s going to become the most used framework evar!" But then I thought about it a bit more and realized that this might not be the case.'
 date: 2012-01-31
 ---
 
@@ -10,11 +10,11 @@ I got into a conversation at work today about whether or not Node.js might becom
 
 One way to think about how a new programming language or a framework becomes popular is examine what needs to be in place.
 
-*   A vibrant active community.
-*   Good libraries and/or a healthy amount of contributors of libraries
-*   The use case for the language / framework must be clear
-*   It must be easy to get into, to learn.
-*   Easy to set up and get up and running
+- A vibrant active community.
+- Good libraries and/or a healthy amount of contributors of libraries
+- The use case for the language / framework must be clear
+- It must be easy to get into, to learn.
+- Easy to set up and get up and running
 
 To me Node.js checks all the boxes on those, and it seems to have a lot of tailwind blowing its way.
 

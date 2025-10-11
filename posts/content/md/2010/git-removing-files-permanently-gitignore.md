@@ -1,5 +1,5 @@
 ---
-title: "Git - removing files permanently - gitignore"
+title: 'Git - removing files permanently - gitignore'
 summary: "I'm a very new user of Git. I've been using it for some time to download and install repositories, like most people, but didn't use it for source control yet. Recently I've started using it, though, so I've been bumping into small problems along the way. One problem I've had was with trying to find out how to keep certain files out of a repository. I had tried Googling a few terms, but that only brought up results for actually removing a file once and for all from the directory tree and from the repository. I had been typing something like git remove files permanently."
 date: 2010-09-29
 ---

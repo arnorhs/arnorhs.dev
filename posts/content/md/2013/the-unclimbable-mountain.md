@@ -1,6 +1,6 @@
 ---
-title: "The Unclimbable Mountain"
-summary: "I was reminded once again today how impenetrable the wall of things to do in life is. We had just hit yet another big milestone at work and as soon as we hit it, I started thinking about the next steps. And after that the next steps. Just in the time it took for us to reach this milestone, a list of things to fix and improve before the next milestone was building up. And that list is long enough to take 10 times the time that the original milestone took. We grow up thinking that next year will be better, or this year you will manage to finish X Running a business, or working at one, is about fires. Everything is either falling behind, failing, has always been broken or is unusable. The only tool we have is a limited fire extinguisher to dim down the biggest most obvious fire each time."
+title: 'The Unclimbable Mountain'
+summary: 'I was reminded once again today how impenetrable the wall of things to do in life is. We had just hit yet another big milestone at work and as soon as we hit it, I started thinking about the next steps. And after that the next steps. Just in the time it took for us to reach this milestone, a list of things to fix and improve before the next milestone was building up. And that list is long enough to take 10 times the time that the original milestone took. We grow up thinking that next year will be better, or this year you will manage to finish X Running a business, or working at one, is about fires. Everything is either falling behind, failing, has always been broken or is unusable. The only tool we have is a limited fire extinguisher to dim down the biggest most obvious fire each time.'
 date: 2013-03-14
 ---
 

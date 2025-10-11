@@ -43,7 +43,7 @@ export const build = async (DEBUG: boolean, dest: string) => {
         ({
           filename: post.contentHash,
           title: post.title,
-        } as Templatable),
+        }) as Templatable,
     )
     // only take the first one in debug mode
     .filter((x, i) => (DEBUG ? i === 0 : true))

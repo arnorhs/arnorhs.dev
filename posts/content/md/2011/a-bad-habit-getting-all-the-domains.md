@@ -1,10 +1,10 @@
 ---
-title: "A bad habit: Getting all the domains!"
-summary: "I have this horrible habit, where when I have an idea, I usually start by ordering a domain. And when I'm brainstorming, I might come up with around 30 ideas for domain names of a particular idea, which I narrow down to about 3-5. But horribly, I can't decide which one is the best (some people tell me it's because I'm a \"libra\"), so I end up buying all of them."
+title: 'A bad habit: Getting all the domains!'
+summary: 'I have this horrible habit, where when I have an idea, I usually start by ordering a domain. And when I''m brainstorming, I might come up with around 30 ideas for domain names of a particular idea, which I narrow down to about 3-5. But horribly, I can''t decide which one is the best (some people tell me it''s because I''m a "libra"), so I end up buying all of them.'
 date: 2011-12-31
 ---
 
-I have this horrible habit, where when I have an idea, I usually start by ordering a domain. And when I'm brainstorming, I might come up with around 30 ideas for domain names of a particular idea, which I narrow down to about 3-5. But horribly, I can't decide which one is the best (some people tell me it's because I'm a "libra"), so I end up buying all of them. ![Get all the domains](https://memegenerator.net/cache/instances/400x/12/12438/12736814.jpg "Get all the domains") And of course, I never end up executing on more than 10% of the ideas, and those that I execute, I usually don't follow through with very well. Which results in me sitting there with a pile of domains that I'll never use, but will probably also not execute on. And as you could imagine, the names I end up getting are usually not the best ones.
+I have this horrible habit, where when I have an idea, I usually start by ordering a domain. And when I'm brainstorming, I might come up with around 30 ideas for domain names of a particular idea, which I narrow down to about 3-5. But horribly, I can't decide which one is the best (some people tell me it's because I'm a "libra"), so I end up buying all of them. ![Get all the domains](https://memegenerator.net/cache/instances/400x/12/12438/12736814.jpg 'Get all the domains') And of course, I never end up executing on more than 10% of the ideas, and those that I execute, I usually don't follow through with very well. Which results in me sitting there with a pile of domains that I'll never use, but will probably also not execute on. And as you could imagine, the names I end up getting are usually not the best ones.
 
 ### How many do I have?
 

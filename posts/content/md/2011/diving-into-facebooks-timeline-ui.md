@@ -4,7 +4,7 @@ summary: "A couple of months ago, Facebook started rolling out it's Timeline fea
 date: 2011-12-03
 ---
 
-A couple of months ago, Facebook started rolling out its [Timeline](https://www.facebook.com/about/timeline) feature. For those who don't know, it's a new form of a Facebook profile, which displays a user's profile in a very different way, based on their _entire life's history_. It's a very dramatic thing and is a very impressive endeavor. I signed up the very minute it was announced and have had it as my default profile, though it hasn't been viewable by anybody but me for some time, it's dust has now settled a bit and I've been trying to digest it and form an opinion. ![](https://f.cl.ly/items/1i0Z2T1I162r2L2m2N1j/Screen%20shot%202011-12-03%20at%2012.53.11%20AM.png "timeline headline") The Timeline is so interesting in so many ways. In one regard it's got a very inconsistent UI compared to the rest of Facebook and it introduces a lot of UI concepts and ideas that have not been known to websites in general before but on the other hand it's also a very pretty beast. So I find it very interesting to think about and digest and both imagine what the developers were thinking and also think about if this is something that will be important in the future.
+A couple of months ago, Facebook started rolling out its [Timeline](https://www.facebook.com/about/timeline) feature. For those who don't know, it's a new form of a Facebook profile, which displays a user's profile in a very different way, based on their _entire life's history_. It's a very dramatic thing and is a very impressive endeavor. I signed up the very minute it was announced and have had it as my default profile, though it hasn't been viewable by anybody but me for some time, it's dust has now settled a bit and I've been trying to digest it and form an opinion. ![](https://f.cl.ly/items/1i0Z2T1I162r2L2m2N1j/Screen%20shot%202011-12-03%20at%2012.53.11%20AM.png 'timeline headline') The Timeline is so interesting in so many ways. In one regard it's got a very inconsistent UI compared to the rest of Facebook and it introduces a lot of UI concepts and ideas that have not been known to websites in general before but on the other hand it's also a very pretty beast. So I find it very interesting to think about and digest and both imagine what the developers were thinking and also think about if this is something that will be important in the future.
 
 ### Evaluating the Facbeook Timeline UI
 
@@ -14,14 +14,14 @@ I just read [this review / fan post](https://baymard.com/blog/facebook-timeline-
 
 The intents / incentives I can think of a user has when he visits someone's Timeline (in no particular order), could be something like: **The user wants to...**
 
-*   See what their friend has been up to  lately.
-*   Find a post again that they recently posted, but the user doesn't have in their feed anymore.
-*   Interact with the user - either send them a message or write on their wall.
-*   View their photos. Either see photos of them or recent photos to see what they've been up to (or more likely: find a picture of yourself that they posted)
-*   Find a friend that they've added that you also want to add.
-*   A user visits his own timeline to find something that they posted, either to delete it, view comments (if out of notifications etc).
-*   The user doesn't know the person, but wants to view their profile and maybe see what they're like, what they've been up to, even though he doesn't want to become friends with him/her.
-*   Find their phone number / email etc.
+- See what their friend has been up to  lately.
+- Find a post again that they recently posted, but the user doesn't have in their feed anymore.
+- Interact with the user - either send them a message or write on their wall.
+- View their photos. Either see photos of them or recent photos to see what they've been up to (or more likely: find a picture of yourself that they posted)
+- Find a friend that they've added that you also want to add.
+- A user visits his own timeline to find something that they posted, either to delete it, view comments (if out of notifications etc).
+- The user doesn't know the person, but wants to view their profile and maybe see what they're like, what they've been up to, even though he doesn't want to become friends with him/her.
+- Find their phone number / email etc.
 
 There are probably more intents that I haven't listed or couldn't remember, but those might cover 90% of the use cases.
 
@@ -31,11 +31,11 @@ I think for the most part it does. It's very easy to see what the user has been 
 
 ### Photo based navigation elements in the header
 
-Finding a user's photos is not as simple as you might think. Take my timeline header-buttons as an example: ![](https://f.cl.ly/items/3b261o2G0B092b0s1k3v/Screen%20shot%202011-12-03%20at%2012.06.00%20AM.png "screenshot of my timeline header navigation elements") The photos are much larger than the captions and when you skim over, they don't exactly represent what you might be looking for. I think the main problem lies in the inconsistency in navigation from regular Facebook profiles, where photos, friends etc are usually placed as text links on the left side of the page: ![](https://f.cl.ly/items/3n0C010W0z0i320Z2a0r/Screen%20shot%202011-12-03%20at%2012.07.38%20AM.png "normal facebook profile navigation elements") Those links also have icons that we've come to get used to and associate with the given task. But in the timeline, those icons are not there. There is no visual difference between photo, friends etc. So you actually have to read the labels. Especially since the thumbnail that's shown is always different depending on what you last did etc. So the mental model breaks down a bit for plain navigation. That's not to say that a user gets completely lost, it's just that it's a bit less intuitive than you might imagine. It makes Facebook's user interface a bit inconsistent and requires the user to learn two different methods of accessing the same information.
+Finding a user's photos is not as simple as you might think. Take my timeline header-buttons as an example: ![](https://f.cl.ly/items/3b261o2G0B092b0s1k3v/Screen%20shot%202011-12-03%20at%2012.06.00%20AM.png 'screenshot of my timeline header navigation elements') The photos are much larger than the captions and when you skim over, they don't exactly represent what you might be looking for. I think the main problem lies in the inconsistency in navigation from regular Facebook profiles, where photos, friends etc are usually placed as text links on the left side of the page: ![](https://f.cl.ly/items/3n0C010W0z0i320Z2a0r/Screen%20shot%202011-12-03%20at%2012.07.38%20AM.png 'normal facebook profile navigation elements') Those links also have icons that we've come to get used to and associate with the given task. But in the timeline, those icons are not there. There is no visual difference between photo, friends etc. So you actually have to read the labels. Especially since the thumbnail that's shown is always different depending on what you last did etc. So the mental model breaks down a bit for plain navigation. That's not to say that a user gets completely lost, it's just that it's a bit less intuitive than you might imagine. It makes Facebook's user interface a bit inconsistent and requires the user to learn two different methods of accessing the same information.
 
 ### Finding a user's phone number, email, etc.
 
-We have a similar problem for finding user information, such as email or a mobile phone (if somebody lists those) We are used to seeing the "info" link on the left side navigation on people's profiles. But on the timeline, it shows up on the bottom left of the header, and it has also been renamed into "about" and when clicked, it now displays an alternative view of the about page you'll usually see on Facebook. ![](https://f.cl.ly/items/3M3F0E2H2Q0N422f2V2X/Screen%20shot%202011-12-03%20at%2012.13.37%20AM.png "facebook timeline about button") That's another example of an inconsistant UI where the user actually has to learn two methods of finding the same information.
+We have a similar problem for finding user information, such as email or a mobile phone (if somebody lists those) We are used to seeing the "info" link on the left side navigation on people's profiles. But on the timeline, it shows up on the bottom left of the header, and it has also been renamed into "about" and when clicked, it now displays an alternative view of the about page you'll usually see on Facebook. ![](https://f.cl.ly/items/3M3F0E2H2Q0N422f2V2X/Screen%20shot%202011-12-03%20at%2012.13.37%20AM.png 'facebook timeline about button') That's another example of an inconsistant UI where the user actually has to learn two methods of finding the same information.
 
 ### Friends
 
@@ -47,7 +47,7 @@ I'm beginning to have the hunch that Facebook is changing its entire UI to somet
 
 ### Photos in the Timeline
 
-The photos get arranged in the Timeline in a very visual and interesting way. Here's a summary of an album I recently updated, as an example: ![](https://f.cl.ly/items/1W1v202j3Y1O0k3Q3U2m/Screen%20shot%202011-12-03%20at%2012.50.40%20AM.png "some photos i uploaded displayed on the timeline")
+The photos get arranged in the Timeline in a very visual and interesting way. Here's a summary of an album I recently updated, as an example: ![](https://f.cl.ly/items/1W1v202j3Y1O0k3Q3U2m/Screen%20shot%202011-12-03%20at%2012.50.40%20AM.png 'some photos i uploaded displayed on the timeline')
 
 ### The really puzzling bit
 
