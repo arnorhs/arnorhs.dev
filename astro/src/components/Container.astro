@@ -1,3 +1,9 @@
-<div class="lg:container">
+---
+export type Props = {
+  width?: 'narrow' | 'wide'
+}
+---
+
+<div class={'container ' + (Astro.props.width === 'narrow' ? 'max-w-[850px]' : 'max-w-screen-lg')}>
   <slot />
 </div>

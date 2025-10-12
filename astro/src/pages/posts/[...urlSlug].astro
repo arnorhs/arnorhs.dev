@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro'
 import PostFull from '../../components/PostFull.astro'
 import { findPost, getAllPosts, type PostWithUrl } from '@arnorhs/posts'
+import Container from '../../components/Container.astro'
 
 export async function getStaticPaths() {
   const allPosts = getAllPosts()
@@ -29,5 +30,7 @@ if (!post) {
   ogType="article"
   description={post.summary}
 >
-  <PostFull {post} />
+  <Container width="narrow">
+    <PostFull {post} />
+  </Container>
 </MainLayout>
