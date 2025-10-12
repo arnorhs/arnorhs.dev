@@ -65,10 +65,10 @@ Now I bet you are asking _"but what about cursor/windsurf, weren't they already 
 
 So that is my observation - I bet you that in 2-3 years, all these agentic cli tools will have transitioned to desktop apps, because this trend doesn't make any sense to me (and I say that, despite being heavily into the CLI tools myself)..
 
-So what would that look like?
+## So what would that look like?
 
 If I were building one, I'd probably borrow from the UI of the terminal UI agents. It would be a simple floating GUI window, where chat is the primary interface.
 
-If you've played around with Roo Code, that's also a possible UI for it.
-
 It would probably look exactly like ChatGPT or T3 chat, except you'd have "project" open - ie a directory.
+
+What do you think? Am I missing something?
