@@ -1,5 +1,5 @@
 ---
-title: "Change vim tab size"
+title: 'Change vim tab size'
 summary: "If you like vim you probably know this already, but if you don't, here's how you change vim's tab size from the default 8."
 date: 2011-05-26
 ---

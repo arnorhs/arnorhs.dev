@@ -1,6 +1,6 @@
 ---
-title: "Interesting - range inputs and putting a bubble on top"
-summary: "This blog post was published on the css-tricks blog today: It explains how you can create a bubble on top of a range-slider html5 form element, which shows the value of the slider."
+title: 'Interesting - range inputs and putting a bubble on top'
+summary: 'This blog post was published on the css-tricks blog today: It explains how you can create a bubble on top of a range-slider html5 form element, which shows the value of the slider.'
 date: 2011-04-14
 ---
 

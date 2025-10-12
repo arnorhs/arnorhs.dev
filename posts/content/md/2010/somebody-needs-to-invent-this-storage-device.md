@@ -1,18 +1,18 @@
 ---
-title: "Somebody needs to invent this storage device"
+title: 'Somebody needs to invent this storage device'
 summary: "Storage. It's an even lasting problem which a lot of companies out there are trying to solve. There are so many requirements and so many limitations. There are a few solutions out there which are pretty good but they are all tackling a separate problem. Somebody needs to invent a computer/storage device with the following features..."
 date: 2010-07-05
 ---
 
-[![](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png "ultimate-storage-device_cloud-infographic")](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png) I've got this problem. It's a problem which is probably affecting a lot of people out there. It goes something like this: I have a storage device that I use to watch movies through on my TV. I have a dropbox account. I have my mp3 collection. I have a lot of stuff on my computer which I need to backup. Some of these things I would like to have access to wherever I am. I would like my girlfriend to have access to all or some of those files as well. I would like all of this to work really simply.
+[![](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png 'ultimate-storage-device_cloud-infographic')](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png) I've got this problem. It's a problem which is probably affecting a lot of people out there. It goes something like this: I have a storage device that I use to watch movies through on my TV. I have a dropbox account. I have my mp3 collection. I have a lot of stuff on my computer which I need to backup. Some of these things I would like to have access to wherever I am. I would like my girlfriend to have access to all or some of those files as well. I would like all of this to work really simply.
 
 ### The solutions out there
 
 Storage. It's an even lasting problem which a lot of companies out there are trying to solve. There are so many requirements and so many limitations. There are a few solutions out there which are pretty good but they are all tackling a separate problem.
 
-*   [Dropbox](https://www.dropbox.com/) - great for a few small files on a computer or a mobile device. You can share those files online and you can share some files/folders accross multiple dropbox accounts.
-*   [TonidoPlug](https://www.tonidoplug.com/) - A small computer which you plug your hard drive to using USB. This actually goes a long way to solving all problems, but it only has a USB plug for one hard drive (which you can probably extend with a USB hub, it can't play back anything, no remote, etc.
-*   External hard drives with a network connector / USB port - some of these have media playback features etc. The ones I'm most familiar with are inoi, Play ON, argosy, etc but there are probably other solutions more common in the states, etc.
+- [Dropbox](https://www.dropbox.com/) - great for a few small files on a computer or a mobile device. You can share those files online and you can share some files/folders accross multiple dropbox accounts.
+- [TonidoPlug](https://www.tonidoplug.com/) - A small computer which you plug your hard drive to using USB. This actually goes a long way to solving all problems, but it only has a USB plug for one hard drive (which you can probably extend with a USB hub, it can't play back anything, no remote, etc.
+- External hard drives with a network connector / USB port - some of these have media playback features etc. The ones I'm most familiar with are inoi, Play ON, argosy, etc but there are probably other solutions more common in the states, etc.
 
 ### The storage device of my dreams
 

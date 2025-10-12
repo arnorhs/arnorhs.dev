@@ -1,6 +1,6 @@
 ---
-title: "A git power feature that helped me 10 mins ago"
-summary: "I was setting up a new git repository (more on that in a later post) and I was using a wrong author, so the name was wrong on all the commits. I googled around and found this command which allow you t..."
+title: 'A git power feature that helped me 10 mins ago'
+summary: 'I was setting up a new git repository (more on that in a later post) and I was using a wrong author, so the name was wrong on all the commits. I googled around and found this command which allow you t...'
 date: 2011-09-25
 ---
 

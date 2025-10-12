@@ -1,5 +1,5 @@
 ---
-title: "My new Kindle Fire"
+title: 'My new Kindle Fire'
 summary: "Recently I won a Kindle Fire in a Hacker Buddy give away, sponsored by Tokbox. (Hacker Buddy is a site that connects hackers to other hackers with the goal of helping each other out, you should check it out) I wanted to write up a summary of my experience using the device. I'm not going to bore anybody with specs, information or detail. Enough information can be found online, eg. on the Amazon Kindle store."
 date: 2012-02-10
 ---

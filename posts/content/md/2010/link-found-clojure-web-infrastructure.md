@@ -1,5 +1,5 @@
 ---
-title: "Link found: Clojure Web Infrastructure"
+title: 'Link found: Clojure Web Infrastructure'
 summary: "This article was posted on Hacker News yesterday. It explains/lists the Clojure web stack. When I started playing with Clojure, I had a very hard time grasping an overview of the libraries out there, this post would have helped me a great deal. There are also some things there that I didn't know about."
 date: 2010-11-06
 ---

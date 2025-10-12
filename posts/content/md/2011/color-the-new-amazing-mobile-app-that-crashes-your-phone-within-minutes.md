@@ -1,5 +1,5 @@
 ---
-title: "Color, the new amazing mobile app that crashes your phone within minutes"
+title: 'Color, the new amazing mobile app that crashes your phone within minutes'
 summary: "(sorry about the hater-post) What is wrong with this picture? Seriously.\n\n### The next Google?\n\nSequoia has just funded a startup that is creating a mobile app, called..."
 date: 2011-03-24
 ---

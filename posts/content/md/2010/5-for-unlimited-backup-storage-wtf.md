@@ -1,5 +1,5 @@
 ---
-title: "$5 for unlimited backup storage? Wtf?"
+title: '$5 for unlimited backup storage? Wtf?'
 summary: "_I'm sorry if this post sounds like an advertisement, **but it is not.**_ I ran into this backup service yesterday. It's called Backblaze I was pretty surprised when I saw the p..."
 date: 2010-08-28
 ---

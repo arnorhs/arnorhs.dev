@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Custom Screens */
+  --screen-xs: 420px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+
+  /* Custom Font Families */
+  --font-family-sans: 'Figtree';
+  --font-family-serif: 'Figtree';
+  --font-family-display: 'Figtree';
+  --font-family-nav: 'Figtree';
+
+  /* Custom Colors */
+  --color-mycard: #fdfdfd;
+
+  --color-myblue: #4151b5;
+  --color-myblue-bright: #e6e9fc;
+  --color-myblue-lighter: #a3ace5;
+  --color-myblue-darker: #4f5680;
+
+  --color-myorange: rgb(255, 192, 203);
+}
+
+/* Add this after your @import and @layer theme */
+
+@utility container {
+  /* 1. Base styles for the container */
+  width: 100%;
+
+  /* 2. Center the container horizontally */
+  margin-inline: auto; /* Modern equivalent of margin-left: auto; margin-right: auto; */
+
+  /* 3. Add default horizontal padding */
+  padding-inline: 1rem; /* Adjust this to your desired default padding */
+
+  /* 4. Apply max-width at each responsive breakpoint */
+  @variant sm {
+    max-width: var(--screen-sm);
+  }
+  @variant md {
+    max-width: var(--screen-md);
+  }
+  @variant lg {
+    max-width: var(--screen-lg);
+  }
+  @variant xl {
+    max-width: var(--screen-xl);
+  }
+  /* If you had a 2xl breakpoint, you'd add it here as well */
+}
+
+@layer base {
+  html {
+    font-family: theme(fontFamily.sans);
+    font-size: 24px;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  a {
+    @apply text-myblue;
+  }
+
+  p a {
+    @apply underline;
+  }
+
+  a:hover,
+  article a:hover {
+    @apply transition-colors;
+    @apply duration-200;
+    @apply text-myorange;
+  }
+
+  article ul {
+    @apply list-outside;
+    @apply list-disc;
+    @apply ml-6;
+  }
+  article ul ul {
+    @apply ml-6;
+    @apply text-sm;
+  }
+
+  article ol {
+    @apply list-outside;
+    @apply list-decimal;
+    @apply ml-7;
+  }
+
+  article ol li p {
+    @apply mt-0;
+  }
+
+  article li {
+    @apply mb-1;
+  }
+
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article ul,
+  article ol,
+  article p,
+  article figure,
+  article h6 {
+    @apply mt-4;
+    @apply mb-2;
+  }
+
+  article blockquote {
+    @apply border-l-8;
+    @apply border-l-myblue-bright;
+    @apply italic;
+    @apply pl-4 py-0;
+    @apply xl:w-4/5;
+  }
+
+  article h1 {
+    @apply text-4xl;
+  }
+
+  article h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+  }
+
+  article h3 {
+    @apply text-2xl;
+  }
+
+  article h4 {
+    @apply text-xl;
+  }
+
+  article h5 {
+    @apply text-lg;
+  }
+
+  article h6 {
+    @apply text-base;
+  }
+}

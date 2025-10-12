@@ -1,6 +1,6 @@
 [build]
   command = "yarn export"
-  publish = "astro/dist/"
+  publish = "website/dist/"
 
 [context.deploy-preview]
   environment = { SKIP_RESOC = "1" }

@@ -1,6 +1,6 @@
 ---
-title: "Great tip on finding transaction bottlenecks in MySQL"
-summary: "On the MySQL performance blog there was a great article posted two days ago on how to debug long-running transactions in MySQL. Long-running transactions are transactions that are left open and not committing or reverting. Maybe because of a failed/halting application or just an application that is taking long to process."
+title: 'Great tip on finding transaction bottlenecks in MySQL'
+summary: 'On the MySQL performance blog there was a great article posted two days ago on how to debug long-running transactions in MySQL. Long-running transactions are transactions that are left open and not committing or reverting. Maybe because of a failed/halting application or just an application that is taking long to process.'
 date: 2011-03-10
 ---
 

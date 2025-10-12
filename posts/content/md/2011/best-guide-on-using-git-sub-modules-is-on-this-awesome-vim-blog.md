@@ -1,6 +1,6 @@
 ---
-title: "Best guide on using git sub modules is on this awesome vim blog"
-summary: "I found this blog the other day when trying to brush up on my vim knowledge. I'm getting tired of my editor situation (Long story, used to be a scite man, migrated to e-text editor, then to notepad plus plus, all horrible) and wanted a refresh. Anyways, I was going to start to use pathogen, which is a vim plugin that makes it a bit more easy to manage a few vim plugins (so, a \"meta\" plugin) when I ran into this tutorial:"
+title: 'Best guide on using git sub modules is on this awesome vim blog'
+summary: 'I found this blog the other day when trying to brush up on my vim knowledge. I''m getting tired of my editor situation (Long story, used to be a scite man, migrated to e-text editor, then to notepad plus plus, all horrible) and wanted a refresh. Anyways, I was going to start to use pathogen, which is a vim plugin that makes it a bit more easy to manage a few vim plugins (so, a "meta" plugin) when I ran into this tutorial:'
 date: 2011-05-28
 ---
 

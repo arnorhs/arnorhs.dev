@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro'
 import PostPreview from '../components/PostPreview.astro'
 import { getFeaturedPost } from '@arnorhs/posts'
 
-const post = await getFeaturedPost()
+const post = getFeaturedPost()
 ---
 
 <MainLayout animate={true}>

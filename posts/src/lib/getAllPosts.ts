@@ -29,7 +29,7 @@ export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
         ({
           year: key,
           posts: value,
-        } as PostGroup),
+        }) as PostGroup,
     )
     .sort(({ year: a }, { year: b }) => {
       return parseInt(b, 10) - parseInt(a, 10)

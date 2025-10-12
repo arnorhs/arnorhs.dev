@@ -1,5 +1,5 @@
 ---
-title: "Echo JS launched"
+title: 'Echo JS launched'
 summary: "A new Hacker News-style social news site has been launched focused exclusively around Javascript. It's a nice source for some interesting JS libraries and articles. If you are passionate about Javascript, you should check it out: https://www.echojs.com/"
 date: 2011-12-01
 ---

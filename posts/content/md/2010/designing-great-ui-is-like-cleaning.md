@@ -1,5 +1,5 @@
 ---
-title: "Designing Great UI is like Cleaning"
+title: 'Designing Great UI is like Cleaning'
 summary: "Usually, when you need to put something down, you just place it on the next table and don't think much about it. After a few days (or weeks/months/years) your appartment looks like shit and you have to clean it up. How do you clean? One thing at a time. So one by one you take each item lying on the floor, on a table, in a shelf and find it a new home. Sometimes you can see a pattern in all your stuff that's lying around and you might find a good place to put many of those things, like a cupboard a drawer, etc. Often you'll already have great places to put them in, so you put them there."
 date: 2010-08-13
 ---

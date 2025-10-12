@@ -1,5 +1,5 @@
 ---
-title: "How to do full text search in MongoDB"
+title: 'How to do full text search in MongoDB'
 summary: "MySQL has had a pretty decent full text search engine in it's MyISAM storage engine and for some developers it's probably still a pretty big reason for sticking with MySQL (for some functionality at least). Somebody published [this link](https://www.mongodb.org/display/DOCS/Full%20Text%20Search%20in%20Mongo) to the The MongoDB blog [on Hacker News](https://news.ycombinator.com/item?id=2376349), just now, so I wanted to share it here. The article is actually from 2009 but it explains how to go about creating a full text search using Mongo. Even though this is a very simple example, it might help some people who rely on MySQL for some basic functionality."
 date: 2011-03-27
 ---

@@ -1,10 +1,10 @@
 ---
-title: "11 Reasons Why Business Catalyst Sucks"
+title: '11 Reasons Why Business Catalyst Sucks'
 summary: "I've recently been working for a colleague and a client on implementing a website and ecommerce site in Business Catalyst. Business Catalyst is a web publishing platform originally developed by a couple of Australians in 2004, but was acquired by Adobe Systems in 2009. It promises to be an all-in-one solutions for business websites (there's your red flag right there) with tight integration of it's online store, tracking and analytics. But there's just one problem with it. It sucks."
 date: 2011-01-19
 ---
 
-_Ok, I know this title sounds like total link bait, but bare with me. I don't believe there's any better way to present my feelings and experiences with this system. Of course you should know, like [Stjáni Gunnars](https://www.stjanigunnars.com/) pointed out to me, that this is written from a developer's perspective. When you're a business, this might be a different story._ I've recently been working for a colleague and a client on implementing a website and ecommerce site in [Business Catalyst](https://en.wikipedia.org/wiki/Business_Catalyst). [![](https://arnorhs.dev/wp-content/uploads/2011/01/business-catalyst-front-page.png "business-catalyst-front-page")](https://businesscatalyst.com/) Business Catalyst is a web publishing platform originally developed by a couple of Australians in 2004, but was acquired by Adobe Systems in 2009. It promises to be an all-in-one solutions for business websites (there's your red flag right there) with tight integration with it's online store, tracking and analytics. **But there's just one problem with it.** It sucks.
+_Ok, I know this title sounds like total link bait, but bare with me. I don't believe there's any better way to present my feelings and experiences with this system. Of course you should know, like [Stjáni Gunnars](https://www.stjanigunnars.com/) pointed out to me, that this is written from a developer's perspective. When you're a business, this might be a different story._ I've recently been working for a colleague and a client on implementing a website and ecommerce site in [Business Catalyst](https://en.wikipedia.org/wiki/Business_Catalyst). [![](https://arnorhs.dev/wp-content/uploads/2011/01/business-catalyst-front-page.png 'business-catalyst-front-page')](https://businesscatalyst.com/) Business Catalyst is a web publishing platform originally developed by a couple of Australians in 2004, but was acquired by Adobe Systems in 2009. It promises to be an all-in-one solutions for business websites (there's your red flag right there) with tight integration with it's online store, tracking and analytics. **But there's just one problem with it.** It sucks.
 
 ### Why Business Catalyst sucks
 
@@ -17,9 +17,9 @@ _Ok, I know this title sounds like total link bait, but bare with me. I don't be
 7.  **Rudimentary API.** Their ecommerce API has 6 function calls and they're all related to product/catalog information.
 8.  **Lack of flexibility.** The built in Contact form application forces you to require a title, name & last name. On the positive side you can create many kinds of forms, however they all have this limitation.
 9.  **Only a basic WYSIWYG editor.** BC obviously doesn't have a lot of SEO or semantic web oriented userbase since the WYSIWYG editor isn't very paragraph-oriented - you'll need to add them manually.
-10.  **Closed platform.** Since it's a closed platform you won't have any developers working on cool plugins or anything value adding beyond what Adobe can deliver. Compared to open source solutions like wordpress, drupal, plone, etc it looks pretty late to the game. This also means that there isn't a plethora of blogs out there covering "how to do X in BC", so you'll have to make do with their online forum or the support channels.
-11.  **Template editing is achieved through the WYSIWYG editor.**
-12.  **Bonus point:** Lack of ready-made custom themes out there. This is mostly attributed to the small user base and I'd say it's a typical problem compared to the small number of users.
+10. **Closed platform.** Since it's a closed platform you won't have any developers working on cool plugins or anything value adding beyond what Adobe can deliver. Compared to open source solutions like wordpress, drupal, plone, etc it looks pretty late to the game. This also means that there isn't a plethora of blogs out there covering "how to do X in BC", so you'll have to make do with their online forum or the support channels.
+11. **Template editing is achieved through the WYSIWYG editor.**
+12. **Bonus point:** Lack of ready-made custom themes out there. This is mostly attributed to the small user base and I'd say it's a typical problem compared to the small number of users.
 
 ### Localized issues
 

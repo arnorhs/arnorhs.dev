@@ -1,5 +1,5 @@
 ---
-title: "Jakob Nielsen on why the WSJ app gets bad reviews"
+title: 'Jakob Nielsen on why the WSJ app gets bad reviews'
 summary: "Jakob Nielsen recently published this post, where he (and I guess his team) analyze why the Wall Street Journal mobile app gets such bad customer reviews. It all stems from a horrible interface where the customers are led to believe that they need to pay separately for the monthly subscription to to the mobile app, when in fact it's free for existing subscribers."
 date: 2011-07-05
 ---

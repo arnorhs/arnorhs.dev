@@ -1,6 +1,6 @@
 ---
-title: "Language"
-summary: "I got into an ironic conversation the other day over the usefulness of having multiple languages in the world. I am of the opinion that languages are redundant and they only exist for being the most usable mechanism we have invented for communication so far."
+title: 'Language'
+summary: 'I got into an ironic conversation the other day over the usefulness of having multiple languages in the world. I am of the opinion that languages are redundant and they only exist for being the most usable mechanism we have invented for communication so far.'
 date: 2013-07-05
 ---
 

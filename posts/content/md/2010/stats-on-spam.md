@@ -1,5 +1,5 @@
 ---
-title: "Stats on Spam"
+title: 'Stats on Spam'
 summary: "Now I've been collecting spam for a little over a year on spambotlove.com. The purpose of which I do not know, yet. I kind of forgot about the project until just recently, so I started harvesting some stats from the database. Currently we have 729,255 records in the database. That's 3 MB of data."
 date: 2010-02-23
 ---
@@ -70,7 +70,7 @@ Total
 
 729271
 
-As you can see, the numbers are growing exponentially. I actually find this whole thing really funny. The irony of software sending in vasts amounts of so useless data is really kind of funny. [![spam chart](https://arnorhs.dev/wp-content/uploads/2010/02/ugly-chart-sbl-2009-02-e1274351380239.gif "ugly-chart-sbl-2009-02")](https://arnorhs.dev/wp-content/uploads/2010/02/ugly-chart-sbl-2009-02.gif)
+As you can see, the numbers are growing exponentially. I actually find this whole thing really funny. The irony of software sending in vasts amounts of so useless data is really kind of funny. [![spam chart](https://arnorhs.dev/wp-content/uploads/2010/02/ugly-chart-sbl-2009-02-e1274351380239.gif 'ugly-chart-sbl-2009-02')](https://arnorhs.dev/wp-content/uploads/2010/02/ugly-chart-sbl-2009-02.gif)
 
 #### Hardest working IP addresses
 

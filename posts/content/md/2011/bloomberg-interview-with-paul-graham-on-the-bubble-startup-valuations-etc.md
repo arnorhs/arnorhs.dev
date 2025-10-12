@@ -1,6 +1,6 @@
 ---
-title: "Bloomberg interview with Paul Graham on \"the bubble\", startup valuations etc."
-summary: "I was watching this Bloomberg interview with Y Combinator's Paul Graham (\"startup god\"), today. He discusses the supposed \"bubble\" that's been going on, valuations of early stage startups, Facebooks valuations and other similar topics. It's an interesting video also for the fact that he's being interviewed with non-startup people and it's fun to see things from the other side."
+title: 'Bloomberg interview with Paul Graham on "the bubble", startup valuations etc.'
+summary: 'I was watching this Bloomberg interview with Y Combinator''s Paul Graham ("startup god"), today. He discusses the supposed "bubble" that''s been going on, valuations of early stage startups, Facebooks valuations and other similar topics. It''s an interesting video also for the fact that he''s being interviewed with non-startup people and it''s fun to see things from the other side.'
 date: 2011-03-09
 ---
 

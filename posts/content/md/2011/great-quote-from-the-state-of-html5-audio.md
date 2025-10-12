@@ -1,6 +1,6 @@
 ---
-title: "Great quote from \"The State of HTML5 Audio\""
-summary: "I was reading through a blog post titled \"The state of HTML5 audio\" and I found it very amusing. Warning.. There is profanity. Read at your own risk."
+title: 'Great quote from "The State of HTML5 Audio"'
+summary: 'I was reading through a blog post titled "The state of HTML5 audio" and I found it very amusing. Warning.. There is profanity. Read at your own risk.'
 date: 2011-03-09
 ---
 

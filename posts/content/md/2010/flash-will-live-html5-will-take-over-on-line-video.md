@@ -1,5 +1,5 @@
 ---
-title: "Flash Will Live, HTML5 Will Take Over On-line Video"
+title: 'Flash Will Live, HTML5 Will Take Over On-line Video'
 summary: "I've been pretty calm for the past few days/weeks. The sun has started to shine outside, I've had the chance to go bouldering outside the last days so I've managed to stay silent through the whole twitter follower mess, Steve's flash rant etc. But no more. I got into a conversation with my coworker, Ari, about the future of Flash in the HTML5 world. The general opinion out there that the media has led us to believe is generally that Flash is dead, forgotten and HTML5's canvas + javascript will replace it completely in the nearest future."
 date: 2010-05-11
 ---

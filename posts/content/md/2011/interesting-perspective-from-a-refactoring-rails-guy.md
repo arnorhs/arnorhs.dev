@@ -1,5 +1,5 @@
 ---
-title: "Interesting perspective from a refactoring rails guy"
+title: 'Interesting perspective from a refactoring rails guy'
 summary: "I ran into this post on HN today. It's from a guy who often gets brought in to help teams refactor old ruby on rails code. My experience with rails has been that it's pretty good at abstracting most of the crap away from your code base and gives you a nice clean structure for your code, but his argument seems to be that as soon as you start doing some spaghetti stuff, you get into trouble."
 date: 2011-08-23
 ---

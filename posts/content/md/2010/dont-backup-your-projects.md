@@ -1,6 +1,6 @@
 ---
 title: "Don't Backup your Projects"
-summary: "Quick post to remind everybody to not back anything up. You might lose all your projects and force yourself to reevaluate your priorities, reevaluate your projects and make some important decisions."
+summary: 'Quick post to remind everybody to not back anything up. You might lose all your projects and force yourself to reevaluate your priorities, reevaluate your projects and make some important decisions.'
 date: 2010-06-13
 ---
 

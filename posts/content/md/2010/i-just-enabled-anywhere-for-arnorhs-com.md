@@ -1,6 +1,6 @@
 ---
-title: "I just enabled @anywhere for arnorhs.com"
-summary: "Twitter recently launched a development platform called @anywhere. You can find more information about that on https://dev.twitter.com/ (Side note: I really like the design of the site)"
+title: 'I just enabled @anywhere for arnorhs.com'
+summary: 'Twitter recently launched a development platform called @anywhere. You can find more information about that on https://dev.twitter.com/ (Side note: I really like the design of the site)'
 date: 2010-04-16
 ---
 

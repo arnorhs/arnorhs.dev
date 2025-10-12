@@ -1,6 +1,6 @@
 ---
-title: "The problem with \"Lorem Ipsum\" and What You Can to Do Instead."
-summary: "Usually when designers are designing both print and website layouts, banner ads and other user interfaces, they need to have some text copy to work with. Most of the time, the client or the company they are working for doesn't have text copy prepared, so designers usually place so called \"Lorem Ipsum\" content into their designs. Lorem Ipsum has been used for many decades as placeholder content in print layout designs. It's based on latin, but is actually just gibberish and doesn't have any meaning. It's purpose is to divert the reader's attention away from the text itself and onto the layout and the design. That seems very logical."
+title: 'The problem with "Lorem Ipsum" and What You Can to Do Instead.'
+summary: 'Usually when designers are designing both print and website layouts, banner ads and other user interfaces, they need to have some text copy to work with. Most of the time, the client or the company they are working for doesn''t have text copy prepared, so designers usually place so called "Lorem Ipsum" content into their designs. Lorem Ipsum has been used for many decades as placeholder content in print layout designs. It''s based on latin, but is actually just gibberish and doesn''t have any meaning. It''s purpose is to divert the reader''s attention away from the text itself and onto the layout and the design. That seems very logical.'
 date: 2011-10-20
 ---
 
@@ -17,14 +17,14 @@ If you ignore these things, you will eventually have to redo big parts of whatev
 
 I'm not a real designer, so I'm probably doing it wrong, but here's what I think you should do (note: I talk about website design here but this should apply to print design just as well):
 
-*   Since you don't have any text yet, you'll **simply have to write it**. Don't worry, you can do it really carelessly and since this isn't your main role you can do a really bad job. But the whole point is that you've started to think about it and the client or your employer will appreciate you going the extra mile to think about what it is you're displaying.
-*   Before you start, try to think about the message and the meaning of whatever it is that you're trying to portray. What is the core concept that you need to introduce right away.
-    *   Think about what the user knows before he/she sees the website. You should also think about where the user came from. Did he click an ad, did he hear about it locally or from somebody he knew, did he hear about it in a conference.
-    *   Based on these things, what do you think the user already knows? What will be the most confusing thing for the user to understand?
-    *   Remember that users on the internet have an attention span of about 20 ms, so you will need to be as concise as possible.
-*   Write a 3-paragraph description of the products and/or services the website is promoting. Then write the same in 1 paragraph. Then write the same in 7 words. Then explain it in 1-4 words. Even though you won't need those versions, it will help you and everybody else get a clear picture of what it is you're describing and you'll get down to the core of the value proposition.
-*   Make a list of the 3 most important elements/services the website needs to illustrate. This will usually be "Products, about the company, contact us, testimonials" etc..
-*   Make a list of at least 6 products that the website promotes - or if there's a single product - 6 features.
+- Since you don't have any text yet, you'll **simply have to write it**. Don't worry, you can do it really carelessly and since this isn't your main role you can do a really bad job. But the whole point is that you've started to think about it and the client or your employer will appreciate you going the extra mile to think about what it is you're displaying.
+- Before you start, try to think about the message and the meaning of whatever it is that you're trying to portray. What is the core concept that you need to introduce right away.
+  - Think about what the user knows before he/she sees the website. You should also think about where the user came from. Did he click an ad, did he hear about it locally or from somebody he knew, did he hear about it in a conference.
+  - Based on these things, what do you think the user already knows? What will be the most confusing thing for the user to understand?
+  - Remember that users on the internet have an attention span of about 20 ms, so you will need to be as concise as possible.
+- Write a 3-paragraph description of the products and/or services the website is promoting. Then write the same in 1 paragraph. Then write the same in 7 words. Then explain it in 1-4 words. Even though you won't need those versions, it will help you and everybody else get a clear picture of what it is you're describing and you'll get down to the core of the value proposition.
+- Make a list of the 3 most important elements/services the website needs to illustrate. This will usually be "Products, about the company, contact us, testimonials" etc..
+- Make a list of at least 6 products that the website promotes - or if there's a single product - 6 features.
 
 After this you should have a pretty decent deck to work with for your layout.
 
@@ -32,9 +32,9 @@ After this you should have a pretty decent deck to work with for your layout.
 
 There's one thing that Lorem Ipsum does somewhat well. Testing content. It's very easy to copy and paste it into content fields to see how it will look and how the content field resizes. I will forgive you if you use Lorem Ipsum for testing content. But that's much more of a technical thing. There are also a few resources you'll want to look into for content generation. Try some of these: There are a few tools out there to generate Lorem Ipsum text and even some that can be used to fill databases with content
 
-*   [https://hipsteripsum.me/](https://hipsteripsum.me/)
-*   [https://lipsum.ahyeah.nl/](https://lipsum.ahyeah.nl/)
-*   [https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/](https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/)
-*   [https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/](https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/)
+- [https://hipsteripsum.me/](https://hipsteripsum.me/)
+- [https://lipsum.ahyeah.nl/](https://lipsum.ahyeah.nl/)
+- [https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/](https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/)
+- [https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/](https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/)
 
 That's it. I hope this was helpful.

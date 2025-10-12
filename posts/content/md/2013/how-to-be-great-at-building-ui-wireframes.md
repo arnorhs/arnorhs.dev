@@ -1,6 +1,6 @@
 ---
-title: "How to be great at building UI wireframes"
-summary: "As I tweaked some last bits of code and added a few comments here and there, I realized I was getting excited. This project I had been working on for the last few days was almost done. I was happy about the code I had written and started prepping for a code review. My co-workers had been asking how it's going and wanted to give me feedback, so I pushed and deployed my changes to a staging server. What immediately followed was a humbling experience. \"What is this?\", \"Why did we decide to do it this way?\", \"Won't this interfere with the rest of the product?\", \"How about if we do X instead?\", \"Arnor, what the hell have you been building?\""
+title: 'How to be great at building UI wireframes'
+summary: 'As I tweaked some last bits of code and added a few comments here and there, I realized I was getting excited. This project I had been working on for the last few days was almost done. I was happy about the code I had written and started prepping for a code review. My co-workers had been asking how it''s going and wanted to give me feedback, so I pushed and deployed my changes to a staging server. What immediately followed was a humbling experience. "What is this?", "Why did we decide to do it this way?", "Won''t this interfere with the rest of the product?", "How about if we do X instead?", "Arnor, what the hell have you been building?"'
 date: 2013-04-26
 ---
 
@@ -10,7 +10,7 @@ As I tweaked some last bits of code and added a few comments here and there, I r
 
 A wireframe is basically a skeleton of your site, your app, your banner, whatever it may be and includes a rough version of the text, buttons, images etc. It is not a high fidelity mockup like a photoshop document, but a rough drawing. Something like this:
 
-[![](https://f.cl.ly/items/2H282V2G1z3s3q0J3G3H/Screen%20Shot%202013-04-26%20at%201.20.51%20AM.png "wireframe")](https://f.cl.ly/items/2H282V2G1z3s3q0J3G3H/Screen%20Shot%202013-04-26%20at%201.20.51%20AM.png)
+[![](https://f.cl.ly/items/2H282V2G1z3s3q0J3G3H/Screen%20Shot%202013-04-26%20at%201.20.51%20AM.png 'wireframe')](https://f.cl.ly/items/2H282V2G1z3s3q0J3G3H/Screen%20Shot%202013-04-26%20at%201.20.51%20AM.png)
 
 Usually it will also include additional steps, and user flows, indicating what you can interact with, how you interact with it, mirroring what you'd come up with in a storyboard.
 
@@ -18,12 +18,12 @@ Usually it will also include additional steps, and user flows, indicating what y
 
 A lot of people are under the impression that building a wireframe is completely useless and redundant. Though sometimes it can be, it usually is a great way to get your idea into visual form so you can communicate what it is that you intend to build. Being great at building wireframes gives you a **huge edge** when it comes to building successful products. Sometimes people think that wireframes are only for designers and you don't really need to have this skill unless you are one. First of all, I'd like to say that **everyone is a designer**, second: Everybody should be good at building wireframes. This includes:
 
-*   Designers
-*   Developers
-*   Project managers
-*   Product managers
-*   CEOs
-*   Your mom
+- Designers
+- Developers
+- Project managers
+- Product managers
+- CEOs
+- Your mom
 
 ### What is the main purpose of making a wireframe?
 
@@ -31,33 +31,33 @@ The main purpose of making a wireframe is surfacing any feedback, any possible i
 
 #### Benefits of building wireframes:
 
-*   Gives you a better picture of what you are building, even for personal projects
-*   Faster iterations for getting to a good user flow
-*   Easier to iterate on text/language/copy
-*   Getting the whole team on the same page
-*   Prevents misunderstanding
-*   Surfaces assumptions that you may have, that you don't know you have
+- Gives you a better picture of what you are building, even for personal projects
+- Faster iterations for getting to a good user flow
+- Easier to iterate on text/language/copy
+- Getting the whole team on the same page
+- Prevents misunderstanding
+- Surfaces assumptions that you may have, that you don't know you have
 
 #### Downsides of building wireframes:
 
-*   Adds an extra step to the design flow
-*   Boxes your thoughts in the confinements of the wireframe, so it's harder to break out of the mold when doing a higher fidelity mockup.
+- Adds an extra step to the design flow
+- Boxes your thoughts in the confinements of the wireframe, so it's harder to break out of the mold when doing a higher fidelity mockup.
 
 ### When should you specifically skip doing wireframes?
 
 Most importantly, it doesn't make sense to use wireframes for doing purely visual design. As in logos, photo cropping and placement, styling buttons and widgets. I'd say you can make pen/paper mockups for those, and those are a different beast and a totally different process. (And outside the scope of this post.) You probably don't want to use wireframes when the feedback cycle is super, super slow. If it takes a week, few days, even a few hours to get feedback on your wireframes, sometimes it can actually hinder the process of what you are building. It's true that you might end up building the wrong thing, but sometimes (especially if you're doing client work) the constraints and mission give you enough guidance when it comes to the design and constraints, and then it might not make sense. Sometimes your client and/or organization you work with might not be able to understand the abstraction of a wireframe. They might simply give you a bunch of unhelpful feedback, start brainstorming irrelevant ideas, and maybe start feeling like the process is too complicated and involved. Some people simply don't want to be involved. When you are the primary stakeholder (eg. personal projects, personal business) it also doesn't always make sense to use wireframes, since you may already have a clear idea for what you are building, what the interactions look like, etc right away.
 
-[![](https://f.cl.ly/items/263P373U1j160T2i270O/Image%202013.04.26%208%3A18%3A29%20AM.png "Example wireframe")](https://f.cl.ly/items/263P373U1j160T2i270O/Image%202013.04.26%208%3A18%3A29%20AM.png) _Example wireframe of signing up for a Saas service_
+[![](https://f.cl.ly/items/263P373U1j160T2i270O/Image%202013.04.26%208%3A18%3A29%20AM.png 'Example wireframe')](https://f.cl.ly/items/263P373U1j160T2i270O/Image%202013.04.26%208%3A18%3A29%20AM.png) _Example wireframe of signing up for a Saas service_
 
 ### Wireframing tools:
 
 There are many, many tools out there to help you build wireframes, I've listed some popular options:
 
-*   MockFlow - [https://www.mockflow.com/](https://www.mockflow.com/)
-*   Mockingbird - [https://gomockingbird.com/](https://gomockingbird.com/)
-*   Balsamiq - [https://www.balsamiq.com/](https://www.balsamiq.com/)
-*   HotGlue - [https://www.hotgloo.com/](https://www.hotgloo.com/)
-*   Good old ink pen and a sheet of paper
+- MockFlow - [https://www.mockflow.com/](https://www.mockflow.com/)
+- Mockingbird - [https://gomockingbird.com/](https://gomockingbird.com/)
+- Balsamiq - [https://www.balsamiq.com/](https://www.balsamiq.com/)
+- HotGlue - [https://www.hotgloo.com/](https://www.hotgloo.com/)
+- Good old ink pen and a sheet of paper
 
 I personally use [Balsamiq](https://www.balsamiq.com/). I think it's one of the more expensive ones out there, but I really like how ugly everything looks, and I feel like that is an important aspect of building a wireframe. If it's ugly, people won't focus in on mis-alignments, colors, borders etc.
 
@@ -89,11 +89,11 @@ For an example, lets lay I've decided to build a small life-tracking app. I will
 
 Now I start getting feedback on the summary, maybe things changed, maybe not, and then I start building the wireframe, and the first screen looks like this:
 
-[![](https://f.cl.ly/items/1a0b2w1o2q1N1Y0A3x2e/Screen%20Shot%202013-04-26%20at%202.05.32%20AM.png "frame 1")](https://f.cl.ly/items/1a0b2w1o2q1N1Y0A3x2e/Screen%20Shot%202013-04-26%20at%202.05.32%20AM.png)
+[![](https://f.cl.ly/items/1a0b2w1o2q1N1Y0A3x2e/Screen%20Shot%202013-04-26%20at%202.05.32%20AM.png 'frame 1')](https://f.cl.ly/items/1a0b2w1o2q1N1Y0A3x2e/Screen%20Shot%202013-04-26%20at%202.05.32%20AM.png)
 
 This is only the first screen. I usually will build the first screen in as much detail as I can and try to make sure there's nothing weird, because as I duplicate it, all my changes will propagate on, so it's nice to get it sort of right. It's ok to use the basic styling available, to get the prominence correct, but not necessary. I also try to annotate to say what the purpose of the flow is. Sometimes it may seem obvious but it makes it so that it's easier for people just starting to look to see what's happening, rather than scanning the whole thing. I usually also will try to say where you clicked etc. Some people like to use arrows to point between the screens, that also works, but I like to have things down to specific flows. Now we can build the rest of the flow:
 
-[![](https://f.cl.ly/items/2U0d283T2w3X341V1Q1N/Image%202013.04.26%202%3A20%3A50%20AM.png "rest of frames")](https://f.cl.ly/items/2U0d283T2w3X341V1Q1N/Image%202013.04.26%202%3A20%3A50%20AM.png)
+[![](https://f.cl.ly/items/2U0d283T2w3X341V1Q1N/Image%202013.04.26%202%3A20%3A50%20AM.png 'rest of frames')](https://f.cl.ly/items/2U0d283T2w3X341V1Q1N/Image%202013.04.26%202%3A20%3A50%20AM.png)
 
 Great, that looks pretty reasonable to me. Now it's time to export.
 

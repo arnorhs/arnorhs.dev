@@ -1,5 +1,5 @@
 ---
-title: "Basic functionality"
+title: 'Basic functionality'
 summary: "Ok. Now we have the basic functionality of posting and reading from forms ready. I tried to keep the form very simple so any spambot should be able to submit into it.\n\nSo far there are no ent..."
 date: 2009-01-25
 ---

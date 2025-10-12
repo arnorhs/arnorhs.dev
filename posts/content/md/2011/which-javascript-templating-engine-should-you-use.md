@@ -1,5 +1,5 @@
 ---
-title: "Which Javascript Templating Engine Should You Use"
+title: 'Which Javascript Templating Engine Should You Use'
 summary: "You may know John as the author of jQuery, so this fellow really knows what he's doing when it comes to Javascript. John's templating engine is extremely fast. In fact it's the fastest of the templating engines featured on this jsPerf benchmark comparison test. What's more amazing is if you view the code behind it, it is extremely short and simple which also means that it minifizes pretty easily to just under 500 characters. That's impressive."
 date: 2011-03-23
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Defining \"The Cloud\" - Hint: SaaS is not Cloud!"
-summary: "There are so many buzz words in this industry that gain momentum, and people tend to start using them everywhere, trying to insert some jizz into whatever their product is. In the last couple of years the term \"Cloud\" has been one of the most popular ones. It comes in many forms of course. Some of them include \"In the cloud\", \"Cloud computing\", \"Cloud based services\", etc."
+title: 'Defining "The Cloud" - Hint: SaaS is not Cloud!'
+summary: 'There are so many buzz words in this industry that gain momentum, and people tend to start using them everywhere, trying to insert some jizz into whatever their product is. In the last couple of years the term "Cloud" has been one of the most popular ones. It comes in many forms of course. Some of them include "In the cloud", "Cloud computing", "Cloud based services", etc.'
 date: 2010-04-22
 ---
 
@@ -22,9 +22,9 @@ In a conversations on Twitter, @ReedBuntingCom pointed out that "[scaling down a
 
 I define the "Cloud" in the following way: **_The Cloud is a place to store and access your resources so that they are available at any time, from anywhere, from whatever interface I choose and, most importantly, usable for any purpose I want._** To elaborate: A resource can be computing power, storage or whatever. I should never need to worry about scaling up and down and scaling or size should be a concept that the end user shouldn't have to be aware of, except maybe in relation to costs. Unfortunately that definition does not fit in a Tweet. So this is a more Tweet friendly version: "The Cloud Definition: A place to access resources, available any time, anywhere, for any purpose, from whatever interface I choose." Feel free to [Tweet it out](https://twitter.com/?status=RT%20@arnorhs%20The%20Cloud%20Definition:%20A%20place%20to%20access%20resources,%20available%20any%20time,%20anywhere,%20for%20any%20purpose,%20from%20whatever%20interface%20I%20choose.) SaaS is not "in the Cloud". Because you can't access it from whatever interface you want and you probably won't be able to use them in a different way than they were originally thought out. Good examples of cloud based offerings:
 
-*   [Dropbox](https://www.dropbox.com/) - You can access your data in what ever way and for what ever purpose you want.
-*   [Gmail](https://gmail.com/) - Almost a SaaS but the difference is that Gmail.com is simply an interface for interacting with your e-mail resources that you can choose to use in whatever way you like and access from whatever interface you see fit.
-*   [Amazon Web Services](https://aws.amazon.com/) - Probably the most obvious case. Nuff said.
+- [Dropbox](https://www.dropbox.com/) - You can access your data in what ever way and for what ever purpose you want.
+- [Gmail](https://gmail.com/) - Almost a SaaS but the difference is that Gmail.com is simply an interface for interacting with your e-mail resources that you can choose to use in whatever way you like and access from whatever interface you see fit.
+- [Amazon Web Services](https://aws.amazon.com/) - Probably the most obvious case. Nuff said.
 
 #### And finally...
 

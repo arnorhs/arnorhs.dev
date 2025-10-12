@@ -1,10 +1,10 @@
 ---
-title: "My Pragmatic Take on SEO"
+title: 'My Pragmatic Take on SEO'
 summary: "I've been thinking a lot about SEO (Search Engine Optimization) these days. Mostly due to a pretty controversial article by Paul Boag, Why I don't get SEO. I get the point of the article but I think it misses a few considerations. I want to summarize my own thoughts on SEO in a pragmatic way. Disclaimer: I'm not an SEO expert and I do not work in the field so I could be wrong. This is just a Web Developer's pragmatic perspective."
 date: 2010-03-24
 ---
 
-[](https://arnorhs.dev/wp-content/uploads/2010/03/hats1.jpg)[![](/wp-content/uploads/2010/03/hats1-e1274351683604.jpg "hats")](/wp-content/uploads/2010/03/hats1.jpg) I've been thinking a lot about SEO (Search Engine Optimization) these days. Mostly due to a pretty controversial article by Paul Boag, [Why I don't get SEO](https://boagworld.com/marketing/i-dont-get-seo). I get the point of the article but I think it misses a few considerations. I want to summarize my own thoughts on SEO in a pragmatic way. Disclaimer: I'm not an SEO expert and I do not work in the field so I could be wrong. This is just a Web Developer's pragmatic perspective.
+[](https://arnorhs.dev/wp-content/uploads/2010/03/hats1.jpg)[![](/wp-content/uploads/2010/03/hats1-e1274351683604.jpg 'hats')](/wp-content/uploads/2010/03/hats1.jpg) I've been thinking a lot about SEO (Search Engine Optimization) these days. Mostly due to a pretty controversial article by Paul Boag, [Why I don't get SEO](https://boagworld.com/marketing/i-dont-get-seo). I get the point of the article but I think it misses a few considerations. I want to summarize my own thoughts on SEO in a pragmatic way. Disclaimer: I'm not an SEO expert and I do not work in the field so I could be wrong. This is just a Web Developer's pragmatic perspective.
 
 ### Why do SEO experts exist?
 
@@ -16,7 +16,7 @@ Search Engine Optimization is a craft. There are good craftsmen and there are ba
 
 ### Black Hat vs White Hat techniques
 
-[Black Hat SEO techniques](https://en.wikipedia.org/wiki/Black_hat_SEO) are ways in which to manipulate the search results as to "trick" the [search engine index](https://en.wikipedia.org/wiki/Index_\(search_engine\)) to include you higher in the ranking order than you should be. The search engine's job is to place relevant stuff in the right place and by using Black Hat techniques, you are NOT helping. You are also in the risk of getting yourself removed from the search engines' index. [White Hat techniques](https://en.wikipedia.org/wiki/White_hat) on the other hand are basically best-practices that a website should follow. White hat techniques are encouraged by the search engines. If you structure your website correctly, it helps the search engine index your website and rank you correctly. These are things like using proper headings, normal links, etc.
+[Black Hat SEO techniques](https://en.wikipedia.org/wiki/Black_hat_SEO) are ways in which to manipulate the search results as to "trick" the [search engine index](<https://en.wikipedia.org/wiki/Index_(search_engine)>) to include you higher in the ranking order than you should be. The search engine's job is to place relevant stuff in the right place and by using Black Hat techniques, you are NOT helping. You are also in the risk of getting yourself removed from the search engines' index. [White Hat techniques](https://en.wikipedia.org/wiki/White_hat) on the other hand are basically best-practices that a website should follow. White hat techniques are encouraged by the search engines. If you structure your website correctly, it helps the search engine index your website and rank you correctly. These are things like using proper headings, normal links, etc.
 
 ### "What's the best way to rank higher \[in Google\]?"
 

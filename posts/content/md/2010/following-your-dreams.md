@@ -1,5 +1,5 @@
 ---
-title: "Following your dreams"
+title: 'Following your dreams'
 summary: "Amit wrote on the Rootein blog:\n\n> What is it with people refusing to take some risks to follow their dreams. Are their dreams not worth it? If not, why do we sulk about them later? Don't we..."
 date: 2010-07-23
 ---

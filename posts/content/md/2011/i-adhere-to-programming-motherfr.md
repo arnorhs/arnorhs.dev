@@ -1,5 +1,5 @@
 ---
-title: "I adhere to \"Programming, Motherf****r\""
+title: 'I adhere to "Programming, Motherf****r"'
 summary: "Methodologies. Oh, methodologies. Agile, Scrum, Kanban etc. etc etc.. I'm a big opponent of those. Probably because I've never really worked within a large team of developers so I probably haven't seen a use case for those yet, but they are really popular. They are especially popular amongst people who are not programmers. I've even seen a lot of startups here in Iceland adopt some of them, no matter if they are doing software development or not. I think it's probably healthy, up to a point, to think about what you are doing and what you should be doing. But it's important to keep it simple..."
 date: 2011-03-23
 ---

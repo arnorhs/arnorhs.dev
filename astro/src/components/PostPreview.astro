@@ -1,5 +1,5 @@
 ---
-import { PostWithUrl } from '@arnorhs/posts'
+import { type PostWithUrl } from '@arnorhs/posts'
 import Heading from './Heading.astro'
 import { dateFormat } from '../lib/dateFormat'
 
@@ -52,7 +52,7 @@ const showByline = Astro.props.showByline ?? !featured
   {
     showByline && (
       <p class="mt-1 md:mt-0 text-xs font-normal" aria-label="published date">
-        {dateFormat(post.publishedDate)}
+        {dateFormat(new Date(post.publishedDate))}
       </p>
     )
   }
