@@ -3,8 +3,8 @@ import { getAllPosts } from '@arnorhs/posts'
 
 const posts = getAllPosts()
 
-export const get = () =>
-  rss({
+export function GET() {
+  return rss({
     title: 'arnorhs blog - arnorhs.dev',
     description: 'The blog of arnorhs - the legendary no-stack developer',
     site: import.meta.env.SITE,
@@ -21,3 +21,4 @@ export const get = () =>
     // (optional) inject custom xml
     customData: `<language>en-us</language>`,
   })
+}

@@ -51,14 +51,14 @@ const showByline = Astro.props.showByline ?? !featured
 
   {
     showByline && (
-      <p class="mt-1 md:mt-0 text-xs font-normal" aria-label="published date">
+      <p class="mt-1 dark:text-boringblue md:mt-0 text-xs font-normal" aria-label="published date">
         {dateFormat(new Date(post.publishedDate))}
       </p>
     )
   }
 
   <p
-    class={`text-lg mt-2 sm:text-2xl font-normal lg:text-base ${featured ? 'md:w-3/4 ' : ''}`}
+    class={`text-md mt-2 sm:text-xl font-normal lg:text-base ${featured ? 'md:w-3/4 ' : ''}`}
     set:html={post.summary}
   />
 
