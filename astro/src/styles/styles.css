@@ -23,6 +23,13 @@
   --color-myblue-darker: #4f5680;
 
   --color-myorange: rgb(255, 192, 203);
+
+  --color-brightblue: #f4f1f8;
+  --color-notasdarkblue: #1f1924;
+  --color-darkblue: #0c0a0e;
+  --color-boringblue: #786e87;
+
+  --spacing: 5px;
 }
 
 /* Add this after your @import and @layer theme */
@@ -57,6 +64,8 @@
   html {
     font-family: theme(fontFamily.sans);
     font-size: 24px;
+    @apply bg-white text-darkblue;
+    @apply dark:bg-darkblue text-brightblue;
   }
 
   html,

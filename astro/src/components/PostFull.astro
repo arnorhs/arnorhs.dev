@@ -1,5 +1,5 @@
 ---
-import { PostWithUrl } from '@arnorhs/posts'
+import { type PostWithUrl } from '@arnorhs/posts'
 import { dateFormat } from '../lib/dateFormat'
 
 const post = Astro.props.post as PostWithUrl
@@ -7,7 +7,7 @@ const post = Astro.props.post as PostWithUrl
 
 <article class="font-serif">
   <h1 class="mb-1 leading-tight text-5xl font-semibold font-display">{post.title}</h1>
-  <p class="mt-0 text-xs" aria-label="published date">{dateFormat(post.publishedDate)}</p>
+  <p class="mt-0 text-xs" aria-label="published date">{dateFormat(new Date(post.publishedDate))}</p>
 
   <div set:html={post.htmlBody} />
 </article>

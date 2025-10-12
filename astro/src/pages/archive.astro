@@ -12,10 +12,10 @@ const groupedPosts = await getAllGroupedPosts()
 <MainLayout title="Blog archive">
   <Heading tag="h1" variation="semi">All posts by arnorhs</Heading>
   <p>
-    Follow my updates on twitter <a
-      href="https://twitter.com/arnorhs"
+    Follow my updates on Bluesky <a
+      href="https://bsky.app/profile/arnorhs.dev"
       target="_blank"
-      rel="no-follow">@arnorhs</a
+      rel="no-follow">@arnorhs.dev</a
     >.
   </p>
   <p class="mb-10">
@@ -33,7 +33,7 @@ const groupedPosts = await getAllGroupedPosts()
             {year}
           </Heading>
           {parseInt(year, 10) >= 2012 ? (
-            <ol class="md:grid md:grid-cols-2 gap-3">
+            <ol class="md:grid md:grid-cols-2 gap-5">
               {posts.map((post) => (
                 <li>
                   <Card>
@@ -50,7 +50,7 @@ const groupedPosts = await getAllGroupedPosts()
                     {post.title}
                   </a>
                   &middot;
-                  <span>{dateFormat(post.publishedDate)}</span>
+                  <span>{dateFormat(new Date(post.publishedDate))}</span>
                 </li>
               ))}
             </ol>
