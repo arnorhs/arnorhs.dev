@@ -4,24 +4,25 @@ summary: "I've been dealing with some unfortunate scroll performance issues at w
 date: 2011-12-11
 ---
 
+_Note from 2025: This concept doesn't really work anymore, since the browser's
+rendering is no longer tied to scrolling - so you will always get the same results.
+I could probably try to update it, but browsers these days have way better tools
+to measure these things, so this is just a relic of the past._
+
 I've been dealing with some unfortunate scroll performance issues at work lately, and to aid me in that task I started using a handy [CSS stress test bookmarklet](https://andy.edinborough.org/CSS-Stress-Testing-and-Performance-Profiling) made by [Andy Edinborough](https://twitter.com/#!/andyedinborough/). It works by iterating through all your classes and measuring the performance improvement you get from dropping them - thus helping you find out which classes are making your page scroll speed slow. It's handy but the use case too constrained for my needs.
 
 ### Another approach for measuring page scroll performance
 
-I wanted to be able to simply run a test anywhere on the page just for a single run, and I didn't really care about the classes, since I was manually disabling styles and moving things around, unbinding event etc to find out where the biggest performance improvements could be had. So I ended up writing this snippet of Javascript to aid me in my work. Drag this link to your bookmark bar / toolbar to try it out: [Arnor's scroll performance test](javascript:\(function \(window,$,runs\) { var t = new Date\(\), i = 1, timetaken,offset = $\(window\).scrollTop\(\); $\(window\).bind\('scroll.scrolltest',function \(\) { if \(i >= runs\) { timetaken = \(new Date\) - t; console.log\('Time taken for '+runs+' scrolls: ',timetaken,' - time per scroll: ', timetaken/runs\); $\(window\).unbind\('scroll.scrolltest'\); return; } i++; doScroll\(\); }\); function mod \(x,y\) { return Math.round\(\(x/y - Math.floor\(x/y\)\) *2\); } function doScroll \(\) { setTimeout\(function\(\){ $\(window\).scrollTop\(offset + mod\(i,2\)*100\); },0\); } doScroll\(\); }\)\(window,jQuery,500\); ) You can find the bookmarklet-ready gist here: [https://gist.github.com/1459352](https://gist.github.com/1459352)
+I wanted to be able to simply run a test anywhere on the page just for a single run, and I didn't really care about the classes, since I was manually disabling styles and moving things around, unbinding event etc to find out where the biggest performance improvements could be had. So I ended up writing this snippet of Javascript to aid me in my work. Drag this link to your bookmark bar / toolbar to try it out:
+<a href="javascript:(function(){'use strict';const a=500,b=100;let c=1;const d=new Date,e=window.scrollY;function f(a){return a%2*b}function g(){setTimeout(()=>{window.scrollTo(0,e+f(c))},0)}function h(){if(c>=a){const b=(new Date)-d;console.log('--- Scroll Test Complete ---'),console.log('Total scrolls: '+a),console.log('Time taken: '+b+' ms'),console.log('Time per scroll: '+b/a+' ms'),window.removeEventListener('scroll',h);return}c++,g()}window.addEventListener('scroll',h),g()})();">Arnor's scroll performance test</a>
 
 ### Requirements
 
-- The jQuery object ($) must be present on the page (I could make it non-jquery dependent, if anybody is interested enough)
-- A browser that has a javascript console
+- Keep your dev tools console open
 
 ### How to use it
 
 Visit any webpage that has the jquery object available and click your new bookmarklet. When it finishes running, it will display the stats in the javascript console of your browser, in ms. You can modify the code and add more runs if you want more consistent results.
-
-### The hacked up code
-
-This is what the code looks like, if you're interested: \[gist id=1459352 file=scrolltest.js\]
 
 ### How does it work
 
