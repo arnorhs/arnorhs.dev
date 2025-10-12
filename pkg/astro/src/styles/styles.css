@@ -65,7 +65,7 @@
     font-family: theme(fontFamily.sans);
     font-size: 24px;
     @apply bg-white text-darkblue;
-    @apply dark:bg-darkblue text-brightblue;
+    @apply dark:bg-darkblue dark:text-brightblue;
   }
 
   html,
@@ -126,6 +126,10 @@
     @apply mb-2;
   }
 
+  article p {
+    @apply my-[1.3em];
+  }
+
   article blockquote {
     @apply border-l-8;
     @apply border-l-myblue-bright;
@@ -141,6 +145,7 @@
   article h2 {
     @apply text-3xl;
     @apply font-semibold;
+    @apply mt-[1.3em];
   }
 
   article h3 {
