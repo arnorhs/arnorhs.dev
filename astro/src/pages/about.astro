@@ -2,65 +2,62 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import Heading from '../components/Heading.astro'
 import Card from '../components/Card.astro'
-import Container from '../components/Container.astro'
 
 const title = 'Arnor Heidar Sigurdsson'
 ---
 
 <MainLayout title={title}>
-  <Container width="narrow">
-    <article>
-      <Heading tag="h1" variation="semi">{title}</Heading>
+  <article>
+    <Heading tag="h1" variation="semi">{title}</Heading>
 
-      <p>
-        I am a software developer and designer hailing from Iceland. Currently CTO at <a
-          href="https://purenorth.is"
-          target="_blank">Pure North</a
-        >
-        where we're working to improve the environment by recycling plastics and bringing the value of
-        recycling back to the consumer.
-      </p>
+    <p>
+      I am a software developer and designer hailing from Iceland. Currently CTO at <a
+        href="https://purenorth.is"
+        target="_blank">Pure North</a
+      >
+      where we're working to improve the environment by recycling plastics and bringing the value of
+      recycling back to the consumer.
+    </p>
 
-      <p>
-        Previously I was the technical director at <a target="_blank" href="https://www.juni.is"
-          >Júní</a
-        >, a digital transformation agency in Iceland.
-      </p>
+    <p>
+      Previously I was the technical director at <a target="_blank" href="https://www.juni.is"
+        >Júní</a
+      >, a digital transformation agency in Iceland.
+    </p>
 
-      <p>
-        Before that I had a 4 year stint as a developer and the lead designer at a venture backed
-        growth-related startup in San Francisco.
-      </p>
+    <p>
+      Before that I had a 4 year stint as a developer and the lead designer at a venture backed
+      growth-related startup in San Francisco.
+    </p>
 
-      <div class="w-8/12 my-6">
-        <Card>
-          <h2 class="mb-3 mt-0 text-4xl font-bold">arnorhs</h2>
-          <ul class="my-0">
-            <li>Bluesky: <a href="https://bsky.app/profile/arnorhs.dev">@arnorhs.dev</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/arnorhs">/in/arnorhs</a></li>
-            <li>Github: <a href="https://github.com/arnorhs">github.com/arnorhs</a></li>
-            <li>Website: <a href="https://arnorhs.dev">arnorhs.dev</a></li>
-            <li>NPM: <a href="https://www.npmjs.com/~arnorhs">~arnorhs</a></li>
-            <li>E-mail: <a href="mailto:arnorhs@gmail.com">arnorhs@gmail.com</a></li>
-          </ul>
-        </Card>
-      </div>
+    <div class="w-8/12 my-6">
+      <Card>
+        <h2 class="mb-3 mt-0 text-4xl font-bold">arnorhs</h2>
+        <ul class="my-0">
+          <li>Bluesky: <a href="https://bsky.app/profile/arnorhs.dev">@arnorhs.dev</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/arnorhs">/in/arnorhs</a></li>
+          <li>Github: <a href="https://github.com/arnorhs">github.com/arnorhs</a></li>
+          <li>Website: <a href="https://arnorhs.dev">arnorhs.dev</a></li>
+          <li>NPM: <a href="https://www.npmjs.com/~arnorhs">~arnorhs</a></li>
+          <li>E-mail: <a href="mailto:arnorhs@gmail.com">arnorhs@gmail.com</a></li>
+        </ul>
+      </Card>
+    </div>
 
-      <Heading tag="h2">Interests and hobbies</Heading>
+    <Heading tag="h2">Interests and hobbies</Heading>
 
-      <ul>
-        <li>Software development - It probably goes without saying</li>
-        <li>
-          Making music - Both electonic music, instrumentalist, love making songs and beats, played
-          in bands, etc
-        </li>
-        <li>Analog modular music and designing my own circuits, soldering etc</li>
-        <li>
-          Rock climbing - I was an avid rock climber for a few years, and visited many places around
-          the world for rock climbing
-        </li>
-        <li>Video games, chess, speedcubing</li>
-      </ul>
-    </article>
-  </Container>
+    <ul>
+      <li>Software development - It probably goes without saying</li>
+      <li>
+        Making music - Both electonic music, instrumentalist, love making songs and beats, played in
+        bands, etc
+      </li>
+      <li>Analog modular music and designing my own circuits, soldering etc</li>
+      <li>
+        Rock climbing - I was an avid rock climber for a few years, and visited many places around
+        the world for rock climbing
+      </li>
+      <li>Video games, chess, speedcubing</li>
+    </ul>
+  </article>
 </MainLayout>

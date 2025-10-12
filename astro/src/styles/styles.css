@@ -34,6 +34,32 @@
 
 /* Add this after your @import and @layer theme */
 
+@utility container {
+  /* 1. Base styles for the container */
+  width: 100%;
+
+  /* 2. Center the container horizontally */
+  margin-inline: auto; /* Modern equivalent of margin-left: auto; margin-right: auto; */
+
+  /* 3. Add default horizontal padding */
+  padding-inline: 1rem; /* Adjust this to your desired default padding */
+
+  /* 4. Apply max-width at each responsive breakpoint */
+  @variant sm {
+    max-width: var(--screen-sm);
+  }
+  @variant md {
+    max-width: var(--screen-md);
+  }
+  @variant lg {
+    max-width: var(--screen-lg);
+  }
+  @variant xl {
+    max-width: var(--screen-xl);
+  }
+  /* If you had a 2xl breakpoint, you'd add it here as well */
+}
+
 @layer base {
   html {
     font-family: theme(fontFamily.sans);
@@ -132,10 +158,4 @@
   article h6 {
     @apply text-base;
   }
-}
-
-.container {
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: 1rem;
 }
