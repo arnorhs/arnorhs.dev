@@ -15,20 +15,21 @@ A quick note: I don't work in AI research, so this is my personal, biased take o
 
 ## Agentic Coding
 
-In the last couple of years my use of coding agents has slowly been ramping up. I really liked copilot when it came out and was a paying customer from day 1. I used the agent mode in VSCode when that came out - I dabbled with Cursor & Windsurf, but never really wanted to switch editors completely.
+In the last couple of years my use of coding agents has slowly been ramping up. I really liked copilot when it came out and was a paying customer from day 1. I used the agent mode in VSCode, I dabbled with Cursor & Windsurf, but never really wanted to switch editors completely.
 
-However, lately I've been in love terminal based coding agents - a la claude code, gemini cli, opencode etc. I much prefer them over the dedicated AI editors etc.
+But when I saw the terminal based Claude Code, I was instatly interested. Because I love terminal based tools.
 
 - CLI tools have a unified interface (posix based command line arguments etc)
 - I can start them and use them anywhere I have a terminal - so in theory I can use a terminal agent in CI, or in a remote VM or wherever.
 - I like keeping these tools in terminal windows using tmux, and i can switch to/from them and pick up where I left off wiithout it cluttering up my UI space
 - The main reason I like them is because I can use them without my main editor - in my editor I can be looking at other stuff while the agent crunches code in another part of the code base.
 
-But when I saw Claude Code, I was instatly interested. Not only do I love terminal based cli tools, but the idea of having the agent be separate from the editor was really appealing. But I thought, for the moast part, that that was not a mainstream opinion...
+Also, the idea of having the agent be separate from the editor was really
+appealing. But I thought, for the moast part, that this was not a mainstream opinion...
 
 ## Surprising rise of the terminal agents
 
-I've noticed that these cli tools are really starting to become popular and judging from the effort put into their respective offerings by the model vendors, it seems to be what they are all betting on now.
+Lately, I've noticed that these cli tools are actually starting to become popular and judging from the effort put into their respective offerings by the model vendors, it seems to be what they are all betting on now.
 
 Even OpenAI released yet another variation of Codex, this time as a terminal based one. Great, I'm all in.
 
