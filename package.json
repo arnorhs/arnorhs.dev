@@ -11,7 +11,8 @@
   "workspaces": [
     "astro",
     "posts",
-    "resoc"
+    "resoc",
+    "website"
   ],
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
@@ -19,7 +20,7 @@
     "resoc": "yarn workspace @arnorhs/resoc",
     "dev": "turbo dev --filter='@arnorhs/astro...'",
     "typecheck": "turbo run type-check",
-    "export": "turbo export"
+    "export": "turbo export --filter='@arnorhs/website'"
   },
   "dependencies": {
     "prettier": "^3.6.2",

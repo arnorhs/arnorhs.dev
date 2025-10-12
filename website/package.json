@@ -1,0 +1,14 @@
+{
+  "name": "@arnorhs/website",
+  "dependencies": {
+    "@arnorhs/astro": "*",
+    "@arnorhs/resoc": "*",
+    "rimraf": "latest"
+  },
+  "scripts": {
+    "build:dist": "rimraf ./dist && mkdir ./dist",
+    "copy:astro": "cp -rf ../astro/dist/* ./dist/.",
+    "copy:resoc": "cp -rf ../resoc/dist/* ./dist/.",
+    "export": "yarn build:dist && yarn copy:astro && yarn copy:resoc"
+  }
+}

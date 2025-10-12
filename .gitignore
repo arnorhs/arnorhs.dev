@@ -4,3 +4,4 @@ node_modules
 *.log*
 posts/dist
 .turbo
+dist

@@ -9,7 +9,7 @@
     "ts-node": "*"
   },
   "scripts": {
-    "export": "bun run src/index.ts ../astro/dist/og-image",
+    "build": "bun run src/index.ts ./dist/og-image",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
