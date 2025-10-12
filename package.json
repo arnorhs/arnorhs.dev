@@ -9,17 +9,14 @@
     "typescript": "^5.9.3"
   },
   "workspaces": [
-    "astro",
-    "posts",
-    "resoc",
-    "website"
+    "pkg/*"
   ],
   "scripts": {
     "posts": "yarn workspace @arnorhs/posts",
     "astro": "yarn workspace @arnorhs/astro",
     "resoc": "yarn workspace @arnorhs/resoc",
     "dev": "turbo dev --filter='@arnorhs/astro...'",
-    "typecheck": "turbo run type-check",
+    "typecheck": "turbo run typecheck",
     "export": "turbo export --filter='@arnorhs/website'"
   },
   "dependencies": {
