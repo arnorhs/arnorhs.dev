@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "typegen": "wrangler types",
     "export": "astro build",
     "typecheck": "tsc --noEmit",
     "preview": "astro preview"

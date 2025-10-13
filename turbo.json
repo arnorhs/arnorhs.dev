@@ -9,11 +9,14 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "typegen": {
+      "dependsOn": ["^build"]
+    },
     "typecheck": {
       "dependsOn": ["^typecheck", "^build"]
     },
     "dev": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^typegen", "typegen"],
       "persistent": true,
       "cache": false
     },

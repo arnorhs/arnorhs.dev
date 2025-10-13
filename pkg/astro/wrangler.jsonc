@@ -7,4 +7,10 @@
     "directory": "./dist",
     "not_found_handling": "404-page", // If you have a custom `src/pages/404.astro` page
   },
+  "analytics_engine_datasets": [
+    {
+      "binding": "ARNORHS_ANALYTICS",
+      "dataset": "arnorhs-analytics",
+    },
+  ],
 }
