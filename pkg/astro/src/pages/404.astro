@@ -1,0 +1,15 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import Heading from '../components/Heading.astro'
+import Card from '../components/Card.astro'
+
+const title = 'Not found'
+---
+
+<MainLayout title={title}>
+  <article>
+    <Heading tag="h1" variation="semi">{title}</Heading>
+
+    <p>I'm terribly sorry. Try the archive - perhaps I messed up the link somewhere.</p>
+  </article>
+</MainLayout>
