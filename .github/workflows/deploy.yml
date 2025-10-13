@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+      - id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/node_modules
+            **/.turbo
+            **/dist
+          key: global-cache-v2
+      - name: Install dependencies (yarn)
+        run: yarn install --frozen-lockfile
+      - name: Turbo export
+        run: yarn turbo export --filter @arnorhs/astro
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          workingDirectory: 'pkg/astro'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
