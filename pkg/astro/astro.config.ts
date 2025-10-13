@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap'
 import { getAllPosts } from '@arnorhs/posts'
 import fs from 'fs/promises'
 import tailwindcss from '@tailwindcss/vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,6 +34,15 @@ export default defineConfig({
         content: [
           './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}',
           // Add any other paths where you use Tailwind classes
+        ],
+      }),
+      // @ts-expect-error
+      viteStaticCopy({
+        targets: [
+          {
+            src: '../resoc/dist/og-image/*.*',
+            dest: 'og-image',
+          },
         ],
       }),
     ],
