@@ -13,22 +13,22 @@ export const transformMd = ({
   html,
   metadata: { summary, title, date },
 }: MdFile): Post => {
-  // the permalink is the filename with the '.md' ending removed
-  const permalink = filename.replace(/\.md$/, '')
+  // the slug is the filename with the '.md' ending removed
+  const slug = filename.replace(/\.md$/, '').toLocaleLowerCase()
 
   // convert date string into a proper `Date`
   const publishedDate = new Date(date)
   const dateStr = publishedDate.toISOString().substring(0, 10)
 
-  const urlSlug = `${dateStr}/${permalink}`
+  const uriId = `${dateStr}/${slug}`
 
-  const contentHash = md5(`design-v2-${permalink}:${title}`)
+  const contentHash = md5(`design-v2-${slug}:${title}`)
 
   // return the new shape
   return {
-    uriId: urlSlug,
+    uriId,
     htmlBody: html,
-    slug: permalink,
+    slug,
     publishedDate,
     contentHash,
     title,
