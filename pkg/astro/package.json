@@ -8,7 +8,7 @@
     "typegen": "wrangler types",
     "export": "astro build",
     "typecheck": "tsc --noEmit",
-    "preview": "astro preview"
+    "preview": "astro build && wrangler dev"
   },
   "dependencies": {
     "@arnorhs/posts": "*",
