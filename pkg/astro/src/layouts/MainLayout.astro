@@ -6,6 +6,7 @@ import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
 import Favicon from '../components/meta/Favicon.astro'
+import { ClientRouter } from 'astro:transitions'
 
 export interface Props {
   title?: string
@@ -62,6 +63,8 @@ const dtUpdated = new Date().toISOString()
     <Favicon />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <ClientRouter />
   </head>
   <body>
     <div class="px-4 sm:px-8 lg:px-0">
@@ -100,3 +103,24 @@ const dtUpdated = new Date().toISOString()
     </div>
   </body>
 </html>
+
+<script>
+  const trackPageView = () => {
+    console.log('Page loaded, tracking view')
+    // Send a non-blocking request to your tracking endpoint
+    fetch('/api/view', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer }),
+      // We don't care about the response, just fire and forget
+      mode: 'no-cors',
+    })
+  }
+
+  // Ensure this runs only client-side
+  document.addEventListener('astro:page-load', () => {
+    trackPageView()
+  })
+</script>

@@ -4,7 +4,6 @@ import { getAllPosts } from '@arnorhs/posts'
 import fs from 'fs/promises'
 import tailwindcss from '@tailwindcss/vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-
 import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
@@ -52,5 +51,9 @@ export default defineConfig({
     ],
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    // platformProxy: {
+    //   enabled: true,
+    // },
+  }),
 })

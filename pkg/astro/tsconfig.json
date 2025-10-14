@@ -4,6 +4,7 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "moduleResolution": "bundler",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["./worker-configuration.d.ts"]
   }
 }
