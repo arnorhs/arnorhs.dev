@@ -14,21 +14,7 @@ export default defineConfig({
   // public: './public',   // A folder of static files Astro will copy to the root. Useful for favicons, images, and other files that don’t need processing.
   site: 'https://arnorhs.dev',
 
-  integrations: [
-    sitemap(),
-    {
-      name: 'redirects',
-      hooks: {
-        'astro:build:done': async ({ dir, routes }) => {
-          const str = getAllPosts()
-            .map((post) => `/${post.slug} /posts/${post.uriId} 301`)
-            .join('\n')
-          await fs.writeFile(`${dir.pathname}_redirects`, str, 'utf8')
-          console.log('Wrote redirects to _redirects')
-        },
-      },
-    },
-  ],
+  integrations: [sitemap()],
 
   vite: {
     plugins: [
@@ -52,8 +38,8 @@ export default defineConfig({
   },
 
   adapter: cloudflare({
-    // platformProxy: {
-    //   enabled: true,
-    // },
+    platformProxy: {
+      enabled: true,
+    },
   }),
 })
