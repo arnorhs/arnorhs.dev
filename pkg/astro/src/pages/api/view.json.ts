@@ -13,12 +13,10 @@ export async function POST({ request, locals }: APIContext) {
       doubles: [1], // Metric, e.g., a count of 1
       indexes: [path], // For sampling/indexing
     })
-
-    // Respond with 204 No Content for a successful submission
-    return new Response(null, { status: 204 })
   } catch (e) {
     console.error('Tracking Error:', e)
-    return new Response('Error processing request', { status: 400 })
+    return Response.json({ error: 'Error processing request' }, { status: 400 })
   }
-  return Response.json({ ok: true }, { status: 201 })
+
+  return Response.json({ ok: true })
 }
