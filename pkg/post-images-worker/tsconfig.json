@@ -1,0 +1,16 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "module": "ESNext",
+    "strictNullChecks": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["./worker-configuration.d.ts"]
+  },
+  "exclude": ["node_modules"]
+}
