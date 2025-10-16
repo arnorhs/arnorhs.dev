@@ -108,7 +108,7 @@ const dtUpdated = new Date().toISOString()
   const trackPageView = () => {
     console.log('Page loaded, tracking view')
     // Send a non-blocking request to your tracking endpoint
-    fetch('/api/view', {
+    fetch('/api/view.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

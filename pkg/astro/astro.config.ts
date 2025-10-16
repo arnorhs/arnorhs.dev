@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
-import { getAllPosts } from '@arnorhs/posts'
-import fs from 'fs/promises'
 import tailwindcss from '@tailwindcss/vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import cloudflare from '@astrojs/cloudflare'
