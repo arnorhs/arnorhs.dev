@@ -1,7 +1,6 @@
 import { findPost } from '@arnorhs/posts'
 import type { APIContext } from 'astro'
 import { ImageResponse } from 'workers-og'
-import { createHtml } from '../../lib/ogImageGeneration/createHtml'
 import type { OgImageGeneratorStore } from '../../worker'
 
 export const prerender = false

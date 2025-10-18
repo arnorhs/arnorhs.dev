@@ -37,6 +37,12 @@
       "new_classes": ["OgImageGeneratorStore"],
     },
   ],
+  "services": [
+    {
+      "binding": "POST_IMAGES_WORKER",
+      "service": "arnorhsdev-post-images",
+    },
+  ],
   "ratelimits": [
     {
       "name": "RATE_LIMIT",

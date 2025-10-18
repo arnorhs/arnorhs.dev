@@ -2,24 +2,17 @@ import { DurableObject } from 'cloudflare:workers'
 import { findPost } from '@arnorhs/posts'
 import { ImageResponse, loadGoogleFont } from 'workers-og'
 import { createHtml } from './lib/createHtml'
-import { getFont, type Font } from './lib/getFont'
+import { getFontCollection, type Font } from './lib/getFontCollection'
 
 export class OgImageGeneratorStore extends DurableObject<Env> {
-  font: { normal: Font; bold: Font } | null = null
+  fonts: Font[] | null = null
 
   async getFont() {
-    if (!this.font) {
-      console.log('no font, fetching font...')
-
-      // Note: I was unable to make it target the right font weight
-      // when this had the same name...
-      this.font = {
-        normal: await getFont('figtree-regular', 'Figtree', 400),
-        bold: await getFont('figtree-bold', 'Figtree', 700),
-      }
+    if (!this.fonts) {
+      this.fonts = await getFontCollection()
     }
 
-    return [this.font.normal, this.font.bold]
+    return this.fonts
   }
 }
 
@@ -29,25 +22,25 @@ export default {
   async fetch(request, env, ctx): Promise<Response> {
     const pathname = new URL(request.url).pathname
 
+    const contentHash = pathname.match(pathRegex)?.groups?.contentHash
+
+    if (!contentHash) {
+      console.warn('no contentHash found in path', { pathname })
+      return new Response('Not Found', { status: 404 })
+    }
+
     const rateLimit = await env.RATE_LIMIT.limit({
-      key: pathname,
+      key: contentHash,
     })
 
     if (!rateLimit.success) {
       return new Response('Rate limit exceeded', { status: 429 })
     }
 
-    const postHash = pathname.match(pathRegex)?.groups?.contentHash
-
-    if (!postHash) {
-      console.warn('no post hash found in path', { pathname })
-      return new Response('Not Found', { status: 404 })
-    }
-
-    const post = findPost((p) => p.contentHash === postHash)
+    const post = findPost((p) => p.contentHash === contentHash)
 
     if (!post) {
-      console.warn('No post found for hash', { postHash })
+      console.warn('No post found for hash', { contentHash })
       return new Response('Not Found', { status: 404 })
     }
 
