@@ -5,11 +5,16 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 import cloudflare from '@astrojs/cloudflare'
 
 export default defineConfig({
-  site: 'https://arnorhs.dev',
+  site: import.meta.env.DEV
+    ? 'http://localhost:4321'
+    : process.env.ASTRO_SITE_URL || 'https://arnorhs.dev',
 
   integrations: [sitemap()],
 
   vite: {
+    build: {
+      minify: false,
+    },
     plugins: [
       // @ts-expect-error - I don't know why
       tailwindcss({
@@ -33,6 +38,10 @@ export default defineConfig({
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
+    },
+    workerEntryPoint: {
+      path: 'src/worker.ts',
+      namedExports: ['OgImageGeneratorStore'],
     },
   }),
 })

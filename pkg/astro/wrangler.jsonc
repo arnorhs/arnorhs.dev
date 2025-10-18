@@ -3,7 +3,7 @@
   "name": "arnorhsdev",
   "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-10-09",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "assets_navigation_has_no_effect"],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page", // If you have a custom `src/pages/404.astro` page
@@ -23,4 +23,28 @@
       "invocation_logs": true,
     },
   },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO_OG_IMAGE_STORE",
+        "class_name": "OgImageGeneratorStore",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["OgImageGeneratorStore"],
+    },
+  ],
+  "ratelimits": [
+    {
+      "name": "RATE_LIMIT",
+      "namespace_id": "1",
+      "simple": {
+        "limit": 100,
+        "period": 60,
+      },
+    },
+  ],
 }
