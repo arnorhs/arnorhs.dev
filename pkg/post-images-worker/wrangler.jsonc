@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "arnorhsdev-post-images",
   "main": "src/index.ts",
-  // Update to today's date
   "compatibility_date": "2025-10-09",
   "durable_objects": {
     "bindings": [
@@ -16,6 +15,16 @@
     {
       "tag": "v1",
       "new_classes": ["OgImageGeneratorStore"],
+    },
+  ],
+  "ratelimits": [
+    {
+      "name": "RATE_LIMIT",
+      "namespace_id": "1",
+      "simple": {
+        "limit": 5,
+        "period": 60,
+      },
     },
   ],
   "observability": {

@@ -27,19 +27,27 @@ const pathRegex = /^\/(?<contentHash>[a-zA-Z0-9]+)\.png$/
 
 export default {
   async fetch(request, env, ctx): Promise<Response> {
-    const url = new URL(request.url)
+    const pathname = new URL(request.url).pathname
 
-    const postHash = url.pathname.match(pathRegex)?.groups?.contentHash
+    const rateLimit = await env.RATE_LIMIT.limit({
+      key: pathname,
+    })
+
+    if (!rateLimit.success) {
+      return new Response('Rate limit exceeded', { status: 429 })
+    }
+
+    const postHash = pathname.match(pathRegex)?.groups?.contentHash
 
     if (!postHash) {
-      console.log('no post hash found in path', { pathname: url.pathname })
+      console.warn('no post hash found in path', { pathname })
       return new Response('Not Found', { status: 404 })
     }
 
     const post = findPost((p) => p.contentHash === postHash)
 
     if (!post) {
-      console.log('No post found for hash', { postHash })
+      console.warn('No post found for hash', { postHash })
       return new Response('Not Found', { status: 404 })
     }
 

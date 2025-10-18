@@ -9,11 +9,16 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "typegen": {
+      "dependsOn": ["^build"],
+      "inputs": ["wrangler.jsonc"],
+      "outputs": ["worker-configuration.d.ts"]
+    },
     "typecheck": {
-      "dependsOn": ["^typecheck", "^build"]
+      "dependsOn": ["^typecheck", "^build", "typegen"]
     },
     "dev": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "typegen"],
       "persistent": true,
       "cache": false
     },

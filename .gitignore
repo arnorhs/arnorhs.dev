@@ -6,3 +6,4 @@ posts/dist
 .turbo
 dist
 .wrangler
+worker-configuration.d.ts
