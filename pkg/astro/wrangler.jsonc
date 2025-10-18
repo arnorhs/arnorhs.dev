@@ -23,20 +23,6 @@
       "invocation_logs": true,
     },
   },
-  "durable_objects": {
-    "bindings": [
-      {
-        "name": "DO_OG_IMAGE_STORE",
-        "class_name": "OgImageGeneratorStore",
-      },
-    ],
-  },
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_classes": ["OgImageGeneratorStore"],
-    },
-  ],
   "services": [
     {
       "binding": "POST_IMAGES_WORKER",

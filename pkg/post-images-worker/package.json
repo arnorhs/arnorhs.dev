@@ -8,6 +8,11 @@
     "typegen": "wrangler types",
     "typecheck": "tsc --noEmit"
   },
+  "exports": {
+    ".": {
+      "types": "./src/lib/PostImagesInterface.ts"
+    }
+  },
   "dependencies": {
     "@arnorhs/posts": "*",
     "cloudflare": "^5.2.0",

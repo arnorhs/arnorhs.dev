@@ -1,14 +1,11 @@
 import { findPost } from '@arnorhs/posts'
 import type { APIContext } from 'astro'
-import { ImageResponse } from 'workers-og'
-import type { OgImageGeneratorStore } from '../../worker'
+import type { PostImagesInterface } from '@arnorhs/post-images-worker'
 
 export const prerender = false
 
 export async function GET({ request, params, locals }: APIContext) {
   const contentHash = params.contentHash
-
-  console.log('Generating OG image for hash:', contentHash)
 
   if (!contentHash) {
     return new Response('Not Found', { status: 404 })
@@ -29,14 +26,11 @@ export async function GET({ request, params, locals }: APIContext) {
     return new Response('Not Found', { status: 404 })
   }
 
-  const doStore = locals.runtime.env.DO_OG_IMAGE_STORE.getByName(
-    'resources',
-  ) as DurableObjectStub<OgImageGeneratorStore>
+  const postImagesWorker = locals.runtime.env.POST_IMAGES_WORKER as unknown as PostImagesInterface
+  const resp = await postImagesWorker.getImageResponse(post.title)
 
-  return new ImageResponse(createHtml({ title: post.title }), {
-    width: 1200,
-    height: 630,
-    format: 'png',
-    fonts: await doStore.getFont(),
-  })
+  // I needed to clone it, because astro complained that it was not a response, even though
+  // it was a response, it was just not an instance of the same response, because it comes
+  // from cloudflare's rpc protocol
+  return new Response(resp.body)
 }

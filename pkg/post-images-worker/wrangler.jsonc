@@ -17,16 +17,6 @@
       "new_classes": ["OgImageGeneratorStore"],
     },
   ],
-  "ratelimits": [
-    {
-      "name": "RATE_LIMIT",
-      "namespace_id": "1",
-      "simple": {
-        "limit": 5,
-        "period": 60,
-      },
-    },
-  ],
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1,
