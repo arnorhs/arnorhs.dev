@@ -31,7 +31,7 @@ jobs:
       - name: Deploy post images worker
         uses: cloudflare/wrangler-action@v3
         with:
-          workingDirectory: 'pkg/post-images'
+          workingDirectory: 'pkg/post-images-worker'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       - name: Deploy website
