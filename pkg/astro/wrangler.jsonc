@@ -2,9 +2,8 @@
   "$schema": "../../node_modules/wrangler/config-schema.json",
   "name": "arnorhsdev",
   "main": "./dist/_worker.js/index.js",
-  // Update to today's date
-  "compatibility_date": "2025-03-25",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-10-09",
+  "compatibility_flags": ["nodejs_compat", "assets_navigation_has_no_effect"],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page", // If you have a custom `src/pages/404.astro` page
@@ -24,4 +23,20 @@
       "invocation_logs": true,
     },
   },
+  "services": [
+    {
+      "binding": "POST_IMAGES_WORKER",
+      "service": "arnorhsdev-post-images",
+    },
+  ],
+  "ratelimits": [
+    {
+      "name": "RATE_LIMIT",
+      "namespace_id": "1",
+      "simple": {
+        "limit": 100,
+        "period": 60,
+      },
+    },
+  ],
 }

@@ -1,9 +1,9 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
-    "typegen": {
-      "outputs": [".astro"]
+    "exports": {
+      "env": ["ASTRO_SITE_URL"]
     }
   }
 }

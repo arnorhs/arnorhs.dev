@@ -1,0 +1,29 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "arnorhsdev-post-images",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-10-09",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO_OG_IMAGE_STORE",
+        "class_name": "OgImageGeneratorStore",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["OgImageGeneratorStore"],
+    },
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+    },
+  },
+}

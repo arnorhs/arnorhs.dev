@@ -27,8 +27,14 @@ jobs:
       - name: Install dependencies (yarn)
         run: yarn install --frozen-lockfile
       - name: Turbo export
-        run: yarn turbo export --filter @arnorhs/astro
-      - name: Deploy
+        run: yarn turbo export
+      - name: Deploy post images worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          workingDirectory: 'pkg/post-images'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Deploy website
         uses: cloudflare/wrangler-action@v3
         with:
           workingDirectory: 'pkg/astro'

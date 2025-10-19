@@ -8,8 +8,17 @@ const processPost = (item: Post): PostWithUrl => ({
   url: `/posts/${item.uriId}`,
 })
 
-export const findPost = async (permalink: string): Promise<PostWithUrl | null> => {
-  const post = allPosts.find((x) => x.slug === permalink)
+export function findPost(slug: string): PostWithUrl | null
+export function findPost(
+  predicate: (post: { contentHash: string; slug: string }) => boolean,
+): PostWithUrl | null
+export function findPost(cond: Function | string): PostWithUrl | null {
+  const post = allPosts.find(
+    typeof cond === 'function'
+      ? (cond as (post: { contentHash: string; slug: string }) => boolean)
+      : (x) => x.slug === cond,
+  )
+
   if (!post) {
     return null
   }
@@ -17,7 +26,7 @@ export const findPost = async (permalink: string): Promise<PostWithUrl | null> =
   return processPost(post as Post)
 }
 
-export const getAllGroupedPosts = async (): Promise<PostGroup[]> => {
+export function getAllGroupedPosts(): PostGroup[] {
   const groupedPosts = allPosts.map(processPost).reduce(
     groupBy<PostWithUrl>((post) => new Date(post.publishedDate).getFullYear()),
     {} as Record<string, PostWithUrl[]>,

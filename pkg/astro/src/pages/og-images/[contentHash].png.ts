@@ -1,0 +1,36 @@
+import { findPost } from '@arnorhs/posts'
+import type { APIContext } from 'astro'
+import type { PostImagesInterface } from '@arnorhs/post-images-worker'
+
+export const prerender = false
+
+export async function GET({ request, params, locals }: APIContext) {
+  const contentHash = params.contentHash
+
+  if (!contentHash) {
+    return new Response('Not Found', { status: 404 })
+  }
+
+  const rateLimit = await locals.runtime.env.RATE_LIMIT.limit({
+    key: contentHash,
+  })
+
+  if (!rateLimit.success) {
+    return new Response('Rate limit exceeded', { status: 429 })
+  }
+
+  const post = findPost((p) => p.contentHash === contentHash)
+
+  if (!post) {
+    console.warn('No post found for hash', { contentHash })
+    return new Response('Not Found', { status: 404 })
+  }
+
+  const postImagesWorker = locals.runtime.env.POST_IMAGES_WORKER as unknown as PostImagesInterface
+  const resp = await postImagesWorker.getImageResponse(post.title)
+
+  // I needed to clone it, because astro complained that it was not a response, even though
+  // it was a response, it was just not an instance of the same response, because it comes
+  // from cloudflare's rpc protocol
+  return new Response(resp.body)
+}

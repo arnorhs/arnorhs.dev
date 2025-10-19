@@ -1,0 +1,22 @@
+{
+  "name": "@arnorhs/post-images-worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 4322",
+    "typegen": "wrangler types",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/lib/PostImagesInterface.ts"
+    }
+  },
+  "dependencies": {
+    "@arnorhs/posts": "*",
+    "cloudflare": "^5.2.0",
+    "workers-og": "^0.0.27",
+    "wrangler": "^4.42.2"
+  }
+}
