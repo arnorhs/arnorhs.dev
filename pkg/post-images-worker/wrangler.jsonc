@@ -14,7 +14,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_classes": ["OgImageGeneratorStore"],
+      "new_sqlite_classes": ["OgImageGeneratorStore"],
     },
   ],
   "observability": {
