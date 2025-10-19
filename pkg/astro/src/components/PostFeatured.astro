@@ -1,0 +1,52 @@
+---
+import { type PostWithUrl } from '@arnorhs/posts'
+import Heading from './Heading.astro'
+
+export interface Props {
+  post: PostWithUrl
+}
+
+const post = Astro.props.post
+---
+
+<style>
+  .featured-transition {
+    display: block;
+    transition-property: transform opacity;
+    animation: splash 0.6s normal forwards ease-in-out;
+  }
+
+  @keyframes splash {
+    from {
+      perspective-origin: 20%;
+      transform: perspective(100px) translateX(-200px) translateZ(-40px);
+      opacity: 0;
+    }
+
+    20% {
+      perspective-origin: 20%;
+      transform: perspective(100px) translateX(-200px) translateZ(-40px);
+      opacity: 0;
+    }
+
+    to {
+      perspective-origin: 20%;
+      transform: perspective(80px) translate3d(-20px, 0, -20px) rotate3d(0, 2, 1, 2deg);
+      opacity: 1;
+    }
+  }
+</style>
+
+<article class="pt-6">
+  <Heading tag="h2" variation="big">
+    <a class="featured-transition text-arnorhs-primary dark:text-arnorhs-700" href={post.url}
+      >{post.title || 'missing title'}</a
+    >
+  </Heading>
+
+  <p class="text-md mt-2 sm:text-xl font-normal lg:text-base md:w-3/4" set:html={post.summary} />
+
+  <p>
+    <a class="text-base font-semibold" href={post.url}>Read on →</a>
+  </p>
+</article>

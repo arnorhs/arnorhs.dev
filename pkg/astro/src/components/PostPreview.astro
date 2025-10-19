@@ -5,64 +5,29 @@ import { dateFormat } from '../lib/dateFormat'
 
 export interface Props {
   post: PostWithUrl
-  featured?: boolean
   showByline?: boolean
 }
 
-const post = Astro.props.post as PostWithUrl
-const featured = Astro.props.featured ?? false
-const showByline = Astro.props.showByline ?? !featured
+const post = Astro.props.post
+const showByline = Astro.props.showByline ?? true
 ---
 
-<style>
-  .featured-transition {
-    display: block;
-    transition-property: transform opacity;
-    animation: splash 0.6s normal forwards ease-in-out;
-  }
-
-  @keyframes splash {
-    from {
-      perspective-origin: 20%;
-      transform: perspective(100px) translateX(-200px) translateZ(-40px);
-      opacity: 0;
-    }
-
-    20% {
-      perspective-origin: 20%;
-      transform: perspective(100px) translateX(-200px) translateZ(-40px);
-      opacity: 0;
-    }
-
-    to {
-      perspective-origin: 20%;
-      transform: perspective(80px) translate3d(-20px, 0, -20px) rotate3d(0, 2, 1, 2deg);
-      opacity: 1;
-    }
-  }
-</style>
-<article class={`font-sans ${featured ? 'pt-6' : ''}`}>
-  <Heading tag={featured ? 'h2' : 'h3'} variation={featured ? 'big' : 'dense'}>
-    <a
-      class={featured ? 'featured-transition text-myblue' : 'text-inherit visited:text-inherit'}
-      href={post.url as string}>{post.title || 'missing title'}</a
-    >
+<article>
+  <Heading tag="h3" variation="dense">
+    <a class="text-inherit visited:text-inherit" href={post.url}>{post.title || 'missing title'}</a>
   </Heading>
 
   {
     showByline && (
-      <p class="mt-1 dark:text-boringblue md:mt-0 text-xs font-normal" aria-label="published date">
+      <p class="mt-1 dark:text-arnorhs-700 md:mt-0 text-xs font-normal" aria-label="published date">
         {dateFormat(new Date(post.publishedDate))}
       </p>
     )
   }
 
-  <p
-    class={`text-md mt-2 sm:text-xl font-normal lg:text-base ${featured ? 'md:w-3/4 ' : ''}`}
-    set:html={post.summary}
-  />
+  <p class="text-md mt-2 sm:text-xl font-normal lg:text-base" set:html={post.summary} />
 
   <p>
-    <a class="text-myblue text-base font-semibold visited:text-myblue" href={post.url}>Read on →</a>
+    <a class="text-base font-semibold" href={post.url}>Read on →</a>
   </p>
 </article>

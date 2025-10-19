@@ -15,19 +15,18 @@
   --font-family-nav: 'Figtree';
 
   /* Custom Colors */
-  --color-mycard: #fdfdfd;
+  --color-arnorhs-50: #0c0a0e;
+  --color-arnorhs-100: #101116;
+  --color-arnorhs-200: #1d202e;
+  --color-arnorhs-400: #4f5680;
+  --color-arnorhs-primary: #4151b5;
+  --color-arnorhs-600: #7481df;
+  --color-arnorhs-700: #a3ace5;
+  --color-arnorhs-800: #c2c6e9;
+  --color-arnorhs-900: #e6e9fc;
+  --color-arnorhs-950: #f8f9ff;
 
-  --color-myblue: #4151b5;
-  --color-myblue-bright: #e6e9fc;
-  --color-myblue-lighter: #a3ace5;
-  --color-myblue-darker: #4f5680;
-
-  --color-myorange: rgb(255, 192, 203);
-
-  --color-brightblue: #f4f1f8;
-  --color-notasdarkblue: #1f1924;
-  --color-darkblue: #0c0a0e;
-  --color-boringblue: #786e87;
+  --color-myorange: #ffc0cb;
 
   --spacing: 5px;
 }
@@ -62,10 +61,10 @@
 
 @layer base {
   html {
-    font-family: theme(fontFamily.sans);
+    font-family: 'Figtree', sans-serif;
     font-size: 24px;
-    @apply bg-white text-darkblue;
-    @apply dark:bg-darkblue dark:text-brightblue;
+    @apply bg-arnorhs-950 text-arnorhs-200;
+    @apply dark:bg-arnorhs-50 dark:text-arnorhs-800;
   }
 
   html,
@@ -74,7 +73,7 @@
   }
 
   a {
-    @apply text-myblue;
+    @apply text-arnorhs-primary dark:text-arnorhs-primary;
   }
 
   p a {
@@ -132,10 +131,11 @@
 
   article blockquote {
     @apply border-l-8;
-    @apply border-l-myblue-bright;
+    @apply border-l-arnorhs-800 dark:border-l-arnorhs-700;
     @apply italic;
-    @apply pl-4 py-0;
+    @apply pl-5 py-0;
     @apply xl:w-4/5;
+    @apply dark:text-arnorhs-700;
   }
 
   article h1 {
