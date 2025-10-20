@@ -19,18 +19,32 @@ export async function GET({ request, params, locals }: APIContext) {
     return new Response('Rate limit exceeded', { status: 429 })
   }
 
-  const post = findPost((p) => p.contentHash === contentHash)
+  const title = titleForContentHash(contentHash)
 
-  if (!post) {
+  if (!title) {
     console.warn('No post found for hash', { contentHash })
     return new Response('Not Found', { status: 404 })
   }
 
   const postImagesWorker = locals.runtime.env.POST_IMAGES_WORKER as unknown as PostImagesInterface
-  const resp = await postImagesWorker.getImageResponse(post.title)
+  const resp = await postImagesWorker.getImageResponse(title)
 
   // I needed to clone it, because astro complained that it was not a response, even though
   // it was a response, it was just not an instance of the same response, because it comes
   // from cloudflare's rpc protocol
   return new Response(resp.body)
+}
+
+function titleForContentHash(contentHash: string) {
+  if (contentHash === 'default') {
+    return "Arnor's blog and stuff"
+  }
+
+  const post = findPost((p) => p.contentHash === contentHash)
+
+  if (!post) {
+    return null
+  }
+
+  return post.title
 }
