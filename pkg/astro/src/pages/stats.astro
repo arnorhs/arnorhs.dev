@@ -1,0 +1,81 @@
+---
+import { z } from 'zod'
+import { CfAnalyticsClient, type CfDateTime } from '../lib/analytics/CfAnalyticsClient'
+import AnalyticsResultsTable from '../components/AnalyticsResultsTable.astro'
+import { AnalyticsQueries } from '../lib/analytics/AnalyticsQueries'
+import MainLayout from '../layouts/MainLayout.astro'
+
+const DAYS_OF_DATA = 14
+
+export const prerender = false
+
+const cfgSchema = z.object({
+  CF_ACCOUNT_ID: z.string().min(1),
+  CF_ANALYTICS_API_TOKEN: z.string().min(1),
+  CF_ANALYTICS_TABLE_NAME: z.string().min(1),
+})
+
+const cfgResult = cfgSchema.safeParse(Astro.locals.runtime.env)
+
+if (!cfgResult.success) {
+  console.error('Missing Cloudflare Analytics configuration', z.treeifyError(cfgResult.error))
+  throw new Error('Missing Cloudflare Analytics configuration')
+}
+
+const cfg = cfgResult.data
+
+const client = new CfAnalyticsClient(
+  {
+    accountId: cfg.CF_ACCOUNT_ID,
+    apiToken: cfg.CF_ANALYTICS_API_TOKEN,
+  },
+  cfg.CF_ANALYTICS_TABLE_NAME,
+)
+
+const queryParamsSchema = z
+  .string()
+  .optional()
+  .transform((val) => {
+    if (!val) {
+      return null
+    }
+
+    const x = val.substring(1)
+
+    return Object.fromEntries(
+      x.split('&').map((x) => x.split('=').map(decodeURIComponent)) as [string, string][],
+    )
+  })
+
+const queryData = queryParamsSchema.parse(new URL(Astro.request.url).search)
+
+const queries = new AnalyticsQueries(client, { daysOfData: DAYS_OF_DATA })
+
+let result
+if (queryData?.slug === 'all') {
+  result = await queries.allByPath()
+} else if (queryData?.slug === 'raw') {
+  result = await queries.rawEvents()
+} else if (queryData?.slug) {
+  result = await queries.pathnameByDay(queryData.slug)
+} else {
+  result = await queries.allByDay()
+}
+
+if (result.type === 'error') {
+  console.error('CF analytics query error', result.message)
+}
+---
+
+<MainLayout>
+  {
+    result.type === 'success' ? (
+      <AnalyticsResultsTable results={result.results} />
+    ) : (
+      <>
+        <div>Error occurred</div>
+        {import.meta.env.DEV ? <pre>{result.message}</pre> : null}
+      </>
+    )
+  }
+</MainLayout>

@@ -37,6 +37,9 @@
       "service": "arnorhsdev-post-images",
     },
   ],
+  "vars": {
+    "CF_ANALYTICS_TABLE_NAME": "arnorhs-analytics",
+  },
   "ratelimits": [
     {
       "name": "RATE_LIMIT",

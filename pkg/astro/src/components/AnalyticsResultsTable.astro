@@ -1,0 +1,30 @@
+---
+import { type AnalyticsResults, type CfDateTime } from '../lib/analytics/CfAnalyticsClient'
+
+export type Props = {
+  results: AnalyticsResults<any>
+}
+
+const results = Astro.props.results as AnalyticsResults<any>
+---
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        {results.meta.map((column) => <th>{column.name}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        results.data.map((row) => (
+          <tr>
+            {results.meta.map((column) => (
+              <td>{row[column.name]}</td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
