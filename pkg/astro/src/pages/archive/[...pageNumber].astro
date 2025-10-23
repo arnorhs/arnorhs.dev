@@ -1,0 +1,139 @@
+---
+import { groupPosts } from '@arnorhs/posts'
+import Card from '../../components/Card.astro'
+import Heading from '../../components/Heading.astro'
+import PostPreview from '../../components/PostPreview.astro'
+import MainLayout from '../../layouts/MainLayout.astro'
+import { getPaginatedPosts } from '../../lib/data/getPaginatedPosts'
+
+export async function getStaticPaths() {
+  return getPaginatedPosts().map((_, i) => {
+    return {
+      params: { pageNumber: i === 0 ? undefined : i + 1 },
+      props: { chunkIndex: i },
+    }
+  })
+}
+
+const { chunkIndex } = Astro.props
+
+const paginated = getPaginatedPosts()
+const postChunk = paginated[chunkIndex]
+const nextPage = paginated[chunkIndex + 1] ? chunkIndex + 2 : null
+const prevPage = paginated[chunkIndex - 1] ? chunkIndex : null
+
+if (!postChunk) {
+  throw new Error(`No posts found for chunk index: ${chunkIndex}`)
+}
+
+const groupedPosts = groupPosts(postChunk)
+---
+
+<MainLayout title="Blog archive">
+  <Heading tag="h1" variation="semi">All posts by arnorhs</Heading>
+  {
+    chunkIndex !== 0 ? (
+      <p class="mb-6">
+        Page {chunkIndex + 1} of {paginated.length}
+      </p>
+    ) : (
+      <>
+        <p>
+          Follow my updates on Bluesky{' '}
+          <a href="https://bsky.app/profile/arnorhs.dev" target="_blank" rel="no-follow">
+            @arnorhs.dev
+          </a>
+          .
+        </p>
+        <p class="mb-10">
+          If you use an RSS reader, you can access the{' '}
+          <a aria-roledescription="RSS feed" title="Subscribe to RSS feed" href="/rss.xml">
+            RSS feed here
+          </a>
+          .
+        </p>
+      </>
+    )
+  }
+
+  <div id="postcontainer">
+    {
+      groupedPosts.map(({ year, posts }) => (
+        <ol>
+          <li>
+            <Heading variation="semi" tag="h2">
+              {year}
+            </Heading>
+
+            <ol class="lg:grid lg:grid-cols-2 gap-5">
+              {posts.map((post) => (
+                <li>
+                  <Card>
+                    <PostPreview post={post} />
+                  </Card>
+                </li>
+              ))}
+            </ol>
+          </li>
+        </ol>
+      ))
+    }
+  </div>
+
+  {
+    (nextPage || prevPage) && (
+      <div class="mt-10 flex items-center justify-center gap-10" id="paginationcontainer">
+        {prevPage && (
+          <a
+            class="
+              inline-block
+              bg-arnorhs-800
+              dark:bg-arnorhs-200
+              px-4
+              py-2
+              rounded
+              hover:bg-arnorhs-700
+              dark:hover:bg-arnorhs-400
+              text-arnorhs-100
+              dark:text-arnorhs-950
+              transition
+            "
+            href={prevPage === 1 ? '/archive' : `/archive/${prevPage}`}
+          >
+            &larr; Previous page
+          </a>
+        )}
+
+        {nextPage && (
+          <a
+            data-next-page-link
+            class="
+              inline-block
+              bg-arnorhs-800
+              dark:bg-arnorhs-200
+              px-4
+              py-2
+              rounded
+              hover:bg-arnorhs-700
+              dark:hover:bg-arnorhs-400
+              text-arnorhs-100
+              dark:text-arnorhs-950
+              transition
+            "
+            href={`/archive/${nextPage}`}
+          >
+            Next page &rarr;
+          </a>
+        )}
+      </div>
+    )
+  }
+</MainLayout>
+
+<script>
+  import { createInfiniteScroll } from '../../lib/createInfiniteScroll'
+
+  document.addEventListener('astro:page-load', () => {
+    createInfiniteScroll()
+  })
+</script>
