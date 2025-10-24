@@ -1,7 +1,6 @@
 ---
 import '../styles/fonts.css'
 import '../styles/styles.css'
-import { pages } from '../lib/data/pages'
 import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
@@ -71,14 +70,14 @@ const dtUpdated = new Date().toISOString()
         <Container>
           <Nav>
             <NavItem first title="home" href="/">arnorhs</NavItem>
-
-            {
-              pages.map(({ slug, shortTitle, title }) => (
-                <NavItem href={`/${slug}/`} active={activePath === `/${slug}/`} title={title}>
-                  {shortTitle}
-                </NavItem>
-              ))
-            }
+            <NavItem title="Blog posts archive" href="/archive" active={activePath === '/archive'}
+              >Posts</NavItem
+            >
+            <NavItem
+              title="Legend of the fountain of wisdom"
+              href="/about"
+              active={activePath === '/about'}>About</NavItem
+            >
           </Nav>
         </Container>
       </header>

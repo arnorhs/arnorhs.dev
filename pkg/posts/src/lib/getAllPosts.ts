@@ -26,25 +26,19 @@ export function findPost(cond: Function | string): PostWithUrl | null {
   return processPost(post as Post)
 }
 
-export function getAllGroupedPosts(): PostGroup[] {
-  const groupedPosts = allPosts.map(processPost).reduce(
+export function groupPosts(posts: Post[]): PostGroup[] {
+  const groupedPosts = posts.map(processPost).reduce(
     groupBy<PostWithUrl>((post) => new Date(post.publishedDate).getFullYear()),
     {} as Record<string, PostWithUrl[]>,
   )
 
-  const posts = Object.entries(groupedPosts)
-    .map(
-      ([key, value]) =>
-        ({
-          year: key,
-          posts: value,
-        }) as PostGroup,
-    )
+  const taggedPosts = Object.entries(groupedPosts)
+    .map<PostGroup>(([year, posts]) => ({ year, posts }))
     .sort(({ year: a }, { year: b }) => {
-      return parseInt(b, 10) - parseInt(a, 10)
+      return Number(b) - Number(a)
     })
 
-  return posts
+  return taggedPosts
 }
 
 export const getAllPosts = () => allPosts.map(processPost)
