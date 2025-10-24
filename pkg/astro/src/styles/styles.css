@@ -163,4 +163,26 @@
   article h6 {
     @apply text-base;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    @apply border border-arnorhs-900 dark:border-arnorhs-200;
+    @apply px-4 py-2;
+    @apply text-left;
+  }
+
+  th,
+  td {
+    @apply text-left;
+  }
+
+  th:last-child,
+  td:last-child {
+    @apply text-right;
+  }
 }

@@ -7,3 +7,5 @@ posts/dist
 dist
 .wrangler
 worker-configuration.d.ts
+*.vars
+*.envrc
