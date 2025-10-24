@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
 const { permalink } = Astro.props
 
-const post = await findPost(permalink)
+const post = findPost(permalink)
 
 if (!post) {
   throw new Error(`No corresponding post: ${permalink}`)

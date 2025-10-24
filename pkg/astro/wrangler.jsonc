@@ -3,7 +3,14 @@
   "name": "arnorhsdev",
   "main": "./dist/_worker.js/index.js",
   "compatibility_date": "2025-10-09",
-  "compatibility_flags": ["nodejs_compat", "assets_navigation_has_no_effect"],
+  "compatibility_flags": [
+    "nodejs_compat",
+    // So I can navigate to og-urls like /og-images/afffd.png without 404s
+    // possibly i should disable this again or disable in prod?
+    "assets_navigation_has_no_effect",
+    // https://github.com/withastro/astro/issues/14511
+    "disable_nodejs_process_v2",
+  ],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page", // If you have a custom `src/pages/404.astro` page

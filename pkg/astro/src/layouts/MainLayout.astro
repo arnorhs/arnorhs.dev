@@ -10,7 +10,6 @@ import { ClientRouter } from 'astro:transitions'
 
 export interface Props {
   title?: string
-  animate?: boolean
   ogImage?: string
   ogType?: string
   description?: string
@@ -117,19 +116,7 @@ const dtUpdated = new Date().toISOString()
 </html>
 
 <script>
-  const trackPageView = () => {
-    console.log('Page loaded, tracking view')
-    // Send a non-blocking request to your tracking endpoint
-    fetch('/api/view.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ path: window.location.pathname, referrer: document.referrer }),
-      // We don't care about the response, just fire and forget
-      mode: 'no-cors',
-    })
-  }
+  import { trackPageView } from '../lib/analytics/trackPageView'
 
   // Ensure this runs only client-side
   document.addEventListener('astro:page-load', () => {
