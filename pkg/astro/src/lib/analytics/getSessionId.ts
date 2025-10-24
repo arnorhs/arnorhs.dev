@@ -26,7 +26,7 @@ export function getSessionId(window: typeof globalThis) {
 
   if (!session || session.createdAt + MAX_AGE < Date.now()) {
     session = {
-      id: Math.random().toString(36).slice(2) + Date.now().toString(36),
+      id: crypto.randomUUID(),
       createdAt: Date.now(),
     }
     window.sessionStorage.setItem(SESSION_KEY, JSON.stringify(session))
