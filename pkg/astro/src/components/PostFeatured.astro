@@ -9,37 +9,9 @@ export interface Props {
 const post = Astro.props.post
 ---
 
-<style>
-  .featured-transition {
-    display: block;
-    transition-property: transform opacity;
-    animation: splash 0.6s normal forwards ease-in-out;
-  }
-
-  @keyframes splash {
-    from {
-      perspective-origin: 20%;
-      transform: perspective(100px) translateX(-200px) translateZ(-40px);
-      opacity: 0;
-    }
-
-    20% {
-      perspective-origin: 20%;
-      transform: perspective(100px) translateX(-200px) translateZ(-40px);
-      opacity: 0;
-    }
-
-    to {
-      perspective-origin: 20%;
-      transform: perspective(80px) translate3d(-20px, 0, -20px) rotate3d(0, 2, 1, 2deg);
-      opacity: 1;
-    }
-  }
-</style>
-
-<article class="pt-6">
+<article class="pt-6" transition:name={post.url}>
   <Heading tag="h2" variation="big">
-    <a class="featured-transition text-arnorhs-primary dark:text-arnorhs-700" href={post.url}
+    <a class="text-arnorhs-primary dark:text-arnorhs-700" href={post.url}
       >{post.title || 'missing title'}</a
     >
   </Heading>
