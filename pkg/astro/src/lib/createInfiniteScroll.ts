@@ -45,7 +45,6 @@ class PostLoader {
 export function createInfiniteScroll() {
   const postContainer = document.getElementById('postcontainer')
   if (!postContainer) {
-    console.error('postContainer not found')
     return
   }
 
