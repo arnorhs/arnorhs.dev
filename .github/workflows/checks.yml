@@ -22,7 +22,7 @@ jobs:
             **/node_modules
             **/.turbo
             **/dist
-          key: global-cache-v2
+          key: global-cache-v3
       - name: Install dependencies (yarn)
         run: yarn install --frozen-lockfile
       - name: Prettier format check

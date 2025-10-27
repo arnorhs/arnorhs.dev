@@ -16,11 +16,6 @@ The project is organized into a monorepo with the following key packages located
   - It provides the data for the Astro site.
   - **Key Technologies:** Vite, Vitest, TypeScript, `marked`, `yaml-front-matter`.
 
-- **`@arnorhs/resoc` (pkg/resoc):**
-  - This package is used for generating social media preview images (OG images) for the blog posts.
-  - It leverages `@resoc/create-img` and likely uses data from `@arnorhs/posts` to create dynamic images.
-  - **Key Technologies:** `@resoc/create-img`, TypeScript, Bun.
-
 ## Getting Started
 
 To set up and run the project locally, follow these steps:
