@@ -14,7 +14,7 @@
     }
   },
   "dependencies": {
-    "@arnorhs/posts": "*",
+    "@arnorhs/posts": "workspace:*",
     "cloudflare": "^5.2.0",
     "workers-og": "^0.0.27",
     "wrangler": "^4.42.2"

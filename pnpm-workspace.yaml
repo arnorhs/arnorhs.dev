@@ -1,0 +1,10 @@
+onlyBuiltDependencies:
+  - bun
+
+overrides:
+  '@types/node': ^22.18.0
+  typescript: ^5.9.3
+  'highlight.js': '^10.4.1'
+
+packages:
+  - pkg/*
