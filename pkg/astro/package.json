@@ -13,7 +13,6 @@
   "dependencies": {
     "@arnorhs/post-images-worker": "*",
     "@arnorhs/posts": "*",
-    "@arnorhs/resoc": "*",
     "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
