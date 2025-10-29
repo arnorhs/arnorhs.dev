@@ -6,7 +6,7 @@ Blog runs on Astro, posts are generated in a separate workspace project.
 
 ## Installation / run
 
-Just install deps with `yarn` and then run `yarn dev` for dev mode, or `yarn export` for final static build.
+Just install deps with `pnpm` and then run `pnpm dev` for dev mode.
 
 # License
 

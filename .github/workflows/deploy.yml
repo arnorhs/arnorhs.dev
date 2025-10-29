@@ -12,10 +12,13 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: 'yarn'
+          cache: 'pnpm'
       - id: cache
         uses: actions/cache@v4
         with:
@@ -23,11 +26,11 @@ jobs:
             **/node_modules
             **/.turbo
             **/dist
-          key: global-cache-v3
-      - name: Install dependencies (yarn)
-        run: yarn install --frozen-lockfile
+          key: global-cache-v3-${{ hashFiles('**/pnpm-*') }}
+      - name: Install dependencies
+        run: pnpm i
       - name: Turbo export
-        run: yarn turbo export
+        run: pnpm turbo export
       - name: Deploy post images worker
         uses: cloudflare/wrangler-action@v3
         with:

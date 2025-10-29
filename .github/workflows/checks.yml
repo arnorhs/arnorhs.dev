@@ -11,10 +11,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: 'yarn'
+          cache: 'pnpm'
       - id: cache
         uses: actions/cache@v4
         with:
@@ -22,14 +25,14 @@ jobs:
             **/node_modules
             **/.turbo
             **/dist
-          key: global-cache-v3
-      - name: Install dependencies (yarn)
-        run: yarn install --frozen-lockfile
+          key: global-cache-v3-${{ hashFiles('**/pnpm-*') }}
+      - name: Install dependencies
+        run: pnpm i
       - name: Prettier format check
-        run: yarn prettier --check .
+        run: pnpm prettier --check .
       - name: Turbo typecheck
-        run: yarn turbo typecheck
+        run: pnpm turbo typecheck
       - name: Turbo test
-        run: yarn turbo test
+        run: pnpm turbo test
       - name: Turbo build
-        run: yarn turbo build
+        run: pnpm turbo build

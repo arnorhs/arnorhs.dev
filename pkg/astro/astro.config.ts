@@ -14,12 +14,7 @@ export default defineConfig({
     build: {
       minify: false,
     },
-    plugins: [
-      // @ts-expect-error - I don't know why
-      tailwindcss({
-        content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
-      }),
-    ],
+    plugins: [tailwindcss()],
   },
 
   adapter: cloudflare({
