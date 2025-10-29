@@ -5,9 +5,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "posts": "yarn workspace @arnorhs/posts",
-    "astro": "yarn workspace @arnorhs/astro",
-    "resoc": "yarn workspace @arnorhs/resoc",
     "dev": "turbo dev --filter='@arnorhs/astro'",
     "typecheck": "turbo run typecheck",
     "export": "turbo export --filter='@arnorhs/astro'"

@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'yarn'
+          cache: 'pnpm'
       - id: cache
         uses: actions/cache@v4
         with:
@@ -24,10 +24,10 @@ jobs:
             **/.turbo
             **/dist
           key: global-cache-v3
-      - name: Install dependencies (yarn)
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm i
       - name: Turbo export
-        run: yarn turbo export
+        run: pnpm turbo export
       - name: Deploy post images worker
         uses: cloudflare/wrangler-action@v3
         with:

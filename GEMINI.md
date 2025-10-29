@@ -21,17 +21,17 @@ The project is organized into a monorepo with the following key packages located
 To set up and run the project locally, follow these steps:
 
 1.  **Install Dependencies:**
-    The project uses `yarn` as its package manager. Ensure you have `yarn` installed.
+    The project uses `pnpm` as its package manager. Ensure you have `pnpm` installed.
 
     ```bash
-    yarn install
+    pnpm install
     ```
 
 2.  **Development Mode:**
     To start the development server for the Astro site, which includes watching for changes in the `@arnorhs/astro` package:
 
     ```bash
-    yarn dev
+    pnpm dev
     ```
 
     This command uses Turborepo to run the `dev` script specifically for the `@arnorhs/astro` workspace.
@@ -40,15 +40,14 @@ To set up and run the project locally, follow these steps:
     To run type checks across all packages:
 
     ```bash
-    yarn typecheck
+    pnpm turbo typecheck
     ```
 
-4.  **Building for Production:**
+4.  **Running tests:**
     To create a static production build of the website:
     ```bash
-    yarn export
+    pnpm turbo test
     ```
-    This command uses Turborepo to run the `export` script for the `@arnorhs/website` (which is likely an alias or a build target that includes `@arnorhs/astro`).
 
 ## License
 

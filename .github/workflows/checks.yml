@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'yarn'
+          cache: 'pnpm'
       - id: cache
         uses: actions/cache@v4
         with:
@@ -23,13 +23,13 @@ jobs:
             **/.turbo
             **/dist
           key: global-cache-v3
-      - name: Install dependencies (yarn)
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm i
       - name: Prettier format check
-        run: yarn prettier --check .
+        run: pnpm prettier --check .
       - name: Turbo typecheck
-        run: yarn turbo typecheck
+        run: pnpm turbo typecheck
       - name: Turbo test
-        run: yarn turbo test
+        run: pnpm turbo test
       - name: Turbo build
-        run: yarn turbo build
+        run: pnpm turbo build
