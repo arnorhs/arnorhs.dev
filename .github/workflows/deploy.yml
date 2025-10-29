@@ -26,7 +26,7 @@ jobs:
             **/node_modules
             **/.turbo
             **/dist
-          key: global-cache-v3
+          key: global-cache-v3-${{ hashFiles('**/pnpm-*') }}
       - name: Install dependencies
         run: pnpm i
       - name: Turbo export
