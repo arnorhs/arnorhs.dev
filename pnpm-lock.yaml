@@ -73,6 +73,9 @@ importers:
       cloudflare:
         specifier: ^5.2.0
         version: 5.2.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
       workers-og:
         specifier: ^0.0.27
         version: 0.0.27
