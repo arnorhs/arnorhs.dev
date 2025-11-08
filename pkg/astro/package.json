@@ -16,12 +16,13 @@
     "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
-    "typescript": "*",
-    "@tailwindcss/vite": "^4.1.14",
-    "astro": "^5.14.4",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "*",
+    "astro": "^5.15.4",
     "autoprefixer": "^10.0.2",
     "postcss": "^8.2.14",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.17",
+    "typescript": "*",
     "wrangler": "^4.42.2",
     "zod": "^4.1.12"
   }
