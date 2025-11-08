@@ -8,6 +8,6 @@ onlyBuiltDependencies:
   - workerd
 
 overrides:
+  vite: ^7.2.2
   '@types/node': ^22.18.0
-  highlight.js: ^10.4.1
   typescript: ^5.9.3

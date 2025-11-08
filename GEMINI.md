@@ -16,6 +16,10 @@ The project is organized into a monorepo with the following key packages located
   - It provides the data for the Astro site.
   - **Key Technologies:** Vite, Vitest, TypeScript, `marked`, `yaml-front-matter`.
 
+- **`@arnorhs/post-images-worker` (pkg/post-images-worker):**
+  - This package contains a Cloudflare Worker responsible for processing and serving post-related images.
+  - **Key Technologies:** Cloudflare Workers, TypeScript, Wrangler.
+
 ## Getting Started
 
 To set up and run the project locally, follow these steps:
