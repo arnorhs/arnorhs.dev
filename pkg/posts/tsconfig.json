@@ -8,6 +8,7 @@
     "strict": true,
     "moduleResolution": "bundler",
     "noEmitOnError": true,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
     "module": "esnext"
   },
