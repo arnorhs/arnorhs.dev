@@ -1,4 +1,4 @@
-/// <reference types="vitest" />
+/// <reference types="vitest/config" />
 import { nodeExternals } from 'rollup-plugin-node-externals'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
@@ -31,18 +31,6 @@ export default defineConfig({
         }
       },
     },
-    // {
-    //   name: 'post-export',
-    //   generateBundle: async function () {
-    //     const items = await getPostCollection()
-
-    //     this.emitFile({
-    //       type: 'asset',
-    //       fileName: 'posts.json',
-    //       source: JSON.stringify(items),
-    //     })
-    //   },
-    // },
     nodeExternals(),
     dts({
       rollupTypes: true,
