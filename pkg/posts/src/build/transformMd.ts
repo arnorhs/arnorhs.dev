@@ -1,18 +1,14 @@
 import md5 from 'md5'
 import type { Post } from '../lib/types'
 
-export interface MdFile {
+type MdFile = {
   filename: string
   html: string
   metadata: Record<string, string>
 }
 
 // function for reshaping each post
-export const transformMd = ({
-  filename,
-  html,
-  metadata: { summary, title, date },
-}: MdFile): Post => {
+export function transformMd({ filename, html, metadata: { summary, title, date } }: MdFile): Post {
   // the slug is the filename with the '.md' ending removed
   const slug = filename.replace(/\.md$/, '').toLocaleLowerCase()
 

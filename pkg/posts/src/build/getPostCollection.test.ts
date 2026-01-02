@@ -1,11 +1,14 @@
 /// <reference types="vitest/globals" />
 import { getPostCollection } from './getPostCollection'
 import type { Post } from '../lib/types'
+import path from 'node:path'
+
+const postsDir = path.resolve(process.cwd(), '../../content')
 
 describe('getPostCollection', () => {
   let allItems: Post[]
   beforeAll(async () => {
-    allItems = await getPostCollection()
+    allItems = await getPostCollection(postsDir)
   })
 
   describe('allItems', () => {

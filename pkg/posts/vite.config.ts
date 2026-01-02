@@ -3,6 +3,7 @@ import { nodeExternals } from 'rollup-plugin-node-externals'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { getPostCollection } from './src/build/getPostCollection'
+import path from 'node:path'
 
 export default defineConfig({
   build: {
@@ -26,7 +27,7 @@ export default defineConfig({
       },
       load: async (id) => {
         if (id === 'posts:json') {
-          const items = await getPostCollection()
+          const items = await getPostCollection(path.resolve(process.cwd(), '../../content'))
           return `export default ${JSON.stringify(items, undefined, '\t')}`
         }
       },
