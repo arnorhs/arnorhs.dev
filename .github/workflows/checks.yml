@@ -5,6 +5,19 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run prettier action
+        uses: arnorhs/prettier-check@v1.0.9
+        with:
+          main-branch: master
+
   checks:
     name: CI checks
     runs-on: ubuntu-latest
@@ -28,11 +41,22 @@ jobs:
           key: global-cache-v3-${{ hashFiles('**/pnpm-*') }}
       - name: Install dependencies
         run: pnpm i
-      - name: Prettier format check
-        run: pnpm prettier --check .
+      - name: Turbo build
+        run: pnpm turbo build
       - name: Turbo typecheck
         run: pnpm turbo typecheck
       - name: Turbo test
         run: pnpm turbo test
-      - name: Turbo build
-        run: pnpm turbo build
+      - name: Turbo export
+        run: pnpm turbo export
+
+  checks-result:
+    name: Checks OK
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    needs:
+      - prettier
+      - checks
+    steps:
+      - name: All deployed
+        run: echo "All good"
