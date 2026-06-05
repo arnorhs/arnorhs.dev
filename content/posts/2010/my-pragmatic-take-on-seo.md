@@ -4,7 +4,7 @@ summary: "I've been thinking a lot about SEO (Search Engine Optimization) these 
 date: 2010-03-24
 ---
 
-[](https://arnorhs.dev/wp-content/uploads/2010/03/hats1.jpg)[![](/wp-content/uploads/2010/03/hats1-e1274351683604.jpg 'hats')](/wp-content/uploads/2010/03/hats1.jpg) I've been thinking a lot about SEO (Search Engine Optimization) these days. Mostly due to a pretty controversial article by Paul Boag, [Why I don't get SEO](https://boagworld.com/marketing/i-dont-get-seo). I get the point of the article but I think it misses a few considerations. I want to summarize my own thoughts on SEO in a pragmatic way. Disclaimer: I'm not an SEO expert and I do not work in the field so I could be wrong. This is just a Web Developer's pragmatic perspective.
+[](/wp-content/uploads/2010/03/hats1.jpg)[![](/wp-content/uploads/2010/03/hats1-e1274351683604.jpg 'hats')](/wp-content/uploads/2010/03/hats1.jpg) I've been thinking a lot about SEO (Search Engine Optimization) these days. Mostly due to a pretty controversial article by Paul Boag, [Why I don't get SEO](https://boagworld.com/marketing/i-dont-get-seo). I get the point of the article but I think it misses a few considerations. I want to summarize my own thoughts on SEO in a pragmatic way. Disclaimer: I'm not an SEO expert and I do not work in the field so I could be wrong. This is just a Web Developer's pragmatic perspective.
 
 ### Why do SEO experts exist?
 

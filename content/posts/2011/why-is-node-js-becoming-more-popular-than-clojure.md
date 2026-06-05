@@ -4,7 +4,7 @@ summary: "I did a post recently about the popularity of Node.js over Clojure. I 
 date: 2011-03-02
 ---
 
-I did a post recently about [the popularity of Node.js over Clojure](https://arnorhs.dev/2011/02/28/node-js-surpasses-clojure-in-popularity/). I didn't want to go into \*why\* Node is getting much more traction than Clojure, since I didn't want to start a language war in that post. However, I have my opinion on the topic, so here's why I think Node.js is becoming much more popular.
+I did a post recently about [the popularity of Node.js over Clojure](/posts/2011-02-28/node-js-surpasses-clojure-in-popularity/). I didn't want to go into \*why\* Node is getting much more traction than Clojure, since I didn't want to start a language war in that post. However, I have my opinion on the topic, so here's why I think Node.js is becoming much more popular.
 
 ### Clojure vs Node.js
 

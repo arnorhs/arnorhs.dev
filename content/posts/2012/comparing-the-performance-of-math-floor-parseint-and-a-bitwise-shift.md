@@ -8,7 +8,7 @@ _Note: Sorry, this post might be a bit more technical than usually._ I read in a
 
 ### [The results](https://jsperf.com/math-floor-parseint-and-left-shift):
 
-[![](https://arnorhs.dev/wp-content/uploads/2012/05/jsperf-646x325.png 'JS perf results')](https://jsperf.com/math-floor-parseint-and-left-shift) There are only a handful of browsers that have been tested, but it seems that the left shift is indeed faster in at least Firefox, my Android browser and in Internet Explorer.
+[![](/wp-content/uploads/2012/05/jsperf-646x325.png 'JS perf results')](https://jsperf.com/math-floor-parseint-and-left-shift) There are only a handful of browsers that have been tested, but it seems that the left shift is indeed faster in at least Firefox, my Android browser and in Internet Explorer.
 
 ### V8's internals
 

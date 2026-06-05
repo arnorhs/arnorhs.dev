@@ -8,7 +8,7 @@ date: 2011-02-24
 
 ### Dropbox
 
-[![](https://arnorhs.dev/wp-content/uploads/2011/02/dropbox-logo.png 'dropbox-logo')](https://arnorhs.dev/wp-content/uploads/2011/02/dropbox-logo.png) I am in love with [dropbox](https://db.tt/owBSxlt). I use it for a lot of things. I use it at least in the following ways:
+[![](/wp-content/uploads/2011/02/dropbox-logo.png 'dropbox-logo')](/wp-content/uploads/2011/02/dropbox-logo.png) I am in love with [dropbox](https://db.tt/owBSxlt). I use it for a lot of things. I use it at least in the following ways:
 
 - Data vault - I have all project PSDs, mockups, text data relating to different projects stored on there. I save everything there by default. If it's not saved in dropbox, I don't care if it gets deleted.
 - I have a few portable apps there. Some people carry around a few handy apps on their USB stick. I use dropbox. Same instance of those apps on my dropbox.
@@ -52,7 +52,7 @@ I don't know if it's so much [github](https://github.com/) itself or just git. I
 
 ### My lovely phone - HTC Desire running Android
 
-[![HTC Desire](https://arnorhs.dev/wp-content/uploads/2011/02/HTC-036-MX_1-300x300.jpg 'HTC Desire')](https://arnorhs.dev/wp-content/uploads/2011/02/HTC-036-MX_1.jpg) I fell in love with the HTC Desire last year. It's such a great device and it's made my life so much easier in so many levels. Setting up events in the calendar without having to sync with the computer, all the contacts are synced between the phone an gmail, the tethering is amazing, just so many great things.. I love it. There's one annoyance with it, though. It comes pre-built with a lot of redundant applications which you can't uninstall for some reason. That is kind of lame.
+[![HTC Desire](/wp-content/uploads/2011/02/HTC-036-MX_1-300x300.jpg 'HTC Desire')](/wp-content/uploads/2011/02/HTC-036-MX_1.jpg) I fell in love with the HTC Desire last year. It's such a great device and it's made my life so much easier in so many levels. Setting up events in the calendar without having to sync with the computer, all the contacts are synced between the phone an gmail, the tethering is amazing, just so many great things.. I love it. There's one annoyance with it, though. It comes pre-built with a lot of redundant applications which you can't uninstall for some reason. That is kind of lame.
 
 ### Steam
 

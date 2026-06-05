@@ -4,7 +4,7 @@ summary: "Storage. It's an even lasting problem which a lot of companies out the
 date: 2010-07-05
 ---
 
-[![](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png 'ultimate-storage-device_cloud-infographic')](https://arnorhs.dev/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png) I've got this problem. It's a problem which is probably affecting a lot of people out there. It goes something like this: I have a storage device that I use to watch movies through on my TV. I have a dropbox account. I have my mp3 collection. I have a lot of stuff on my computer which I need to backup. Some of these things I would like to have access to wherever I am. I would like my girlfriend to have access to all or some of those files as well. I would like all of this to work really simply.
+[![](/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png 'ultimate-storage-device_cloud-infographic')](/wp-content/uploads/2010/07/ultimate-storage-device_cloud-infographic.png) I've got this problem. It's a problem which is probably affecting a lot of people out there. It goes something like this: I have a storage device that I use to watch movies through on my TV. I have a dropbox account. I have my mp3 collection. I have a lot of stuff on my computer which I need to backup. Some of these things I would like to have access to wherever I am. I would like my girlfriend to have access to all or some of those files as well. I would like all of this to work really simply.
 
 ### The solutions out there
 

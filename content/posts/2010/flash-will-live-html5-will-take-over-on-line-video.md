@@ -8,7 +8,7 @@ _TL;DR version: Flash will live in **games** and **graphics intensive applicatio
 
 ### Flash pros and cons
 
-As a web developer you grow up literally **hating** Flash. Sort of in a similar way in which you hate IE6. It has a lot of problems, [which I've covered before](https://arnorhs.dev/2010/02/27/why-flash-based-websites-are-usually-a-bad-idea/), it's a closed, proprietary system - but, it also has it's merits! Flash is blazing fast doing animations, working with vector graphics, etc. Even with the [latest advances of Google Chrome's V8 engine](https://chrome.blogspot.com/2010/05/pedal-to-chrome-metal-our-fastest-beta.html), Flash is still so much faster than canvas+javascript. So when you are creating games or other fast paced animations that cannot allow any hick ups, Flash will be the best choice for most.
+As a web developer you grow up literally **hating** Flash. Sort of in a similar way in which you hate IE6. It has a lot of problems, [which I've covered before](/posts/2010-02-27/why-flash-based-websites-are-usually-a-bad-idea/), it's a closed, proprietary system - but, it also has it's merits! Flash is blazing fast doing animations, working with vector graphics, etc. Even with the [latest advances of Google Chrome's V8 engine](https://chrome.blogspot.com/2010/05/pedal-to-chrome-metal-our-fastest-beta.html), Flash is still so much faster than canvas+javascript. So when you are creating games or other fast paced animations that cannot allow any hick ups, Flash will be the best choice for most.
 
 ### On-line videos using Flash vs HTML5
 

@@ -12,19 +12,19 @@ I've been dabbling in clojure, python and ruby recently and since I've been thin
 
 ### Java, C# and PHP
 
-[![](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_java-php-csharp.jpg 'arnorhs-language-compare_java-php-csharp')](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_java-php-csharp.jpg)
+[![](/wp-content/uploads/2010/08/arnorhs-language-compare_java-php-csharp.jpg 'arnorhs-language-compare_java-php-csharp')](/wp-content/uploads/2010/08/arnorhs-language-compare_java-php-csharp.jpg)
 
 Nothing surprising there, really. Java, PHP declining as you'd expect.
 
 ### Ruby & Python
 
-[![](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_ruby-python.jpg 'arnorhs-language-compare_ruby-python')](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_ruby-python.jpg)
+[![](/wp-content/uploads/2010/08/arnorhs-language-compare_ruby-python.jpg 'arnorhs-language-compare_ruby-python')](/wp-content/uploads/2010/08/arnorhs-language-compare_ruby-python.jpg)
 
 This is pretty interesting, I thought ruby would've been a more popular search term.
 
 ### Clojure, Haskell, node.js & Erlang:
 
-[![](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_hask-erl-cloj-node.jpg 'arnorhs-language-compare_hask-erl-cloj-node')](https://arnorhs.dev/wp-content/uploads/2010/08/arnorhs-language-compare_hask-erl-cloj-node.jpg)
+[![](/wp-content/uploads/2010/08/arnorhs-language-compare_hask-erl-cloj-node.jpg 'arnorhs-language-compare_hask-erl-cloj-node')](/wp-content/uploads/2010/08/arnorhs-language-compare_hask-erl-cloj-node.jpg)
 
 This is where it gets more interesting. Node.js has in a short time caught up with clojure's popularity. I also believe, since there are so many javascript developers out there, that it should be easy for node.js to pick up steam and become even more popular. Of course, I should mention that Haskell is also a relatively common name, a university, etc, so the searches might be a little skewed. Thanks to @JonGretar for that tidbit of info.
 

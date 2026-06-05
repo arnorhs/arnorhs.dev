@@ -6,7 +6,7 @@ date: 2010-02-20
 
 _Ok, this is my first blog post here, so it probably sucks. If you value your time, don't read this._ When writing code these days, I keep running into these dilemmas. With the way the web and application development has been evolving, a greater part of the development and more importantly _my time_, goes into javascript development. This causes me to repeatedly get into these kinds of situations, where I'll have to choose between two paths when developing an app.
 
-#### \_[![Comic: How do I placed logic](https://arnorhs.dev/wp-content/uploads/2010/02/howdoiplacedlogic.gif 'howdoiplacedlogic')](https://arnorhs.dev/wp-content/uploads/2010/02/howdoiplacedlogic.gif)\_The dilemma
+#### \_[![Comic: How do I placed logic](/wp-content/uploads/2010/02/howdoiplacedlogic.gif 'howdoiplacedlogic')](/wp-content/uploads/2010/02/howdoiplacedlogic.gif)\_The dilemma
 
 Let's say you have a few rows of items that can be edited. You want the user to be able to edit these items without exiting the current page so you decide to make a form popup in front of the user in some sort of a dialog box. So do you...
 

@@ -4,7 +4,7 @@ summary: 'Stop. Don''t do it. I know what you''re thinking. You''re thinking: "T
 date: 2010-05-02
 ---
 
-[![Sunk Code Comic](https://arnorhs.dev/wp-content/uploads/2010/05/sunk-code.jpg 'sunk-code')](https://arnorhs.dev/wp-content/uploads/2010/05/sunk-code.jpg) **Stop.** Don't do it. I know what you're thinking. You're thinking: _"This code is ugly. It's messy, it's big, it seems too complicated with too many features, trying to get my head into it will be too time consuming, I'll just rewrite this. It won't take long. A few hours, maybe"_. I'm here to tell you: **Don't do it.**
+[![Sunk Code Comic](/wp-content/uploads/2010/05/sunk-code.jpg 'sunk-code')](/wp-content/uploads/2010/05/sunk-code.jpg) **Stop.** Don't do it. I know what you're thinking. You're thinking: _"This code is ugly. It's messy, it's big, it seems too complicated with too many features, trying to get my head into it will be too time consuming, I'll just rewrite this. It won't take long. A few hours, maybe"_. I'm here to tell you: **Don't do it.**
 
 ### The Programmer's Rewrite Fallacy
 

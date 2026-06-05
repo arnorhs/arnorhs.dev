@@ -4,9 +4,9 @@ summary: "I think it's no secret that I'm a big fan of This Week in Startups. In
 date: 2011-03-30
 ---
 
-I think it's no secret that [I'm a big fan](https://arnorhs.dev/2010/03/28/my-favorite-tech-related-webcasts-on-startups-and-entrepreneurship/) of [This Week in Startups](https://thisweekin.com/thisweekin-startups/). In [this latest episode (no 128)](https://thisweekin.com/thisweekin-startups/bill-nguyen-co-founder-of-color-com-on-this-week-in-startups-128/) Jason Calacanis interviews [Color](https://color.com/)'s founder, Bill Nguyen. Color has obviously had a lot of attention because of it's [enormous pre-launch raise](https://www.businessweek.com/technology/content/mar2011/tc20110324_504360.htm) and the [low quality of it's initial application](https://arnorhs.dev/2011/03/24/color-the-new-amazing-mobile-app-that-crashes-your-phone-within-minutes/). The interview addresses these issues and gives you a little glimpse into the way Bill sees things.
+I think it's no secret that [I'm a big fan](/posts/2010-03-28/my-favorite-tech-related-webcasts-on-startups-and-entrepreneurship/) of [This Week in Startups](https://thisweekin.com/thisweekin-startups/). In [this latest episode (no 128)](https://thisweekin.com/thisweekin-startups/bill-nguyen-co-founder-of-color-com-on-this-week-in-startups-128/) Jason Calacanis interviews [Color](https://color.com/)'s founder, Bill Nguyen. Color has obviously had a lot of attention because of it's [enormous pre-launch raise](https://www.businessweek.com/technology/content/mar2011/tc20110324_504360.htm) and the [low quality of it's initial application](/posts/2011-03-24/color-the-new-amazing-mobile-app-that-crashes-your-phone-within-minutes/). The interview addresses these issues and gives you a little glimpse into the way Bill sees things.
 
-[![](https://arnorhs.dev/wp-content/uploads/2011/03/color-logo.jpg 'color-logo')](https://arnorhs.dev/wp-content/uploads/2011/03/color-logo.jpg)
+[![](/wp-content/uploads/2011/03/color-logo.jpg 'color-logo')](/wp-content/uploads/2011/03/color-logo.jpg)
 
 ### There are a few things that made me think:
 
