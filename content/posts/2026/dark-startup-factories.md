@@ -32,7 +32,7 @@ This removes a lot of friction from startups but introduces a lot of fundamental
 - Having an **architecture** that allows you to scale your code gets way more important than management
 - Your product sense actually becomes more important than before, since it's much easier to [build your backlog](/posts/2026-06-04/maybe-later-was-a-feature)
 - Your **people skills** are almost negligible - outside of being able to sell a vision and talk to VCs (arguably, that was the case already)
-- Historically the best startups have been **started in the Bay Area**, since it has the most abundant pool of talent. Once that's no longer the limiting factor, the startup's location mostly becomes **irrelevant**.
+- Historically the best startups have been **started in the Bay Area**, since it has the most abundant pool of talent. Once that's no longer the limiting factor, the ideal startup's location is constrained more by data privacy laws and access to capital.
 - **Runway** used to mostly be your cash / monthly payroll, but now it's just a matter of how large the features are that you're building at any given point.
 
 Let's talk about runway
@@ -71,7 +71,7 @@ Let's call that a Dark Startup Factory.
 
 ## Are we there yet?
 
-We aren't. At least the agents are not fully able to operate autonomously without producing something that's hard to maintain - even for them. And they are also pretty bad at design and understanding what makes people tick.
+We aren't. At least the agents are not fully able to operate autonomously without producing something that's hard to maintain - even for them. Without a human in the loop, code tends to degrade to unmaintainable spaghetti. Coding models are also pretty bad at design and understanding what makes people tick, so there certainly are limitations.
 
 At the moment.
 
