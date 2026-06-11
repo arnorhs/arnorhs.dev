@@ -70,13 +70,13 @@ const dtUpdated = new Date().toISOString()
         <Container>
           <Nav>
             <NavItem first title="home" href="/">arnorhs</NavItem>
-            <NavItem title="Blog posts archive" href="/archive" active={activePath === '/archive'}
+            <NavItem title="Blog posts archive" href="/archive/" active={activePath === '/archive/'}
               >Posts</NavItem
             >
             <NavItem
               title="Legend of the fountain of wisdom"
-              href="/about"
-              active={activePath === '/about'}>About</NavItem
+              href="/about/"
+              active={activePath === '/about/'}>About</NavItem
             >
           </Nav>
         </Container>
@@ -106,7 +106,7 @@ const dtUpdated = new Date().toISOString()
         <Container>
           &copy; Arnór Heiðar Sigurðsson, all rights reserved. - <a
             class="text-inherit underline"
-            href="/disclaimer">Disclaimer</a
+            href="/disclaimer/">Disclaimer</a
           >
         </Container>
       </footer>

@@ -5,7 +5,7 @@ import type { Post, PostGroup, PostWithUrl } from './types'
 const processPost = (item: Post): PostWithUrl => ({
   ...item,
   publishedDate: new Date(item.publishedDate),
-  url: `/posts/${item.uriId}`,
+  url: `/posts/${item.uriId}/`,
 })
 
 export function findPost(slug: string): PostWithUrl | null

@@ -98,7 +98,7 @@ const groupedPosts = groupPosts(postChunk)
               dark:text-arnorhs-950
               transition
             "
-            href={prevPage === 1 ? '/archive' : `/archive/${prevPage}`}
+            href={prevPage === 1 ? '/archive/' : `/archive/${prevPage}/`}
           >
             &larr; Previous page
           </a>
@@ -120,7 +120,7 @@ const groupedPosts = groupPosts(postChunk)
               dark:text-arnorhs-950
               transition
             "
-            href={`/archive/${nextPage}`}
+            href={`/archive/${nextPage}/`}
           >
             Next page &rarr;
           </a>
