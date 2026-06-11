@@ -29,6 +29,29 @@ const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
 const activePath = (Astro.request.url as unknown as URL).pathname
 const fullUrl = Astro.request.url.toString()
 const dtUpdated = new Date().toISOString()
+
+function formatMetaDescription(desc: string | undefined): string {
+  if (!desc) return ''
+  // Strip HTML tags
+  let clean = desc.replace(/<[^>]*>/g, '')
+  // Normalize whitespace/newlines
+  clean = clean.replace(/\s+/g, ' ').trim()
+
+  if (clean.length <= 160) {
+    return clean
+  }
+
+  // Truncate to 157 and add ...
+  const maxLen = 157
+  let truncated = clean.substring(0, maxLen)
+  const lastSpace = truncated.lastIndexOf(' ')
+  if (lastSpace > 100) {
+    truncated = truncated.substring(0, lastSpace)
+  }
+  return truncated + '...'
+}
+
+const formattedDescription = formatMetaDescription(description)
 ---
 
 <html lang="en">
@@ -36,18 +59,18 @@ const dtUpdated = new Date().toISOString()
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{titleTag}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={formattedDescription} />
     <meta property="og:image" content={`${Astro.site}og-images/${ogImage}.png`} />
     <meta property="og:title" content={titleTag} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={fullUrl} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={formattedDescription} />
     <meta property="og:updated_time" content={dtUpdated} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@arnorhs" />
     <meta name="twitter:title" content={titleTag} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={formattedDescription} />
     <meta name="twitter:image" content={`${Astro.site}og-image/${ogImage}.jpg`} />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
