@@ -4,7 +4,7 @@ summary: 'I just received the monthly Dreamhost newsletter - the November 2010 e
 date: 2010-11-03
 ---
 
-I just received the monthly Dreamhost newsletter - the [November 2010 edition](https://www.dreamhost.com/newsletter/1110.html), to be exact. As usually it made me smile. It starts out like this:
+I just received the monthly Dreamhost newsletter - the November 2010 edition, to be exact. As usually it made me smile. It starts out like this:
 
 > Hello, and welcome to the Happy November 2010 DreamHost Newsletter! I can't even begin to tell you how happy I am that 1200 people unsubscribed from the newsletter last month. They're gone! Splitsville! Vamoosed. Truly, I am overjoyed. It means that I can now, finally, let you in on a little secret: You. Yes, you. You are wonderful. I've always liked you.
 

@@ -35,6 +35,6 @@ There's one thing that Lorem Ipsum does somewhat well. Testing content. It's ver
 - [https://hipsteripsum.me/](https://hipsteripsum.me/)
 - [https://lipsum.ahyeah.nl/](https://lipsum.ahyeah.nl/)
 - [https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/](https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/)
-- [https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/](https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/)
+- https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/
 
 That's it. I hope this was helpful.

@@ -36,6 +36,6 @@ I can't believe I've made a "Top X"-post, but I just wanted to get this off my c
 
 - Transcribed: **Yes**
 - Aired live: **Yes**
-- URL: [https://thisweekin.com/thisweekin-startups/](https://thisweekin.com/thisweekin-startups/)
+- URL: https://thisweekin.com/thisweekin-startups/
 
 I'm probably forgetting some shows or maybe there are shows out there that I don't know about, so I'd love to hear about any other ones on the same subject. Please let me know in the comments.

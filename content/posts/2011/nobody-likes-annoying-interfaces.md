@@ -4,7 +4,7 @@ summary: 'I came upon this blog post by Seth Hoenig titled "Open letter to sites
 date: 2011-12-26
 ---
 
-I came upon [this blog post](https://bitonic.org/blog/?p=176) by Seth Hoenig titled "Open letter to sites with annoying interfaces" yesterday. In the article he talkes about how some web sites and/or apps hide user interface actions until a later state. The post is a little bit funny and there might be a little bit of truth to it, but mostly it's inaccurate. The examples he covers are gmail's edit-contact page and the button used to edit a project's description on github. I'd like to talk a little bit about those and then give another perspective on hiding UI elements.
+I came upon this blog post by Seth Hoenig titled "Open letter to sites with annoying interfaces" yesterday. In the article he talkes about how some web sites and/or apps hide user interface actions until a later state. The post is a little bit funny and there might be a little bit of truth to it, but mostly it's inaccurate. The examples he covers are gmail's edit-contact page and the button used to edit a project's description on github. I'd like to talk a little bit about those and then give another perspective on hiding UI elements.
 
 ### The Gmail example
 

@@ -23,7 +23,7 @@ If you're interested in those kinds of services, check these sites out:
 
 Other examples of ad retargeting services:
 
-- [Rocketmedia Retargeting services](https://www.rocketmediastudios.com/retargeting/)
+- Rocketmedia Retargeting services
 - [adretargeting.com](https://adretargeting.com/)
 
 And of course, a good source of information is on Wikipedia's entry: [Behavioral Retargeting on Wikipedia](https://en.wikipedia.org/wiki/Behavioral_retargeting)

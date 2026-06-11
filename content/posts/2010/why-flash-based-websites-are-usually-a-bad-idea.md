@@ -8,7 +8,7 @@ Through the last years developing websites for various types of clients - from s
 
 #### I like Flash
 
-Flash is an incredibly powerful development environment and a very compelling platform to develop and design for. Even [ActionScript 3](https://www.adobe.com/devnet/actionscript/articles/actionscript3_overview.html) is a really nice language and the libraries and documentation keep getting better. So I can totally understand the attraction. I personally like Flash for limited, narrow scoped purposes. For small presentations, [3d rolling slide-shows](https://www.flashloaded.com/flashcomponents/3dwall/example1.html), [video](https://youtube.com), multimedia stuff, etc, Flash is **perfect**. So I'm not a complete anti-flash maniac. I just really don't like it when people use Flash as their whole website.
+Flash is an incredibly powerful development environment and a very compelling platform to develop and design for. Even ActionScript 3 is a really nice language and the libraries and documentation keep getting better. So I can totally understand the attraction. I personally like Flash for limited, narrow scoped purposes. For small presentations, [3d rolling slide-shows](https://www.flashloaded.com/flashcomponents/3dwall/example1.html), [video](https://youtube.com), multimedia stuff, etc, Flash is **perfect**. So I'm not a complete anti-flash maniac. I just really don't like it when people use Flash as their whole website.
 
 #### The recipe list for failure
 

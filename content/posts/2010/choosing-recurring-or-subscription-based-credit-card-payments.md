@@ -19,7 +19,7 @@ I'm not even going to talk through the differences between them, because they ba
 
 ### Merchant Accounts
 
-Another issue that a lot of people want to point out is the issue of how much of a hassle it is to set up merchant accounts. Daniel Tenner wrote [an excellent article on merchant accounts](https://danieltenner.com/posts/0006-how-to-get-a-merchant-account.html), which you should read if you haven't already. [This was posted on HN back when he wrote it](https://news.ycombinator.com/item?id=530055) and there are also some helpful comments there.
+Another issue that a lot of people want to point out is the issue of how much of a hassle it is to set up merchant accounts. Daniel Tenner wrote an excellent article on merchant accounts, which you should read if you haven't already. [This was posted on HN back when he wrote it](https://news.ycombinator.com/item?id=530055) and there are also some helpful comments there.
 
 ### Other services
 

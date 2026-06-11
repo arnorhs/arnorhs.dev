@@ -16,4 +16,4 @@ Check out [Programming, Motherf\*\*\*\*r](https://programming-motherfucker.com/
 
 ### Zed Shaw
 
-If you don't know who Zed is, he's a really interesting character and the developer behind [Mongrel2](https://mongrel2.org/home) - he's also the author of an awesome Python book called [Learn Python the Hard Way](https://learnpythonthehardway.org/index) You should also check out [his blog](https://sheddingbikes.com/).
+If you don't know who Zed is, he's a really interesting character and the developer behind [Mongrel2](https://mongrel2.org/) - he's also the author of an awesome Python book called [Learn Python the Hard Way](https://learnpythonthehardway.org/) You should also check out [his blog](https://sheddingbikes.com/).

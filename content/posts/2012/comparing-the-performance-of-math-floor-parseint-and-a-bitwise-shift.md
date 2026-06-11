@@ -6,13 +6,13 @@ date: 2012-05-30
 
 _Note: Sorry, this post might be a bit more technical than usually._ I read in an article about [HTML5/canvas rendering stuff](https://devworks.thinkdigit.com/channel5/blogs/Unleash-the-power-of-HTML-5-Canvas_9141.html) that a bitwise left shift was a faster method of removing a fraction of a floating point number in Javascript than using parseInt or Math.floor(). I wasn't surprised that parseInt was slow, since I think it parses the number as a string, but the left/right shift being faster than Math.floor() was a bit more puzzling to me. So I decided to make a JSPerf test to compare those three methods.
 
-### [The results](https://jsperf.com/math-floor-parseint-and-left-shift):
+### The results:
 
 [![](/wp-content/uploads/2012/05/jsperf-646x325.png 'JS perf results')](https://jsperf.com/math-floor-parseint-and-left-shift) There are only a handful of browsers that have been tested, but it seems that the left shift is indeed faster in at least Firefox, my Android browser and in Internet Explorer.
 
 ### V8's internals
 
-My good friend, [Paul Rosania](https://paul.rosania.org/writings/) (who's blog you should read), looked at the V8 source to look at what it's doing internally. [Math.floor() does seem to be implemented using the bitwise left shift operator](https://github.com/v8/v8/blob/master/src/math.js#L96-110).
+My good friend, Paul Rosania (who's blog you should read), looked at the V8 source to look at what it's doing internally. [Math.floor() does seem to be implemented using the bitwise left shift operator](https://github.com/v8/v8/blob/master/src/math.js#L96-110).
 
 ### What is a left shift and how/why does it work?
 
