@@ -12,4 +12,4 @@ That's kind of weird, a bit quirky but definitely makes you smile. I love this k
 
 ### Unlimited + 50 = ?
 
-Since I've started talking about the newsletter I might as well mention that they just increased their unlimited disk space by 50 GB. That sounds like an oxymoron, but what they mean is that you can store up to 50 GB of your personal stuff on your DH hosting account. So you can use that space for personal backups etc. It's a helpful and, it seems, an unselfish move. [![](/wp-content/uploads/2010/11/dh-newsletter-300x264.jpg 'dh-newsletter')](https://www.dreamhost.com/newsletter/1110.html)
+Since I've started talking about the newsletter I might as well mention that they just increased their unlimited disk space by 50 GB. That sounds like an oxymoron, but what they mean is that you can store up to 50 GB of your personal stuff on your DH hosting account. So you can use that space for personal backups etc. It's a helpful and, it seems, an unselfish move. [![](/wp-content/uploads/2010/11/dh-newsletter-300x264.jpg 'dh-newsletter')](https://web.archive.org/web/20101106044146/http://www.dreamhost.com:80/newsletter/1110.html)

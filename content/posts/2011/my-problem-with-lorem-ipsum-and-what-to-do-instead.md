@@ -32,9 +32,9 @@ After this you should have a pretty decent deck to work with for your layout.
 
 There's one thing that Lorem Ipsum does somewhat well. Testing content. It's very easy to copy and paste it into content fields to see how it will look and how the content field resizes. I will forgive you if you use Lorem Ipsum for testing content. But that's much more of a technical thing. There are also a few resources you'll want to look into for content generation. Try some of these: There are a few tools out there to generate Lorem Ipsum text and even some that can be used to fill databases with content
 
-- [https://hipsteripsum.me/](https://hipsteripsum.me/)
+- [https://hipsum.co/](https://hipsum.co/)
 - [https://lipsum.ahyeah.nl/](https://lipsum.ahyeah.nl/)
 - [https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/](https://www.theotherblog.com/Articles/2003/11/20/grsgeddkfh/)
-- https://karenmcgrane.com/2010/01/10/in-defense-of-lorem-ipsum/
+- https://karenmcgrane.com/in-defense-of-lorem-ipsum/
 
 That's it. I hope this was helpful.

@@ -32,10 +32,10 @@ I can't believe I've made a "Top X"-post, but I just wanted to get this off my c
 
 #### 1\. This Week in Startups
 
-[![](/wp-content/uploads/2010/03/wc-thisweekin-300x136.jpg 'This Week in Startups')](https://thisweekin.com/thisweekin-startups/)I don't know if it's because of Jason's strong opinionated personality, the cool headed insights from Tyler or the sheer number of high profile guests, but this show has in a relatively short time grown a pretty large fan base. Jason is a highly energetic and driven person and asks his interviewees to-the-point questions. The show does tend to become a bit long, but it's always interesting, so that doesn't really become an issue. This week in startups has a new website on thisweekin.com which is an umbrella site for a few other similar shows and it's worth it checking those out as well.
+[![](/wp-content/uploads/2010/03/wc-thisweekin-300x136.jpg 'This Week in Startups')](https://thisweekinstartups.com/)I don't know if it's because of Jason's strong opinionated personality, the cool headed insights from Tyler or the sheer number of high profile guests, but this show has in a relatively short time grown a pretty large fan base. Jason is a highly energetic and driven person and asks his interviewees to-the-point questions. The show does tend to become a bit long, but it's always interesting, so that doesn't really become an issue. This week in startups has a new website on thisweekin.com which is an umbrella site for a few other similar shows and it's worth it checking those out as well.
 
 - Transcribed: **Yes**
 - Aired live: **Yes**
-- URL: https://thisweekin.com/thisweekin-startups/
+- URL: https://thisweekinstartups.com/
 
 I'm probably forgetting some shows or maybe there are shows out there that I don't know about, so I'd love to hear about any other ones on the same subject. Please let me know in the comments.

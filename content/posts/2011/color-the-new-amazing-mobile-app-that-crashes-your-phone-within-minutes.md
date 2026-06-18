@@ -18,4 +18,4 @@ This makes no sense to me, because it sounds like almost every other location ba
 
 It took exactly 1 minute for this app to crash my phone. Ok, granted that when they created the application they probably had not received the funding. And I guess it's so hard to find android/iphone developers these days that just having them increases your valuation immensely. But it seems weird that a technology company that investors have so much faith in can release an application that works so poorly. Somehow I can't picture Larry & Sergei releasing an application of this quality back in the day.. Of course the internet is having a field day with this whole thing and somebody creating this hilarious slideshow pitch, making fun of the whole thing.
 
-https://jacquesmattheij.com/41000006+reasons+why+I+think+we+are+in+a+bubble
+https://jacquesmattheij.com/41000006-reasons-why-i-think-we-are-in-a-bubble
