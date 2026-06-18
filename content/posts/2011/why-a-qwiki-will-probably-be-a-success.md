@@ -4,7 +4,7 @@ summary: "We are losing our attention span. [ADHD](https://en.wikipedia.org/wiki
 date: 2011-02-01
 ---
 
-\[caption id="" align="alignright" width="303" caption="Photo credit: chris.corwin"\][![ADD poster](https://farm3.static.flickr.com/2083/1603743023_c30e7f6ee9.jpg)](https://www.flickr.com/photos/70872463@N00/1603743023/ 'ADD poster')\[/caption\] We are losing our attention span. [ADHD](https://en.wikipedia.org/wiki/Attention_deficit_hyperactivity_disorder)\-like symptoms seem to sweeping the world.
+\[caption id="" align="alignright" width="303" caption="Photo credit: chris.corwin"\][![ADD poster](https://web.archive.org/web/20121112000511/http://farm3.static.flickr.com/2083/1603743023_c30e7f6ee9.jpg)](https://www.flickr.com/photos/70872463@N00/1603743023/ 'ADD poster')\[/caption\] We are losing our attention span. [ADHD](https://en.wikipedia.org/wiki/Attention_deficit_hyperactivity_disorder)\-like symptoms seem to sweeping the world.
 
 - We want our food fast
 - We want all service to be fast

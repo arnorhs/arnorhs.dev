@@ -72,4 +72,4 @@ php programming
 
 70,200,000
 
-![Number of search results](https://chart.apis.google.com/chart?chxr=0,0,70&chxt=y&chbh=a&chs=640x350&cht=bvg&chco=A2C180,3D7930,0051FF,FF9900,EB0079,00B200,0088FF,AA0033,777BB4&chds=0,70200000,0,70200000,5,70200000,0,70200000,0,70200000,0,70200000,0,70200000,0,70200000,0,70200000&chd=t:215000|714000|760000|1420000|2030000|8640000|12800000|40600000|70200000&chdl=clojure|erlang|node.js|haskell|ruby|python|c%23|java|php&chtt=Number+of+search+results) Of course Google's result count is only an estimate, so it shouldn't really be used as a scientific reference, but it still gives you at least an idea of how many resources are out there.
+![Number of search results](/wp-content/uploads/2010/08/number-of-search-results.png) Of course Google's result count is only an estimate, so it shouldn't really be used as a scientific reference, but it still gives you at least an idea of how many resources are out there.

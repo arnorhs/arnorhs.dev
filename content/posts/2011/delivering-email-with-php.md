@@ -10,7 +10,7 @@ _TL;DR version: Email delivery is hard, getting through spam filters is hard. Us
 
 Just being able to send an email is not a problem at all. It takes a single line of code (often times) and the mail is off. However, getting that email to the recipient's inbox is harder, mostly due to spam-filtering and other spam fighting mechanisms designed to keep spam away. Spam filters are only half the story. Email servers utilize multiple automated techniques to find and detect spam these days.
 
-[![Network](https://farm3.static.flickr.com/2436/3780220955_f519f4ca70.jpg)](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Network') [![Creative Commons License](/wp-content/plugins/photo-dropper/images/cc.png)](https://creativecommons.org/licenses/by-sa/2.0/ 'Attribution-ShareAlike License') credit: [Claus Rebler](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Claus Rebler')
+[![Network](https://web.archive.org/web/20140602131452/http://farm3.static.flickr.com/2436/3780220955_f519f4ca70.jpg)](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Network') [![Creative Commons License](/wp-content/plugins/photo-dropper/images/cc.png)](https://creativecommons.org/licenses/by-sa/2.0/ 'Attribution-ShareAlike License') credit: [Claus Rebler](https://www.flickr.com/photos/15939977@N05/3780220955/ 'Claus Rebler')
 
 **Most common methods used by servers to keep spam away:**
 
