@@ -24,7 +24,33 @@ const {
   `,
 } = Astro.props as Props
 
-const titleTag = (title ? `${title} - ` : '') + 'arnorhs.dev'
+function formatTitleTag(rawTitle: string | undefined): string {
+  const siteName = 'arnorhs.dev'
+  const maxLen = 80
+
+  if (!rawTitle) return siteName
+
+  const cleanTitle = rawTitle.replace(/\s+/g, ' ').trim()
+  const withSuffix = `${cleanTitle} - ${siteName}`
+
+  // Ideal: keep full title + suffix when in-range.
+  if (withSuffix.length <= maxLen) return withSuffix
+
+  // First fallback: remove suffix.
+  if (cleanTitle.length <= maxLen) return cleanTitle
+
+  // Final fallback: truncate title at a word boundary.
+  const cutoff = maxLen - 3 // + '...' => maxLen
+  let truncated = cleanTitle.substring(0, cutoff)
+  const lastSpace = truncated.lastIndexOf(' ')
+  if (lastSpace > 50) {
+    truncated = truncated.substring(0, lastSpace)
+  }
+
+  return truncated + '...'
+}
+
+const titleTag = formatTitleTag(title)
 
 const activePath = (Astro.request.url as unknown as URL).pathname
 const fullUrl = Astro.request.url.toString()
