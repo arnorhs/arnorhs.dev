@@ -1,0 +1,172 @@
+---
+import type { PostWithUrl } from '@arnorhs/posts'
+
+export interface Props {
+  title: string
+  description: string
+  url: string
+  post?: PostWithUrl
+}
+
+const { title, description, url, post } = Astro.props
+
+const urlObj = new URL(url)
+const origin = urlObj.origin
+
+const personId = `${origin}/#person`
+const websiteId = `${origin}/#website`
+const blogId = `${origin}/#blog`
+
+const personNode = {
+  '@type': 'Person',
+  '@id': personId,
+  name: 'Arnór Heiðar Sigurðsson',
+  url: origin,
+  sameAs: [
+    'https://bsky.app/profile/arnorhs.dev',
+    'https://linkedin.com/in/arnorhs',
+    'https://github.com/arnorhs',
+    'https://www.npmjs.com/~arnorhs',
+  ],
+  jobTitle: 'CTO',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Pure North',
+    url: 'https://purenorth.is',
+  },
+}
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: origin + '/',
+  name: 'arnorhs.dev',
+  publisher: {
+    '@id': personId,
+  },
+}
+
+const webpageNode = {
+  '@type': 'WebPage',
+  '@id': `${url}#webpage`,
+  url: url,
+  name: title,
+  description: description,
+  isPartOf: {
+    '@id': websiteId,
+  },
+  inLanguage: 'en',
+}
+
+const blogNode = {
+  '@type': 'Blog',
+  '@id': blogId,
+  url: origin + '/',
+  name: 'arnorhs.dev Blog',
+  publisher: {
+    '@id': personId,
+  },
+}
+
+const graph: any[] = [personNode, websiteNode, webpageNode, blogNode]
+
+if (post) {
+  const publishDate = post.publishedDate instanceof Date
+    ? post.publishedDate.toISOString()
+    : new Date(post.publishedDate).toISOString()
+
+  const blogPostingNode = {
+    '@type': 'BlogPosting',
+    '@id': `${url}#blogposting`,
+    url: url,
+    mainEntityOfPage: {
+      '@id': `${url}#webpage`,
+    },
+    isPartOf: {
+      '@id': blogId,
+    },
+    headline: post.title,
+    description: post.summary,
+    datePublished: publishDate,
+    author: {
+      '@id': personId,
+    },
+    publisher: {
+      '@id': personId,
+    },
+    image: post.contentHash ? {
+      '@type': 'ImageObject',
+      url: `${origin}/og-images/${post.contentHash}.png`,
+    } : undefined,
+  }
+
+  graph.push(blogPostingNode)
+}
+
+const breadcrumbs = [
+  {
+    '@type': 'ListItem',
+    position: 1,
+    name: 'Home',
+    item: origin + '/',
+  },
+]
+
+const pathname = urlObj.pathname
+if (pathname === '/archive/' || pathname.startsWith('/archive/')) {
+  breadcrumbs.push({
+    '@type': 'ListItem',
+    position: 2,
+    name: 'Posts',
+    item: origin + '/archive/',
+  })
+} else if (pathname === '/about/') {
+  breadcrumbs.push({
+    '@type': 'ListItem',
+    position: 2,
+    name: 'About',
+    item: origin + '/about/',
+  })
+} else if (pathname === '/disclaimer/') {
+  breadcrumbs.push({
+    '@type': 'ListItem',
+    position: 2,
+    name: 'Disclaimer',
+    item: origin + '/disclaimer/',
+  })
+} else if (post) {
+  breadcrumbs.push(
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Posts',
+      item: origin + '/archive/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.title,
+      item: url,
+    }
+  )
+}
+
+if (breadcrumbs.length > 1) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
+    itemListElement: breadcrumbs,
+  })
+}
+
+const schemaJson = JSON.stringify(
+  {
+    '@context': 'https://schema.org',
+    '@graph': graph,
+  },
+  null,
+  2
+)
+---
+
+<script type="application/ld+json" set:html={schemaJson} />

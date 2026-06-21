@@ -5,13 +5,16 @@ import Container from '../components/Container.astro'
 import Nav from '../components/nav/Nav.astro'
 import NavItem from '../components/nav/Item.astro'
 import Favicon from '../components/meta/Favicon.astro'
+import JsonLd from '../components/meta/JsonLd.astro'
 import { ClientRouter } from 'astro:transitions'
+import type { PostWithUrl } from '@arnorhs/posts'
 
 export interface Props {
   title?: string
   ogImage?: string
   ogType?: string
   description?: string
+  post?: PostWithUrl
 }
 
 const {
@@ -22,6 +25,7 @@ const {
     Arnor is a software developer and designer hailing from Iceland who writes
     about software development and design
   `,
+  post = undefined,
 } = Astro.props as Props
 
 function formatTitleTag(rawTitle: string | undefined): string {
@@ -108,6 +112,7 @@ const formattedDescription = formatMetaDescription(description)
     />
 
     <Favicon />
+    <JsonLd title={titleTag} description={formattedDescription} url={fullUrl} post={post} />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
