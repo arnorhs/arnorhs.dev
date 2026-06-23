@@ -9,7 +9,7 @@ import { getPaginatedPosts } from '../../lib/data/getPaginatedPosts'
 export async function getStaticPaths() {
   return getPaginatedPosts().map((_, i) => {
     return {
-      params: { pageNumber: i === 0 ? undefined : i + 1 },
+      params: { pageNumber: i === 0 ? undefined : String(i + 1) },
       props: { chunkIndex: i },
     }
   })
