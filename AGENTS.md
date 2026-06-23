@@ -7,6 +7,7 @@ This repository contains the personal website and blog of Arnór Heiðar Sigurð
 ## 1. Project Directory Structure
 
 The project has two main sections containing source files:
+
 - **`content/posts/`**: Contains the raw Markdown files representing the blog posts.
 - **`pkg/`**: Contains the application packages.
 
@@ -36,7 +37,7 @@ Raw blog posts are written in standard Markdown and reside under the root `conte
   ```yaml
   ---
   title: 'Post Title'
-  summary: "Brief synopsis. Will be used for SEO meta tags and preview snippets."
+  summary: 'Brief synopsis. Will be used for SEO meta tags and preview snippets.'
   date: YYYY-MM-DD
   ---
   ```
@@ -48,16 +49,21 @@ Raw blog posts are written in standard Markdown and reside under the root `conte
 To prevent unnecessary redirects and maintain clean SEO, follow these strict routing conventions:
 
 ### Trailing Slashes
+
 All internal links **MUST** end with a trailing slash. The hosting server and Astro router will trigger 307 redirects for URLs lacking trailing slashes.
+
 - **Good:** `href="/about/"`, `href="/archive/"`, `href="/disclaimer/"`
 - **Bad:** `href="/about"`, `href="/archive"`, `href="/disclaimer"`
 
 ### Post URL Structure
+
 A post file stored at `content/posts/YYYY/slug.md` is served at the following URL path:
+
 ```
 /posts/YYYY-MM-DD/slug/
 ```
-*Note the date prefix (fetched from the frontmatter date) and the trailing slash.*
+
+_Note the date prefix (fetched from the frontmatter date) and the trailing slash._
 
 The `@arnorhs/posts` package parses the markdown files and dynamically appends the trailing slash via the `url` property on the post objects (in [getAllPosts.ts](file:///Users/arnorhs/projects/arnorhs.dev/pkg/posts/src/lib/getAllPosts.ts)). Always use `post.url` in layouts and components.
 
@@ -69,7 +75,7 @@ SEO metadata is managed globally in [MainLayout.astro](file:///Users/arnorhs/pro
 
 - **Titles:** Main page titles are suffixed with ` - arnorhs.dev` (e.g. `About - arnorhs.dev`).
 - **Descriptions:** Meta descriptions (`description`, `og:description`, `twitter:description`) must range **between 110 and 160 characters**.
-  * The layout uses a helper function `formatMetaDescription()` to automatically clean up leading/trailing white space, strip HTML tags from post summaries, and truncate the text cleanly at a word boundary before 160 characters (appending `...` if truncated).
+  - The layout uses a helper function `formatMetaDescription()` to automatically clean up leading/trailing white space, strip HTML tags from post summaries, and truncate the text cleanly at a word boundary before 160 characters (appending `...` if truncated).
 
 ---
 
@@ -101,8 +107,9 @@ SEO metadata is managed globally in [MainLayout.astro](file:///Users/arnorhs/pro
   ```bash
   pnpm check:links
   ```
-  * Script location: `scripts/check-links.mjs`
-  * Common flags:
+
+  - Script location: `scripts/check-links.mjs`
+  - Common flags:
     ```bash
     pnpm check:links -- --external-only
     pnpm check:links -- --dir content/posts/2012 --concurrency 5 --timeout-ms 8000

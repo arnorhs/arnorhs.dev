@@ -71,9 +71,10 @@ const blogNode = {
 const graph: any[] = [personNode, websiteNode, webpageNode, blogNode]
 
 if (post) {
-  const publishDate = post.publishedDate instanceof Date
-    ? post.publishedDate.toISOString()
-    : new Date(post.publishedDate).toISOString()
+  const publishDate =
+    post.publishedDate instanceof Date
+      ? post.publishedDate.toISOString()
+      : new Date(post.publishedDate).toISOString()
 
   const blogPostingNode = {
     '@type': 'BlogPosting',
@@ -94,10 +95,12 @@ if (post) {
     publisher: {
       '@id': personId,
     },
-    image: post.contentHash ? {
-      '@type': 'ImageObject',
-      url: `${origin}/og-images/${post.contentHash}.png`,
-    } : undefined,
+    image: post.contentHash
+      ? {
+          '@type': 'ImageObject',
+          url: `${origin}/og-images/${post.contentHash}.png`,
+        }
+      : undefined,
   }
 
   graph.push(blogPostingNode)
@@ -147,7 +150,7 @@ if (pathname === '/archive/' || pathname.startsWith('/archive/')) {
       position: 3,
       name: post.title,
       item: url,
-    }
+    },
   )
 }
 
@@ -165,7 +168,7 @@ const schemaJson = JSON.stringify(
     '@graph': graph,
   },
   null,
-  2
+  2,
 )
 ---
 
