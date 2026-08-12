@@ -3,6 +3,7 @@ import { env } from 'cloudflare:workers'
 import { z } from 'zod'
 import { CfAnalyticsClient, type CfDateTime } from '../lib/analytics/CfAnalyticsClient'
 import AnalyticsResultsTable from '../components/AnalyticsResultsTable.astro'
+import AnalyticsChart from '../components/AnalyticsChart.astro'
 import { AnalyticsQueries } from '../lib/analytics/AnalyticsQueries'
 import MainLayout from '../layouts/MainLayout.astro'
 
@@ -71,27 +72,56 @@ if (result.type === 'error') {
 <MainLayout title="Stats" description="Open dashboard for website analytics">
   <div class="prose prose-lg dark:prose-invert max-w-none mt-12 mb-8">
     <h1>Website Analytics</h1>
-    <p>A public dashboard showing traffic to arnorhs.dev, powered by Cloudflare Analytics Engine.</p>
+    <p>
+      A public dashboard showing traffic to arnorhs.dev, powered by Cloudflare Analytics Engine.
+    </p>
   </div>
 
   <div class="flex flex-wrap gap-6 border-b border-gray-200 dark:border-gray-800 mb-6 pb-2 text-sm">
-    <a href="/stats/" class={(!queryData?.slug ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white ' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + "pb-2 -mb-[10px]"}>By Day</a>
-    <a href="/stats/?slug=all" class={(queryData?.slug === 'all' ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white ' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + "pb-2 -mb-[10px]"}>By Path</a>
-    <a href="/stats/?slug=raw" class={(queryData?.slug === 'raw' ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white ' : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + "pb-2 -mb-[10px]"}>Raw Events</a>
-    {queryData?.slug && queryData.slug !== 'all' && queryData.slug !== 'raw' && (
-      <span class="font-bold text-black dark:text-white border-b-2 border-black dark:border-white pb-2 -mb-[10px] ml-auto truncate max-w-[200px] sm:max-w-md">
-        {queryData.slug}
-      </span>
-    )}
+    <a
+      href="/stats/"
+      class={(!queryData?.slug
+        ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white '
+        : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'}
+      >By Day</a
+    >
+    <a
+      href="/stats/?slug=all"
+      class={(queryData?.slug === 'all'
+        ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white '
+        : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'}
+      >By Path</a
+    >
+    <a
+      href="/stats/?slug=raw"
+      class={(queryData?.slug === 'raw'
+        ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white '
+        : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'}
+      >Raw Events</a
+    >
+    {
+      queryData?.slug && queryData.slug !== 'all' && queryData.slug !== 'raw' && (
+        <span class="font-bold text-black dark:text-white border-b-2 border-black dark:border-white pb-2 -mb-[10px] ml-auto truncate max-w-[200px] sm:max-w-md">
+          {queryData.slug}
+        </span>
+      )
+    }
   </div>
 
   {
     result.type === 'success' ? (
-      <AnalyticsResultsTable results={result.results} />
+      <>
+        <AnalyticsChart data={result.results.data} />
+        <AnalyticsResultsTable results={result.results} />
+      </>
     ) : (
       <>
         <div class="text-red-500 mt-8">Error occurred while fetching analytics</div>
-        {import.meta.env.DEV ? <pre class="mt-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-x-auto text-sm">{result.message}</pre> : null}
+        {import.meta.env.DEV ? (
+          <pre class="mt-4 p-4 bg-gray-100 dark:bg-gray-900 overflow-x-auto text-sm">
+            {result.message}
+          </pre>
+        ) : null}
       </>
     )
   }

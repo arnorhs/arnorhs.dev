@@ -24,7 +24,12 @@ const results = Astro.props.results as AnalyticsResults<any>
               if (column.name === 'path' || column.name === 'pathname') {
                 return (
                   <td class="px-6 py-4">
-                    <a href={`/stats/?slug=${encodeURIComponent(val)}`} class="text-blue-600 dark:text-blue-400 hover:underline">{val}</a>
+                    <a
+                      href={`/stats/?slug=${encodeURIComponent(val)}`}
+                      class="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      {val}
+                    </a>
                   </td>
                 )
               }

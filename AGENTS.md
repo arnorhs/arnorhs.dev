@@ -104,6 +104,7 @@ SEO metadata is managed globally in [MainLayout.astro](file:///Users/arnorhs/pro
   pnpm turbo test
   ```
 - **Link checking for markdown posts:**
+
   ```bash
   pnpm check:links
   ```
