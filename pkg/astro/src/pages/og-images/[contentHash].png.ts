@@ -1,17 +1,18 @@
 import { findPost } from '@arnorhs/posts'
+import { env } from 'cloudflare:workers'
 import type { APIContext } from 'astro'
 import type { PostImagesInterface } from '@arnorhs/post-images-worker'
 
 export const prerender = false
 
-export async function GET({ request, params, locals }: APIContext) {
+export async function GET({ params }: APIContext) {
   const contentHash = params.contentHash
 
   if (!contentHash) {
     return new Response('Not Found', { status: 404 })
   }
 
-  const rateLimit = await locals.runtime.env.RATE_LIMIT.limit({
+  const rateLimit = await env.RATE_LIMIT.limit({
     key: contentHash,
   })
 
@@ -26,7 +27,7 @@ export async function GET({ request, params, locals }: APIContext) {
     return new Response('Not Found', { status: 404 })
   }
 
-  const postImagesWorker = locals.runtime.env.POST_IMAGES_WORKER as unknown as PostImagesInterface
+  const postImagesWorker = env.POST_IMAGES_WORKER as unknown as PostImagesInterface
   const resp = await postImagesWorker.getImageResponse(title)
 
   // I needed to clone it, because astro complained that it was not a response, even though

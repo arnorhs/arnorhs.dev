@@ -1,0 +1,45 @@
+---
+import type { AnalyticsResults } from '../lib/analytics/CfAnalyticsClient'
+
+type AnalyticsRow = Record<string, unknown>
+
+export type Props = {
+  results: AnalyticsResults<AnalyticsRow>
+}
+
+const results = Astro.props.results
+---
+
+<div class="overflow-x-auto mt-6 border rounded-lg border-gray-200 dark:border-gray-800">
+  <table class="min-w-full text-sm text-left whitespace-nowrap">
+    <thead class="text-xs uppercase bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+      <tr>
+        {results.meta.map((column) => <th class="px-6 py-3 font-semibold">{column.name}</th>)}
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+      {
+        results.data.map((row) => (
+          <tr class="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+            {results.meta.map((column) => {
+              const val = row[column.name]
+              if (column.name === 'path' || column.name === 'pathname') {
+                return (
+                  <td class="px-6 py-4">
+                    <a
+                      href={`/stats/?slug=${encodeURIComponent(String(val))}`}
+                      class="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      {String(val)}
+                    </a>
+                  </td>
+                )
+              }
+              return <td class="px-6 py-4">{String(val ?? '')}</td>
+            })}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

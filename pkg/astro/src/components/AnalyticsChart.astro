@@ -1,0 +1,162 @@
+---
+type ChartDatum = {
+  day?: unknown
+  views?: unknown
+  uniqueSessions?: unknown
+}
+
+export type Props = {
+  data: ChartDatum[]
+}
+
+const { data } = Astro.props
+
+// Expects data to be an array of objects with at least `day` and `views`
+let chartData = data
+  .filter((d) => 'day' in d && 'views' in d)
+  .map((d) => ({
+    day: String(d.day).split(' ')[0], // just the date part (YYYY-MM-DD)
+    views: Number(d.views),
+    uniqueSessions: d.uniqueSessions ? Number(d.uniqueSessions) : undefined,
+  }))
+  .reverse() // Sort chronologically (oldest to newest)
+
+const hasData = chartData.length > 0
+const maxViews = hasData ? Math.max(...chartData.map((d) => d.views), 10) : 10
+
+const width = 800
+const height = 280
+const padding = { top: 20, right: 20, bottom: 60, left: 60 }
+
+const chartWidth = width - padding.left - padding.right
+const chartHeight = height - padding.top - padding.bottom
+
+const barWidth = hasData ? (chartWidth / chartData.length) * 0.7 : 0
+const barSpacing = hasData ? (chartWidth / chartData.length) * 0.3 : 0
+
+const getY = (val: number) => padding.top + chartHeight - (val / maxViews) * chartHeight
+---
+
+{
+  hasData && (
+    <div class="w-full overflow-hidden mb-8 border rounded-lg border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 pt-4 px-2">
+      <svg viewBox={`0 0 ${width} ${height}`} class="w-full h-auto text-xs font-sans">
+        {/* Y Axis labels & grid */}
+        {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
+          const val = Math.round(maxViews * tick)
+          const y = getY(val)
+          return (
+            <g class="text-gray-400 dark:text-gray-500">
+              <text x={padding.left - 10} y={y + 4} text-anchor="end" fill="currentColor">
+                {val}
+              </text>
+              <line
+                x1={padding.left}
+                y1={y}
+                x2={width - padding.right}
+                y2={y}
+                stroke="currentColor"
+                stroke-dasharray="4 4"
+                stroke-opacity="0.2"
+              />
+            </g>
+          )
+        })}
+
+        {/* Bars */}
+        {chartData.map((d, i) => {
+          const x = padding.left + i * (barWidth + barSpacing) + barSpacing / 2
+          const y = getY(d.views)
+          const h = chartHeight - (y - padding.top)
+
+          const uniqueY = d.uniqueSessions ? getY(d.uniqueSessions) : undefined
+          const uniqueH = uniqueY ? chartHeight - (uniqueY - padding.top) : undefined
+
+          const showLabel =
+            chartData.length <= 14 ||
+            i % Math.ceil(chartData.length / 10) === 0 ||
+            i === chartData.length - 1
+
+          return (
+            <g class="group">
+              {/* Main Views Bar */}
+              <rect
+                x={x}
+                y={y}
+                width={barWidth}
+                height={h}
+                class="fill-blue-100 dark:fill-blue-900/40 hover:fill-blue-200 dark:hover:fill-blue-800/60 transition-colors cursor-pointer"
+                rx="2"
+              >
+                <title>
+                  {d.day}: {d.views} views
+                  {d.uniqueSessions ? `, ${d.uniqueSessions} unique sessions` : ''}
+                </title>
+              </rect>
+
+              {/* Unique Sessions Bar (Overlaid) */}
+              {uniqueH !== undefined && (
+                <rect
+                  x={x + barWidth * 0.15}
+                  y={uniqueY}
+                  width={barWidth * 0.7}
+                  height={uniqueH}
+                  class="fill-blue-500 dark:fill-blue-500 pointer-events-none"
+                  rx="1"
+                />
+              )}
+
+              {/* X Axis labels */}
+              {showLabel && (
+                <text
+                  x={x + barWidth / 2}
+                  y={height - padding.bottom + 24}
+                  text-anchor="end"
+                  class="fill-gray-500 dark:fill-gray-400"
+                  transform={`rotate(-45, ${x + barWidth / 2}, ${height - padding.bottom + 24})`}
+                >
+                  {d.day.substring(5)}
+                </text>
+              )}
+            </g>
+          )
+        })}
+
+        {/* Base line */}
+        <line
+          x1={padding.left}
+          y1={height - padding.bottom}
+          x2={width - padding.right}
+          y2={height - padding.bottom}
+          stroke="currentColor"
+          class="text-gray-300 dark:text-gray-700"
+        />
+
+        {/* Legend */}
+        {chartData[0]?.uniqueSessions !== undefined && (
+          <g
+            class="text-gray-500 dark:text-gray-400"
+            transform={`translate(${width - padding.right - 180}, 0)`}
+          >
+            <rect
+              x="0"
+              y="0"
+              width="12"
+              height="12"
+              rx="2"
+              class="fill-blue-100 dark:fill-blue-900/40"
+            />
+            <text x="20" y="10" fill="currentColor">
+              Page Views
+            </text>
+
+            <rect x="100" y="0" width="12" height="12" rx="2" class="fill-blue-500" />
+            <text x="120" y="10" fill="currentColor">
+              Unique Sessions
+            </text>
+          </g>
+        )}
+      </svg>
+    </div>
+  )
+}
