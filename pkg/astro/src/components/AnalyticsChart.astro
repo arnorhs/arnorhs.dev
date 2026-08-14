@@ -11,152 +11,175 @@ export type Props = {
 
 const { data } = Astro.props
 
-// Expects data to be an array of objects with at least `day` and `views`
-let chartData = data
-  .filter((d) => 'day' in d && 'views' in d)
-  .map((d) => ({
-    day: String(d.day).split(' ')[0], // just the date part (YYYY-MM-DD)
-    views: Number(d.views),
-    uniqueSessions: d.uniqueSessions ? Number(d.uniqueSessions) : undefined,
+const chartData = data
+  .filter((datum) => datum.day != null && datum.views != null)
+  .map((datum) => ({
+    day: String(datum.day).split(' ')[0],
+    views: Number(datum.views),
+    uniqueSessions: datum.uniqueSessions == null ? undefined : Number(datum.uniqueSessions),
   }))
-  .reverse() // Sort chronologically (oldest to newest)
+  .sort((a, b) => a.day.localeCompare(b.day))
 
 const hasData = chartData.length > 0
-const maxViews = hasData ? Math.max(...chartData.map((d) => d.views), 10) : 10
+const hasUniqueSessions = chartData.some((datum) => datum.uniqueSessions !== undefined)
 
-const width = 800
-const height = 280
-const padding = { top: 20, right: 20, bottom: 60, left: 60 }
+function niceMaximum(value: number) {
+  if (value <= 10) return 10
 
+  const magnitude = 10 ** Math.floor(Math.log10(value))
+  const normalized = value / magnitude
+  const rounded = normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10
+
+  return rounded * magnitude
+}
+
+const maxValue = hasData
+  ? Math.max(...chartData.flatMap((datum) => [datum.views, datum.uniqueSessions ?? 0]))
+  : 0
+const maxY = niceMaximum(maxValue)
+
+const width = 760
+const height = 220
+const padding = { top: 10, right: 12, bottom: 36, left: 42 }
 const chartWidth = width - padding.left - padding.right
 const chartHeight = height - padding.top - padding.bottom
+const slotWidth = hasData ? chartWidth / chartData.length : 0
+const barWidth = Math.min(slotWidth * 0.66, 64)
 
-const barWidth = hasData ? (chartWidth / chartData.length) * 0.7 : 0
-const barSpacing = hasData ? (chartWidth / chartData.length) * 0.3 : 0
-
-const getY = (val: number) => padding.top + chartHeight - (val / maxViews) * chartHeight
+const getY = (value: number) => padding.top + chartHeight - (value / maxY) * chartHeight
 ---
 
 {
   hasData && (
-    <div class="w-full overflow-hidden mb-8 border rounded-lg border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 pt-4 px-2">
-      <svg viewBox={`0 0 ${width} ${height}`} class="w-full h-auto text-xs font-sans">
-        {/* Y Axis labels & grid */}
-        {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
-          const val = Math.round(maxViews * tick)
-          const y = getY(val)
-          return (
-            <g class="text-gray-400 dark:text-gray-500">
-              <text x={padding.left - 10} y={y + 4} text-anchor="end" fill="currentColor">
-                {val}
-              </text>
-              <line
-                x1={padding.left}
-                y1={y}
-                x2={width - padding.right}
-                y2={y}
-                stroke="currentColor"
-                stroke-dasharray="4 4"
-                stroke-opacity="0.2"
-              />
-            </g>
-          )
-        })}
+    <section class="mb-8 overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900/50">
+      <header class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-gray-100 px-4 py-3 dark:border-gray-800">
+        <h2 class="text-sm font-semibold text-gray-900 dark:text-gray-100">Daily traffic</h2>
 
-        {/* Bars */}
-        {chartData.map((d, i) => {
-          const x = padding.left + i * (barWidth + barSpacing) + barSpacing / 2
-          const y = getY(d.views)
-          const h = chartHeight - (y - padding.top)
+        <div class="flex flex-wrap items-center gap-4 text-[11px] leading-none text-gray-500 dark:text-gray-400">
+          <span class="inline-flex items-center gap-1.5">
+            <span class="size-2.5 rounded-sm bg-blue-100 dark:bg-blue-900/60" />
+            Page views
+          </span>
+          {hasUniqueSessions && (
+            <span class="inline-flex items-center gap-1.5">
+              <span class="size-2.5 rounded-sm bg-blue-500" />
+              Unique sessions
+            </span>
+          )}
+        </div>
+      </header>
 
-          const uniqueY = d.uniqueSessions ? getY(d.uniqueSessions) : undefined
-          const uniqueH = uniqueY ? chartHeight - (uniqueY - padding.top) : undefined
+      <div class="overflow-x-auto px-2 py-3">
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          class:list={[
+            'traffic-chart mx-auto block h-auto w-full max-w-[900px]',
+            chartData.length > 7 && 'traffic-chart--dense min-w-[560px]',
+          ]}
+          role="img"
+          aria-label="Page views and unique sessions by day"
+          style="font-size: 9px"
+        >
+          {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
+            const value = Math.round(maxY * tick)
+            const y = getY(value)
 
-          const showLabel =
-            chartData.length <= 14 ||
-            i % Math.ceil(chartData.length / 10) === 0 ||
-            i === chartData.length - 1
-
-          return (
-            <g class="group">
-              {/* Main Views Bar */}
-              <rect
-                x={x}
-                y={y}
-                width={barWidth}
-                height={h}
-                class="fill-blue-100 dark:fill-blue-900/40 hover:fill-blue-200 dark:hover:fill-blue-800/60 transition-colors cursor-pointer"
-                rx="2"
-              >
-                <title>
-                  {d.day}: {d.views} views
-                  {d.uniqueSessions ? `, ${d.uniqueSessions} unique sessions` : ''}
-                </title>
-              </rect>
-
-              {/* Unique Sessions Bar (Overlaid) */}
-              {uniqueH !== undefined && (
-                <rect
-                  x={x + barWidth * 0.15}
-                  y={uniqueY}
-                  width={barWidth * 0.7}
-                  height={uniqueH}
-                  class="fill-blue-500 dark:fill-blue-500 pointer-events-none"
-                  rx="1"
-                />
-              )}
-
-              {/* X Axis labels */}
-              {showLabel && (
-                <text
-                  x={x + barWidth / 2}
-                  y={height - padding.bottom + 24}
-                  text-anchor="end"
-                  class="fill-gray-500 dark:fill-gray-400"
-                  transform={`rotate(-45, ${x + barWidth / 2}, ${height - padding.bottom + 24})`}
-                >
-                  {d.day.substring(5)}
+            return (
+              <g class="text-gray-400 dark:text-gray-500">
+                <text x={padding.left - 8} y={y + 3} text-anchor="end" fill="currentColor">
+                  {value}
                 </text>
-              )}
-            </g>
-          )
-        })}
+                <line
+                  x1={padding.left}
+                  y1={y}
+                  x2={width - padding.right}
+                  y2={y}
+                  stroke="currentColor"
+                  stroke-dasharray="3 4"
+                  stroke-opacity="0.2"
+                />
+              </g>
+            )
+          })}
 
-        {/* Base line */}
-        <line
-          x1={padding.left}
-          y1={height - padding.bottom}
-          x2={width - padding.right}
-          y2={height - padding.bottom}
-          stroke="currentColor"
-          class="text-gray-300 dark:text-gray-700"
-        />
+          {chartData.map((datum, index) => {
+            const x = padding.left + index * slotWidth + (slotWidth - barWidth) / 2
+            const y = getY(datum.views)
+            const barHeight = padding.top + chartHeight - y
+            const uniqueY =
+              datum.uniqueSessions === undefined ? undefined : getY(datum.uniqueSessions)
+            const uniqueHeight =
+              uniqueY === undefined ? undefined : padding.top + chartHeight - uniqueY
+            const showLabel =
+              chartData.length <= 14 ||
+              index % Math.ceil(chartData.length / 10) === 0 ||
+              index === chartData.length - 1
 
-        {/* Legend */}
-        {chartData[0]?.uniqueSessions !== undefined && (
-          <g
-            class="text-gray-500 dark:text-gray-400"
-            transform={`translate(${width - padding.right - 180}, 0)`}
-          >
-            <rect
-              x="0"
-              y="0"
-              width="12"
-              height="12"
-              rx="2"
-              class="fill-blue-100 dark:fill-blue-900/40"
-            />
-            <text x="20" y="10" fill="currentColor">
-              Page Views
-            </text>
+            return (
+              <g>
+                <rect
+                  x={x}
+                  y={y}
+                  width={barWidth}
+                  height={barHeight}
+                  rx="2"
+                  class="fill-blue-100 transition-colors hover:fill-blue-200 dark:fill-blue-900/60 dark:hover:fill-blue-800/70"
+                >
+                  <title>
+                    {datum.day}: {datum.views} page views
+                    {datum.uniqueSessions === undefined
+                      ? ''
+                      : `, ${datum.uniqueSessions} unique sessions`}
+                  </title>
+                </rect>
 
-            <rect x="100" y="0" width="12" height="12" rx="2" class="fill-blue-500" />
-            <text x="120" y="10" fill="currentColor">
-              Unique Sessions
-            </text>
-          </g>
-        )}
-      </svg>
-    </div>
+                {uniqueY !== undefined && uniqueHeight !== undefined && (
+                  <rect
+                    x={x + barWidth * 0.2}
+                    y={uniqueY}
+                    width={barWidth * 0.6}
+                    height={uniqueHeight}
+                    rx="1"
+                    class="pointer-events-none fill-blue-500"
+                  />
+                )}
+
+                {showLabel && (
+                  <text
+                    x={x + barWidth / 2}
+                    y={height - padding.bottom + 17}
+                    text-anchor="middle"
+                    class="fill-gray-500 dark:fill-gray-400"
+                  >
+                    {datum.day.substring(5)}
+                  </text>
+                )}
+              </g>
+            )
+          })}
+
+          <line
+            x1={padding.left}
+            y1={padding.top + chartHeight}
+            x2={width - padding.right}
+            y2={padding.top + chartHeight}
+            stroke="currentColor"
+            class="text-gray-300 dark:text-gray-700"
+          />
+        </svg>
+      </div>
+    </section>
   )
 }
+
+<style>
+  @media (max-width: 640px) {
+    .traffic-chart {
+      font-size: 18px !important;
+    }
+
+    .traffic-chart--dense {
+      font-size: 12px !important;
+    }
+  }
+</style>
