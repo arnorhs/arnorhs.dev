@@ -15,6 +15,11 @@ const client = getAnalyticsClient(env)
 const queryData = {
   slug: new URL(Astro.request.url).searchParams.get('slug'),
 }
+const rawEventsEnabled = import.meta.env.DEV
+
+if (queryData.slug === 'raw' && !rawEventsEnabled) {
+  return Astro.redirect('/stats/')
+}
 
 const queries = new AnalyticsQueries(client, { daysOfData: DAYS_OF_DATA })
 
@@ -66,13 +71,20 @@ if (result.type === 'error') {
         : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'}
       >By Country</a
     >
-    <a
-      href="/stats/?slug=raw"
-      class={(queryData?.slug === 'raw'
-        ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white '
-        : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'}
-      >Raw Events</a
-    >
+    {
+      rawEventsEnabled && (
+        <a
+          href="/stats/?slug=raw"
+          class={
+            (queryData?.slug === 'raw'
+              ? 'font-bold text-black dark:text-white border-b-2 border-black dark:border-white '
+              : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 ') + 'pb-2 -mb-[10px]'
+          }
+        >
+          Raw Events
+        </a>
+      )
+    }
     {
       queryData?.slug &&
         queryData.slug !== 'all' &&
