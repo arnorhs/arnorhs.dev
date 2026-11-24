@@ -11,4 +11,5 @@ overrides:
   vite: ^8.0.0
   '@types/node': ^22.18.0
   typescript: ^5.9.3
-  wrangler: 4.103.0
+  wrangler: ^4.167.0
+  rollup: ^4.59.0
